@@ -102,6 +102,9 @@ body{background:radial-gradient(circle at 8% 8%,rgba(255,190,70,.20),transparent
 .spy-wrap{max-width:760px;margin:auto}.spy-round,.spy-badge{display:inline-block;padding:8px 13px;border-radius:999px;background:#f1edff;color:#6b4fd3;font-weight:950;margin:4px}.spy-card,.spy-secret,.spy-result{margin:16px auto;padding:26px;border-radius:28px;background:linear-gradient(145deg,#ffffff,#f7f4ff);border:1px solid #e8defd;box-shadow:0 14px 35px rgba(80,60,130,.10)}.spy-lock{font-size:46px}.spy-big{font-size:68px;margin:10px}.spy-secret.is-spy{background:linear-gradient(145deg,#fff1f3,#fff8f8);border-color:#ffd2d8}.spy-secret.is-citizen{background:linear-gradient(145deg,#effcf7,#f8fffc);border-color:#c8f0df}.spy-votes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}.spy-vote-secret{padding:12px;border-radius:16px;background:#fff8df;border:1px solid #f5dda1;font-weight:900;margin:14px 0}.spy-vote-list{margin-top:16px}.spy-vote-row{display:flex;justify-content:space-between;padding:11px 14px;border-bottom:1px solid #eee}.spy-result.good{border-color:#bdebd5}.spy-result.bad{border-color:#ffd0d6}@media(max-width:650px){.spy-votes{grid-template-columns:1fr}}
 
 .mystery-photo{margin:18px auto;max-width:700px;border-radius:28px;overflow:hidden;box-shadow:0 16px 40px rgba(20,20,40,.18);border:1px solid #2a2c42}.mystery-photo svg{display:block;width:100%;height:auto}.mystery-box{background:#fff8fb;border:1px solid #ead8e8;border-radius:20px;padding:14px 16px;line-height:1.9}.mystery-clues,.mystery-questions{display:grid;gap:10px;margin:14px 0}.mystery-clues small{line-height:1.7;color:var(--muted)}.mystery-suspect{background:linear-gradient(145deg,#fff,#f7f3ff);border:1px solid #e5dcff;border-radius:26px;padding:20px;margin:12px 0}.claim{margin-top:12px;padding:14px;border-radius:18px;background:#fff;border:1px solid #ece8f4;line-height:1.9}.mystery-summary{display:grid;gap:10px;text-align:right;background:#fff;border:1px solid #e7eaf2;border-radius:20px;padding:16px;line-height:1.9}
+.mystery-caseboard{margin:14px 0;padding:16px;border-radius:22px;background:linear-gradient(145deg,#11162b,#0b1020);border:1px solid rgba(34,211,238,.22);box-shadow:0 14px 35px rgba(0,0,0,.22);text-align:right}.mystery-caseboard-title{font-size:17px;font-weight:1000;margin-bottom:12px}.mystery-caseboard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.mystery-caseboard-grid>div{padding:11px 8px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);text-align:center}.mystery-caseboard-grid b{display:block;font-size:20px;color:#f4f7ff}.mystery-caseboard-grid span{display:block;margin-top:3px;font-size:10px;color:var(--muted);line-height:1.5}.mystery-caseboard-tip{margin-top:11px;padding:11px 12px;border-radius:15px;background:rgba(139,92,246,.10);border:1px solid rgba(139,92,246,.20);color:var(--muted);font-size:12px;line-height:1.8}.mystery-caseboard-tip b{color:#f4f7ff}@media(max-width:520px){.mystery-caseboard-grid{grid-template-columns:repeat(2,1fr)}}
+.mystery-clue-progress{display:inline-block;margin:8px auto 2px;padding:8px 12px;border-radius:999px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.20);color:var(--muted);font-size:12px}.mystery-clue-progress b{color:#f4f7ff}.mystery-clues .collected{border-color:rgba(52,211,153,.55)!important;background:rgba(52,211,153,.10)!important;box-shadow:0 0 0 2px rgba(52,211,153,.08)}
+
 
 .game-guide-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}.game-guide-card{background:#fff;border:1px solid #e7eaf2;border-right:5px solid var(--guide-color,#7657ff);border-radius:20px;padding:16px;box-shadow:0 8px 22px rgba(54,72,110,.06)}.game-guide-head{display:flex;align-items:center;gap:10px}.game-guide-icon{font-size:30px}.game-guide-card h3{font-size:17px}.game-guide-card p{color:var(--muted);font-size:13px;line-height:1.9;margin-top:8px}.game-guide-steps{margin-top:10px;padding:11px 13px;border-radius:14px;background:#fbfbff;border:1px solid #eeeef8;font-size:12px;line-height:2;color:#555}.game-guide-steps b{color:#3d3760}.menu-guide-hint{margin-top:12px;padding:14px;border-radius:18px;background:linear-gradient(135deg,#fff8e8,#f4fbff);border:1px solid #f0e1bb;line-height:1.9;font-size:13px;color:#4d5363}.game-guide-tip{margin-top:10px;padding:10px 12px;border-radius:14px;background:#f7fbff;font-size:12px;line-height:1.8}.guide-modal .modal-box{max-width:760px;max-height:88vh;overflow:auto}.guide-intro{background:linear-gradient(135deg,#f7f3ff,#f2fbff);border:1px solid #e5defc;border-radius:18px;padding:14px;line-height:1.9;color:var(--muted);margin:10px 0 16px}.guide-close-row{display:flex;gap:8px;margin-top:16px}
 </style>
@@ -184,6 +187,36 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;ba
 .pill,.score,.player-status{background:#11152a!important;border-color:var(--line)!important;color:#fff!important}
 .input{box-shadow:none!important}.input::placeholder{color:#69728e}
 .modal-box{border-radius:26px}
+</style>
+
+<style id="dossier-dark-fix">
+/* Dossier: keep its cards consistent with the Neon Dark design. */
+.mystery-box, .mystery-summary, .mystery-suspect, .mystery-summary, .claim {
+  background:linear-gradient(145deg,#0f1426,#151a31)!important;
+  color:var(--ink)!important;
+  border:1px solid rgba(139,92,246,.28)!important;
+  box-shadow:0 14px 35px rgba(0,0,0,.28)!important;
+}
+.mystery-box b, .mystery-summary b, .mystery-suspect b, .claim b { color:#f4f7ff!important; }
+.mystery-box span, .mystery-summary span, .mystery-suspect span, .claim span { color:var(--muted)!important; }
+.mystery-questions button, .mystery-clues > * { color:var(--ink); }
+</style>
+
+<style id="dark-inline-card-fix">
+/* Keep inline hint cards readable on the Neon Dark theme. */
+.spy-secret div[style*="background:#fff"],
+.spy-secret div[style*="background: #fff"],
+.spy-first-speaker[style*="background:#f5f1ff"]{
+  background:linear-gradient(145deg,#17132b,#11172b)!important;
+  border-color:rgba(139,92,246,.38)!important;
+  color:#f4f7ff!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.28)!important;
+}
+.spy-secret div[style*="background:#fff"] div,
+.spy-secret div[style*="background: #fff"] div{color:#f4f7ff!important}
+.spy-secret div[style*="background:#fff"] p,
+.spy-secret div[style*="background: #fff"] p{color:#c9c3df!important}
+.spy-first-speaker[style*="background:#f5f1ff"] .hint{color:#a8b0c7!important}
 </style>
 </head>
 <body>
@@ -270,12 +303,159 @@ function renderGroups(){
   A.innerHTML=a.length?a.map(n=>`<span class="team-player">${esc(n)}</span>`).join(""):`<span class="team-player">هێشتا یاریزان نییە</span>`;
   B.innerHTML=b.length?b.map(n=>`<span class="team-player">${esc(n)}</span>`).join(""):`<span class="team-player">هێشتا یاریزان نییە</span>`;
 }
-function showScreen(id){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));const el=document.getElementById(id);if(el)el.classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
+function showScreen(id){if(id!=="game")stopMysteryMusic();document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));const el=document.getElementById(id);if(el)el.classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
 function scrollToGames(){document.getElementById("gamesTitle").scrollIntoView({behavior:"smooth"})}
 function toast(t){const e=document.getElementById("toast");e.textContent=t;e.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("show"),2200)}
-function toggleSound(){state.sound=!state.sound;document.getElementById("soundBtn").textContent=state.sound?"🔊":"🔇";saveState()}
+function toggleSound(){state.sound=!state.sound;document.getElementById("soundBtn").textContent=state.sound?"🔊":"🔇";if(!state.sound)stopMysteryMusic();else if(state.currentGame==="mystery")startMysteryMusic();saveState()}
 let audio=null;
-function beep(f=600,d=.08,type="sine"){if(!state.sound)return;try{audio ||= new(window.AudioContext||window.webkitAudioContext)();const o=audio.createOscillator(),g=audio.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(.0001,audio.currentTime);g.gain.exponentialRampToValueAtTime(.09,audio.currentTime+.01);g.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+d);o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+d)}catch(e){}}
+let mysteryMusicTimer=null;
+let mysteryMusicToken=0;
+let mysteryMusicNodes=[];
+function ensureAudio(){
+  try{
+    audio ||= new(window.AudioContext||window.webkitAudioContext)();
+    if(audio.state === "suspended") audio.resume();
+    return audio;
+  }catch(e){ return null; }
+}
+function beep(f=600,d=.08,type="sine"){
+  if(!state.sound)return;
+  const ctx=ensureAudio(); if(!ctx)return;
+  try{
+    const o=ctx.createOscillator(),g=ctx.createGain();
+    o.type=type;o.frequency.value=f;
+    g.gain.setValueAtTime(.0001,ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(.09,ctx.currentTime+.01);
+    g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+d);
+    o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+d);
+  }catch(e){}
+}
+function stopMysteryMusic(){
+  mysteryMusicToken++;
+  if(mysteryMusicTimer){clearTimeout(mysteryMusicTimer);mysteryMusicTimer=null;}
+  const ctx=audio;
+  if(!ctx)return;
+  const now=ctx.currentTime;
+  mysteryMusicNodes.forEach(n=>{
+    try{
+      if(n.gain){
+        n.gain.cancelScheduledValues(now);
+        n.gain.setTargetAtTime(.0001,now,.045);
+      }
+      if(n.osc){n.osc.stop(now+.18)}
+    }catch(e){}
+  });
+  mysteryMusicNodes=[];
+}
+function startMysteryMusic(){
+  // Music is allowed ONLY while the actual mystery game screen is open.
+  const gameScreen=document.getElementById("game");
+  if(!gameScreen || !gameScreen.classList.contains("active"))return;
+  stopMysteryMusic();
+  if(!state.sound || state.currentGame!=="mystery")return;
+  const ctx=ensureAudio(); if(!ctx)return;
+  const token=++mysteryMusicToken;
+  const now=ctx.currentTime;
+
+  // Cinematic mystery ambience: no sharp beeps and no piercing high notes.
+  const compressor=ctx.createDynamicsCompressor();
+  compressor.threshold.value=-20;
+  compressor.knee.value=24;
+  compressor.ratio.value=6;
+  compressor.attack.value=.012;
+  compressor.release.value=.28;
+  compressor.connect(ctx.destination);
+
+  const master=ctx.createGain();
+  master.gain.setValueAtTime(.0001,now);
+  master.gain.exponentialRampToValueAtTime(1.75,now+1.6);
+  master.connect(compressor);
+
+  const filter=ctx.createBiquadFilter();
+  filter.type="lowpass";
+  filter.frequency.value=1150;
+  filter.Q.value=.7;
+  filter.connect(master);
+
+  const padGain=ctx.createGain(); padGain.gain.value=.82; padGain.connect(filter);
+  const bassGain=ctx.createGain(); bassGain.gain.value=.56; bassGain.connect(filter);
+  const motifGain=ctx.createGain(); motifGain.gain.value=.13; motifGain.connect(filter);
+
+  const chords=[
+    [146.83,174.61,220.00], // Dm
+    [130.81,164.81,196.00], // C
+    [116.54,146.83,174.61], // Bb
+    [123.47,155.56,185.00]  // A colour
+  ];
+  const roots=[73.42,65.41,58.27,61.74];
+  const motif=[220,196,174.61,196,220,246.94,220,196];
+  let step=0;
+
+  const addTone=(freq,duration,attack,release,gainValue,type,output,t)=>{
+    const o=ctx.createOscillator(),g=ctx.createGain();
+    o.type=type;o.frequency.setValueAtTime(freq,t);
+    g.gain.setValueAtTime(.0001,t);
+    g.gain.exponentialRampToValueAtTime(gainValue,t+attack);
+    g.gain.setValueAtTime(gainValue,t+Math.max(attack+.01,duration-release));
+    g.gain.exponentialRampToValueAtTime(.0001,t+duration);
+    o.connect(g);g.connect(output);o.start(t);o.stop(t+duration+.04);
+    mysteryMusicNodes.push({osc:o,gain:g});
+  };
+
+  // Start with a soft sustained chord so it sounds like music, not a beep.
+  chords[0].forEach((f,i)=>addTone(f,4.8,1.4,1.5,i===1?.12:.15,i===1?"triangle":"sine",padGain,now));
+  addTone(roots[0],4.5,1.0,1.4,.17,"sine",bassGain,now);
+
+  const playStep=()=>{
+    if(token!==mysteryMusicToken || !state.sound || state.currentGame!=="mystery")return;
+    const t=ctx.currentTime;
+    const chordIndex=Math.floor(step/4)%chords.length;
+    if(step%4===0){
+      chords[chordIndex].forEach((f,i)=>addTone(f,3.8,1.0,1.25,i===1?.10:.13,i===1?"triangle":"sine",padGain,t));
+      addTone(roots[chordIndex],3.55,.75,1.1,.16,"sine",bassGain,t);
+    }
+
+    // Very soft low-register motif: longer notes, rounded envelope, no piercing beep.
+    const f=motif[step%motif.length];
+    addTone(f,1.7,.38,.72,.045,"sine",motifGain,t);
+    step++;
+    mysteryMusicTimer=setTimeout(playStep,1500);
+  };
+  playStep();
+}
+function gameStartSound(gameId){
+  if(!state.sound)return;
+  const ctx=ensureAudio(); if(!ctx)return;
+  try{
+    // Mystery uses ONLY its ambient soundtrack, and only after its game screen is active.
+    if(gameId==='mystery'){
+      const begin=()=>startMysteryMusic();
+      if(document.getElementById("game")?.classList.contains("active"))setTimeout(begin,80);
+      else setTimeout(begin,120);
+      return;
+    }
+    const now=ctx.currentTime;
+    const patterns={
+      spy:[[330,.09],[392,.09],[494,.16]],
+      bomb:[[110,.08],[165,.08],[220,.10],[110,.16]],
+      reaction:[[523,.07],[659,.07],[784,.12]],
+      challenge:[[392,.08],[523,.08],[659,.13]],
+      rapid:[[440,.06],[554,.06],[659,.10]],
+      duel:[[294,.09],[370,.09],[494,.14]]
+    };
+    const seq=patterns[gameId]||[[330,.08],[440,.08],[554,.12]];
+    let t=now;
+    seq.forEach(([f,d],i)=>{
+      const o=ctx.createOscillator(),g=ctx.createGain();
+      o.type='sine'; o.frequency.setValueAtTime(f,t);
+      g.gain.setValueAtTime(.0001,t);
+      g.gain.exponentialRampToValueAtTime(.075,t+.012);
+      g.gain.exponentialRampToValueAtTime(.0001,t+d);
+      o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+d+.02);
+      t+=d+(i<seq.length-1?.035:.02);
+    });
+  }catch(e){}
+}
 function win(){beep(523,.08);setTimeout(()=>beep(659,.08),90);setTimeout(()=>beep(784,.14),180)}
 function lose(){beep(220,.14,"square");setTimeout(()=>beep(150,.18,"square"),120)}
 function openMenu(){document.getElementById("menuOverlay").classList.add("show")}function closeMenu(e){if(e&&e.target!==e.currentTarget&&e.target.id!=="menuOverlay")return;document.getElementById("menuOverlay").classList.remove("show")}
@@ -345,10 +525,10 @@ function bankGet(game,factory){if(!state.used[game])state.used[game]=[];const us
 function rotatePlayer(){state.currentPlayer=(state.currentPlayer+1)%state.players.length}
 function nextAfter(ms=600){clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);state.nextTimeout=setTimeout(()=>{state.gameLocked=false;state.turn++;rotatePlayer();if(state.turn>=10)finishGame();else dispatchCurrent()},ms)}
 function dispatchCurrent(){const id=String(state.currentGame||"").trim();const runners={quiz:quizGame,truth:truthGame,who:whoGame,rapid:rapidGame,memory:memoryGame,math:mathGame,category:categoryGame,emoji:emojiGame,reaction:reactionGame,word:wordGame,forbidden:forbiddenGame,charades:charadesGame,duel:duelGame,guess:guessGame,choice:choiceGame,bomb:bombGame,challenge:challengeGame,redhunt:redHuntGame,spy:spyGame,mystery:mysteryGame};const run=runners[id];if(typeof run==="function"){run();return;}state.currentGame=null;showScreen("home");renderGames();toast("⚠️ یارییەکە نەدۆزرایەوە") }
-function finishGame(){clearInterval(state.timer);state.timer=null;state.gameLocked=false;const sorted=[...state.players].sort((a,b)=>(state.scores[b]||0)-(state.scores[a]||0));const w=sorted[0];document.getElementById("resultText").innerHTML=`🎉 بەرەوپێش <b>${esc(w)}</b>!<br>نمرە: <b>${state.scores[w]||0}</b>`;document.getElementById("leaderboard").innerHTML=sorted.map((n,i)=>`<div class="leader-row"><span>${i===0?"🥇":i===1?"🥈":i===2?"🥉":"🏅"} ${esc(n)}</span><b>${state.scores[n]||0}</b></div>`).join("");win();showScreen("result")}
+function finishGame(){stopMysteryMusic();clearInterval(state.timer);state.timer=null;state.gameLocked=false;const sorted=[...state.players].sort((a,b)=>(state.scores[b]||0)-(state.scores[a]||0));const w=sorted[0];document.getElementById("resultText").innerHTML=`🎉 بەرەوپێش <b>${esc(w)}</b>!<br>نمرە: <b>${state.scores[w]||0}</b>`;document.getElementById("leaderboard").innerHTML=sorted.map((n,i)=>`<div class="leader-row"><span>${i===0?"🥇":i===1?"🥈":i===2?"🥉":"🏅"} ${esc(n)}</span><b>${state.scores[n]||0}</b></div>`).join("");win();showScreen("result")}
 function restartGame(){if(state.currentGame)startGame(state.currentGame)}
-function exitGame(){clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);state.gameLocked=false;state.currentGame=null;state.bombQuestion=null;state.bombTurn=0;state.eliminated=[];window.reactionStarted=false;window.ready=false;showScreen("home");renderGames();toast("🏠 گەڕایتەوە سەرەتا")}
-function startGame(id){if(state.players.length<2){showPlayersSetup();return toast("👥 یەکەم لانیکەم 2 یاریزان زیاد بکە")}const gameId=String(id||"").trim();const g=GAMES.find(x=>x.id===gameId);if(!g){toast("⚠️ یارییەکە نەدۆزرایەوە");return}clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);state.currentGame=gameId;state.currentPlayer=0;state.turn=0;state.gameLocked=false;state.eliminated=[];state.bombQuestion=null;state.bombTurn=0;state.spyRound=0;state.spyRoles={};state.spyLocation="";state.spyRevealIndex=0;state.spyVotes={};window.reactionStarted=false;window.ready=false;resetScores();renderScores();document.documentElement.style.setProperty("--game-color",g?.color||"#7657ff");showScreen("game");document.getElementById("gameContent").innerHTML="";document.getElementById("gameTitle").textContent=`${g.icon} ${g.name}`;dispatchCurrent()}
+function exitGame(){stopMysteryMusic();clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);state.gameLocked=false;state.currentGame=null;state.bombQuestion=null;state.bombTurn=0;state.eliminated=[];window.reactionStarted=false;window.ready=false;showScreen("home");renderGames();toast("🏠 گەڕایتەوە سەرەتا")}
+function startGame(id){stopMysteryMusic();if(state.players.length<2){showPlayersSetup();return toast("👥 یەکەم لانیکەم 2 یاریزان زیاد بکە")}const gameId=String(id||"").trim();const g=GAMES.find(x=>x.id===gameId);if(!g){toast("⚠️ یارییەکە نەدۆزرایەوە");return}clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);state.currentGame=gameId;state.currentPlayer=0;state.turn=0;state.gameLocked=false;state.eliminated=[];state.bombQuestion=null;state.bombTurn=0;state.spyRound=0;state.spyRoles={};state.spyLocation="";state.spyRevealIndex=0;state.spyVotes={};window.reactionStarted=false;window.ready=false;resetScores();renderScores();document.documentElement.style.setProperty("--game-color",g?.color||"#7657ff");showScreen("game");document.getElementById("gameContent").innerHTML="";document.getElementById("gameTitle").textContent=`${g.icon} ${g.name}`;gameStartSound(gameId);dispatchCurrent()}
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 
 /* Truth/dare */
@@ -581,7 +761,7 @@ function spyVote(name){
 }
 /* Mystery / Crime investigation — 2 real player culprits, 8-role scene system */
 const mysteryCases=[
- {title:"دۆسیەی هۆتێلی شەوی باران",victim:"ئارام",place:"لابی و ڕێڕەوی نهۆمی 3ی هۆتێل",time:"11:20ی شەو",scene:"ئارام لە کۆتایی ڕێڕەوی نهۆمی 3 دۆزرایەوە. پێش ڕووداوەکە 8 کەس لە چیرۆکەکەدا هەبوون؛ تەنها 4 کەس لە کاتی گرنگدا لە نزیک شوێنی ڕووداوەکە بوون. لە 11:14 چرای ڕێڕەو بۆ چەند چرکەیەک کوژایەوە، 11:16 دەرگای خزمەتگوزاری کراوە، و 11:20 کاتژمێرێکی شکێنراو لە نزیک ئارام دۆزرایەوە. دوو تاوانبار لە نێوان 4 کەسە نزیکەکانن؛ بەڵام هیچ کەسێک نازانێت کام دووانەن. ئامانجتان ئەوەیە لە ڕێگەی ڕۆڵ، کاتی جوڵە، بەڵگە و وەڵامەکان هەردوو تاوانبار بدۆزنەوە." ,weapon:"کەلوپەلێکی دیکۆراتیڤ",clues:["11:14 چرای ڕێڕەو بۆ نزیکەی 20 چرکە کوژاوەتەوە.","11:16 دەرگای خزمەتگوزاری بە کلیلی یەدەکی کراوەتەوە.","لە ژێر میزەکە تیکەتێکی ژمارەدار دۆزرایەوە.","مۆبایلی ئارام لە 11:17 پەیامێکی نەخوێندراوی هەیە: «پێش ئەوەی بڕۆیت، پێویستە قسە بکەین.»","کامێرا تەنها سایەی دوو کەسی جیاواز لە نزیک ڕێڕەوەکە تۆمار کردووە."],roleSlots:[
+ {title:"دۆسیەی هۆتێلی شەوی باران",victim:"ئارام",place:"لابی و ڕێڕەوی نهۆمی 3ی هۆتێل",time:"11:20ی شەو",scene:"ئارام لە کۆتایی ڕێڕەوی نهۆمی 3 دۆزرایەوە. پێش ڕووداوەکە 8 کەس لە چیرۆکەکەدا هەبوون؛ بە تایبەتی 4 کەس لە کاتی گرنگدا لە نزیک شوێنی ڕووداوەکە بوون. لە 11:14 چرای ڕێڕەو بۆ چەند چرکەیەک کوژایەوە، 11:16 دەرگای خزمەتگوزاری کراوە، و 11:20 کاتژمێرێکی شکێنراو لە نزیک ئارام دۆزرایەوە. دوو تاوانبار لە نێوان 4 کەسە نزیکەکانن؛ بەڵام هیچ کەسێک نازانێت کام دووانەن. ئامانجتان ئەوەیە لە ڕێگەی ڕۆڵ، کاتی جوڵە، بەڵگە و وەڵامەکان هەردوو تاوانبار بدۆزنەوە." ,weapon:"کەلوپەلێکی دیکۆراتیڤ",clues:["11:14 چرای ڕێڕەو بۆ نزیکەی 20 چرکە کوژاوەتەوە.","11:16 دەرگای خزمەتگوزاری بە کلیلی یەدەکی کراوەتەوە.","لە ژێر میزەکە تیکەتێکی ژمارەدار دۆزرایەوە.","مۆبایلی ئارام لە 11:17 پەیامێکی نەخوێندراوی هەیە: «پێش ئەوەی بڕۆیت، پێویستە قسە بکەین.»","کامێرا تەنها سایەی دوو کەسی جیاواز لە نزیک ڕێڕەوەکە تۆمار کردووە."],roleSlots:[
   {role:"کارمەندی پێشخان",where:"لە لابی بوویت و نزیک شوێنی ڕووداو بوویت",knowledge:"دەزانی کێ کلیلی یەدەکی هەبوو."},
   {role:"میوانی ژووری 305",where:"لە ڕێڕەوی نهۆمی 3 بوویت",knowledge:"دەنگێکی بەرزت لە نزیک ڕێڕەوەکە بیستووە."},
   {role:"چاککەرەوەی کارەبا",where:"بۆ چارەسەری چرای ڕێڕەو هاتبوویت",knowledge:"دەزانی بۆچی چرای ڕێڕەوەکە 11:14 کوژایەوە."},
@@ -596,43 +776,83 @@ const mysteryCases=[
  {title:"دۆسیەی کافێی داخراو",victim:"سوران",place:"کافێیەکی داخراو",time:"10:05ی شەو",scene:"کافێک داخراو بوو، بەڵام 8 کەس بە شێوەیەکی جیاواز پەیوەندییان بە کافێکەوە هەبوو. لە کاتی گرنگدا 4 کەس لە کافێ یان لە دەرگای پاشەوە نزیک بوون. 10:01 سیستەمی داخستن کارا بوو، 10:04 کارتی چوونەژوورەوە تۆمار کرا و 10:05 سوران دۆزرایەوە. دوو تاوانبار لە نێوان 4 کەسی نزیکن." ,weapon:"شیشەی شکێنراو",clues:["سیستەمی داخستنی کافێ 10:01 تۆمار کردووە.","کارتێک 10:04 بەکار هاتووە.","پەیامی کۆتایی 9:58 نێردراوە.","دەرگای پشتەوە دوای داخستن کراوەتەوە.","لەسەر میزەکە دوو کوپ و یەک تیکەتی نوێ ماوەتەوە."],roleSlots:[
   {role:"خاوەن کافێ",where:"لە ناو کافێ بوویت",knowledge:"سیستەمی داخستن دەناسی."},{role:"کارمەند",where:"لە دەرگای پاشەوە بوویت",knowledge:"کارتێکی چوونەژوورت هەیە."},{role:"میوانی کۆتایی",where:"لە کافێ بوویت",knowledge:"کۆتا قسەی سورانت بیستووە."},{role:"گەیەنەر",where:"نزیک دەرگای پاشەوە بوویت",knowledge:"کەسێکت بینی کارتەکە بەکار هێنا."},{role:"دراوسێی کافێ",where:"لە دەرەوە بوویت",knowledge:"کاتی داخستنی کافێت بینیوە."},{role:"هاوڕێی سوران",where:"پێش داخستن لەگەڵی بوویت",knowledge:"دەزانی سوران لە کێ دەترسا."},{role:"چاککەرەوەی سیستەم",where:"لە دەرەوەی کافێ بوویت",knowledge:"دەزانی تۆماری کارت چۆن کار دەکات."},{role:"پاککەرەوە",where:"لە ژووری خزمەتگوزاری بوویت",knowledge:"دوو کوپ لەسەر میزەکە بینیوە."}],questions:["لە 9:50 تا 10:10 بە وردی چی کرد؟","کێ دەتوانێت شوێنی تۆ پشتڕاست بکاتەوە؟","کارت یان کلیلت هەبوو؟","کەی کۆتا جار سورانت بینی؟","چی لە دەرگای پاشەوە سەیر بوو؟","بۆچی ئەو کەسە یان بەڵگەیە بە گرنگ دەزانیت؟","ئایا کاتێک لە قسەکەتدا گۆڕانکاری هەبوو؟","ئەگەر تۆ لێکۆڵەر بیت، یەکەم گومانەکەت کێیە؟"]}
 ];
+/* EXTRA DOSSIERS: replayable cases with more leads and investigation detail */
+const extraMysteryCases=[
+{title:"دۆسیەی سەعاتی ونبوو",victim:"هیوا",place:"کتێبخانە و ڕێڕەوی پشتی",time:"7:35ی ئێوارە",scene:"هیوا لە کۆتایی ڕێڕەو دۆزرایەوە. لە 7:20 تا 7:35 هەشت کەس لە چیرۆکەکەدا هەبوون. 7:27 سەعاتێکی دیواری وەستا، 7:30 دەرگای پشتی کرا، 7:33 چرای ڕێڕەو کەم بوو و 7:35 ڕووداوەکە دۆزرایەوە. دوو تاوانبار لە نێوان 4 کەسی نزیکن.",weapon:"کەلوپەلێکی قورس",clues:["7:27 سەعاتەکە وەستا، بەڵام پاشان دەستی لێدراوە.","7:30 دەرگای پشتی بە کلیل کراوەتەوە.","تۆماری کۆمپیوتەر 7:31 یەک چوونەژوورەوە نیشان دەدات.","لەسەر پەنجەرەکە پەنجەمۆری نوێ هەیە.","کەسێک 7:34 دەنگی پێی خێرا بیستوە.","لە ژێر کورسییەکە کاغەزێکی ژمارە 27 دۆزرایەوە.","لەسەر دەرگا نیشانەی تازەی دەست هەیە."],roleSlots:[],questions:["لە 7:20 تا 7:35 بە کات ڕیزبەندی چی کردیت؟","کێ دەتوانێت شوێنت پشتڕاست بکاتەوە؟","دەرگای پشتی کەی و چۆن کرا؟","کێ دەزانێت سەعاتەکە بۆچی وەستا؟","کاغەزی ژمارە 27 چ پەیوەندییەکی هەیە؟","کاتەکانی کێ لەگەڵ تۆمارەکە ناگونجێن؟","کێ کۆتا جار قوربانی بینی؟","کام دوو بەڵگە پێکەوە گومانەکە توندتر دەکەن؟"]},
+{title:"دۆسیەی پەنجەرەی داخراو",victim:"رۆژ",place:"هۆڵی گەشتیاری",time:"9:10ی شەو",scene:"رۆژ لە هۆڵی گەشتیاری دۆزرایەوە. 9:02 پەنجەرە داخرا، 9:04 ئاگادارکردنەوەی مۆبایلێک دەنگی دا، 9:07 چرای هۆڵ گۆڕانی کرد و 9:10 ڕووداوەکە دۆزرایەوە. دوو تاوانبار لە 4 کەسی نزیکن.",weapon:"کەلوپەلێکی شکاو",clues:["پەنجەرە لە ناوەوە داخراوە، بەڵام قوفڵەکە نوێ کراوەتەوە.","9:04 ئاگادارکردنەوەی مۆبایل تۆمار کراوە.","شوێنی پێیەکی تازە لە زەویە.","9:06 کاغەزێک لە ژێر دەرگا دابین کراوە.","کامێرا 9:07 سایەی دوو کەس تۆمار کردووە.","کلیلێکی بچووک لە نزیک پەنجەرەکە دۆزرایەوە.","دەستگێڕی دەرگا لە 9:08 گەرم بووە."],roleSlots:[],questions:["لە 9:00 تا 9:10 بە وردی لە کوێ بوویت؟","چی دەتوانێت قسەکەت پشتڕاست بکاتەوە؟","پەنجەرەکە کەی بینی؟","کلیلە بچووکەکە بۆچی گرنگە؟","دەنگی مۆبایل کێ دەتوانێت ڕوون بکاتەوە؟","کێ دەستگەیشتنی ڕاستەوخۆی بە هۆڵ هەبوو؟","لە قسەی کێدا کاتێکی نامۆ هەیە؟","کام بەڵگە پێویستە لەگەڵ قسەی دوو کەس بەراورد بکرێت؟"]},
+{title:"دۆسیەی کۆگای تاریک",victim:"سەروە",place:"کۆگای کۆن",time:"11:45ی شەو",scene:"سەروە لە کۆگا دۆزرایەوە. 11:30 دەرگا داخرا، 11:36 کارتێکی چوونەژوورەوە بەکار هات، 11:40 کارەبا بڕا و 11:45 ڕووداوەکە دۆزرایەوە. هەشت کەس زانیارییان هەیە و 4 کەس لە نزیک بوون. دوو تاوانبار لەو 4 کەسەن.",weapon:"ئامێرێکی کۆگاکە",clues:["تۆماری کارت 11:36 یەک چوونەژوورەوە نیشان دەدات.","کارەبا 11:40 بڕاوە و 11:43 گەڕاوەتەوە.","لەسەر خاکەکە شوێنی دوو جۆر پێ هەیە.","پارچەیەکی جل لەسەر دەستگێڕەکە ماوەتەوە.","دەرگای پاشەوە 11:44 کەمێک کراوە بوو.","11:29 کەسێک داوای کلیلێکی یەدەکی کردووە.","لەسەر قاپی کۆگا نیشانەی تازەی پەنجەمۆر هەیە."],roleSlots:[],questions:["لە 11:30 تا 11:45 چی کردیت؟","کلیل یان کارتت هەبوو؟","بڕینی کارەبا چ پەیوەندییەکی بە ڕۆڵی تۆوە هەیە؟","کێ دەتوانێت چوونەژوورەوەت پشتڕاست بکاتەوە؟","پارچەی جل چی دەتوانێت بڵێت؟","کێ دەستگەیشتنی زیاتر بە کۆگا هەبوو؟","کام کات لە قسەی یەکێکدا سەیرە؟","کام بەڵگە دەبێت لەگەڵ تۆماری کارت پێکەوە بخوێندرێتەوە؟"]},
+{title:"دۆسیەی شەوی یاریگا",victim:"کاروان",place:"یاریگا و ژووری تماشاکەر",time:"8:55ی شەو",scene:"کاروان لە پشت ژووری تماشاکەر دۆزرایەوە. 8:45 دەرگای یاریگا داخرا، 8:49 موسیقا بەرز بوو، 8:52 تۆپێک لە ڕێڕەو کەوت و 8:55 ڕووداوەکە دۆزرایەوە. 4 کەس نزیک بوون و دوو تاوانبار لەوانەن.",weapon:"کەلوپەلێکی یاریگا",clues:["8:49 موسیقا بەرز بوو و دەنگی دەرەوەی نەبیسترا.","8:52 تۆپەکە لە شوێنێک دۆزرایەوە کە پێویستی بە تێپەڕبوون هەبوو.","کارتێکی یاریگا 8:51 تۆمار کراوە.","ژمارەی کورسییەکە لە کاغەزێک نووسراوە.","کامێرا تەنها دەرگای سەرەکی دەبینێت.","شوێنی پێیەکی تازە لە دەرگای خزمەتگوزارییە.","8:53 دەنگی دەرگا لە تۆمارێکدا هەیە."],roleSlots:[],questions:["لە 8:45 تا 8:55 کوێ بوویت؟","کارتەکەت کەی بەکار هات؟","موسیقا چ پەیوەندییەکی بە ڕووداوەکەوە هەیە؟","کێ دەتوانێت کورسییەکە بناسێت؟","کەسێک بینی لە دەرگای خزمەتگوزاری؟","کام وەڵام کاتی ناگونجێت؟","کێ زانیاریی زیاتر لەسەر ڕێڕەو هەیە؟","دەنگی 8:53 چ کەسێک لە قسەکانی دەکاتەوە؟"]},
+{title:"دۆسیەی پەیامی نەخوێندراو",victim:"ئازاد",place:"ژووری کار",time:"6:25ی ئێوارە",scene:"ئازاد لە ژووری کار دۆزرایەوە. 6:10 پەیامێک بۆی نێردرا، 6:15 دەرگا داخرا، 6:19 کاغەزێک چاپ کرا و 6:25 ڕووداوەکە دۆزرایەوە. 4 کەس نزیک بوون و دوو تاوانبار لەوانەن.",weapon:"کەلوپەلێکی ئۆفیس",clues:["پەیامی 6:10 هێشتا نەخوێندراوە.","پرینتەر 6:19 فایلیەکی نوێ چاپ کردووە.","دەرگا 6:15 داخراوە، بەڵام قوفڵ نەکراوە.","لە میزەکەدا دوو پەن و کاغەزی تازە هەیە.","تۆماری کۆمپیوتەر 6:21 گۆڕانکارییەکی نیشان دەدات.","کەسێک دەڵێت 6:20 لە دەرەوەی ژوور بووە.","کاغەزی چاپکراوەکە پاشماوەی پڕینتەری هەیە."],roleSlots:[],questions:["لە 6:10 تا 6:25 چی کردیت؟","پەیوەندیت بە پرینتەرەکە چییە؟","کێ دەزانێت کۆمپیوتەرەکە چی گۆڕاوە؟","دەرگا کەی بینی؟","کێ دەتوانێت قسەکەت پشتڕاست بکات؟","کێ زانیارییەکی زۆر لەسەر پەیامەکە هەیە؟","کاتەکانی کێ لەگەڵ 6:21 ناگونجێن؟","کاغەزی چاپکراو چ کاتێک دەتوانێت بەکار هاتبێت؟"]},
+{title:"دۆسیەی شەوی باغ",victim:"نەوزاد",place:"باغی پشت ماڵ",time:"10:30ی شەو",scene:"نەوزاد لە باغ دۆزرایەوە. 10:18 چراغی باغ کوژایەوە، 10:22 دەرگای بچووک کرا، 10:27 دەنگی شاخەی شکێنراو هات و 10:30 ڕووداوەکە دۆزرایەوە. 4 کەس نزیک بوون و دوو تاوانبار لەوانەن.",weapon:"ئامرازێکی باغ",clues:["چراغی باغ 10:18 خامۆش بوو.","دەرگای بچووک 10:22 کراوەتەوە.","شوێنی پێ لە خاکەکەدا دوو جۆرە.","شاخێک تازە شکێنراوە.","دەنگی ئاگادارکەرەوە 10:24 هاتووە.","کلیلێکی دەرگای بچووک لە ژێر گڵدا دۆزرایەوە.","لەسەر پەنجەرەی پشتەوە نیشانەی گڵ هەیە."],roleSlots:[],questions:["لە 10:18 تا 10:30 بە وردی کوێ بوویت؟","کلیلەکە دەناسی؟","چراغ کێ دەتوانێت خامۆش بکات؟","شوێنی پێت چی دەڵێت؟","کەی شاخەکەت بینی؟","کێ زانیاریی تایبەت لەسەر دەرگای بچووک هەیە؟","کام قسە لەگەڵ ئاگادارکەرەوە ناگونجێت؟","کێ دەتوانێت لەو کاتەدا بگاتە باغ بەبێ ئەوەی ببیندرێت؟"]},
+{title:"دۆسیەی ژووری موزیک",victim:"بەختیار",place:"ژووری موزیک",time:"9:40ی شەو",scene:"بەختیار لە ژووری موزیک دۆزرایەوە. 9:28 سیستەمی دەنگ کارا بوو، 9:32 دەرگا داخرا، 9:36 دەنگێکی لەناکاو هات و 9:40 ڕووداوەکە دۆزرایەوە. دوو تاوانبار لە نێوان 4 کەسی نزیکن.",weapon:"ئامێرێکی موزیک",clues:["سیستەمی دەنگ 9:28 کارا کراوە.","9:36 تۆمارێکی دەنگی کورت هەیە.","دەرگا 9:32 داخراوە بەڵام قوفڵ نەبووە.","کابلێک لەسەر زەوی دابڕاوە.","مۆبایلێک 9:37 پەیوەندییەکی نەکراوی هەیە.","لەسەر ئامێرەکە پەنجەمۆری نوێ هەیە.","9:38 دەنگی جوڵەی کورسییەک لە تۆمارەکەیە."],roleSlots:[],questions:["لە 9:28 تا 9:40 چی کردیت؟","سیستەمی دەنگ کێ دەناسی؟","دەنگی 9:36 چ پەیوەندییەکی بە کاتەکەوە هەیە؟","کێ دەتوانێت کابلەکە ڕوون بکاتەوە؟","پەیوەندیی نەکراو کێ دەتوانێت ڕوون بکاتەوە؟","کام بەڵگە دەتوانێت شوێنی کەسێک دیاری بکات؟","کێ قسەکەی لەگەڵ تۆمارەکە ناگونجێت؟","دەنگی 9:38 چۆن دەتوانێت کاتی جوڵە دیاری بکات؟"]},
+{title:"دۆسیەی دەرگای پشتی مەکتەب",victim:"دڵشاد",place:"هۆڵی پشتی مەکتەب",time:"5:50ی ئێوارە",scene:"دڵشاد لە هۆڵی پشتی مەکتەب دۆزرایەوە. 5:38 دەرگای پشتی کرا، 5:42 کۆمپیوتەرێک داخرا، 5:47 دەنگی کلیل هات و 5:50 ڕووداوەکە دۆزرایەوە. 4 کەس نزیک بوون و دوو تاوانبار لەوانەن.",weapon:"کەلوپەلێکی مەکتەب",clues:["دەرگای پشتی 5:38 کراوەتەوە.","کۆمپیوتەر 5:42 بە شێوەی دەستی داخراوە.","5:47 دەنگی کلیل لە تۆمارێکی دەنگدا هەیە.","کارتێکی ناسین لە ژێر میزەکەیە.","شوێنی پێ لە پەردەی خۆڵاوی ماوە.","کەسێک دەڵێت 5:46 لە لای دەرگای سەرەکی بووە.","5:48 چرای هۆڵ بۆ ساتێک گۆڕانی کردووە."],roleSlots:[],questions:["کاتەکانت بە ڕیزبەندی بڵێ.","کارتەکە بۆ کێیە؟","دەنگی کلیل کێ دەتوانێت بناسێت؟","کێ شوێنی تۆ پشتڕاست دەکات؟","دەرگای پشتی کەی بینی؟","کێ دەتوانێت لە 5:47 بگاتە هۆڵ؟","کام قسە لەگەڵ تۆمارەکە ناگونجێت؟","گۆڕانی چرای 5:48 چ پەیوەندییەکی بە جوڵەوە هەیە؟"]},
+{title:"دۆسیەی میوانخانەی بێدەنگ",victim:"ژین",place:"هۆڵی میوانخانە",time:"12:15ی شەو",scene:"ژین لە هۆڵی میوانخانە دۆزرایەوە. 12:03 چرای هۆڵ کەم بوو، 12:07 دەرگای خزمەتگوزاری کرا، 12:09 کامێرا بۆ چەند چرکەیەک وەستا، 12:15 ڕووداوەکە دۆزرایەوە. دوو تاوانبار لە 4 کەسی نزیکن.",weapon:"کەلوپەلێکی دیکۆراتیڤ",clues:["چرای هۆڵ 12:03 کەم بووە.","دەرگای خزمەتگوزاری 12:07 کراوە.","کامێرا 12:09 بۆ چەند چرکەیەک وەستا.","کارتێکی ژوور 12:10 لە نزیک دەرگا دۆزرایەوە.","دەنگی کۆڵانەوە 12:11 تۆمار کراوە.","کەسێک دەڵێت 12:12 هەموو دەرگا داخراون.","لەسەر دەرگا نیشانەی تازەی پەنجەمۆر هەیە."],roleSlots:[],questions:["لە 12:03 تا 12:15 کوێ بوویت؟","کێ دەزانێت کامێرا بۆچی وەستا؟","کارتەکە بۆ کێیە؟","دەرگای خزمەتگوزاری کێ دەتوانێت بکاتەوە؟","دەنگی 12:11 چی دەڵێت؟","کێ قسەی 12:12ی لەگەڵ بەڵگەکان ناگونجێت؟","کێ زانیاریی زیاتر لەسەر ژوورەکان هەیە؟","کام بەڵگە دەتوانێت کاتی جوڵەی کەسێک دیاری بکات؟"]}
+];
+const extraRoleTemplates=[["بەرپرسی شوێن","لە نزیک شوێنی ڕووداو بوویت","ڕێکخستنی دەرگا و کاتەکانی چوونەژوورەوە دەناسی."],["کارمەندی خزمەتگوزاری","نزیک ڕێڕەوی خزمەتگوزاری بوویت","کات و شوێنی بەکارهێنانی کلیل یان کارت دەناسی."],["میوانی نزیک","لە هۆڵ یان ڕێڕەوی نزیک بوویت","دەنگێک یان جوڵەیەکی نامۆت بیستوە."],["چاککەرەوە","لە نزیک ئامێرەکان بوویت","دەزانی کام سیستەم کەی گۆڕانی کردووە."],["پاککەرەوە","لە بەشی خزمەتگوزاری بوویت","نیشانەی تازە و شتە جێماوەکانت بینیوە."],["دراوسێ","لە دەرەوەی شوێنەکە بوویت","جوڵە یان کەسێکت لە کاتی گرنگدا بینیوە."],["هاوڕێی قوربانی","پێش ڕووداوەکە لەگەڵ قوربانی بوویت","دەزانی قوربانی لەگەڵ کێ یان چی کێشەی هەبوو."],["چاودێری","لە شوێنی چاودێری بوویت","تۆمارێک یان کاتێکی دیاریکراوت لەبیرە."]];
+extraMysteryCases.forEach(c=>{c.roleSlots=extraRoleTemplates.map(x=>({role:x[0],where:x[1],knowledge:x[2]}));});
+mysteryCases.push(...extraMysteryCases);
+
 let mysteryState={case:null,culprits:[],roles:{},phase:"",suspectIndex:0,asked:{},answers:{},evidence:[],votes:{},voteIndex:0,scenePlayers:[],roleInfo:{}};
 function mysteryPick(){
  mysteryState.case=mysteryCases[Math.floor(Math.random()*mysteryCases.length)];
  const ps=[...state.players]; shuffle(ps);
- const slots=mysteryState.case.roleSlots.map((x,i)=>({...x,atScene:i<4}));
- mysteryState.scenePlayers=ps.slice(0,4);
- mysteryState.culprits=mysteryState.scenePlayers.slice(); shuffle(mysteryState.culprits); mysteryState.culprits=mysteryState.culprits.slice(0,2);
+ /* بۆ ئەوەی دۆسیەکە بە تەواوی لۆجیکی و چارەسەرکراو بێت:
+    هەمیشە 4 کەس لە نزیک شوێنی تاوانن، و تەنها 2 لەو 4 کەسە تاوانبارن. */
+ const sceneCount=4;
+ mysteryState.scenePlayers=ps.slice(0,sceneCount);
+ /* دوو ڕۆڵی دیاریکراوی ناو ئەو 4 کەسە تاوانبارن؛ بەڵگە و پرسیارەکان
+    بۆ بەراوردکردنی کات/شوێن/دەستگەیشتن دانراون، نە بۆ حدسی هەڕەمەکی. */
+ const culpritSceneIndexes=[1,3];
+ mysteryState.culprits=culpritSceneIndexes.map(i=>mysteryState.scenePlayers[i]).filter(Boolean);
  mysteryState.roles={}; mysteryState.roleInfo={};
- ps.forEach((name,i)=>{const slot=slots[i%slots.length]; mysteryState.roles[name]=mysteryState.culprits.includes(name)?"culprit":"investigator"; mysteryState.roleInfo[name]={role:slot.role,where:slot.where,knowledge:slot.knowledge,atScene:i<4};});
+ ps.forEach((name,i)=>{
+   const base=mysteryState.case.roleSlots[i % mysteryState.case.roleSlots.length];
+   const cycle=Math.floor(i/mysteryState.case.roleSlots.length);
+   const slot=cycle?{...base,role:`${base.role} ${cycle+1}`}:base;
+   const isCulprit=mysteryState.culprits.includes(name);
+   const atScene=i<sceneCount;
+   const timeline=atScene
+     ? (isCulprit
+       ? `لە کاتی گرنگدا لە نزیک شوێنی ڕووداو بوویت. لە گفتوگۆدا پێویستە ڕوون بکەیتەوە کە لە ${mysteryState.case.time} چۆن لەوێ بوویت؛ هەموو وردەکارییەکانت لەگەڵ بەڵگەکان بەراورد دەکرێن.`
+       : `لە کاتی گرنگدا لە شوێنی دیاریکراوت بوویت. کات و شوێنەکەت بە ڕوونی بڵێ و ئەو شتانەی بینیوتە لەگەڵ بەڵگەکان بەراورد بکە.`)
+     : `لە کاتی گرنگدا لە شوێنی دیکە بوویت. بە وردی بڵێ لە کوێ بوویت، کێ دەتوانێت پشتڕاستی بکاتەوە و چییت بینی یان بیستووە.`;
+   const proof=atScene
+     ? `ئەگەر لێکۆڵەرەکان پرسیاری کات و شوێنت کرد، وەڵامەکەت بە وردی بدە؛ ${isCulprit?"هەوڵ بدە پۆششی ڕۆڵەکەت بپارێزیت و لەگەڵ بەڵگەکاندا نەکەویتە ناکۆکی.":"زانیاریی ڕاستی ڕۆڵەکەت بەکاربهێنە بۆ ئەوەی کات و شوێنەکەت پشتڕاست بکەیتەوە."}`
+     : `زانیارییەکەت بۆ پشتڕاستکردنەوەی کات و شوێنی کەسانی نزیک بەکاربهێنە.`;
+   mysteryState.roles[name]=isCulprit?"culprit":"investigator";
+   const focusPool=["کاتەکان بە وردی بەراورد بکە؛ ئەگەر یەک کەس لە دوو شوێندا لە هەمان کاتدا بوو، ئەو ناکۆکییە گرنگە.","دەستگەیشتن بە شوێنەکە بپشکنە؛ کێ کلیلی، کارت، دەرگا یان ڕێگای تایبەتی هەبوو؟","بەڵگەکانی کات و تۆمارەکان پێکەوە بخە؛ یەک بەڵگە بە تەنیا کۆتایی نییە.","قسەی دوو کەس بەراورد بکە؛ جیاوازییە بچووکەکانی کات زۆر گرنگن.","سەرنج بدە بەو زانیارییەی کە کەسێک زۆر زوو دەزانێت؛ بزانە چۆن لەگەڵ بەڵگەکە دەگونجێت.","ڕێگای جوڵەکە دروست بکە: شوێنی هەر کەس + کاتی گۆڕینی شوێن + دەستگەیشتن."];
+ const investigatorFocus=focusPool[i%focusPool.length];
+ mysteryState.roleInfo[name]={role:slot.role,where:slot.where,knowledge:slot.knowledge,atScene,timeline,proof,investigatorFocus};
+ });
  mysteryState.phase="brief"; mysteryState.suspectIndex=0; mysteryState.asked={}; mysteryState.answers={}; mysteryState.evidence=[]; mysteryState.votes={}; mysteryState.voteIndex=0;
 }
 function mysteryGame(){
  if(state.players.length<4){showPlayersSetup();return toast("🕵️ بۆ ئەم یارییە لانیکەم 4 یاریزان پێویستە")}
- mysteryPick(); const c=mysteryState.case;
- document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-big">🕯️</div><div class="spy-round">📁 دۆسیەی نوێ</div><h2>${esc(c.title)}</h2><p class="hint" style="display:block!important">ئەم جارە هەموو یاریزانەکان ڕۆڵێکی تایبەتیان هەیە. <b>4 کەس لە کاتی ڕووداوەکەدا لە شوێنی تاوان یان زۆر نزیک بوون</b> و 4 کەسی تر لە شوێنەکانی دەوروبەر بوون و زانیاریی گرنگیان هەیە. لە نێوان ئەو 4 کەسەی نزیکدا <b>2 تاوانبار</b> هەن.</p><div class="mystery-photo"><svg viewBox="0 0 700 300" role="img" aria-label="وێنەی دۆسیەی تاوان"><rect width="700" height="300" rx="28" fill="#171827"/><rect x="85" y="55" width="530" height="175" rx="20" fill="#24263a"/><path d="M125 210h450M180 80v130M350 80v130M520 80v130" stroke="#8b6cff" stroke-width="4" opacity=".55"/><circle cx="350" cy="145" r="34" fill="#d9dbe8"/><text x="350" y="270" fill="#fff" font-size="18" text-anchor="middle">نەخشەی شوێنی ڕووداو — بەبێ دیمەنی خوێناوی</text></svg></div><div class="mystery-box"><b>🧑‍💼 قوربانی:</b> ${esc(c.victim)}<br><b>📍 شوێن:</b> ${esc(c.place)}<br><b>⏰ کاتی ڕووداو:</b> ${esc(c.time)}<br><b>🔎 شێوەی ڕووداو:</b> ${esc(c.weapon)}<br><br><b>📖 چۆنیەتی ڕووداو:</b><br>${esc(c.scene)}</div><div class="mystery-summary"><b>🎯 ئامانجی یاری</b><span>هەمووتان بە وردی ڕۆڵ و کات و بەڵگەکان بخوێننەوە، پاشان مۆبایلەکە دابنێن و گفتوگۆ بکەن تا هەردوو تاوانبار بدۆزنەوە.</span></div><button class="primary" onclick="mysteryRoles()">🔐 دەست بە ڕۆڵە نهێنییەکان بکە</button></div>`;
+ mysteryPick(); const c=mysteryState.case; const ps=state.players;
+ document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-big">🕯️</div><div class="spy-round">📁 دۆسیەی نوێ</div><h2>${esc(c.title)}</h2><p class="hint" style="display:block!important">ئەم جارە هەموو یاریزانەکان ڕۆڵێکی تایبەتیان هەیە. <b>${mysteryState.scenePlayers.length} کەس لە کاتی ڕووداوەکەدا لە شوێنی تاوان یان زۆر نزیک بوون</b> و ${ps.length-mysteryState.scenePlayers.length} کەسی تر لە شوێنەکانی دەوروبەر بوون و زانیاریی گرنگیان هەیە. لە نێوان ئەو 4 کەسەی نزیکدا <b>2 تاوانبار</b> هەن.</p><div class="mystery-photo"><svg viewBox="0 0 700 300" role="img" aria-label="وێنەی دۆسیەی تاوان"><rect width="700" height="300" rx="28" fill="#171827"/><rect x="85" y="55" width="530" height="175" rx="20" fill="#24263a"/><path d="M125 210h450M180 80v130M350 80v130M520 80v130" stroke="#8b6cff" stroke-width="4" opacity=".55"/><circle cx="350" cy="145" r="34" fill="#d9dbe8"/><text x="350" y="270" fill="#fff" font-size="18" text-anchor="middle">نەخشەی شوێنی ڕووداو — بەبێ دیمەنی خوێناوی</text></svg></div><div class="mystery-box"><b>🧑‍💼 قوربانی:</b> ${esc(c.victim)}<br><b>📍 شوێن:</b> ${esc(c.place)}<br><b>⏰ کاتی ڕووداو:</b> ${esc(c.time)}<br><b>🔎 شێوەی ڕووداو:</b> ${esc(c.weapon)}<br><br><b>📖 چۆنیەتی ڕووداو:</b><br>${esc(c.scene)}</div><div class="mystery-summary"><b>🎯 ئامانجی یاری</b><span>هەمووتان بە وردی ڕۆڵ و کات و بەڵگەکان بخوێننەوە، پاشان مۆبایلەکە دابنێن و گفتوگۆ بکەن تا هەردوو تاوانبار بدۆزنەوە.</span></div><div class="mystery-caseboard"><div class="mystery-caseboard-title">🧩 پازلەکە چۆن دەکەنەوە؟</div><div class="mystery-caseboard-grid"><div><b>👥 ${ps.length}</b><span>هەموو یاریزانەکان ڕۆڵیان هەیە</span></div><div><b>📍 ${mysteryState.scenePlayers.length}</b><span>لە نزیک شوێنی تاوان</span></div><div><b>😈 2</b><span>تاوانباری ڕاستەقینە</span></div><div><b>🔎 5+</b><span>بەڵگە و نیشانە</span></div></div><div class="mystery-caseboard-tip">💡 سەرکەوتن تەنها بە حدس نییە؛ <b>کات + شوێن + وەڵام + بەڵگە</b> پێکەوە بەراورد بکەن.</div></div><button class="primary" onclick="mysteryRoles()">🔐 دەست بە ڕۆڵە نهێنییەکان بکە</button></div>`;
 }
 function mysteryRoles(){mysteryState.phase="roles";mysteryState.suspectIndex=0;renderMysteryRoleReveal()}
 function renderMysteryRoleReveal(){
  const i=mysteryState.suspectIndex,ps=state.players;if(i>=ps.length)return mysteryEvidence();
  const name=ps[i],role=mysteryState.roles[name],info=mysteryState.roleInfo[name],c=mysteryState.case;
- const culpritText=role==="culprit"?`<div class="spy-big">😈</div><h2>تۆ تاوانباری!</h2><p><b>ڕۆڵت:</b> ${esc(info.role)}</p><p><b>شوێنت:</b> ${esc(info.where)}</p><p><b>زانیاری نهێنی:</b> ${esc(info.knowledge)}</p><div class="claim"><b>🔐 نهێنی تۆ:</b><br>تۆ یەکێکیت لە دوو تاوانبار. <b>لە شوێنی ڕووداو بوویت</b>. لە گفتوگۆدا ڕۆڵ و زانیاریی خۆت بە شێوەیەکی سروشتی بەکاربهێنە و هەموو شتێک بە ڕاستی مەڵێ.</div>`:`<div class="spy-big">🕵️</div><h2>تۆ لێکۆڵەریت</h2><p><b>ڕۆڵت:</b> ${esc(info.role)}</p><p><b>شوێنت:</b> ${esc(info.where)}</p><p><b>زانیاریت:</b> ${esc(info.knowledge)}</p><div class="claim"><b>🎯 ئەرک:</b><br>لە وەڵام و کاتەکان و بەڵگەکاندا ناکۆکی بدۆزەوە. هەوڵ بدە هەردوو تاوانبار بناسیت، بەڵام ڕۆڵی خۆت بە شێوەیەکی سروشتی بپارێزە.</div>`;
+ const culpritText=role==="culprit"?`<div class="spy-big">😈</div><h2>تۆ تاوانباری!</h2><p><b>ڕۆڵت:</b> ${esc(info.role)}</p><p><b>شوێنت:</b> ${esc(info.where)}</p><p><b>زانیاری نهێنی:</b> ${esc(info.knowledge)}</p><div class="claim"><b>⏱️ کاتی ڕۆڵ:</b><br>${esc(info.timeline)}<br><br><b>🔎 چۆن بەکاری بهێنیت:</b><br>${esc(info.proof)}</div><div class="claim"><b>🔐 نهێنی تۆ:</b><br>تۆ یەکێکیت لە دوو تاوانبار. <b>لە شوێنی ڕووداو بوویت</b>. لە گفتوگۆدا ڕۆڵ و زانیاریی خۆت بە شێوەیەکی سروشتی بەکاربهێنە و هەموو شتێک بە ڕاستی مەڵێ.</div>`:`<div class="spy-big">🕵️</div><h2>تۆ لێکۆڵەریت</h2><p><b>ڕۆڵت:</b> ${esc(info.role)}</p><p><b>شوێنت:</b> ${esc(info.where)}</p><p><b>زانیاریت:</b> ${esc(info.knowledge)}</p><div class="claim"><b>🎯 ئەرک:</b><br>لە وەڵام و کاتەکان و بەڵگەکاندا ناکۆکی بدۆزەوە. هەوڵ بدە هەردوو تاوانبار بناسیت، بەڵام ڕۆڵی خۆت بە شێوەیەکی سروشتی بپارێزە.</div><div class="claim"><b>🧭 نیشانەی لێکۆڵینەوە:</b><br>${esc(info.investigatorFocus)}</div>`;
  document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🔐 ڕۆڵی نهێنی — ${i+1}/${ps.length}</div><div class="turn">تەنها ${esc(name)} سەیری شاشەکە بکات</div><div class="spy-secret ${role==="culprit"?"is-spy":"is-citizen"}">${culpritText}</div><div class="mystery-box"><b>📌 تێبینی:</b> ${esc(c.time)}، ${esc(c.place)}. ئەم زانیارییە تەنها بۆ خۆتە؛ بە دەنگی بەرز مەخوێنەوە.</div><button class="primary" onclick="mysteryNextRole()">👀 تێگەیشتم — شاشە بشارەوە</button></div>`;
 }
 function mysteryNextRole(){mysteryState.suspectIndex++;renderMysteryRoleReveal()}
 function mysteryEvidence(){
  mysteryState.phase="evidence";const c=mysteryState.case;
- document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🔎 بەڵگەکانی دۆسیە</div><h2>ئێستا هەمووان بەڵگەکان بخوێننەوە</h2><p class="hint" style="display:block!important">ئەم بەڵگانە بۆ هەمووانن. هەر بەڵگەیەک دەتوانێت کات، شوێن یان قسەی کەسێک پشتڕاست یان لاواز بکات.</p><div class="mystery-clues">${c.clues.map((x,i)=>`<button class="answer" onclick="mysteryClue(${i})">📌 بەڵگە ${i+1}<br><small>${esc(x)}</small></button>`).join("")}</div><button class="primary" onclick="mysteryInterrogate(0)">🗣️ ئێستا بە نۆرە پرسیار لە هەموو کەسێک بکەن</button></div>`;
+ document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🔎 بەڵگەکانی دۆسیە</div><h2>ئێستا هەمووان بەڵگەکان بخوێننەوە</h2><p class="hint" style="display:block!important">ئەم بەڵگانە بۆ هەمووانن. هەر بەڵگەیەک دەتوانێت کات، شوێن یان قسەی کەسێک پشتڕاست یان لاواز بکات.</p><div class="mystery-clue-progress">📌 بەڵگەکانی هەڵگیراو: <b id="mysteryEvidenceCount">0</b> / ${c.clues.length}</div><div class="mystery-clues">${c.clues.map((x,i)=>`<button id="mysteryClue${i}" class="answer" onclick="mysteryClue(${i})">📌 بەڵگە ${i+1}<br><small>${esc(x)}</small></button>`).join("")}</div><button class="primary" onclick="mysteryInterrogate(0)">🗣️ ئێستا بە نۆرە پرسیار لە هەموو کەسێک بکەن</button></div>`;
 }
-function mysteryClue(i){if(!mysteryState.evidence.includes(i)){mysteryState.evidence.push(i);toast("📌 بەڵگەکە بۆ گفتوگۆ هەڵگیرا")}}
+function mysteryClue(i){if(!mysteryState.evidence.includes(i)){mysteryState.evidence.push(i);const b=document.getElementById("mysteryClue"+i);if(b)b.classList.add("collected");const n=document.getElementById("mysteryEvidenceCount");if(n)n.textContent=mysteryState.evidence.length;toast("📌 بەڵگەکە بۆ گفتوگۆ هەڵگیرا")}}
 function mysteryInterrogate(i){
  const ps=state.players,name=ps[i],c=mysteryState.case,info=mysteryState.roleInfo[name];mysteryState.suspectIndex=i;if(!mysteryState.asked[name])mysteryState.asked[name]=[];
- const qs=[...c.questions];
+ const followUps=["لەو کاتەدا کێ لە نزیکت بوو و چیت لێی بینی؟","کاتەکە بە وردی چەند بوو کە شوێنەکەت گۆڕی؟","ئەگەر کەسێک قسەکەت پشتڕاست نەکاتەوە، چی دەتوانێت یارمەتیدەر بێت؟","پەیوەندیت بە یەکێک لە بەڵگەکان چییە؟","پێش ڕووداوەکە کۆتا جار لەگەڵ کێ قسەت کرد؟","لە قسەی کەسێکی تر چییە کە لەگەڵ زانیاریت ناگونجێت؟","ئەگەر مۆبایل یان کامێرا بەردەست بێت، چ شتێک دەردەخات؟","چۆن دەتوانیت پیشانی بدەیت کە لە شوێنی ڕووداو نەبوویت؟","کام بەڵگە بە گومانەکەت دەگۆڕێت و بۆچی؟","ئەگەر تۆ لێکۆڵەر بیت، یەکەم کەس کێ دەپرسی و بۆچی؟"];
+ const qs=[...c.questions,...followUps];
  document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🗣️ پرسیارکردن — ${i+1}/${ps.length}</div><div class="mystery-suspect"><div class="spy-big">👤</div><h2>${esc(name)}</h2><p><b>ڕۆڵ:</b> ${esc(info.role)} — <b>${info.atScene?"نزیک شوێنی ڕووداو":"لە شوێنی دیکە"}</b></p><div class="claim"><b>🎙️ یاسای گفتوگۆ:</b><br>پرسیارەکە بە دەنگی بەرز بخوێنەوە، ئەو کەسە خۆی وەڵام بدات. وەڵامی دروست لە شاشەدا نادرێت؛ هەموو کەسێک دەبێت لە وەڵامەکە وردبێت.</div></div><div class="mystery-questions">${qs.map((q,j)=>`<button class="answer" onclick="mysteryAsk(${j})" ${mysteryState.asked[name].includes(j)?"disabled":""}>❓ ${esc(q)}</button>`).join("")}</div>${i>0?`<button class="secondary" onclick="mysteryInterrogate(${i-1})">⬅️ کەسی پێشوو</button>`:""}${i<ps.length-1?`<button class="primary" onclick="mysteryInterrogate(${i+1})">➡️ کەسی داهاتوو</button>`:`<button class="primary" onclick="mysteryDiscussStart()">📱 شاشەکە دابنێن — گفتوگۆ دەست پێ بکات</button>`}</div>`;
 }
 function mysteryAsk(j){
  const name=state.players[mysteryState.suspectIndex];if(mysteryState.asked[name].includes(j))return toast("🔁 ئەم پرسیارە پێشتر کراوە");mysteryState.asked[name].push(j);
- const info=mysteryState.roleInfo[name];const text=`<div class="mystery-box" style="margin-top:12px"><b>❓ پرسیار:</b> ${esc(mysteryState.case.questions[j])}<br><b>🎙️ ${esc(name)}:</b> خاوەن نۆرەیەکە بە دەنگی خۆی وەڵام بدات.<br><small>📌 ڕۆڵی ئەو کەسە: ${esc(info.role)} — وەڵامەکەی بە قسە و بەڵگەکان بسەلمێنن.</small></div>`;
+ const info=mysteryState.roleInfo[name];const text=`<div class="mystery-box" style="margin-top:12px"><b>❓ پرسیار:</b> ${esc(([...mysteryState.case.questions,"لەو کاتەدا کێ لە نزیکت بوو و چیت لێی بینی؟","کاتەکە بە وردی چەند بوو کە شوێنەکەت گۆڕی؟","ئەگەر کەسێک قسەکەت پشتڕاست نەکاتەوە، چی دەتوانێت یارمەتیدەر بێت؟","پەیوەندیت بە یەکێک لە بەڵگەکان چییە؟","پێش ڕووداوەکە کۆتا جار لەگەڵ کێ قسەت کرد؟","لە قسەی کەسێکی تر چییە کە لەگەڵ زانیاریت ناگونجێت؟","ئەگەر مۆبایل یان کامێرا بەردەست بێت، چ شتێک دەردەخات؟","چۆن دەتوانیت پیشانی بدەیت کە لە شوێنی ڕووداو نەبوویت؟","کام بەڵگە بە گومانەکەت دەگۆڕێت و بۆچی؟","ئەگەر تۆ لێکۆڵەر بیت، یەکەم کەس کێ دەپرسی و بۆچی?"][j]))}<br><b>🎙️ ${esc(name)}:</b> خاوەن نۆرەیەکە بە دەنگی خۆی وەڵام بدات.<br><small>📌 ڕۆڵی ئەو کەسە: ${esc(info.role)} — وەڵامەکەی بە قسە و بەڵگەکان بسەلمێنن.</small></div>`;
  document.getElementById("gameContent").insertAdjacentHTML("beforeend",text);toast("🎙️ ئێستا خاوەن نۆرە وەڵام بدات")
 }
 function mysteryDiscussStart(){
