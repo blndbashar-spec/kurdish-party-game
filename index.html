@@ -1,222 +1,1541 @@
 <!DOCTYPE html>
-<html lang="ckb" dir="rtl">
+<html lang="ku" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>کۆڕی گەنجان | یارییە کۆمەڵایەتییەکان</title>
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --accent: #ff007f;
-      --accent-hover: #d6006b;
-      --text: #f8fafc;
-      --subtext: #94a3b8;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#080b14">
+
+<title>گەنجان — یاری بکە، بیر بکەرەوە، پێشبکەوە!</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#070a12;
+    --card:#111827;
+    --card2:#172033;
+    --purple:#8b5cf6;
+    --cyan:#06b6d4;
+    --yellow:#f59e0b;
+    --green:#22c55e;
+    --red:#ef4444;
+    --white:#f8fafc;
+    --muted:#94a3b8;
+    --border:rgba(255,255,255,.08);
+}
+
+body{
+    font-family:
+    "Noto Sans Arabic",
+    "Noto Sans",
+    Arial,
+    sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 0%,rgba(139,92,246,.20),transparent 30%),
+        radial-gradient(circle at 100% 20%,rgba(6,182,212,.12),transparent 25%),
+        var(--bg);
+
+    color:var(--white);
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    backdrop-filter:blur(18px);
+    background:rgba(7,10,18,.78);
+
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+
+    height:72px;
+    padding:0 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:23px;
+    font-weight:900;
+}
+
+.logoIcon{
+    width:42px;
+    height:42px;
+
+    border-radius:14px;
+
+    display:grid;
+    place-items:center;
+
+    background:linear-gradient(135deg,var(--purple),var(--cyan));
+
+    box-shadow:0 8px 30px rgba(139,92,246,.25);
+}
+
+.navRight{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.level{
+    padding:8px 12px;
+
+    background:var(--card);
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    font-size:13px;
+}
+
+.avatar{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    background:linear-gradient(135deg,#ec4899,#8b5cf6);
+
+    font-size:20px;
+}
+
+/* ================= MAIN ================= */
+
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 20px 110px;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+
+    min-height:260px;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139,92,246,.35),
+            rgba(6,182,212,.15)
+        ),
+        var(--card);
+
+    border:1px solid var(--border);
+
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+
+.hero:after{
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    left:-100px;
+    top:-120px;
+
+    border-radius:50%;
+
+    background:rgba(139,92,246,.15);
+
+    filter:blur(10px);
+}
+
+.heroContent{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:clamp(30px,5vw,52px);
+
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:16px;
+
+    max-width:600px;
+
+    line-height:1.9;
+
+    margin-bottom:25px;
+}
+
+.primary{
+    border:0;
+
+    color:white;
+
+    padding:14px 22px;
+
+    border-radius:15px;
+
+    font-size:15px;
+    font-weight:800;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        #6366f1
+    );
+
+    box-shadow:0 12px 30px rgba(139,92,246,.25);
+
+    transition:.2s;
+}
+
+.primary:hover{
+    transform:translateY(-2px);
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+.stat{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:18px;
+}
+
+.statIcon{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.statValue{
+    font-size:24px;
+    font-weight:900;
+}
+
+.statName{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:3px;
+}
+
+/* ================= XP ================= */
+
+.xpCard{
+    margin-top:20px;
+
+    padding:20px;
+
+    border-radius:22px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+}
+
+.xpTop{
+    display:flex;
+    justify-content:space-between;
+margin-bottom:10px;
+
+    font-size:14px;
+}
+
+.xpBar{
+    height:11px;
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.xpFill{
+    width:68%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--purple),
+        var(--cyan)
+    );
+
+    border-radius:20px;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:32px;
+}
+
+.sectionHead{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:15px;
+}
+
+.sectionHead h2{
+    font-size:22px;
+}
+
+.sectionHead span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* ================= GAMES ================= */
+
+.games{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:16px;
+}
+
+.game{
+    position:relative;
+
+    padding:20px;
+
+    min-height:180px;
+
+    border-radius:23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.015)
+        ),
+        var(--card);
+
+    border:1px solid var(--border);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    overflow:hidden;
+}
+
+.game:hover{
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(139,92,246,.45);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.25);
+}
+
+.gameIcon{
+    width:55px;
+    height:55px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:17px;
+
+    background:var(--card2);
+
+    font-size:28px;
+
+    margin-bottom:15px;
+}
+
+.game h3{
+    font-size:17px;
+
+    margin-bottom:7px;
+}
+
+.game p{
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+.play{
+    position:absolute;
+
+    bottom:15px;
+    left:15px;
+
+    width:38px;
+    height:38px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:12px;
+
+    background:rgba(139,92,246,.15);
+
+    color:#c4b5fd;
+}
+
+/* ================= DAILY ================= */
+
+.daily{
+    display:grid;
+
+    grid-template-columns:1.5fr 1fr;
+
+    gap:18px;
+}
+
+.dailyMain{
+    padding:25px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(245,158,11,.18),
+            rgba(139,92,246,.12)
+        ),
+        var(--card);
+
+    border:1px solid var(--border);
+}
+
+.dailyMain h3{
+    font-size:25px;
+    margin:12px 0;
+}
+
+.dailyMain p{
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-bottom:18px;
+}
+
+.reward{
+    padding:20px;
+
+    border-radius:24px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.reward strong{
+    font-size:30px;
+
+    color:#fbbf24;
+
+    margin:8px 0;
+}
+
+/* ================= BOTTOM NAV ================= */
+
+.bottomNav{
+    display:none;
+}
+
+/* ================= GAME MODAL ================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:500;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(10px);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.gameBox{
+    width:100%;
+    max-width:650px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:25px;
+
+    box-shadow:0 30px 100px rgba(0,0,0,.5);
+}
+
+.gameHeader{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.timer{
+    padding:9px 14px;
+
+    border-radius:12px;
+
+    background:rgba(239,68,68,.12);
+
+    color:#fca5a5;
+
+    font-weight:900;
+}
+
+.question{
+    font-size:25px;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+}
+
+.answers{
+    display:grid;
+
+    gap:12px;
+}
+
+.answer{
+    width:100%;
+
+    padding:17px;
+
+    text-align:right;
+
+    color:white;
+
+    background:#182235;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.2s;
+}
+
+.answer:hover{
+    background:#202d43;
+    transform:translateX(-3px);
+}
+
+.answer.correct{
+    background:rgba(34,197,94,.18);
+    border-color:var(--green);
+}
+.answer.wrong{
+    background:rgba(239,68,68,.18);
+    border-color:var(--red);
+}
+
+.close{
+    border:0;
+
+    width:40px;
+    height:40px;
+
+    border-radius:12px;
+
+    background:#1e293b;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .games{
+        grid-template-columns:
+            repeat(2,1fr);
     }
-    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
-    body { background-color: var(--bg); color: var(--text); padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-    
-    header { text-align: center; margin-bottom: 20px; }
-    header h1 { font-size: 2rem; color: var(--accent); margin-bottom: 5px; }
-    header p { color: var(--subtext); font-size: 0.9rem; }
 
-    .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; width: 100%; max-width: 600px; margin-bottom: 20px; }
-    .game-btn { background: var(--card); border: 2px solid #334155; color: var(--text); padding: 12px; border-radius: 10px; cursor: pointer; transition: 0.2s; font-weight: bold; font-size: 0.85rem; }
-    .game-btn:hover, .game-btn.active { border-color: var(--accent); background: #26334d; }
+    .stats{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
 
-    .display-card { background: var(--card); border-radius: 16px; padding: 30px 20px; width: 100%; max-width: 600px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #334155; min-height: 220px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
-    .game-title { color: var(--accent); font-size: 1.2rem; margin-bottom: 15px; }
-    .content-text { font-size: 1.25rem; line-height: 1.6; margin-bottom: 20px; font-weight: 600; min-height: 60px; display: flex; align-items: center; }
+    .daily{
+        grid-template-columns:1fr;
+    }
+}
 
-    .action-btn { background: var(--accent); color: white; border: none; padding: 12px 30px; font-size: 1rem; font-weight: bold; border-radius: 25px; cursor: pointer; transition: 0.2s; }
-    .action-btn:hover { background: var(--accent-hover); transform: scale(1.05); }
-    
-    .dual-btns { display: flex; gap: 10px; }
-    .btn-truth { background: #3b82f6; }
-    .btn-dare { background: #ef4444; }
+@media(max-width:600px){
 
-    .bottle { font-size: 4rem; transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1); margin: 20px 0; }
-  </style>
+    .nav{
+        height:64px;
+    }
+
+    .level{
+        display:none;
+    }
+
+    main{
+        padding:20px 14px 100px;
+    }
+
+    .hero{
+        padding:25px;
+
+        min-height:250px;
+
+        border-radius:25px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .stats{
+        gap:10px;
+    }
+
+    .stat{
+        padding:15px;
+        border-radius:17px;
+    }
+
+    .games{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+    }
+
+    .game{
+        min-height:165px;
+
+        padding:16px;
+
+        border-radius:19px;
+    }
+
+    .game h3{
+        font-size:14px;
+    }
+
+    .game p{
+        font-size:11px;
+    }
+
+    .gameIcon{
+        width:48px;
+        height:48px;
+
+        font-size:24px;
+    }
+
+    .bottomNav{
+        position:fixed;
+
+        display:flex;
+
+        bottom:0;
+        right:0;
+        left:0;
+
+        z-index:300;
+
+        height:70px;
+
+        background:rgba(10,14,24,.92);
+
+        backdrop-filter:blur(18px);
+
+        border-top:1px solid var(--border);
+
+        justify-content:space-around;
+
+        padding:7px 5px;
+    }
+
+    .bottomItem{
+        flex:1;
+
+        border:0;
+
+        background:none;
+
+        color:var(--muted);
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        justify-content:center;
+
+        gap:3px;
+
+        font-size:10px;
+
+        cursor:pointer;
+    }
+
+    .bottomItem span{
+        font-size:21px;
+    }
+
+    .bottomItem.active{
+        color:#c4b5fd;
+    }
+
+    .question{
+        font-size:20px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>🔥 کۆڕی گەنجان</h1>
-    <p>باشترین یاری کۆمەڵایەتی بۆ کچ و کوڕان</p>
-  </header>
+<header>
 
-  <div class="game-grid">
-    <button class="game-btn active" onclick="selectGame(1)">1. ڕاستی یان جورئەت</button>
-    <button class="game-btn" onclick="selectGame(2)">2. تا ئێستا کردوومە/نەکردوومە</button>
-    <button class="game-btn" onclick="selectGame(3)">3. بڕیاری ئەستەم (Which One)</button>
-    <button class="game-btn" onclick="selectGame(4)">4. سووڕاندنی بوتڵ 🍾</button>
-    <button class="game-btn" onclick="selectGame(5)">5. کێ ئەگەری زیاترە؟</button>
-    <button class="game-btn" onclick="selectGame(6)">6. دانپێدانانی سەیری گەنجان</button>
-    <button class="game-btn" onclick="selectGame(7)">7. وەڵامی خێرا (٥ چرکە)</button>
-    <button class="game-btn" onclick="selectGame(8)">8. شوێنی تۆ بێت چی دەکەیت؟</button>
-    <button class="game-btn" onclick="selectGame(9)">9. تەحەدی دووانەکان (Pair Challenge)</button>
-    <button class="game-btn" onclick="selectGame(10)">10. تابوو (دەستەواژەی قەدەغەکراو)</button>
-  </div>
+<nav class="nav">
 
-  <div class="display-card">
-    <div id="game-title" class="game-title">ڕاستی یان جورئەت</div>
-    <div id="content-area" class="content-text">یەکێک لە دوگمەکانی خوارەوە هەڵبژێرە!</div>
-    
-    <div id="controls">
-      </div>
-  </div>
+<div class="logo">
+    <div class="logoIcon">🎮</div>
+    <span>گەنجان</span>
+</div>
 
-  <script>
-    let currentGame = 1;
+<div class="navRight">
 
-    // داتای یارییەکان بە زمانی کوردی سۆرانی
-    const gamesData = {
-      1: {
-        title: "🎯 ڕاستی یان جورئەت (Truth or Dare)",
-type: "dual",
-        truth: [
-          "سەیرترین شت چییە لە ڕەگەزی بەرامبەر کە زۆر بەدڵتە؟",
-          "خراپترین مەسج کە بۆ کەسێکت ناردووە و پەشیمان بوویتەتەوە چی بووە؟",
-          "ئایا تا ئێستا بە نهێنی ئاشقی کەسێکی ناو ئەم کۆڕە بوویت؟",
-          "گەر بتوانیت یەکێک لە ئامادەبووان ببەیتە گەشتێک، کێ هەڵدەبژێریت؟"
-        ],
-        dare: [
-          "مۆبایلەکەت بدە دەست کەسی ڕاستت بۆ دە خولەک!",
-          "تەلەفۆن بۆ هاوڕێیەکت بکه و بڵێ ئۆتۆمبێلەکەم تێکچووە بە هاوارمەوە وەرە!",
-          "بە دەنگی بەرز گۆرانییەکی میللی بۆ ماوەی ٣٠ چرکە بڵێڕەوە.",
-          "سێ وەسفی جوان بۆ کەسی لای چەپت بکه."
-        ]
-      },
-      2: {
-        title: "🙈 تا ئێستا کردوومە / نەکردوومە (Never Have I Ever)",
-        type: "single",
-        data: [
-          "تا ئێستا نهێنی کەسێکم ئاشکرا کردووە کە لەسەرم کەوتووە.",
-          "تا ئێستا لەبەر نەچوون بۆ ژوانێک (Date) درۆم کردووە.",
-          "تا ئێستا بە نهێنی سەەیری مۆبایلی کەسێکی ترم کردووە.",
-          "تا ئێستا لە ناو پاس یان شوێنی گشتی بە هەڵە بانگی کەسێکی ترم کردووە."
-        ]
-      },
-      3: {
-        title: "⚖️ بڕیاری ئەستەم (Would You Rather)",
-        type: "single",
-        data: [
-          "حەز دەکەیت هەموو دەقەیەک بیرۆکەکانت بپشکنرێت یان هەموو کات شوێنت لەسەر خەرێتە دیار بێت؟",
-          "تەنها بتوانیت گۆرانی کوردی کۆن گوێ بگریت یان تەنها ئینگلیزی؟",
-          "ژیان لەبەر دەریا لەگەڵ هاوڕێکانت یان ژیان لەسەر لوپکەی شاخ بە تەنیایی؟"
-        ]
-      },
-      4: {
-        title: "🍾 سووڕاندنی بوتڵ (Spin the Bottle)",
-        type: "bottle"
-      },
-      5: {
-        title: "👑 کێ ئەگەری زیاترە؟ (Most Likely To)",
-        type: "single",
-        data: [
-          "کێ لەم کۆڕە ئەگەری زیاترە زووتر لە هەمووان هاوسەرگیری بکات؟",
-          "کێ ئەگەری زیاترە لەبەر خۆشەویستی گریابێت؟",
-          "کێ ئەگەری زیاترە پارەکانی بە شتی بێسوود سەرف بکات؟"
-        ]
-      },
-      6: {
-        title: "🤫 دانپێدانانی سەیری گەنجان",
-        type: "single",
-        data: [
-          "گەمژەترین ڕەفتار کە لەبەردەم کەسێکدا کردووتە کە بەدڵت بووە چییە؟",
-          "عەیبەترین شت کە لە ماڵەوە لێت ڕوویداوە چی بووە؟",
-          "یەکەم ئاشقبوون لە تەمەنی چەند ساڵیدا بوو؟"
-        ]
-      },
-      7: {
-        title: "⚡️ وەڵامی خێرا (لە ٥ چرکەدا)",
-        type: "single",
-        data: [
-          "لە ٥ چرکەدا: ٣ ناو بڵێ کە بە پیتی 'م' دەست پێدەکات!",
-          "لە ٥ چرکەدا: ٣ ناوی خواردنی کوردی بڵێ!",
-          "لە ٥ چرکەدا: ٣ خەسڵەت بڵێ کە لە ڕەگەزی بەرامبەر ڕقت لێیەتی!"
-        ]
-      },
-      8: {
-        title: "🤔 شوێنی تۆ بێت چی دەکەیت؟",
-        type: "single",
-        data: [
-          "ئەگەر بە هەڵە مەسجێکی زۆر تایبەت بۆ گرۆپی خێزانی بنێریت چی دەکەیت؟",
-          "ئەگەر لە ژوانێکدا کەسەکە لەناکاو ڕۆیشت و تۆی بەجێهێشت چی دەکەیت؟"
-        ]
-      },
-      9: {
-        title: "👩‍❤️‍👨 تەحەدی دووانەکان (کچ و کوڕ)",
-        type: "single",
-        data: [
-          "کچ و کوڕێک بەبێ سێری یەکتر بکەن بۆ ماوەی ١ خولەک سەیری چاوی یەکتر بکەن!",
-          "کچەکە دەبێت لاسایی دەنگی کوڕەکە بکاتەوە، و کوڕەکەش لاسایی کچەکە!"
-        ]
-      },
-      10: {
-        title: "🚫 یاری تابوو (وشەی قەدەغەکراو)",
-        type: "single",
-        data: [
-          "وشەکە: [شووتی] - نابی ئەم وشانە بڵێیت: (سوور، هاوین، میوە، ئاو). دەبێت بۆ هاوڕێکانتی ڕوون بلیتەوە!",
-          "وشەکە: [مۆبایل] - نابی ئەم وشانە بڵێیت: (پەیوەندی، ئینتەرنێت، شاشە، ئاپ)."
-        ]
-      }
-    };
+<div class="level">
+    ⚡️ ئاست 7
+</div>
 
-    function selectGame(id) {
-      currentGame = id;
-      document.querySelectorAll('.game-btn').forEach((btn, idx) => {
-        btn.classList.toggle('active', idx + 1 === id);
-      });
-      
-      const game = gamesData[id];
-      document.getElementById('game-title').innerText = game.title;
-      const controls = document.getElementById('controls');
-      const content = document.getElementById('content-area');
+<div class="avatar">
+    😎
+</div>
 
-      if(game.type === 'dual') {
-content.innerText = "یەکێک لە دوگمەکانی خوارەوە هەڵبژێرە!";
-        controls.innerHTML = 
-          <div class="dual-btns">
-            <button class="action-btn btn-truth" onclick="getTruth()">ڕاستی</button>
-            <button class="action-btn btn-dare" onclick="getDare()">جورئەت</button>
-          </div>
-        ;
-      } else if(game.type === 'bottle') {
-        content.innerHTML = <div class="bottle" id="bottle">🍾</div>;
-        controls.innerHTML = <button class="action-btn" onclick="spinBottle()">بسوڕێنە!</button>;
-      } else {
-        content.innerText = "داگرە بۆ هێنانی پرسیار/تەحەدی";
-        controls.innerHTML = <button class="action-btn" onclick="getNextContent()">دواتر 🎲</button>;
-      }
+</div>
+
+</nav>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="heroContent">
+
+<h1>
+بەخێربێیت بۆ گەنجان 👋
+</h1>
+
+<p>
+ئامادەیت خۆت تاقیبکەیتەوە؟
+یاری بکە، خاڵ کۆبکەرەوە،
+ئاستت بەرز بکەرەوە و ببە بە پاڵەوانی گەنجان! 🔥
+</p>
+
+<button class="primary"
+onclick="startGame()">
+دەست پێبکە 🎮
+</button>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat">
+
+<div class="statIcon">🔥</div>
+
+<div class="statValue">
+7
+</div>
+
+<div class="statName">
+ڕۆژی بەردەوام
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="statIcon">🏆</div>
+
+<div class="statValue">
+2,840
+</div>
+
+<div class="statName">
+خاڵەکانت
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="statIcon">🧠</div>
+
+<div class="statValue">
+286
+</div>
+
+<div class="statName">
+پرسیاری وەڵامدراو
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="statIcon">🥇</div>
+
+<div class="statValue">
+#42
+</div>
+
+<div class="statName">
+پلەی گشتی
+</div>
+
+</div>
+
+</section>
+
+
+<!-- XP -->
+
+<section class="xpCard">
+
+<div class="xpTop">
+
+<strong>
+⚡️ ئاست 7
+</strong>
+
+<span>
+680 / 1000 XP
+</span>
+
+</div>
+
+<div class="xpBar">
+
+<div class="xpFill"></div>
+
+</div>
+
+</section>
+
+
+<!-- DAILY -->
+
+<section class="section">
+
+<div class="sectionHead">
+
+<h2>
+🎯 چالاکی ڕۆژانە
+</h2>
+
+<span>
+هەر ڕۆژ نوێ دەبێتەوە
+</span>
+
+</div>
+
+<div class="daily">
+
+<div class="dailyMain">
+
+<div style="font-size:42px">
+🔥
+</div>
+
+<h3>
+ئامادەیت بۆ چالاکی ئەمڕۆ؟
+</h3>
+
+<p>
+10 پرسیاری جۆراوجۆر و خێرا.
+ئەگەر هەمووی تەواو بکەیت،
+100 XP وەردەگریت.
+</p>
+
+<button class="primary"
+onclick="startGame()">
+دەست پێبکە
+</button>
+
+</div>
+
+<div class="reward">
+
+<span>
+🎁 پاداش
+</span>
+
+<strong>
++100 XP
+</strong>
+<span style="color:var(--muted)">
+لەگەڵ هەر وەڵامێکی دروست خاڵ کۆدەکەیتەوە.
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GAMES -->
+
+<section class="section">
+
+<div class="sectionHead">
+
+<h2>
+🎮 یارییەکان
+</h2>
+
+<span>
+هەموو یارییەکان
+</span>
+
+</div>
+
+
+<div class="games">
+
+<div class="game"
+onclick="startGame()">
+
+<div class="gameIcon">
+⚡️
+</div>
+
+<h3>
+کوێزی خێرا
+</h3>
+
+<p>
+10 پرسیار، 15 چرکە بۆ هەر پرسیارێک.
+</p>
+
+<div class="play">
+▶️
+</div>
+
+</div>
+
+
+<div class="game"
+onclick="startGame()">
+
+<div class="gameIcon">
+🧠
+</div>
+
+<h3>
+مێشکی زیرەک
+</h3>
+
+<p>
+لۆژیک و بیرکردنەوە تاقیبکەرەوە.
+</p>
+
+<div class="play">
+▶️
+</div>
+
+</div>
+
+
+<div class="game"
+onclick="startGame()">
+
+<div class="gameIcon">
+⏱️
+</div>
+
+<h3>
+پێشبڕکێی کات
+</h3>
+
+<p>
+لە 60 چرکەدا چەند پرسیار دەتوانیت؟
+</p>
+
+<div class="play">
+▶️
+</div>
+
+</div>
+
+
+<div class="game"
+onclick="startGame()">
+
+<div class="gameIcon">
+✅
+</div>
+
+<h3>
+دروست یان هەڵە
+</h3>
+
+<p>
+خێرا بڕیار بدە؛ دروستە یان هەڵە؟
+</p>
+
+<div class="play">
+▶️
+</div>
+
+</div>
+
+
+<div class="game"
+onclick="startGame()">
+
+<div class="gameIcon">
+🔤
+</div>
+
+<h3>
+وشەی نهێنی
+</h3>
+
+<p>
+وشەکە لە هینتەکانەوە بدۆزەرەوە.
+</p>
+
+<div class="play">
+▶️
+</div>
+
+</div>
+
+
+<div class="game"
+onclick="startGame()">
+
+<div class="gameIcon">
+🎴
+</div>
+
+<h3>
+یادەوەری
+</h3>
+
+<p>
+جووتەکان بدۆزەرەوە و مێشکت تاقیبکەرەوە.
+</p>
+
+<div class="play">
+▶️
+</div>
+
+</div>
+
+
+<div class="game"
+onclick="startGame()">
+
+<div class="gameIcon">
+🔢
+</div>
+
+<h3>
+ژمارەی خێرا
+</h3>
+
+<p>
+بیرکاری بە خێرایی چارەسەر بکە.
+</p>
+
+<div class="play">
+▶️
+</div>
+
+</div>
+
+
+<div class="game"
+onclick="startGame()">
+
+<div class="gameIcon">
+🏆
+</div>
+
+<h3>
+شارەزای گەنجان
+</h3>
+
+<p>
+تاقیکردنەوەی گەورەی زانین و زیرەکی.
+</p>
+
+<div class="play">
+▶️
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- BOTTOM NAV -->
+
+<nav class="bottomNav">
+
+<button class="bottomItem active">
+<span>🏠</span>
+سەرەتا
+</button>
+
+<button class="bottomItem">
+<span>🎮</span>
+یاری
+</button>
+
+<button class="bottomItem">
+<span>🏆</span>
+پێشبڕکێ
+</button>
+
+<button class="bottomItem">
+<span>🎁</span>
+دەسکەوت
+</button>
+
+<button class="bottomItem">
+<span>👤</span>
+پرۆفایل
+</button>
+
+</nav>
+
+
+<!-- GAME MODAL -->
+
+<div class="modal" id="gameModal">
+
+<div class="gameBox">
+
+<div class="gameHeader">
+
+<div>
+<strong>
+⚡️ کوێزی خێرا
+</strong>
+
+<div style="color:var(--muted);font-size:12px;margin-top:5px">
+پرسیاری <span id="questionNumber">1</span> لە 5
+</div>
+
+</div>
+
+<div class="timer">
+⏱️ <span id="timer">15</span>
+</div>
+
+<button class="close"
+onclick="closeGame()">
+×
+</button>
+
+</div>
+
+
+<div class="question"
+id="question">
+کامەیان گەورەترین سیارەی سیستەمی خۆرە؟
+</div>
+
+
+<div class="answers">
+
+<button class="answer"
+onclick="answer(this,false)">
+🌍 زەوی
+</button>
+
+<button class="answer"
+onclick="answer(this,true)">
+🪐 مشتری
+</button>
+
+<button class="answer"
+onclick="answer(this,false)">
+🔴 مریخ
+</button>
+
+<button class="answer"
+onclick="answer(this,false)">
+🌙 مانگ
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* ================= QUESTIONS ================= */
+
+const questions = [
+
+{
+q:"کامەیان گەورەترین سیارەی سیستەمی خۆرە؟",
+a:["🌍 زەوی","🪐 مشتری","🔴 مریخ","🌙 مانگ"],
+correct:1
+},
+
+{
+q:"پایتەختی فەرەنسا چییە؟",
+a:["لۆندەن","پاریس","بەرلین","ڕۆما"],
+correct:1
+},
+
+{
+q:"چەند ڕۆژێک هەفتە پێکدەهێنێت؟",
+a:["5","6","7","8"],
+correct:2
+},
+
+{
+q:"H₂O چییە؟",
+a:["ئاو","ئۆکسجین","خوێ","کاربۆن"],
+correct:0
+},
+
+{
+q:"کێ نووسەری شازادەی بچووکە؟",
+a:["شکسپیر","ئەنتوان دو سەنت-ئێکزوپێری","هۆمەر","تۆڵستۆی"],
+correct:1
+}
+
+];
+
+
+/* ================= GAME ================= */
+
+let current = 0;
+let score = 0;
+let timer = 15;
+let interval;
+
+
+function startGame(){
+
+    current = 0;
+    score = 0;
+
+    document
+        .getElementById("gameModal")
+        .classList.add("show");
+
+    loadQuestion();
+
+}
+
+
+function closeGame(){
+
+    clearInterval(interval);
+
+    document
+        .getElementById("gameModal")
+        .classList.remove("show");
+
+}
+
+
+function loadQuestion(){
+
+    if(current >= questions.length){
+
+        finishGame();
+
+        return;
     }
 
-    function getNextContent() {
-      const data = gamesData[currentGame].data;
-      const random = Math.floor(Math.random() * data.length);
-      document.getElementById('content-area').innerText = data[random];
+    const item = questions[current];
+document
+        .getElementById("question")
+        .textContent = item.q;
+
+    document
+        .getElementById("questionNumber")
+        .textContent = current + 1;
+
+    const buttons =
+        document.querySelectorAll(".answer");
+
+    buttons.forEach((btn,i)=>{
+
+        btn.textContent = item.a[i];
+
+        btn.classList.remove(
+            "correct",
+            "wrong"
+        );
+
+        btn.disabled = false;
+
+    });
+
+    startTimer();
+
+}
+
+
+function startTimer(){
+
+    clearInterval(interval);
+
+    timer = 15;
+
+    document
+        .getElementById("timer")
+        .textContent = timer;
+
+    interval = setInterval(()=>{
+
+        timer--;
+
+        document
+            .getElementById("timer")
+            .textContent = timer;
+
+        if(timer <= 0){
+
+            clearInterval(interval);
+
+            current++;
+
+            loadQuestion();
+
+        }
+
+    },1000);
+
+}
+
+
+function answer(button,isCorrect){
+
+    clearInterval(interval);
+
+    const buttons =
+        document.querySelectorAll(".answer");
+
+    buttons.forEach(b=>{
+        b.disabled = true;
+    });
+
+    if(isCorrect){
+
+        button.classList.add("correct");
+
+        score += 100;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        const correct =
+            questions[current].correct;
+
+        buttons[correct]
+            .classList.add("correct");
+
     }
 
-    function getTruth() {
-      const truths = gamesData[1].truth;
-      const random = Math.floor(Math.random() * truths.length);
-      document.getElementById('content-area').innerText = truths[random];
-    }
+    setTimeout(()=>{
 
-    function getDare() {
-      const dares = gamesData[1].dare;
-      const random = Math.floor(Math.random() * dares.length);
-      document.getElementById('content-area').innerText = dares[random];
-    }
+        current++;
 
-    function spinBottle() {
-      const bottle = document.getElementById('bottle');
-      const randomDegree = Math.floor(Math.random() * 360) + 1440; // 4 دور تەواو
-      bottle.style.transform = rotate(${randomDegree}deg);
-    }
+        loadQuestion();
 
-    // دەستپێکردن
-    selectGame(1);
-  </script>
+    },800);
+
+}
+
+
+function finishGame(){
+
+    clearInterval(interval);
+
+    const box =
+        document.querySelector(".gameBox");
+
+    box.innerHTML = 
+
+        <div style="
+            text-align:center;
+            padding:35px 10px;
+        ">
+
+            <div style="
+                font-size:65px;
+                margin-bottom:15px;
+            ">
+                🏆
+            </div>
+
+            <h2 style="
+                font-size:30px;
+                margin-bottom:10px;
+            ">
+                تەواو بوو! 🎉
+            </h2>
+
+            <p style="
+                color:#94a3b8;
+                margin-bottom:20px;
+            ">
+                یارییەکەت تەواو کرد.
+            </p>
+
+            <div style="
+                font-size:42px;
+                font-weight:900;
+                margin-bottom:5px;
+            ">
+                ${score}
+            </div>
+
+            <div style="
+                color:#fbbf24;
+                margin-bottom:25px;
+            ">
+                خاڵ 🏆
+            </div>
+
+            <button
+                class="primary"
+                onclick="
+                    document
+                    .getElementById('gameModal')
+                    .classList.remove('show');
+                    location.reload();
+                "
+            >
+                باشە! 🔥
+            </button>
+
+        </div>
+
+    ;
+
+}
+
+</script>
+
 </body>
 </html>
