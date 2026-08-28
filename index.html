@@ -110,6 +110,81 @@ body{background:radial-gradient(circle at 8% 8%,rgba(255,190,70,.20),transparent
 #gameContent > .play > .hint, #gameContent > .play .hunt-card > .hint { display:none !important; }
 </style>
 
+<style>
+/* ===== Neon Dark Gaming Redesign ===== */
+:root{
+  --bg:#070814;--surface:#0d1020;--surface2:#13172b;--ink:#f4f7ff;--muted:#a8b0c7;
+  --pink:#ff3ea5;--purple:#8b5cf6;--cyan:#22d3ee;--yellow:#fbbf24;--green:#34d399;
+  --red:#fb3b52;--blue:#4f8cff;--line:rgba(255,255,255,.10);
+  --shadow:0 20px 70px rgba(0,0,0,.42)
+}
+html,body{background:#070814!important;color:var(--ink)}
+body{
+  background:
+    radial-gradient(circle at 10% 5%,rgba(139,92,246,.16),transparent 25%),
+    radial-gradient(circle at 90% 10%,rgba(34,211,238,.12),transparent 23%),
+    radial-gradient(circle at 50% 100%,rgba(255,62,165,.10),transparent 35%),
+    #070814!important;
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:32px 32px;z-index:-1}
+.topbar,.panel,.play,.stat,.game-card,.group-box,.team,.leader-row,.modal-box,.input,.secondary,.memory-option,.score,.answer,.menu-drawer,.menu-item{
+  background:rgba(13,16,32,.88)!important;color:var(--ink)!important;border-color:var(--line)!important;
+  box-shadow:var(--shadow)
+}
+.topbar{backdrop-filter:blur(18px);border-radius:22px}
+.logo b,.gradient{background:linear-gradient(90deg,#22d3ee,#8b5cf6,#ff3ea5);-webkit-background-clip:text;color:transparent}
+.icon{background:#11152a!important;color:#fff!important;border-color:var(--line)!important}
+.hero h1{color:#fff;text-shadow:0 0 30px rgba(139,92,246,.28)}
+.hero p,.hint,.stat span,.game-card p,.game-guide-card p{color:var(--muted)!important}
+.badge{background:rgba(139,92,246,.12)!important;border-color:rgba(139,92,246,.35)!important;color:#c9bbff!important}
+.primary{background:linear-gradient(135deg,#8b5cf6,#ff3ea5)!important;color:#fff!important;box-shadow:0 12px 35px rgba(139,92,246,.28)}
+.secondary{background:#11152a!important}
+.danger{background:rgba(251,59,82,.12)!important;color:#ff8c99!important;border-color:rgba(251,59,82,.35)!important}
+.stat{border-radius:20px}
+.stat strong{color:#fff}
+.games-grid{gap:16px}
+.game-card{
+  min-height:195px!important;border:1px solid rgba(255,255,255,.10)!important;
+  border-top:0!important;border-radius:24px!important;overflow:hidden;
+  position:relative;transition:.25s ease!important;
+}
+.game-card:after{content:"";position:absolute;inset:0;border-radius:24px;padding:1px;background:linear-gradient(135deg,var(--game-color),transparent 55%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.75}
+.game-card:hover{transform:translateY(-8px) scale(1.015)!important;box-shadow:0 24px 65px rgba(0,0,0,.55),0 0 30px color-mix(in srgb,var(--game-color) 18%,transparent)!important}
+.game-card:before{background:radial-gradient(circle at 100% 100%,color-mix(in srgb,var(--game-color) 22%,transparent),transparent 62%)!important}
+.game-icon{
+  background:linear-gradient(135deg,color-mix(in srgb,var(--game-color) 78%,#111),color-mix(in srgb,var(--game-color) 35%,#0b0d19))!important;
+  border:1px solid color-mix(in srgb,var(--game-color) 65%,#fff 5%)!important;
+  box-shadow:0 0 28px color-mix(in srgb,var(--game-color) 28%,transparent)!important;
+}
+.game-card h3{color:#fff!important}
+.game-card .tag{background:color-mix(in srgb,var(--game-color) 13%,#0d1020)!important;color:color-mix(in srgb,var(--game-color) 75%,#fff)!important;border-color:color-mix(in srgb,var(--game-color) 35%,transparent)!important}
+.section-title{color:#fff}
+.progress{background:#171b2e!important}.bar{background:linear-gradient(90deg,#22d3ee,#8b5cf6,#ff3ea5)!important}
+.turn{color:#c4b5fd!important}.round{color:var(--muted)!important}
+.answer{background:#11152a!important}.answer:hover{background:#191e39!important}
+.answer.correct{background:rgba(52,211,153,.14)!important;border-color:#34d399!important;color:#6ee7b7!important}
+.answer.wrong{background:rgba(251,59,82,.14)!important;border-color:#fb3b52!important}
+.timer{background:#17172b!important;border-color:#fbbf24!important;color:#fff!important}
+.footer{color:#69728e!important}
+.menu-overlay{background:rgba(0,0,0,.65)!important}
+.menu-drawer{backdrop-filter:blur(20px)}
+.menu-item:hover{background:#171b32!important}
+.menu-note,.menu-guide-hint,.guide-intro,.game-guide-steps,.game-guide-tip{background:#11152a!important;border-color:var(--line)!important;color:var(--muted)!important}
+.game-guide-card{background:#0d1020!important;border-color:var(--line)!important}
+.spy-card,.spy-secret,.spy-result{background:linear-gradient(145deg,#10142a,#0b0e1b)!important;border-color:rgba(139,92,246,.35)!important}
+.spy-secret.is-spy{background:linear-gradient(145deg,#26121c,#120d16)!important}
+.spy-secret.is-citizen{background:linear-gradient(145deg,#0d241d,#0b1715)!important}
+.mystery-box,.mystery-suspect,.mystery-summary{background:#10142a!important;color:var(--ink)!important;border-color:var(--line)!important}
+.bomb-wrap{background:linear-gradient(145deg,#24101a,#141126)!important;border-color:rgba(251,59,82,.35)!important}
+.red-hunt{background:linear-gradient(145deg,#171326,#101b25)!important;border-color:rgba(34,211,238,.25)!important}
+.reaction-new{background:#10142a!important;border-color:rgba(34,211,238,.3)!important}
+.reaction-new.ready{background:rgba(52,211,153,.12)!important}
+.group-box{background:linear-gradient(145deg,#10142a,#0c101e)!important}
+.team-a{border-color:rgba(139,92,246,.5)!important}.team-b{border-color:rgba(34,211,238,.45)!important}
+.pill,.score,.player-status{background:#11152a!important;border-color:var(--line)!important;color:#fff!important}
+.input{box-shadow:none!important}.input::placeholder{color:#69728e}
+.modal-box{border-radius:26px}
+</style>
 </head>
 <body>
 <div class="app">
