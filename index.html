@@ -1,1 +1,222 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کۆڕی گەنجان | یارییە کۆمەڵایەتییەکان</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --accent: #ff007f;
+      --accent-hover: #d6006b;
+      --text: #f8fafc;
+      --subtext: #94a3b8;
+    }
+    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
+    body { background-color: var(--bg); color: var(--text); padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+    
+    header { text-align: center; margin-bottom: 20px; }
+    header h1 { font-size: 2rem; color: var(--accent); margin-bottom: 5px; }
+    header p { color: var(--subtext); font-size: 0.9rem; }
 
+    .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; width: 100%; max-width: 600px; margin-bottom: 20px; }
+    .game-btn { background: var(--card); border: 2px solid #334155; color: var(--text); padding: 12px; border-radius: 10px; cursor: pointer; transition: 0.2s; font-weight: bold; font-size: 0.85rem; }
+    .game-btn:hover, .game-btn.active { border-color: var(--accent); background: #26334d; }
+
+    .display-card { background: var(--card); border-radius: 16px; padding: 30px 20px; width: 100%; max-width: 600px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #334155; min-height: 220px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+    .game-title { color: var(--accent); font-size: 1.2rem; margin-bottom: 15px; }
+    .content-text { font-size: 1.25rem; line-height: 1.6; margin-bottom: 20px; font-weight: 600; min-height: 60px; display: flex; align-items: center; }
+
+    .action-btn { background: var(--accent); color: white; border: none; padding: 12px 30px; font-size: 1rem; font-weight: bold; border-radius: 25px; cursor: pointer; transition: 0.2s; }
+    .action-btn:hover { background: var(--accent-hover); transform: scale(1.05); }
+    
+    .dual-btns { display: flex; gap: 10px; }
+    .btn-truth { background: #3b82f6; }
+    .btn-dare { background: #ef4444; }
+
+    .bottle { font-size: 4rem; transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1); margin: 20px 0; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔥 کۆڕی گەنجان</h1>
+    <p>باشترین یاری کۆمەڵایەتی بۆ کچ و کوڕان</p>
+  </header>
+
+  <div class="game-grid">
+    <button class="game-btn active" onclick="selectGame(1)">1. ڕاستی یان جورئەت</button>
+    <button class="game-btn" onclick="selectGame(2)">2. تا ئێستا کردوومە/نەکردوومە</button>
+    <button class="game-btn" onclick="selectGame(3)">3. بڕیاری ئەستەم (Which One)</button>
+    <button class="game-btn" onclick="selectGame(4)">4. سووڕاندنی بوتڵ 🍾</button>
+    <button class="game-btn" onclick="selectGame(5)">5. کێ ئەگەری زیاترە؟</button>
+    <button class="game-btn" onclick="selectGame(6)">6. دانپێدانانی سەیری گەنجان</button>
+    <button class="game-btn" onclick="selectGame(7)">7. وەڵامی خێرا (٥ چرکە)</button>
+    <button class="game-btn" onclick="selectGame(8)">8. شوێنی تۆ بێت چی دەکەیت؟</button>
+    <button class="game-btn" onclick="selectGame(9)">9. تەحەدی دووانەکان (Pair Challenge)</button>
+    <button class="game-btn" onclick="selectGame(10)">10. تابوو (دەستەواژەی قەدەغەکراو)</button>
+  </div>
+
+  <div class="display-card">
+    <div id="game-title" class="game-title">ڕاستی یان جورئەت</div>
+    <div id="content-area" class="content-text">یەکێک لە دوگمەکانی خوارەوە هەڵبژێرە!</div>
+    
+    <div id="controls">
+      </div>
+  </div>
+
+  <script>
+    let currentGame = 1;
+
+    // داتای یارییەکان بە زمانی کوردی سۆرانی
+    const gamesData = {
+      1: {
+        title: "🎯 ڕاستی یان جورئەت (Truth or Dare)",
+type: "dual",
+        truth: [
+          "سەیرترین شت چییە لە ڕەگەزی بەرامبەر کە زۆر بەدڵتە؟",
+          "خراپترین مەسج کە بۆ کەسێکت ناردووە و پەشیمان بوویتەتەوە چی بووە؟",
+          "ئایا تا ئێستا بە نهێنی ئاشقی کەسێکی ناو ئەم کۆڕە بوویت؟",
+          "گەر بتوانیت یەکێک لە ئامادەبووان ببەیتە گەشتێک، کێ هەڵدەبژێریت؟"
+        ],
+        dare: [
+          "مۆبایلەکەت بدە دەست کەسی ڕاستت بۆ دە خولەک!",
+          "تەلەفۆن بۆ هاوڕێیەکت بکه و بڵێ ئۆتۆمبێلەکەم تێکچووە بە هاوارمەوە وەرە!",
+          "بە دەنگی بەرز گۆرانییەکی میللی بۆ ماوەی ٣٠ چرکە بڵێڕەوە.",
+          "سێ وەسفی جوان بۆ کەسی لای چەپت بکه."
+        ]
+      },
+      2: {
+        title: "🙈 تا ئێستا کردوومە / نەکردوومە (Never Have I Ever)",
+        type: "single",
+        data: [
+          "تا ئێستا نهێنی کەسێکم ئاشکرا کردووە کە لەسەرم کەوتووە.",
+          "تا ئێستا لەبەر نەچوون بۆ ژوانێک (Date) درۆم کردووە.",
+          "تا ئێستا بە نهێنی سەەیری مۆبایلی کەسێکی ترم کردووە.",
+          "تا ئێستا لە ناو پاس یان شوێنی گشتی بە هەڵە بانگی کەسێکی ترم کردووە."
+        ]
+      },
+      3: {
+        title: "⚖️ بڕیاری ئەستەم (Would You Rather)",
+        type: "single",
+        data: [
+          "حەز دەکەیت هەموو دەقەیەک بیرۆکەکانت بپشکنرێت یان هەموو کات شوێنت لەسەر خەرێتە دیار بێت؟",
+          "تەنها بتوانیت گۆرانی کوردی کۆن گوێ بگریت یان تەنها ئینگلیزی؟",
+          "ژیان لەبەر دەریا لەگەڵ هاوڕێکانت یان ژیان لەسەر لوپکەی شاخ بە تەنیایی؟"
+        ]
+      },
+      4: {
+        title: "🍾 سووڕاندنی بوتڵ (Spin the Bottle)",
+        type: "bottle"
+      },
+      5: {
+        title: "👑 کێ ئەگەری زیاترە؟ (Most Likely To)",
+        type: "single",
+        data: [
+          "کێ لەم کۆڕە ئەگەری زیاترە زووتر لە هەمووان هاوسەرگیری بکات؟",
+          "کێ ئەگەری زیاترە لەبەر خۆشەویستی گریابێت؟",
+          "کێ ئەگەری زیاترە پارەکانی بە شتی بێسوود سەرف بکات؟"
+        ]
+      },
+      6: {
+        title: "🤫 دانپێدانانی سەیری گەنجان",
+        type: "single",
+        data: [
+          "گەمژەترین ڕەفتار کە لەبەردەم کەسێکدا کردووتە کە بەدڵت بووە چییە؟",
+          "عەیبەترین شت کە لە ماڵەوە لێت ڕوویداوە چی بووە؟",
+          "یەکەم ئاشقبوون لە تەمەنی چەند ساڵیدا بوو؟"
+        ]
+      },
+      7: {
+        title: "⚡️ وەڵامی خێرا (لە ٥ چرکەدا)",
+        type: "single",
+        data: [
+          "لە ٥ چرکەدا: ٣ ناو بڵێ کە بە پیتی 'م' دەست پێدەکات!",
+          "لە ٥ چرکەدا: ٣ ناوی خواردنی کوردی بڵێ!",
+          "لە ٥ چرکەدا: ٣ خەسڵەت بڵێ کە لە ڕەگەزی بەرامبەر ڕقت لێیەتی!"
+        ]
+      },
+      8: {
+        title: "🤔 شوێنی تۆ بێت چی دەکەیت؟",
+        type: "single",
+        data: [
+          "ئەگەر بە هەڵە مەسجێکی زۆر تایبەت بۆ گرۆپی خێزانی بنێریت چی دەکەیت؟",
+          "ئەگەر لە ژوانێکدا کەسەکە لەناکاو ڕۆیشت و تۆی بەجێهێشت چی دەکەیت؟"
+        ]
+      },
+      9: {
+        title: "👩‍❤️‍👨 تەحەدی دووانەکان (کچ و کوڕ)",
+        type: "single",
+        data: [
+          "کچ و کوڕێک بەبێ سێری یەکتر بکەن بۆ ماوەی ١ خولەک سەیری چاوی یەکتر بکەن!",
+          "کچەکە دەبێت لاسایی دەنگی کوڕەکە بکاتەوە، و کوڕەکەش لاسایی کچەکە!"
+        ]
+      },
+      10: {
+        title: "🚫 یاری تابوو (وشەی قەدەغەکراو)",
+        type: "single",
+        data: [
+          "وشەکە: [شووتی] - نابی ئەم وشانە بڵێیت: (سوور، هاوین، میوە، ئاو). دەبێت بۆ هاوڕێکانتی ڕوون بلیتەوە!",
+          "وشەکە: [مۆبایل] - نابی ئەم وشانە بڵێیت: (پەیوەندی، ئینتەرنێت، شاشە، ئاپ)."
+        ]
+      }
+    };
+
+    function selectGame(id) {
+      currentGame = id;
+      document.querySelectorAll('.game-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', idx + 1 === id);
+      });
+      
+      const game = gamesData[id];
+      document.getElementById('game-title').innerText = game.title;
+      const controls = document.getElementById('controls');
+      const content = document.getElementById('content-area');
+
+      if(game.type === 'dual') {
+content.innerText = "یەکێک لە دوگمەکانی خوارەوە هەڵبژێرە!";
+        controls.innerHTML = 
+          <div class="dual-btns">
+            <button class="action-btn btn-truth" onclick="getTruth()">ڕاستی</button>
+            <button class="action-btn btn-dare" onclick="getDare()">جورئەت</button>
+          </div>
+        ;
+      } else if(game.type === 'bottle') {
+        content.innerHTML = <div class="bottle" id="bottle">🍾</div>;
+        controls.innerHTML = <button class="action-btn" onclick="spinBottle()">بسوڕێنە!</button>;
+      } else {
+        content.innerText = "داگرە بۆ هێنانی پرسیار/تەحەدی";
+        controls.innerHTML = <button class="action-btn" onclick="getNextContent()">دواتر 🎲</button>;
+      }
+    }
+
+    function getNextContent() {
+      const data = gamesData[currentGame].data;
+      const random = Math.floor(Math.random() * data.length);
+      document.getElementById('content-area').innerText = data[random];
+    }
+
+    function getTruth() {
+      const truths = gamesData[1].truth;
+      const random = Math.floor(Math.random() * truths.length);
+      document.getElementById('content-area').innerText = truths[random];
+    }
+
+    function getDare() {
+      const dares = gamesData[1].dare;
+      const random = Math.floor(Math.random() * dares.length);
+      document.getElementById('content-area').innerText = dares[random];
+    }
+
+    function spinBottle() {
+      const bottle = document.getElementById('bottle');
+      const randomDegree = Math.floor(Math.random() * 360) + 1440; // 4 دور تەواو
+      bottle.style.transform = rotate(${randomDegree}deg);
+    }
+
+    // دەستپێکردن
+    selectGame(1);
+  </script>
+</body>
+</html>
