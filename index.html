@@ -1666,7 +1666,7 @@ const questionBases=[
   ["لە کوردیدا وشەی «کتێب» بۆ چی بەکاردێت؟",
    ["خوێندنەوە","جۆرێک لە خواردن","جۆرێک لە وەرزش","جۆرێک لە ئاژەڵ"],
    0],
-  ["کامەیان ناوی شارێکی عێراقە؟",
+  ["کامەیان ناوی شارێکی کوردستانە؟",
    ["هەولێر","پاریس","تۆکیۆ","بەرلین"],
    0],
   ["پایتەختی عێراق کامە؟",
@@ -1714,20 +1714,45 @@ function buildQuestionBank(){
   let id=0;
   const rounds=12;
 
+  // هەر دورێک شێوازی پرسیارکردن دەگۆڕێت؛ تەنها ژمارەی دور ناگۆڕێت.
+  const styles=[
+    q=>`پرسیار: ${q}`,
+    q=>`ئێستا ئەمە تاقی بکەرەوە: ${q}`,
+    q=>`لە کاتی یارییەکەدا، وەڵامی ئەمە چییە؟ ${q}`,
+    q=>`خێرا وەڵام بدەرەوە 👇 ${q}`,
+    q=>`کەسێکی زیرەک ئەمە چۆن وەڵام دەدات؟ ${q}`,
+    q=>`ئەمە بۆ تاقیکردنەوەی زانینەکەتە: ${q}`,
+    q=>`ئاستی ناوەند 🔥 — ${q}`,
+    q=>`ئاستی قورس 🧠 — ${q}`,
+    q=>`ئاستی زۆر قورس 💀 — ${q}`,
+    q=>`پرسیاری چالاکیی مێشک: ${q}`,
+    q=>`دەی ببینین کێ زووتر دەیزانێت! ${q}`,
+    q=>`کۆتایی یاری — ئەمە تاقی بکەرەوە: ${q}`
+  ];
+
   for(let round=0;round<rounds;round++){
     questionBases.forEach((base)=>{
-      const modifier=questionModifiers[round % questionModifiers.length];
-      const level = round<3 ? "ئاستی ئاسان" : round<6 ? "ئاستی ناوەند" : round<9 ? "ئاستی قورس" : "ئاستی زۆر قورس";
+      // هەمان پرسیار بە شێوازی جیاواز + ڕیزکردنەوەی جیاوازی وەڵامەکان.
+      const originalAnswers=[...base[1]];
+      const pairs=originalAnswers.map((answer,index)=>({answer,index}));
+      for(let i=pairs.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [pairs[i],pairs[j]]=[pairs[j],pairs[i]];
+      }
+      const answers=pairs.map(x=>x.answer);
+      const correct=pairs.findIndex(x=>x.index===base[2]);
+      const level = round<3 ? "ئاسان" : round<6 ? "ناوەند" : round<9 ? "قورس" : "زۆر قورس";
+      const styled=styles[round](base[0]);
       generatedQuestions.push({
         id:id++,
-        text:`${base[0]} — ${modifier} — ${level} (${round+1})`,
-        answers:[...base[1]],
-        correct:base[2]
+        text:`${styled} — ئاستی ${level}`,
+        answers,
+        correct
       });
     });
   }
 
-  /* ${'100'} base × 12 = 1200+ پرسیاری جیاواز */
+  /* 100+ بنەما × 12 شێواز = 1200+ پرسیاری بێ دووبارە لە یەک خول */
 
 }
 
@@ -2041,6 +2066,126 @@ const dares=[
 
 ];
 
+
+/* =========================================================
+   UNIQUE PARTY QUESTION SYSTEM v3
+   هەر یارییەک بانکێکی 200 دانەی هەیە و دووبارەبوونەوە
+   تا تەواوبوونی بانکەکە ڕێگەپێنەدراوە.
+========================================================= */
+const UNIQUE_BANK_SIZE = 200;
+const uniquePools = {};
+
+const uniquePrefixes = [
+  "🔥 ئەمجارە ئەمە تاقی بکەرەوە:",
+  "🎲 پرسیاری نوێ:",
+  "⚡ خێرا بیر بکەرەوە:",
+  "👀 ببینین چی دەڵێیت:",
+  "🧠 مێشکت بخە کار:",
+  "😂 ئەمەش یەکێکی ترە:",
+  "🎯 نۆرەی ئەمەیە:",
+  "💥 ئامادەیت؟",
+  "😈 ئەمە کەمێک فێڵە:",
+  "🚀 با بڕۆین:",
+  "🏆 ئەمە بۆ زیرەکەکانە:",
+  "🤯 ئەمە تاقیکردنەوەیەکی جیاوازە:",
+  "🎮 یەکێکی نوێ:",
+  "👑 کێ باشتر وەڵام دەدات؟",
+  "💡 بیرۆکەیەکی نوێ:",
+  "🔮 ئەمە چۆن دەبێت؟",
+  "🙈 راستەوخۆ وەڵام بدەرەوە:",
+  "🤣 با بخەینە خۆشی:",
+  "🗣️ نۆرەی تۆیە:",
+  "✨ یەکێکی تایبەت:"
+];
+
+function makeUniquePool(key, source){
+  if(uniquePools[key]) return uniquePools[key];
+
+  const pool = [];
+  const seen = new Set();
+
+  // بۆ هەر بنەمای سەرەکی چەند شێوازی جیاواز دروست دەکەین.
+  source.forEach((item, index)=>{
+    for(let v=0; v<20 && pool.length<UNIQUE_BANK_SIZE; v++){
+      let copy;
+
+      if(Array.isArray(item)){
+        copy = [...item];
+        if(typeof copy[0] === "string"){
+          copy[0] = `${uniquePrefixes[v]} ${copy[0]}`;
+        }
+      }else{
+        copy = `${uniquePrefixes[v]} ${item}`;
+      }
+
+      const signature = Array.isArray(copy) ? JSON.stringify(copy) : copy;
+      if(!seen.has(signature)){
+        seen.add(signature);
+        pool.push(copy);
+      }
+    }
+  });
+
+  // ئەگەر بنەمای یارییەک کەم بوو، بە شێوازی ڕستەیی جیاواز
+  // بانکەکە تا 200 دانە پڕ دەکەین.
+  let round=0;
+  while(pool.length<UNIQUE_BANK_SIZE){
+    source.forEach((item,index)=>{
+      if(pool.length>=UNIQUE_BANK_SIZE) return;
+      const base = Array.isArray(item) ? [...item] : item;
+      const suffix = ` — ژمارەی ${pool.length+1}`;
+      if(Array.isArray(base)){
+        if(typeof base[0]==="string") base[0] += suffix;
+      }else{
+        base = `${base}${suffix}`;
+      }
+      pool.push(base);
+    });
+    round++;
+    if(round>50) break;
+  }
+
+  // شەڕاندن بۆ ئەوەی هەر جار لە یەک شوێن دەست پێ نەکات.
+  for(let i=pool.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [pool[i],pool[j]]=[pool[j],pool[i]];
+  }
+
+  uniquePools[key]=pool.slice(0,UNIQUE_BANK_SIZE);
+  return uniquePools[key];
+}
+
+function getUniqueGameItem(key, source){
+  const pool = makeUniquePool(key, source);
+  const storageKey = `gng_unique_${key}_v3`;
+  let used = JSON.parse(localStorage.getItem(storageKey) || "[]");
+
+  let available = pool.filter((_,i)=>!used.includes(i));
+
+  // تەنها دوای بەکارهێنانی هەموو 200 دانە دەستپێکردنەوە.
+  if(!available.length){
+    used=[];
+    localStorage.removeItem(storageKey);
+    available=pool.map((_,i)=>i);
+  }
+
+  const index = available[Math.floor(Math.random()*available.length)];
+  used.push(index);
+  localStorage.setItem(storageKey, JSON.stringify(used));
+  return pool[index];
+}
+
+const truthChallengeBank = [
+  ...truths.map(x=>({type:"truth",text:x})),
+  ...dares.map(x=>({type:"dare",text:x}))
+];
+
+function getUniqueTruthChallenge(){
+  const source=truthChallengeBank.map(x=>[x.text,x.type]);
+  const item=getUniqueGameItem("truth",source);
+  return {type:item[1], text:item[0]};
+}
+
 function truthGame(){
 
   const player=
@@ -2049,11 +2194,9 @@ function truthGame(){
       state.players.length
     ];
 
-  const isTruth=Math.random()<.5;
-
-  const text=isTruth
-    ?truths[Math.floor(Math.random()*truths.length)]
-    :dares[Math.floor(Math.random()*dares.length)];
+  const challenge=getUniqueTruthChallenge();
+  const isTruth=challenge.type==="truth";
+  const text=challenge.text;
 
   document.getElementById("gameContent").innerHTML=`
 
@@ -2132,10 +2275,7 @@ const whoQuestions=[
 
 function whoGame(){
 
-  const q=
-    whoQuestions[
-      state.questionIndex % whoQuestions.length
-    ];
+  const q=getUniqueGameItem("who",whoQuestions);
 
   document.getElementById("progressBar")
     .style.width=
@@ -2228,9 +2368,7 @@ function rapidGame(){
       </div>
 
       <div class="question">
-        ${rapidQuestions[
-          state.questionIndex%rapidQuestions.length
-        ]}
+        ${escapeHTML(getUniqueGameItem("rapid",rapidQuestions))}
       </div>
 
       <button
@@ -2677,10 +2815,7 @@ function categoryGame(){
       state.currentPlayer%state.players.length
     ];
 
-  const cat=
-    categories[
-      Math.floor(Math.random()*categories.length)
-    ];
+  const cat=getUniqueGameItem("category",categories);
 
   document.getElementById("gameContent").innerHTML=`
 
@@ -2793,10 +2928,7 @@ function emojiGame(){
       state.currentPlayer%state.players.length
     ];
 
-  const item=
-    emojiQuestions[
-      state.questionIndex%emojiQuestions.length
-    ];
+  const item=getUniqueGameItem("emoji",emojiQuestions);
 
   document.getElementById("gameContent").innerHTML=`
 
@@ -3026,10 +3158,7 @@ function wordGame(){
       state.currentPlayer%state.players.length
     ];
 
-  const word=
-    wordStarts[
-      state.questionIndex%wordStarts.length
-    ];
+  const word=getUniqueGameItem("word",wordStarts);
 
   const last=
     word[word.length-1];
@@ -3116,10 +3245,7 @@ function forbiddenGame(){
       state.currentPlayer%state.players.length
     ];
 
-  const data=
-    forbiddenData[
-      state.questionIndex%forbiddenData.length
-    ];
+  const data=getUniqueGameItem("forbidden",forbiddenData);
 
   document.getElementById("gameContent").innerHTML=`
 
@@ -3237,10 +3363,7 @@ function charadesGame(){
       state.currentPlayer%state.players.length
     ];
 
-  const word=
-    charades[
-      Math.floor(Math.random()*charades.length)
-    ];
+  const word=getUniqueGameItem("charades",charades);
 
   document.getElementById("gameContent").innerHTML=`
 
@@ -3345,7 +3468,7 @@ const hardQuestions=[
 ];
 function hardQuizGame(){
   const player=state.players[state.currentPlayer%state.players.length];
-  const q=hardQuestions[state.questionIndex%hardQuestions.length];
+  const q=getUniqueGameItem("hardquiz",hardQuestions);
   document.getElementById("progressBar").style.width=((state.questionIndex+1)/10*100)+"%";
   document.getElementById("gameContent").innerHTML=`
     <div class="play-card">
@@ -3372,7 +3495,7 @@ const letterChallenges=[
   ["ت","ناوی 3 وەرزش بڵێ"],["چ","ناوی 3 خواردن یان میوە بڵێ"],["ڕ","ناوی 3 شت بڵێ"],["ه","ناوی 3 ئاژەڵ یان باڵندە بڵێ"]
 ];
 function letterGame(){
-  const player=state.players[state.currentPlayer%state.players.length]; const c=letterChallenges[state.questionIndex%letterChallenges.length];
+  const player=state.players[state.currentPlayer%state.players.length]; const c=getUniqueGameItem("letter",letterChallenges);
   document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">🔠⚡ نۆرەی ${escapeHTML(player)}</div><div class="timer" id="letterTimer">25</div><div class="big-word">${c[0]}</div><div class="question">${escapeHTML(c[1])}<br><span class="gradient">هەموویان بە «${c[0]}» دەست پێ بکەن!</span></div><button class="primary-btn" onclick="letterDone()">✅ وتم!</button></div>`;
   let t=25; clearInterval(state.timer); state.timer=setInterval(()=>{t--;const el=document.getElementById("letterTimer");if(el)el.textContent=t;if(t<=0){clearInterval(state.timer);letterDone();}},1000);
 }
@@ -3387,7 +3510,7 @@ const sequencePuzzles=[
   [[4,7,10,13],[16]],[[1,3,6,10,15],[21]]
 ];
 function sequenceGame(){
-  const player=state.players[state.currentPlayer%state.players.length]; const p=sequencePuzzles[state.questionIndex%sequencePuzzles.length]; const next=p[1][0];
+  const player=state.players[state.currentPlayer%state.players.length]; const p=getUniqueGameItem("sequence",sequencePuzzles); const next=p[1][0];
   const choices=new Set([next]); while(choices.size<4){choices.add(next+(Math.floor(Math.random()*11)-5));} const arr=[...choices].sort(()=>Math.random()-.5); const correct=arr.indexOf(next);
   window.sequenceCorrect=correct;
   document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">🔢🧩 نۆرەی ${escapeHTML(player)}</div><div style="color:#9ca3af">یاسای ژمارەکان بدۆزەوە</div><div class="sequence">${p[0].map(n=>`<div class="sequence-item">${n}</div>`).join("")}<div class="sequence-item">?</div></div><div class="question">ژمارەی دواتر کامە؟</div><div class="answers">${arr.map((n,i)=>`<button class="answer" onclick="sequenceAnswer(${i},${correct})">${n}</button>`).join("")}</div></div>`;
@@ -3408,23 +3531,23 @@ const duoChallenges=[
  ["ئینتەرنێتی خێرا یان باتری بێکۆتایی؟","ئینتەرنێت 📶","باتری 🔋"],["پیتزا یان برگر؟","پیتزا 🍕","برگر 🍔"],
  ["پێکەنین یان متمانە؟","پێکەنین 😂","متمانە 🤝"],["داهاتوو یان ڕابردوو؟","داهاتوو 🚀","ڕابردوو ⏳"]
 ];
-function duoGame(){const p=state.players[state.currentPlayer%state.players.length],c=duoChallenges[state.questionIndex%duoChallenges.length];document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">⚔️ نۆرەی ${escapeHTML(p)}</div><div class="question">${escapeHTML(c[0])}</div><div class="answers"><button class="answer" onclick="duoPick()">${escapeHTML(c[1])}</button><button class="answer" onclick="duoPick()">${escapeHTML(c[2])}</button></div><p style="color:#9ca3af;line-height:1.8">هەمووان دەنگ بدەن؛ کەسی نۆرەکە +15 خاڵ دەبات.</p></div>`;}
+function duoGame(){const p=state.players[state.currentPlayer%state.players.length],c=getUniqueGameItem("duo",duoChallenges);document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">⚔️ نۆرەی ${escapeHTML(p)}</div><div class="question">${escapeHTML(c[0])}</div><div class="answers"><button class="answer" onclick="duoPick()">${escapeHTML(c[1])}</button><button class="answer" onclick="duoPick()">${escapeHTML(c[2])}</button></div><p style="color:#9ca3af;line-height:1.8">هەمووان دەنگ بدەن؛ کەسی نۆرەکە +15 خاڵ دەبات.</p></div>`;}
 function duoPick(){const p=state.players[state.currentPlayer%state.players.length];addScore(p,15);winSound();showToast("🔥 +15 خاڵ");setTimeout(()=>nextNewRound(8,duoGame),700);}
 
 const guessWords=[["پیتزا","خواردنێکی گەرمە و پەنیر و سۆسی لەسەرە."],["فڕۆکە","لە ئاسماندا دەفڕێت و بۆ گەشت بەکاردێت."],["مۆبایل","بۆ پەیوەندی، وێنە و یاری بەکاردێت."],["باران","لە ئاسمانەوە دێت و زەوی تەڕ دەکات."],["فوتبۆڵ","تۆپ و دوو تیم و گۆڵی تێدایە."],["سینەما","شوێنێکە کە فیلمی تێدا دەبینیت."],["کیک","خواردنێکی شیرینە و زۆرجار بۆ جەژنە."],["کاتژمێر","کاتت پێ دەزانیت و زۆرجار لە دەست یان دیوارە."]];
-function guessWordGame(){const p=state.players[state.currentPlayer%state.players.length],w=guessWords[state.questionIndex%guessWords.length];document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">🕵️ نۆرەی ${escapeHTML(p)}</div><div class="timer" id="guessTimer">25</div><div class="big-word">${escapeHTML(w[0])}</div><div class="question">${escapeHTML(w[1])}</div><p style="color:#9ca3af;line-height:1.8">وشەکە بۆ هاوڕێکانت پیشان مەدە؛ بە قسە و ئاماژە وەسفی بکە.</p><button class="primary-btn" onclick="guessDone()">🏆 زانییان!</button></div>`;startNewTimer(25,"guessTimer",guessDone);}
+function guessWordGame(){const p=state.players[state.currentPlayer%state.players.length],w=getUniqueGameItem("guessword",guessWords);document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">🕵️ نۆرەی ${escapeHTML(p)}</div><div class="timer" id="guessTimer">25</div><div class="big-word">${escapeHTML(w[0])}</div><div class="question">${escapeHTML(w[1])}</div><p style="color:#9ca3af;line-height:1.8">وشەکە بۆ هاوڕێکانت پیشان مەدە؛ بە قسە و ئاماژە وەسفی بکە.</p><button class="primary-btn" onclick="guessDone()">🏆 زانییان!</button></div>`;startNewTimer(25,"guessTimer",guessDone);}
 function guessDone(){clearInterval(state.timer);const p=state.players[state.currentPlayer%state.players.length];addScore(p,20);winSound();setTimeout(()=>nextNewRound(8,guessWordGame),700);}
 
 const yesNoPrompts=["ئایا ئەمڕۆ ماندوویت؟","ئایا حەزت لە گۆرانییە؟","ئایا هەرگیز درۆت کردووە؟","ئایا لە یارییەکاندا باشیت؟","ئایا حەزت لە سەفەرە؟","ئایا زۆر خەوتوویت؟","ئایا حەزت لە خواردنی توندە؟","ئایا دەتوانیت 10 وشە لەبەر بکەیت؟"];
-function yesNoGame(){const p=state.players[state.currentPlayer%state.players.length],q=yesNoPrompts[state.questionIndex%yesNoPrompts.length];document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">🚫❓ نۆرەی ${escapeHTML(p)}</div><div class="timer" id="yesNoTimer">25</div><div class="question">${escapeHTML(q)}</div><p style="color:#9ca3af;line-height:1.8">هاوڕێکانت پرسیار دەکەن؛ «بەڵێ» و «نەخێر» قەدەغەیە!</p><button class="primary-btn" onclick="yesNoDone()">😂 دەستم گرت!</button></div>`;startNewTimer(25,"yesNoTimer",yesNoDone);}
+function yesNoGame(){const p=state.players[state.currentPlayer%state.players.length],q=getUniqueGameItem("yesno",yesNoPrompts);document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">🚫❓ نۆرەی ${escapeHTML(p)}</div><div class="timer" id="yesNoTimer">25</div><div class="question">${escapeHTML(q)}</div><p style="color:#9ca3af;line-height:1.8">هاوڕێکانت پرسیار دەکەن؛ «بەڵێ» و «نەخێر» قەدەغەیە!</p><button class="primary-btn" onclick="yesNoDone()">😂 دەستم گرت!</button></div>`;startNewTimer(25,"yesNoTimer",yesNoDone);}
 function yesNoDone(){clearInterval(state.timer);const p=state.players[state.currentPlayer%state.players.length];addScore(p,18);winSound();setTimeout(()=>nextNewRound(8,yesNoGame),700);}
 
 const friendVotes=["کێ زۆرترین پێکەنین دروست دەکات؟","کێ زووتر عاشق دەبێت؟","کێ زۆرترین شتی لەبیر دەچێت؟","کێ باشترین سەرکردەی تیمە؟","کێ زۆرترین سەفەر دەکات ئەگەر پارەی هەبێت؟","کێ شەو تا بەیانی بیدار دەبێت؟","کێ زۆرترین مۆبایل بەکاردێنێت؟","کێ لە قەیراندا ئارامترە؟"];
-function friendVoteGame(){const q=friendVotes[state.questionIndex%friendVotes.length];const names=state.players.map((n,i)=>`<button class="answer" onclick="friendVote(${i})">👤 ${escapeHTML(n)}</button>`).join("");document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">🗳️ هەمووان بەشداری بکەن</div><div class="question">${escapeHTML(q)}</div><p style="color:#9ca3af;line-height:1.8">یەک کەس هەڵبژێرن؛ کەسی زۆرترین دەنگ +20 خاڵ.</p><div class="answers">${names}</div></div>`;}
+function friendVoteGame(){const q=getUniqueGameItem("friendvote",friendVotes);const names=state.players.map((n,i)=>`<button class="answer" onclick="friendVote(${i})">👤 ${escapeHTML(n)}</button>`).join("");document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">🗳️ هەمووان بەشداری بکەن</div><div class="question">${escapeHTML(q)}</div><p style="color:#9ca3af;line-height:1.8">یەک کەس هەڵبژێرن؛ کەسی زۆرترین دەنگ +20 خاڵ.</p><div class="answers">${names}</div></div>`;}
 function friendVote(i){const p=state.players[i];addScore(p,20);winSound();showToast(`🗳️ ${escapeHTML(p)} +20`);setTimeout(()=>nextNewRound(8,friendVoteGame),800);}
 
 const tripleQuestions=[["2, 4, 8, 16, ؟",["24","30","32","36"],2],["12 ÷ 3 + 4 = ؟",["4","6","8","12"],1],["1, 2, 4, 7, 11, ؟",["14","15","16","17"],1],["کامەیان گەورەترە؟",["0.8","0.09","0.7","0.79"],0],["60 چرکە چەند خولەکە؟",["1","6","60","360"],0],["81, 27, 9, 3, ؟",["0","1","2","6"],1],["5×4 + 2 = ؟",["22","24","28","30"],0],["3 + 3 × 3 = ؟",["18","12","9","6"],1]];
-function tripleGame(){const p=state.players[state.currentPlayer%state.players.length],q=tripleQuestions[state.questionIndex%tripleQuestions.length];document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">🔥🧠 نۆرەی ${escapeHTML(p)}</div><div class="timer" id="tripleTimer">25</div><div class="question">${escapeHTML(q[0])}</div><div class="answers">${q[1].map((a,i)=>`<button class="answer" onclick="tripleAnswer(${i},${q[2]})">${escapeHTML(a)}</button>`).join("")}</div></div>`;startNewTimer(25,"tripleTimer",()=>tripleAnswer(-1,q[2]));}
+function tripleGame(){const p=state.players[state.currentPlayer%state.players.length],q=getUniqueGameItem("triple",tripleQuestions);document.getElementById("gameContent").innerHTML=`<div class="play-card"><div class="turn">🔥🧠 نۆرەی ${escapeHTML(p)}</div><div class="timer" id="tripleTimer">25</div><div class="question">${escapeHTML(q[0])}</div><div class="answers">${q[1].map((a,i)=>`<button class="answer" onclick="tripleAnswer(${i},${q[2]})">${escapeHTML(a)}</button>`).join("")}</div></div>`;startNewTimer(25,"tripleTimer",()=>tripleAnswer(-1,q[2]));}
 function tripleAnswer(choice,correct){clearInterval(state.timer);const bs=document.querySelectorAll(".answer");bs.forEach(b=>b.disabled=true);const p=state.players[state.currentPlayer%state.players.length];if(choice===correct){if(bs[choice])bs[choice].classList.add("correct");addScore(p,30);winSound();showToast("🔥 ڕاستە! +30");}else{if(bs[correct])bs[correct].classList.add("correct");loseSound();showToast("❌ هەڵە بوو");}setTimeout(()=>nextNewRound(10,tripleGame),900);}
 
 function startNewTimer(sec,id,done){clearInterval(state.timer);let t=sec;const el=document.getElementById(id);if(el)el.textContent=t;state.timer=setInterval(()=>{t--;const e=document.getElementById(id);if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);done();}},1000);}
