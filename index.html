@@ -50,11 +50,11 @@ button,input{font:inherit}button{cursor:pointer}
 .answers{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.answer{border:1px solid var(--line);background:#fff8fc;border-radius:16px;padding:15px;font-weight:900;color:var(--ink);transition:.16s}.answer:hover{transform:translateY(-2px);background:#f8f4ff}.answer.correct{background:#e9fff5;border-color:#9fe5c7}.answer.wrong{background:#fff0f2;border-color:#ffc1ca}
 .timer{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;margin:12px auto;font-size:28px;font-weight:1000;background:#fff7dc;border:7px solid #ffe7a1}.timer.danger{background:#fff0f2;border-color:#ffabb6}
 .big{font-size:clamp(45px,12vw,100px);font-weight:1000;margin:18px 0}.reaction{height:240px;border-radius:24px;display:grid;place-items:center;background:#fff4f6;border:2px solid #ffd0d8;font-size:27px;font-weight:1000;user-select:none}
-.red-hunt{background:linear-gradient(145deg,#fff,#fff3f4);border:2px solid #ffd0d5;border-radius:30px;padding:30px 22px;box-shadow:0 18px 50px rgba(242,92,105,.12);position:relative;overflow:hidden}
-.red-hunt:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(242,92,105,.08);top:-75px;left:-55px;animation:redFloat 2.8s ease-in-out infinite}
-.red-orb{width:108px;height:108px;margin:4px auto 18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9a9a,#ef3340 55%,#b91222);box-shadow:0 14px 35px rgba(239,51,64,.28);animation:redPulse 1.15s ease-in-out infinite}
-.red-hunt h2{font-size:30px;margin-bottom:8px}.red-hunt .timer{margin:12px auto}.red-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
-@keyframes redPulse{50%{transform:scale(1.08);box-shadow:0 18px 42px rgba(239,51,64,.38)}}
+.red-hunt{background:linear-gradient(145deg,#fff,#fff9f0 45%,#f3f7ff);border:2px solid #f2dfc7;border-radius:30px;padding:30px 22px;box-shadow:0 18px 50px rgba(100,90,70,.10);position:relative;overflow:hidden}
+.red-hunt:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:linear-gradient(135deg,rgba(255,190,70,.16),rgba(70,160,255,.10));top:-80px;left:-55px;animation:redFloat 2.8s ease-in-out infinite}
+.hunt-icon{position:relative;width:108px;height:108px;margin:4px auto 14px;border-radius:28px;display:grid;place-items:center;font-size:58px;background:linear-gradient(135deg,#fff3d8,#eef7ff);box-shadow:0 14px 35px rgba(80,100,130,.14);animation:huntPop 1.2s ease-in-out infinite}
+.hunt-type{display:inline-block;padding:6px 11px;border-radius:999px;background:#f2edff;color:#6b56c7;font-size:11px;font-weight:950;margin-bottom:8px}.red-hunt h2{font-size:30px;margin-bottom:8px}.red-hunt .timer{margin:12px auto}.red-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+@keyframes huntPop{50%{transform:translateY(-4px) rotate(2deg);box-shadow:0 20px 42px rgba(80,100,130,.18)}}
 @keyframes redFloat{50%{transform:translate(18px,18px) scale(1.08)}}
 .reaction-new{height:270px;border-radius:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(145deg,#fff,#f3fbff);border:2px solid #cfeaf2;box-shadow:inset 0 0 0 1px #fff,0 18px 45px rgba(25,184,208,.10);font-size:24px;font-weight:1000;user-select:none;cursor:pointer;transition:transform .18s ease,background .18s ease}
 .reaction-new.ready{background:linear-gradient(145deg,#eafff4,#f7fff9);border-color:#8de0bd;transform:scale(1.015)}
@@ -99,6 +99,11 @@ body{background:radial-gradient(circle at 8% 8%,rgba(255,190,70,.20),transparent
 
 .static-game h3,.static-game p,.static-game .tag{display:block}.static-game{font-family:inherit;color:var(--ink)}
 </style>
+<style>
+/* Game screens: keep the interface clean; explanatory hint text is hidden. */
+#gameContent > .play > .hint, #gameContent > .play .hunt-card > .hint { display:none !important; }
+</style>
+
 </head>
 <body>
 <div class="app">
@@ -154,7 +159,7 @@ const GAMES=[
 {id:"choice",icon:"🎲",name:"سێ هەڵبژاردە",desc:"هەڵبژاردەی خۆش و پرسیاری خێرا.",tag:"خۆش",color:"#d946ef"},
 {id:"bomb",icon:"💣",name:"بۆمبی پیتی",desc:"پیتێک دیاری دەکرێت؛ وشە بڵێ و بۆمبەکە بگەڕێنەوە.",tag:"قورس",color:"#f03e3e"},
 {id:"challenge",icon:"🔥",name:"چالاکی شێتانە",desc:"ئەرکە کورتەکان، خۆش و گونجاو بۆ هەمووان.",tag:"پێکەنین",color:"#14b8a6"},
-{id:"redhunt",icon:"🔴",name:"بگەڕێ بۆ سوور",desc:"زوو شتێکی سوور بدۆزەوە و لە نۆرەکەتدا پیشانی بدە.",tag:"چالاکی",color:"#ef3340"}
+{id:"redhunt",icon:"🧭",name:"بگەڕێ و بیهێنە",desc:"بەپەلە شتێکی دیاریکراو لە دەوروبەرت بدۆزەوە و بیهێنە.",tag:"چالاکی",color:"#ff7a18"}
 ];
 
 const state={players:[],scores:{},currentPlayer:0,currentGame:null,turn:0,timer:null,nextTimeout:null,sound:true,gameLocked:false,used:{},eliminated:[],bombQuestion:null,bombTurn:0,groups:{a:[],b:[]}};
@@ -203,7 +208,11 @@ const uniqueQuestionEnds=[
 "ئەگەر دەتوانیت، وەڵامەکەت بە نموونە ڕوون بکە.","سەرنج بدە کە پرسیارەکە بە وردی چی دەڵێت.","ئەمجارە لەگەڵ کۆمەڵەکە بەراوردی بکە.","هەوڵ بدە وەڵامەکە خۆش و سروشتی بێت.","ئەم دانەیە بۆ تاقیکردنەوەی سەرنجە.","یەک وەڵامی نوێ هەڵبژێرە.","ئەمجارە بۆ خۆت چالاکییەکی بچووک دابنێ.","بە شێوەیەکی خۆش وەڵامی بدەوە.","ئەگەر دڵنیایت، ڕاستەوخۆ بڕیار بدە.","ئەمجارە هەوڵ بدە زووتر لە نۆرەی پێشوو بزانیت.",
 "وەڵامەکە بە قسەی خۆت بڵێ.","ئەم دانەیە هەمان بابەتە، بەڵام شێوازی پرسیارەکە جیاوازە.","هەموو سەرنجت لەسەر ئەم نۆرەیە بێت.","ئەمجارە بۆچوونی خۆت پێش بۆچوونی کەسانی تر بخە.","هەوڵ بدە بە دڵنیایی تەواو وەڵام بدەیت.","ئەم دانەیە بۆ ڕکابەرییەکی پاک و خۆشە.","کەمێک بیر بکەرەوە و پاشان وەڵام بدە.","ئەمجارە هیچ شتێکی پێشوو کۆپی مەکە.","ئێستا نۆرەی تۆیە؛ دەست پێ بکە.","ئەم دانەیە لە بانکەکەدا بە تایبەتی بۆ ئەم نۆرەیە دروست کراوە."];
 function uniqueQuestionVariant(game,index){const lead=uniqueQuestionLeads[Math.floor(index/40)%uniqueQuestionLeads.length];const end=uniqueQuestionEnds[index%uniqueQuestionEnds.length];return ` ${lead} ${end} — دانەی ${index+1} لە 1000`}
-function applyUniqueQuestion(game,index,item){const suffix=uniqueQuestionVariant(game,index);if(game==='quiz'||game==='math'||game==='truth'||game==='who'||game==='rapid'||game==='category'||game==='duel'||game==='challenge'){item.text=(item.text||'')+suffix}else if(game==='emoji'){item.question=(item.question||'')+suffix}else if(game==='choice'){item.q=(item.q||'')+suffix}else if(game==='guess'){item.hint=(item.hint||'')+suffix}else if(game==='word'){item.rule=(item.rule||'')+suffix}else if(game==='forbidden'||game==='charades'){item.variant=suffix}return item}
+function applyUniqueQuestion(game,index,item){
+  // تەنها جیاوازیی ناوەڕۆک و ID پارێزراوە؛
+  // دەقی زیادکراوی «ئەمجارە... — دانەی ... لە 1000» نیشان نادرێت.
+  return item;
+}
 function bankGet(game,factory){if(!state.used[game])state.used[game]=[];const used=state.used[game];const index=used.length;let item=factory(),tries=0;while(used.includes(item.id)&&tries<100){item=factory();tries++}if(used.includes(item.id)){item={...item,id:`${game}-unique-${Date.now()}-${index}-${Math.random()}`}}used.push(item.id);applyUniqueQuestion(game,index,item);saveState();return item}
 function rotatePlayer(){state.currentPlayer=(state.currentPlayer+1)%state.players.length}
 function nextAfter(ms=600){clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);state.nextTimeout=setTimeout(()=>{state.gameLocked=false;state.turn++;rotatePlayer();if(state.turn>=10)finishGame();else dispatchCurrent()},ms)}
@@ -334,7 +343,7 @@ function truthGame(){const q=bankGet("truth",makeTruth),p=player();progress(10);
 function truthDone(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),5);win();toast("🎤 تەواو! +5");nextAfter(550)}
 
 /* Who */
-function whoGame(){const q=bankGet("who",makeWho);progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">👀 هەمووان بەشداری بکەن</div><div class="prompt">${esc(q.text)}</div><p class="hint">هەمووان دەنگ بدەن بۆ یەک یاریزان. پاشان دوگمەکە دابگرن.</p><br><button class="primary" onclick="whoDone()">👉 دەنگمان دا</button></div>`}
+function whoGame(){const q=bankGet("who",makeWho);progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">👀 هەمووان بەشداری بکەن</div><div class="prompt">${esc(q.text)}</div><button class="primary" onclick="whoDone()">👉 دەنگمان دا</button></div>`}
 function whoDone(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),5);toast("👀 دەنگەکان تۆمارکران! +5");nextAfter(550)}
 
 /* Rapid */
@@ -348,7 +357,7 @@ function memoryGame(){
   const p=player(),len=Math.min(8,3+Math.floor(state.turn/2)),pool=["🍎","🚀","🎸","🐯","⚽","🔥","🌙","🍕","🎮","⭐","🍔","🎈","🐼","🌈","🎯","🧩"];
   memorySeq=[];while(memorySeq.length<len){const x=pool[Math.floor(Math.random()*pool.length)];if(!memorySeq.includes(x))memorySeq.push(x)}
   progress(8);
-  document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🧩 نۆرەی ${esc(p)} — ئاست ${len-2}</div><div class="sequence">${memorySeq.map(x=>`<div class="seq">${x}</div>`).join("")}</div><p class="hint">بۆ 2.5 چرکە سەیری ڕیزەکە بکە، پاشان بە هەڵبژاردنەکان ڕیزەکە دیاری بکە.</p><button class="primary" onclick="hideMemory()">🙈 شارەوە و دەست پێ بکە</button></div>`;
+  document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🧩 نۆرەی ${esc(p)} — ئاست ${len-2}</div><div class="sequence">${memorySeq.map(x=>`<div class="seq">${x}</div>`).join("")}</div><button class="primary" onclick="hideMemory()">🙈 شارەوە و دەست پێ بکە</button></div>`;
   setTimeout(()=>{const s=document.querySelector(".sequence");if(s)s.innerHTML=memorySeq.map(()=>`<div class="seq">❓</div>`).join("")},2600)
 }
 function hideMemory(){
@@ -362,7 +371,7 @@ function hideMemory(){
     if(wrong!==correct&&!options.includes(wrong))options.push(wrong)
   }
   shuffle(options);
-  document.getElementById("gameContent").insertAdjacentHTML("beforeend",`<div class="memory-options">${options.map((o,i)=>`<button class="memory-option" onclick="memoryPick(${JSON.stringify(o).replace(/"/g,'&quot;')})">ڕیز ${i+1}<br><span dir="ltr">${esc(o)}</span></button>`).join("")}</div><p class="hint">👇 تەنها یەک ڕیز ڕاستە.</p>`);
+  document.getElementById("gameContent").insertAdjacentHTML("beforeend",`<div class="memory-options">${options.map((o,i)=>`<button class="memory-option" onclick="memoryPick(${JSON.stringify(o).replace(/"/g,'&quot;')})">ڕیز ${i+1}<br><span dir="ltr">${esc(o)}</span></button>`).join("")}</div>`);
 }
 function memoryPick(choice){
   if(!state.gameLocked)return;
@@ -389,7 +398,7 @@ function emojiAnswer(){if(state.gameLocked)return;state.gameLocked=true;addScore
 /* Reaction */
 function reactionGame(){
   const p=player();progress(8);
-  document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🖐️ نۆرەی ${esc(p)}</div><div class="reaction-new" id="reactionArea"><div class="reaction-dot"></div><div id="reactionText">ئامادەی؟</div><button class="primary reaction-start" onclick="reactionStart(event)">⚡ دەست پێ بکە</button></div><p class="hint">کاتێک سەوز بوو، یەکسەر ناوەڕاستی خانەکە پەنجە بنێ.</p></div>`;
+  document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🖐️ نۆرەی ${esc(p)}</div><div class="reaction-new" id="reactionArea"><div class="reaction-dot"></div><div id="reactionText">ئامادەی؟</div><button class="primary reaction-start" onclick="reactionStart(event)">⚡ دەست پێ بکە</button></div></div>`;
   state.gameLocked=false;window.ready=false;clearTimeout(window.rto)
 }
 function reactionStart(ev){
@@ -414,23 +423,23 @@ function reactionClick(){
 }
 
 /* Word */
-function wordGame(){const q=bankGet("word",makeWord),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🔤 نۆرەی ${esc(p)}</div><div class="big">${esc(q.word)}</div><div class="prompt">${esc(q.rule||"وشەیەک بڵێ")} — پیتی کۆتایی: <span class="letter">${esc(q.last)}</span>.</div><button class="primary" onclick="wordDone()">✅ وتم!</button></div>`}
+function wordGame(){const q=bankGet("word",makeWord),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🔤 نۆرەی ${esc(p)}</div><div class="big">${esc(q.word)}</div><div class="letter-big"><span class="letter">${esc(q.last)}</span></div><button class="primary" onclick="wordDone()">✅ وتم!</button></div>`}
 function wordDone(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),8);win();toast("🔤 باشە! +8");nextAfter(500)}
 
 /* Forbidden */
-function forbiddenGame(){const q=bankGet("forbidden",makeForbidden),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🚫 نۆرەی ${esc(p)}</div><div class="big">${esc(q.word)}</div><div class="prompt">بەبێ بەکارهێنانی وشەی «${esc(q.bad)}» ئەمە بۆ هاوڕێکانت وەسف بکە.${q.variant?`<br><span class="hint">${esc(q.variant)}</span>`:""}</div><div class="timer" id="forbiddenTimer">25</div><button class="primary" onclick="forbiddenDone()">✅ تەواو</button></div>`;let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("forbiddenTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);forbiddenDone(true)}},1000)}
+function forbiddenGame(){const q=bankGet("forbidden",makeForbidden),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🚫 نۆرەی ${esc(p)}</div><div class="big">${esc(q.word)}</div><div class="prompt">بەبێ بەکارهێنانی وشەی «${esc(q.bad)}» ئەمە بۆ هاوڕێکانت وەسف بکە.</div><div class="timer" id="forbiddenTimer">25</div><button class="primary" onclick="forbiddenDone()">✅ تەواو</button></div>`;let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("forbiddenTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);forbiddenDone(true)}},1000)}
 function forbiddenDone(timeout=false){if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;addScore(player(),timeout?5:12);toast(timeout?"⏰ کات تەواو بوو":"🚫 باشە! +12");nextAfter(500)}
 
 /* Charades */
-function charadesGame(){const q=bankGet("charades",makeCharades),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🎭 نۆرەی ${esc(p)}</div><div class="timer" id="charadesTimer">25</div><div class="big">${esc(q.word)}</div><p class="hint">مۆبایلەکە بە هاوڕێکانت مەدە؛ تەنها بە جوڵە و ئاماژە وەسفی بکە.${q.variant?`<br>${esc(q.variant)}`:""}</p><button class="primary" onclick="charadesDone()">🏆 زانییان!</button></div>`;let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("charadesTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);charadesDone(true)}},1000)}
+function charadesGame(){const q=bankGet("charades",makeCharades),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🎭 نۆرەی ${esc(p)}</div><div class="timer" id="charadesTimer">25</div><div class="big">${esc(q.word)}</div><button class="primary" onclick="charadesDone()">🏆 زانییان!</button></div>`;let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("charadesTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);charadesDone(true)}},1000)}
 function charadesDone(timeout=false){if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;addScore(player(),timeout?4:15);toast(timeout?"⏰ کات تەواو بوو":"🎭 زانییان! +15");nextAfter(550)}
 
 /* Duel */
-function duelGame(){const q=bankGet("duel",makeDuel),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">⚔️ نۆرەی ${esc(p)}</div><div class="prompt">${esc(q.text)}</div><p class="hint">هەردوو کەس ئامادە بن؛ یەکێک بەدەنگی بەرز وەڵام بدات.</p><div class="center"><button class="primary" onclick="duelDone()">🏁 ئەنجام</button></div></div>`}
+function duelGame(){const q=bankGet("duel",makeDuel),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">⚔️ نۆرەی ${esc(p)}</div><div class="prompt">${esc(q.text)}</div><div class="center"><button class="primary" onclick="duelDone()">🏁 ئەنجام</button></div></div>`}
 function duelDone(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),20);win();toast("⚔️ دووڕووبەڕوو تەواو بوو! +20");nextAfter(650)}
 
 /* Guess */
-function guessGame(){const q=bankGet("guess",makeGuess),p=player();progress(10);window.guessAnswer=q.word;document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🕵️ نۆرەی ${esc(p)}</div><div class="prompt">هینتەکە:<br><span class="gradient">${esc(q.hint)}</span></div><button class="primary" onclick="guessShow()">🔎 وەڵام بدۆزەوە</button></div>`}
+function guessGame(){const q=bankGet("guess",makeGuess),p=player();progress(10);window.guessAnswer=q.word;document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🕵️ نۆرەی ${esc(p)}</div><div class="prompt"><span class="gradient">${esc(q.hint)}</span></div><button class="primary" onclick="guessShow()">🔎 وەڵام بدۆزەوە</button></div>`}
 function guessShow(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),8);win();document.getElementById("gameContent").insertAdjacentHTML("beforeend",`<div class="feedback good">🔎 وەڵام: <b>${esc(window.guessAnswer)}</b><br>+8 خاڵ</div>`);nextAfter(1200)}
 
 /* Choice */
@@ -441,15 +450,46 @@ function choiceDone(i){if(state.gameLocked)return;state.gameLocked=true;const bs
 function challengeGame(){const q=bankGet("challenge",makeChallenge),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🔥 نۆرەی ${esc(p)}</div><div class="timer" id="challengeTimer">25</div><div class="prompt">${esc(q.text)}</div><button class="primary" onclick="challengeDone()">😄 کردم!</button></div>`;let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("challengeTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);challengeDone(true)}},1000)}
 function challengeDone(timeout=false){if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;addScore(player(),timeout?3:10);toast(timeout?"⏰ کات تەواو بوو":"🔥 ئەرکەکە تەواو بوو! +10");nextAfter(500)}
 
-/* Red hunt — physical party challenge */
+/* Hunt — physical party challenge: many different tasks, not color-only */
+const huntTasks=[
+  ["🎨","شتێکی سەوز","شتێکی سەوز لە دەوروبەرت بدۆزەوە و بیهێنە.","رەنگ"],
+  ["🧸","شتێکی نەرم","شتێکی نەرم بدۆزەوە و بیهێنە.","جۆر"],
+  ["📦","شتێکی چوارگۆشە","شتێکی چوارگۆشە یان نزیک لە چوارگۆشە بدۆزەوە.","شێوە"],
+  ["🪑","شتێک کە لەسەر مێز نییە","شتێک بدۆزەوە کە ئێستا لەسەر مێز نەبێت.","شوێن"],
+  ["🔵","شتێکی شین","شتێکی شین بدۆزەوە و بیهێنە.","رەنگ"],
+  ["🧢","شتێک کە لە سەرەوە دەپۆشرێت","شتێک بدۆزەوە کە زۆرجار لە سەرەوە دەپۆشرێت.","بەکارهێنان"],
+  ["📱","شتێکی تەکنەلۆجی","شتێکی تەکنەلۆجی بدۆزەوە کە بۆ کارێک بەکاردێت.","تێکنەلۆجیا"],
+  ["📄","شتێکی کاغەزی","شتێکی کاغەزی بدۆزەوە و بیهێنە.","ماددە"],
+  ["🟡","شتێکی زەرد","شتێکی زەرد بدۆزەوە و بیهێنە.","رەنگ"],
+  ["🧴","شتێک کە لە ناوی خۆیدا پیتی «م» هەیە","شتێک بدۆزەوە کە ناوی بە پیتی «م» دەست پێ بکات.","پیت"],
+  ["🪙","شتێکی بچووک","شتێکی بچووک بدۆزەوە کە بتوانیت بە یەک دەست هەڵیبگریت.","قەبارە"],
+  ["🧤","شتێک بۆ پاراستنی دەست","شتێک بدۆزەوە کە بۆ پاراستنی دەست بەکاردێت.","ئامراز"],
+  ["⚪","شتێکی سپی","شتێکی سپی بدۆزەوە و بیهێنە.","رەنگ"],
+  ["🧹","شتێک بۆ پاککردنەوە","شتێک بدۆزەوە کە بۆ پاککردنەوە بەکاردێت.","بەکارهێنان"],
+  ["🔺","شتێکی سێگۆشە یان نزیک لەو شێوەیە","شتێک بە شێوەی سێگۆشە بدۆزەوە.","شێوە"],
+  ["📚","شتێک بۆ خوێندن","شتێک بدۆزەوە کە بۆ خوێندن بەکاردێت.","بەکارهێنان"],
+  ["🟣","شتێکی مۆر","شتێکی مۆر بدۆزەوە و بیهێنە.","رەنگ"],
+  ["🔑","شتێکی کە قوفڵ دەکاتەوە","شتێک بدۆزەوە کە بۆ کردنەوەی قوفڵ بەکاردێت.","بەکارهێنان"],
+  ["🧊","شتێکی سارد","شتێکی سارد بدۆزەوە؛ ئەگەر خۆراکە، تەنها بەبێ تێکدانی یاری بیهێنە.","هەست"],
+  ["🎒","شتێک بۆ هەڵگرتنی شتەکان","شتێک بدۆزەوە کە بتوانیت شتێکی تێدا هەڵبگریت.","بەکارهێنان"]
+];
+let huntTaskIndex=0;
+function makeHuntTask(){
+  if(!state.used.hunt)state.used.hunt=[];
+  const used=state.used.hunt;
+  let available=huntTasks.map((_,i)=>i).filter(i=>!used.includes(i));
+  if(!available.length){state.used.hunt=[];available=huntTasks.map((_,i)=>i)}
+  const i=available[Math.floor(Math.random()*available.length)];
+  state.used.hunt.push(i);saveState();return huntTasks[i];
+}
 function redHuntGame(){
-  const p=player();progress(8);
-  document.getElementById("gameContent").innerHTML=`<div class="play"><div class="red-hunt"><div class="turn">🔴 نۆرەی ${esc(p)}</div><div class="red-orb"></div><h2>دەست لە شتێکی سوور بدە!</h2><p class="hint">زوو شتێکی سوور لە دەوروبەرت بدۆزەوە و بیهێنە؛ کاتت سنووردارە!</p><div class="timer" id="redHuntTimer">25</div><div class="red-actions"><button class="primary" onclick="redHuntDone()">✅ هێنام!</button><button class="secondary" onclick="redHuntDone(true)">⏰ نەگەیشتم</button></div></div></div>`;
+  const p=player(),task=makeHuntTask();progress(8);
+  document.getElementById("gameContent").innerHTML=`<div class="play"><div class="red-hunt hunt-card"><div class="turn">🧭 نۆرەی ${esc(p)}</div><div class="hunt-icon">${task[0]}</div><div class="hunt-type">${esc(task[3])}</div><h2>${esc(task[1])}</h2><div class="timer" id="redHuntTimer">25</div><div class="red-actions"><button class="primary" onclick="redHuntDone()">✅ هێنام!</button><button class="secondary" onclick="redHuntDone(true)">⏰ نەگەیشتم</button></div></div></div>`;
   let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("redHuntTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);redHuntDone(true)}},1000)
 }
 function redHuntDone(timeout=false){
   if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;
-  if(timeout){addScore(player(),2);lose();toast("⏰ کات تەواو بوو")}else{addScore(player(),15);win();toast("🔴 زۆر باش! +15")}
+  if(timeout){addScore(player(),2);lose();toast("⏰ کات تەواو بوو")}else{addScore(player(),15);win();toast("🎯 زۆر باش! +15")}
   nextAfter(550)
 }
 
