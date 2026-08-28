@@ -1434,7 +1434,7 @@ function buildQuestionBank(){
       generatedQuestions.push({
 
         id:id++,
-text:
+        text:
           ${base[0]} (${modifier}),
 
         answers:[...base[1]],
@@ -1668,7 +1668,7 @@ function answerQuiz(choice,correct){
     ];
 
   if(choice===correct){
-buttons[choice].classList.add("correct");
+  buttons[choice].classList.add("correct");
 
     addScore(player,10);
 
@@ -1893,6 +1893,7 @@ function whoNext(){
   }
 
 }
+
 /* =========================================================
    RAPID 30
 ========================================================= */
@@ -2162,7 +2163,8 @@ function memoryNext(correct){
 ========================================================= */
 
 function createMathQuestion(){
-const type=
+
+  const type=
     Math.floor(Math.random()*4);
 
   let a,b,answer,text;
@@ -2446,7 +2448,8 @@ function categoryGame(){
 function categoryDone(){
 
   clearInterval(state.timer);
-const player=
+ 
+  const player=
     state.players[
       state.currentPlayer%state.players.length
     ];
@@ -2717,6 +2720,7 @@ const wordStarts=[
   "ماڵ",
   "هاوڕێ",
   "یاری"
+
 ];
 
 function wordGame(){
@@ -2984,7 +2988,8 @@ function charadesGame(){
 
     const el=
       document.getElementById("charadesTimer");
-if(el)el.textContent=t;
+
+    if(el)el.textContent=t;
 
     if(t<=0){
 
