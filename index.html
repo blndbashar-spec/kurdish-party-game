@@ -78,7 +78,7 @@ button,input{font:inherit}button{cursor:pointer}
 .modal{position:fixed;inset:0;background:rgba(55,35,65,.25);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:18px;z-index:5000}.modal.show{display:flex}.modal-box{width:min(520px,100%);background:#fff;border-radius:25px;padding:23px;border:1px solid var(--line);box-shadow:var(--shadow)}
 .footer{text-align:center;color:#9b94a5;font-size:12px;margin:35px 0 5px}
 
-.feedback{margin:18px auto 0;padding:14px 16px;border-radius:17px;background:#ecfff6;border:1px solid #bdebd5;color:#18734f;font-weight:800;line-height:1.8}.bomb-topline{display:flex;justify-content:space-between;align-items:center;gap:10px}.bomb-round{padding:8px 12px;border-radius:999px;background:#fff4f5;color:#d04452;font-weight:900;font-size:12px}.bomb-device{position:relative;width:150px;height:150px;margin:12px auto 2px;display:grid;place-items:center}.bomb-glow{position:absolute;inset:12px;border-radius:50%;background:radial-gradient(circle,#ffe9ed 0%,#fff7f8 48%,transparent 70%);animation:bglow 1.2s infinite alternate}.bomb-core{position:relative;font-size:92px;filter:drop-shadow(0 12px 16px rgba(242,92,105,.22));animation:bob 1s ease-in-out infinite alternate}@keyframes bglow{to{transform:scale(1.12);opacity:.7}}@keyframes bob{to{transform:translateY(-5px) rotate(2deg)}}.bomb-question-label{display:inline-block;padding:7px 12px;border-radius:999px;background:#f1edff;color:#6652c8;font-weight:950;font-size:12px}.bomb-question{max-width:780px;margin-top:14px}.bomb-timer{width:105px;height:105px;background:#fff8e6;border-color:#ffd77b;box-shadow:0 8px 25px rgba(255,189,63,.14)}.bomb-pass{min-width:min(100%,420px)}.bomb-hint{max-width:650px;margin:8px auto 16px}.explode .boom{animation:boom .55s ease-in-out infinite alternate}@keyframes boom{to{transform:scale(1.12)}}
+.feedback{margin:18px auto 0;padding:14px 16px;border-radius:17px;background:rgba(52,211,153,.10);border:1px solid rgba(52,211,153,.30);color:#7ee7bd;font-weight:800;line-height:1.8}.bomb-topline{display:flex;justify-content:space-between;align-items:center;gap:10px}.bomb-round{padding:8px 12px;border-radius:999px;background:#fff4f5;color:#d04452;font-weight:900;font-size:12px}.bomb-device{position:relative;width:150px;height:150px;margin:12px auto 2px;display:grid;place-items:center}.bomb-glow{position:absolute;inset:12px;border-radius:50%;background:radial-gradient(circle,#ffe9ed 0%,#fff7f8 48%,transparent 70%);animation:bglow 1.2s infinite alternate}.bomb-core{position:relative;font-size:92px;filter:drop-shadow(0 12px 16px rgba(242,92,105,.22));animation:bob 1s ease-in-out infinite alternate}@keyframes bglow{to{transform:scale(1.12);opacity:.7}}@keyframes bob{to{transform:translateY(-5px) rotate(2deg)}}.bomb-question-label{display:inline-block;padding:7px 12px;border-radius:999px;background:#f1edff;color:#6652c8;font-weight:950;font-size:12px}.bomb-question{max-width:780px;margin-top:14px}.bomb-timer{width:105px;height:105px;background:#fff8e6;border-color:#ffd77b;box-shadow:0 8px 25px rgba(255,189,63,.14)}.bomb-pass{min-width:min(100%,420px)}.bomb-hint{max-width:650px;margin:8px auto 16px}.explode .boom{animation:boom .55s ease-in-out infinite alternate}@keyframes boom{to{transform:scale(1.12)}}
 @media(max-width:900px){.games-grid{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.app{padding:10px 11px 28px}.games-grid{grid-template-columns:repeat(2,1fr)}.answers{grid-template-columns:1fr}.player-list{grid-template-columns:1fr}.play{padding:18px 13px}.game-head{align-items:flex-start;flex-direction:column}.scores{justify-content:flex-start}.hero{padding-top:24px}}@media(max-width:430px){.games-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.hero h1{font-size:42px}.primary,.secondary,.danger{width:100%}.actions{display:grid}.player-row{flex-direction:column}}
 
 /* ڕەنگاوڕەنگ و animation ـی نوێ */
@@ -107,6 +107,14 @@ body{background:radial-gradient(circle at 8% 8%,rgba(255,190,70,.20),transparent
 
 
 .game-guide-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}.game-guide-card{background:#fff;border:1px solid #e7eaf2;border-right:5px solid var(--guide-color,#7657ff);border-radius:20px;padding:16px;box-shadow:0 8px 22px rgba(54,72,110,.06)}.game-guide-head{display:flex;align-items:center;gap:10px}.game-guide-icon{font-size:30px}.game-guide-card h3{font-size:17px}.game-guide-card p{color:var(--muted);font-size:13px;line-height:1.9;margin-top:8px}.game-guide-steps{margin-top:10px;padding:11px 13px;border-radius:14px;background:#fbfbff;border:1px solid #eeeef8;font-size:12px;line-height:2;color:#555}.game-guide-steps b{color:#3d3760}.menu-guide-hint{margin-top:12px;padding:14px;border-radius:18px;background:linear-gradient(135deg,#fff8e8,#f4fbff);border:1px solid #f0e1bb;line-height:1.9;font-size:13px;color:#4d5363}.game-guide-tip{margin-top:10px;padding:10px 12px;border-radius:14px;background:#f7fbff;font-size:12px;line-height:1.8}.guide-modal .modal-box{max-width:760px;max-height:88vh;overflow:auto}.guide-intro{background:linear-gradient(135deg,#f7f3ff,#f2fbff);border:1px solid #e5defc;border-radius:18px;padding:14px;line-height:1.9;color:var(--muted);margin:10px 0 16px}.guide-close-row{display:flex;gap:8px;margin-top:16px}
+</style>
+<style id="pre-game-ready-dark-fix">
+/* Pre-game explanation screen: never render as a white card/page. */
+#gameContent .game-ready-card{background:#0b0e1b !important;color:#f4f7ff !important;border:1px solid #29204a !important;box-shadow:0 18px 45px rgba(0,0,0,.28) !important;}
+#gameContent .game-ready-card h2,#gameContent .game-ready-card b{color:#f4f7ff !important;}
+#gameContent .game-ready-card p{color:#a8b0c7;}
+#gameContent .game-ready-card > div[style*="background"]{background:#11152a !important;border-color:#29204a !important;color:#c8cde0 !important;}
+#gameContent .game-ready-card > div[style*="background:#ecfff6"]{background:rgba(52,211,153,.10) !important;border-color:rgba(52,211,153,.30) !important;color:#7ee7bd !important;}
 </style>
 <style>
 /* Game screens: keep the interface clean; explanatory hint text is hidden. */
@@ -218,6 +226,59 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;ba
 .spy-secret div[style*="background: #fff"] p{color:#c9c3df!important}
 .spy-first-speaker[style*="background:#f5f1ff"] .hint{color:#a8b0c7!important}
 </style>
+<style id="spy-voting-dark-fix">
+#game, #gameContent{background:#070814!important;color:#f4f7ff!important;}
+#gameContent .spy-wrap{background:transparent!important;color:#f4f7ff!important;}
+#gameContent .spy-wrap .spy-round,#gameContent .spy-wrap .spy-badge{background:#17132b!important;color:#c4b5fd!important;border-color:rgba(139,92,246,.35)!important;}
+#gameContent .spy-wrap .spy-vote-secret{background:#17152a!important;color:#f4f7ff!important;border-color:rgba(251,191,36,.3)!important;}
+#gameContent .spy-wrap .spy-votes{background:transparent!important;}
+#gameContent .spy-wrap .spy-votes .answer{background:#11152a!important;color:#f4f7ff!important;border-color:rgba(139,92,246,.28)!important;}
+#gameContent .spy-wrap .spy-votes .answer:hover{background:#191e39!important;border-color:#8b5cf6!important;}
+#gameContent .spy-wrap .prompt{color:#fff!important;}
+</style>
+
+<style id="final-game-guide-dark-fix">
+/* Final fix: game explanation pages/cards must never render as a white page. */
+#gameGuideModal, #gameGuideModal .modal-box, #gameGuideModal #gameGuideList,
+#gameGuideModal .game-guide-card, #gameGuideModal .game-guide-steps,
+#gameGuideModal .game-guide-tip, #gameGuideModal .guide-intro {
+  background:#0b0e1b !important;
+  color:#f4f7ff !important;
+  border-color:rgba(139,92,246,.28) !important;
+}
+#gameGuideModal .game-guide-card {
+  background:linear-gradient(145deg,#10142a,#0b0e1b) !important;
+  box-shadow:0 14px 35px rgba(0,0,0,.30) !important;
+}
+#gameGuideModal .game-guide-steps, #gameGuideModal .game-guide-tip, #gameGuideModal .guide-intro {
+  background:#11152a !important;
+  color:#a8b0c7 !important;
+}
+#gameGuideModal h2, #gameGuideModal h3, #gameGuideModal b,
+#gameGuideModal .game-guide-head, #gameGuideModal .game-guide-icon {
+  color:#f4f7ff !important;
+}
+#gameGuideModal p, #gameGuideModal span, #gameGuideModal .game-guide-card p {
+  color:#a8b0c7 !important;
+}
+#gameGuideModal .tag {
+  background:#17132b !important;
+  color:#c4b5fd !important;
+  border-color:rgba(139,92,246,.35) !important;
+}
+</style>
+<style id="ABSOLUTE-GUIDE-DARK-FIX">
+#gameGuideModal{background:#050711!important;position:fixed!important;inset:0!important;z-index:99999!important;align-items:center!important;justify-content:center!important;}
+#gameGuideModal.show{display:flex!important;}
+#gameGuideModal .modal-box{background:#0b0e1b!important;color:#f4f7ff!important;border:1px solid #29204a!important;}
+#gameGuideModal .game-guide-grid{background:#0b0e1b!important;}
+#gameGuideModal .game-guide-card{background:#10142a!important;color:#f4f7ff!important;border:1px solid #29204a!important;}
+#gameGuideModal .game-guide-card h3,#gameGuideModal .game-guide-card b{color:#f4f7ff!important;}
+#gameGuideModal .game-guide-card p,#gameGuideModal .game-guide-card span{color:#a8b0c7!important;}
+#gameGuideModal .game-guide-steps,#gameGuideModal .game-guide-tip,#gameGuideModal .guide-intro{background:#151a30!important;color:#c8cde0!important;border:1px solid #29204a!important;}
+#gameGuideModal .game-guide-steps b{color:#f4f7ff!important;}
+#gameGuideModal .icon{background:#171b32!important;color:#fff!important;}
+</style>
 </head>
 <body>
 <div class="app">
@@ -283,7 +344,7 @@ const GAMES=[
 {id:"mystery",icon:"🕯️",name:"دۆسیەی تاوان",desc:"کۆمەڵێک لێکۆڵەر، 2 تاوانبار، بەڵگە و پرسیار و گفتوگۆی زۆر!",tag:"لێکۆڵینەوە",color:"#9b5de5"}
 ];
 
-const state={players:[],scores:{},currentPlayer:0,currentGame:null,turn:0,timer:null,nextTimeout:null,sound:true,gameLocked:false,used:{},eliminated:[],bombQuestion:null,bombTurn:0,groups:{a:[],b:[]},spyRound:0,spyRoundLimit:5,spyRoles:{},spyLocation:"",spyRevealIndex:0,spyVotes:{}};
+const state={players:[],scores:{},currentPlayer:0,currentGame:null,turn:0,timer:null,nextTimeout:null,sound:true,gameLocked:false,used:{},eliminated:[],bombQuestion:null,bombTurn:0,groups:{a:[],b:[]},spyRound:0,spyRoundLimit:5,spyRoles:{},spyLocation:"",spyRevealIndex:0,spyVotes:{},bombActive:false,bombTickTimer:null,bombTickStep:0};
 const KEY="gng_v6";
 
 function saveState(){try{localStorage.setItem(KEY,JSON.stringify({players:state.players,used:state.used,sound:state.sound,groups:state.groups,spyRoundLimit:state.spyRoundLimit}))}catch(e){}}
@@ -321,6 +382,61 @@ function beep(f=600,d=.08,type="sine"){
     g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+d);
     o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+d);
   }catch(e){}
+}
+function stopBombSound(){
+  if(state.bombTickTimer){clearInterval(state.bombTickTimer);state.bombTickTimer=null;}
+  state.bombTickStep=0;
+}
+function bombTickSound(){
+  if(!state.sound || state.currentGame!=="bomb" || !state.bombActive)return;
+  const ctx=ensureAudio(); if(!ctx)return;
+  try{
+    const now=ctx.currentTime;
+    // Short mechanical "tick-tock" click — intentionally not a beep.
+    const buffer=ctx.createBuffer(1,Math.floor(ctx.sampleRate*.055),ctx.sampleRate);
+    const data=buffer.getChannelData(0);
+    for(let i=0;i<data.length;i++){
+      const env=Math.pow(1-i/data.length,5);
+      data[i]=(Math.random()*2-1)*env;
+    }
+    const src=ctx.createBufferSource(),filter=ctx.createBiquadFilter(),g=ctx.createGain();
+    src.buffer=buffer; filter.type="bandpass"; filter.frequency.value=state.bombTickStep%2?2100:1650; filter.Q.value=5;
+    g.gain.setValueAtTime(.0001,now); g.gain.exponentialRampToValueAtTime(.34,now+.004); g.gain.exponentialRampToValueAtTime(.0001,now+.055);
+    src.connect(filter);filter.connect(g);g.connect(ctx.destination);src.start(now);src.stop(now+.06);
+    state.bombTickStep++;
+  }catch(e){}
+}
+function bombExplosionSound(){
+  if(!state.sound)return;
+  const ctx=ensureAudio(); if(!ctx)return;
+  try{
+    const now=ctx.currentTime;
+    const master=ctx.createGain(),comp=ctx.createDynamicsCompressor();
+    master.gain.setValueAtTime(.0001,now);master.gain.exponentialRampToValueAtTime(.9,now+.015);master.gain.exponentialRampToValueAtTime(.0001,now+.9);
+    comp.threshold.value=-18;comp.knee.value=18;comp.ratio.value=8;comp.attack.value=.002;comp.release.value=.25;
+    master.connect(comp);comp.connect(ctx.destination);
+    // Low impact / blast body.
+    const osc=ctx.createOscillator(),og=ctx.createGain();osc.type="sine";osc.frequency.setValueAtTime(120,now);osc.frequency.exponentialRampToValueAtTime(42,now+.55);
+    og.gain.setValueAtTime(.0001,now);og.gain.exponentialRampToValueAtTime(.8,now+.02);og.gain.exponentialRampToValueAtTime(.0001,now+.65);osc.connect(og);og.connect(master);osc.start(now);osc.stop(now+.7);
+    // Short noisy burst for a more natural grenade-like explosion.
+    const buffer=ctx.createBuffer(1,Math.floor(ctx.sampleRate*.7),ctx.sampleRate),data=buffer.getChannelData(0);
+    for(let i=0;i<data.length;i++){const env=Math.pow(1-i/data.length,2.6);data[i]=(Math.random()*2-1)*env;}
+    const src=ctx.createBufferSource(),filter=ctx.createBiquadFilter(),ng=ctx.createGain();src.buffer=buffer;filter.type="lowpass";filter.frequency.setValueAtTime(2400,now);filter.frequency.exponentialRampToValueAtTime(350,now+.65);ng.gain.setValueAtTime(.0001,now);ng.gain.exponentialRampToValueAtTime(.75,now+.008);ng.gain.exponentialRampToValueAtTime(.0001,now+.68);src.connect(filter);filter.connect(ng);ng.connect(master);src.start(now);src.stop(now+.72);
+  }catch(e){}
+}
+function startBombSound(){
+  stopBombSound();
+  if(!state.sound || state.currentGame!=="bomb" || !state.bombActive)return;
+  bombTickSound();
+  state.bombTickTimer=setInterval(()=>{
+    if(state.currentGame!=="bomb" || !state.bombActive){stopBombSound();return;}
+    const el=document.getElementById("bombTimer");
+    const t=el?parseInt(el.textContent,10):999;
+    // Near the end, make the ticking faster without making it harsh.
+    if(t<=5){ clearInterval(state.bombTickTimer); state.bombTickTimer=setInterval(bombTickSound,420); }
+    else if(t<=10){ clearInterval(state.bombTickTimer); state.bombTickTimer=setInterval(bombTickSound,650); }
+    bombTickSound();
+  },1000);
 }
 function stopMysteryMusic(){
   mysteryMusicToken++;
@@ -453,7 +569,7 @@ function lose(){beep(220,.14,"square");setTimeout(()=>beep(150,.18,"square"),120
 function openMenu(){document.getElementById("menuOverlay").classList.add("show")}function closeMenu(e){if(e&&e.target!==e.currentTarget&&e.target.id!=="menuOverlay")return;document.getElementById("menuOverlay").classList.remove("show")}
 function showGameGuide(){
   const box=document.getElementById("gameGuideList");
-  const guide={
+  window.GAME_GUIDE={
     quiz:["پرسیارێک دەردەکەوێت و یاریزان وەڵامی ڕاست هەڵدەبژێرێت.","١) یاریزانەکان زیاد بکەن. ٢) پرسیار بخوێننەوە. ٣) وەڵام هەڵبژێرن. ٤) خاڵ و پرسیاری داهاتوو.","💡 هەر پرسیارێک جیاوازە و پرسیارە بەکارهاتووەکان دووبارە نابنەوە تا بانکەکە پڕ بێت."],
     truth:["ڕاستی بڵێ یان ئەرکێکی خۆش جێبەجێ بکە.","١) نۆرەکە دیاری دەکرێت. ٢) ڕاستی یان ئەرک هەڵبژێرە. ٣) وەڵام بدە یان ئەرکەکە بکە. ٤) نۆرە بۆ کەسی داهاتوو.","💡 ئەرکەکان بۆ کۆمەڵەی خۆتان بگونجێنن."],
     who:["پرسیارێک دەخوێندرێتەوە و هەمووان دەنگ دەدەن بۆ کەسێکی گونجاو.","١) پرسیار بخوێننەوە. ٢) هەمووان بۆچوونی خۆیان بڵێن. ٣) دەنگ بدەن. ٤) کەسی زۆرترین دەنگ ببینن.","💡 ئەمە بۆ پێکەنین و ناسینی بۆچوونی هاوڕێکانە."],
@@ -520,7 +636,47 @@ function dispatchCurrent(){const id=String(state.currentGame||"").trim();const r
 function finishGame(){stopMysteryMusic();clearInterval(state.timer);state.timer=null;state.gameLocked=false;const sorted=[...state.players].sort((a,b)=>(state.scores[b]||0)-(state.scores[a]||0));const w=sorted[0];document.getElementById("resultText").innerHTML=`🎉 بەرەوپێش <b>${esc(w)}</b>!<br>نمرە: <b>${state.scores[w]||0}</b>`;document.getElementById("leaderboard").innerHTML=sorted.map((n,i)=>`<div class="leader-row"><span>${i===0?"🥇":i===1?"🥈":i===2?"🥉":"🏅"} ${esc(n)}</span><b>${state.scores[n]||0}</b></div>`).join("");win();showScreen("result")}
 function restartGame(){if(state.currentGame)startGame(state.currentGame)}
 function exitGame(){stopMysteryMusic();clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);state.gameLocked=false;state.currentGame=null;state.bombQuestion=null;state.bombTurn=0;state.eliminated=[];window.reactionStarted=false;window.ready=false;showScreen("home");renderGames();toast("🏠 گەڕایتەوە سەرەتا")}
-function startGame(id){stopMysteryMusic();if(state.players.length<2){showPlayersSetup();return toast("👥 یەکەم لانیکەم 2 یاریزان زیاد بکە")}const gameId=String(id||"").trim();const g=GAMES.find(x=>x.id===gameId);if(!g){toast("⚠️ یارییەکە نەدۆزرایەوە");return}clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);state.currentGame=gameId;state.currentPlayer=0;state.turn=0;state.gameLocked=false;state.eliminated=[];state.bombQuestion=null;state.bombTurn=0;state.spyRound=0;state.spyRoles={};state.spyLocation="";state.spyRevealIndex=0;state.spyVotes={};window.reactionStarted=false;window.ready=false;resetScores();renderScores();document.documentElement.style.setProperty("--game-color",g?.color||"#7657ff");showScreen("game");document.getElementById("gameContent").innerHTML="";document.getElementById("gameTitle").textContent=`${g.icon} ${g.name}`;gameStartSound(gameId);dispatchCurrent()}
+function startGame(id){
+  stopMysteryMusic();
+  if(state.players.length<2){showPlayersSetup();return toast("👥 یەکەم لانیکەم 2 یاریزان زیاد بکە")}
+  const gameId=String(id||"").trim();
+  const g=GAMES.find(x=>x.id===gameId);
+  if(!g){toast("⚠️ یارییەکە نەدۆزرایەوە");return}
+  clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);
+  state.currentGame=gameId;state.currentPlayer=0;state.turn=0;state.gameLocked=false;
+  state.eliminated=[];state.bombQuestion=null;state.bombTurn=0;state.spyRound=0;state.spyRoles={};state.spyLocation="";state.spyRevealIndex=0;state.spyVotes={};state.bombActive=false;
+  stopBombSound();window.reactionStarted=false;window.ready=false;resetScores();renderScores();
+  document.documentElement.style.setProperty("--game-color",g.color||"#7657ff");
+  showScreen("game");document.getElementById("gameTitle").textContent=`${g.icon} ${g.name}`;
+  renderGameReady();
+}
+function renderGameReady(){
+  const g=GAMES.find(x=>x.id===state.currentGame)||{};
+  const guide=window.GAME_GUIDE||{};
+  const x=guide[g.id]||[g.desc||"ئەم یارییە بۆ خۆشی و بەشداریکردنی هەموو یاریزانەکانە.","١) ڕێنمایییەکە بخوێنەوە. ٢) هەموو یاریزانەکان ئامادە بن. ٣) دوگمەی دەستپێکردن دابگرە. ٤) یاساکانی ناو یارییەکە جێبەجێ بکە.","💡 گرنگترین شت: پێش دەستپێکردن هەموو کەسێک ئامادە بێت."];
+  document.getElementById("gameContent").innerHTML=`<div class="play game-ready-card" style="text-align:center;padding:30px 18px">
+    <div style="font-size:78px;margin-bottom:8px">${g.icon||"🎮"}</div>
+    <h2 style="margin:0 0 8px">${esc(g.name||"یاری")}</h2>
+    <p style="font-size:16px;line-height:2;margin:0 auto 14px;max-width:760px"><b>🎯 ئامانجی یاری:</b><br>${esc(x[0])}</p>
+    <div style="text-align:right;background:#11152a;border:1px solid #29204a;border-radius:20px;padding:18px;max-width:760px;margin:0 auto 14px;line-height:2">
+      <b>📖 چۆن یارییەکە دەکرێت؟</b><br>${esc(x[1])}
+    </div>
+    <div style="background:rgba(52,211,153,.10);border:1px solid rgba(52,211,153,.30);color:#7ee7bd;border-radius:17px;padding:13px;max-width:760px;margin:0 auto 20px;line-height:1.9">${esc(x[2])}</div>
+    <p class="hint" style="margin-bottom:12px">هەموو یاریزانەکان ئامادە بن؛ یاری تەنها دوای کلیککردن لە دوگمەی خوارەوە دەست پێ دەکات.</p>
+    <button class="primary" data-begin-game>▶️ ئێستا دەست پێ بکە</button>
+    <button class="secondary" style="margin-top:10px" onclick="exitGame()">🏠 گەڕانەوە</button>
+  </div>`;
+}
+function beginGame(){
+  if(!state.currentGame||state.gameLocked)return;
+  state.gameLocked=true;
+  try{gameStartSound(state.currentGame)}catch(e){}
+  try{dispatchCurrent()}catch(e){state.gameLocked=false;toast("⚠️ کێشەیەک لە دەستپێکردنی یاری هەیە")}
+}
+document.addEventListener("click",function(e){
+  const b=e.target.closest&&e.target.closest("[data-begin-game]");
+  if(b){e.preventDefault();e.stopPropagation();beginGame();return;}
+});
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 
 /* Truth/dare */
@@ -720,12 +876,13 @@ function spyDiscussion(){
   state.currentPlayer=Math.floor(Math.random()*state.players.length);
   state.spyFirstSpeaker=state.players[state.currentPlayer];
   state.gameLocked=false;clearInterval(state.timer);state.timer=null;
-  document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🔥 قسە و گومان — ڕاو ${state.spyRound}/${state.spyRoundLimit}</div><div class="spy-badge">⏱️ 5 خولەک</div><div class="spy-big">🕵️‍♂️</div><div class="prompt">${esc(prompt)}</div><div class="spy-first-speaker" style="margin:18px auto;padding:18px;border-radius:22px;background:#f5f1ff;border:1px solid #ddd0ff;max-width:620px"><div style="font-size:13px;color:#7657ff;font-weight:950;margin-bottom:6px">🎙️ یەکەم قسە</div><div style="font-size:25px;font-weight:1000">${esc(state.spyFirstSpeaker)}</div><div class="hint" style="margin-top:7px">ئەم کەسە یەکەمجار قسە بکات، پاشان هەمووان بەشداری بکەن.</div></div><p class="hint">شوێنەکە بە ڕاستەوخۆ مەڵێن. کات تەواو بوو، دەنگ دەدەین.</p><div class="timer" id="spyTimer">5:00</div><button class="primary" onclick="spyStartDiscussion()">🔥 دەست پێ بکە</button></div>`;
+  document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🔥 قسە و گومان — ڕاو ${state.spyRound}/${state.spyRoundLimit}</div><div class="spy-badge">⏱️ 3 خولەک</div><div class="spy-big">🕵️‍♂️</div><div class="prompt">${esc(prompt)}</div><div class="spy-first-speaker" style="margin:18px auto;padding:18px;border-radius:22px;background:#f5f1ff;border:1px solid #ddd0ff;max-width:620px"><div style="font-size:13px;color:#7657ff;font-weight:950;margin-bottom:6px">🎙️ یەکەم قسە</div><div style="font-size:25px;font-weight:1000">${esc(state.spyFirstSpeaker)}</div><div class="hint" style="margin-top:7px">ئەم کەسە یەکەمجار قسە بکات، پاشان هەمووان بەشداری بکەن.</div></div><p class="hint">شوێنەکە بە ڕاستەوخۆ مەڵێن. کات تەواو بوو، دەنگ دەدەین.</p><div class="timer" id="spyTimer">3:00</div><div class="center" style="margin-top:12px"><button class="primary" onclick="spyStartDiscussion()">🔥 دەست پێ بکە</button><button class="danger" onclick="spyEndDiscussion()">🗳️ ئێستا تەواو بکە و دەنگ بدە</button></div></div>`;
 }
 function spyStartDiscussion(){
-  if(state.gameLocked)return; state.gameLocked=true; let t=300,el=document.getElementById("spyTimer");
+  if(state.gameLocked)return; state.gameLocked=true; let t=180,el=document.getElementById("spyTimer");
   const show=()=>{if(el)el.textContent=`${Math.floor(t/60)}:${String(t%60).padStart(2,"0")}`};show();clearInterval(state.timer);state.timer=setInterval(()=>{t--;show();if(t<=30&&el)el.classList.add("danger");if(t<=0){clearInterval(state.timer);state.timer=null;spyVoting()}},1000);
 }
+function spyEndDiscussion(){clearInterval(state.timer);state.timer=null;state.gameLocked=false;spyVoting()}
 function spyVoting(){
   clearInterval(state.timer);state.timer=null;state.gameLocked=false;
   state.spyVoteIndex=0; state.spyVotes={}; renderSpyVote();
@@ -1073,7 +1230,7 @@ const bombQuestionEnds=[
   " 😄", " 😂", " 🤔", " 🔥", " 🎮", " 👀", " ✨", " 😎", " 🤯", " 🥳"
 ];
 function makeBombQuestion(){const topics=["ناوی میوەکان","ناوی خواردنەکان","ناوی ئاژەڵەکان","ناوی شارەکان","ناوی وڵاتەکان","ناوی فیلمەکان","ناوی گۆرانییەکان","ناوی وەرزشەکان","ناوی ڕەنگەکان","ناوی شتەکانی مۆبایل","ناوی پیشەکان","ناوی شتەکانی قوتابخانە","ناوی شتەکانی ماڵ","ناوی شوێنەکانی گەشت","ناوی ئامێرە تەکنەلۆجییەکان","ناوی شتەکانی ئاشپەزخانە","ناوی شتەکانی یاری","ناوی شتەکانی بازاڕ","ناوی شتەکانی کافێ","ناوی شتەکانی سروشت"];const used=state.used.bombTopics||[];let available=topics.filter(x=>!used.includes(x));if(!available.length){state.used.bombTopics=[];available=topics}const category=available[Math.floor(Math.random()*available.length)];state.used.bombTopics=[...(state.used.bombTopics||[]),category];saveState();return{id:`bomb-${Date.now()}-${Math.random()}`,category}}
-function bombGame(){state.eliminated=[];state.bombTurn=0;state.bombQuestion=makeBombQuestion();renderBomb()}
+function bombGame(){stopBombSound();state.eliminated=[];state.bombTurn=0;state.bombQuestion=makeBombQuestion();state.bombActive=false;renderBombReady()}
 function alivePlayers(){return state.players.filter(p=>!state.eliminated.includes(p));}
 function nextAliveAfter(name){
   const alive=alivePlayers();
@@ -1086,9 +1243,16 @@ function nextAliveAfter(name){
   return alive[0];
 }
 
-function bombPass(){if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;addScore(player(),10);beep(780,.08);setTimeout(()=>beep(980,.12),90);toast("💨 بۆمب گوازرایەوە!");const next=nextAliveAfter(player());if(next)state.bombTurn=state.players.indexOf(next);setTimeout(()=>{state.gameLocked=false;renderBomb()},500)}
-function bombExplode(p){if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;state.eliminated.push(p);lose();bombExplosionSound();document.getElementById("gameContent").innerHTML=`<div class="play bomb-wrap explode"><div class="big boom">💥</div><div class="prompt">کات تەواو بوو!<br><b>${esc(p)}</b> بۆمبەکەی لێ تەقی و لە یارییەکە دەرکرا.</div></div>`;const alive=alivePlayers();if(alive.length<=1){setTimeout(()=>{state.gameLocked=false;renderBomb()},1100);return}const next=nextAliveAfter(p);state.bombTurn=next?state.players.indexOf(next):0;setTimeout(()=>{state.gameLocked=false;renderBomb()},1100)}
-function renderBomb(){clearInterval(state.timer);state.timer=null;state.gameLocked=false;const alive=alivePlayers();if(alive.length<=1){if(alive[0])addScore(alive[0],50);finishGame();return}if(!state.bombQuestion)state.bombQuestion=makeBombQuestion();const p=alive[state.bombTurn%alive.length];state.currentPlayer=state.players.indexOf(p);const q=state.bombQuestion;progress(alive.length+4);document.getElementById("gameContent").innerHTML=`<div class="play bomb-wrap"><div class="bomb-topline"><span class="turn">💣 بۆمب لە دەستی ${esc(p)}</span><span class="bomb-round">هەمان پرسیار بۆ هەمووان</span></div><div class="bomb-device" aria-hidden="true"><div class="bomb-glow"></div><div class="bomb-core">💣</div></div><div class="bomb-question-label">🎯 بابەتی ڕاو</div><div class="prompt bomb-question"><b>${esc(q.category)}</b></div><p class="hint bomb-hint">وەڵامەکەت بە دەنگی خۆت بڵێ؛ هیچ شتێک مەنووسە. کاتێک وەڵامت دا، بۆمبەکە بگوازەرەوە. هەمان بابەت بۆ هەمووان بەردەوامە.</p><button class="primary bomb-pass" onclick="bombPass()">💨 وتم — بۆمب بگوازەرەوە</button><div class="timer bomb-timer" id="bombTimer">20</div><div class="player-list">${state.players.map(n=>`<div class="player-status ${state.eliminated.includes(n)?"eliminated":"alive"}"><span>${esc(n)}</span><b>${state.eliminated.includes(n)?"💥 دەرکراوە":n===p?"💣 نۆرەی ئێستا":"🟢 چاوەڕێ"}</b></div>`).join("")}</div></div>`;let t=20,el=document.getElementById("bombTimer");state.timer=setInterval(()=>{t--;if(el)el.textContent=t;if(t<=5&&el)el.classList.add("danger");if(t<=0){clearInterval(state.timer);state.timer=null;bombExplode(p)}},1000)}
+function bombPass(){if(state.gameLocked||!state.bombActive)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;stopBombSound();addScore(player(),10);beep(780,.08);setTimeout(()=>beep(980,.12),90);toast("💨 بۆمب گوازرایەوە!");const next=nextAliveAfter(player());if(next)state.bombTurn=state.players.indexOf(next);setTimeout(()=>{state.gameLocked=false;renderBomb()},500)}
+function bombExplode(p){if(state.gameLocked)return;stopBombSound();state.gameLocked=true;clearInterval(state.timer);state.timer=null;state.eliminated.push(p);lose();bombExplosionSound();document.getElementById("gameContent").innerHTML=`<div class="play bomb-wrap explode"><div class="big boom">💥</div><div class="prompt">کات تەواو بوو!<br><b>${esc(p)}</b> بۆمبەکەی لێ تەقی و لە یارییەکە دەرکرا.</div></div>`;const alive=alivePlayers();if(alive.length<=1){setTimeout(()=>{state.gameLocked=false;renderBomb()},1100);return}const next=nextAliveAfter(p);state.bombTurn=next?state.players.indexOf(next):0;setTimeout(()=>{state.gameLocked=false;renderBomb()},1100)}
+function renderBombReady(){
+  clearInterval(state.timer);state.timer=null;state.gameLocked=false;stopBombSound();
+  const alive=alivePlayers(); if(alive.length<=1){finishGame();return;}
+  const p=alive[state.bombTurn%alive.length]; state.currentPlayer=state.players.indexOf(p);
+  document.getElementById("gameContent").innerHTML=`<div class="play bomb-wrap"><div class="bomb-topline"><span class="turn">💣 بۆمبی پیتی</span><span class="bomb-round">ئامادەی یاری؟</span></div><div class="bomb-device" aria-hidden="true"><div class="bomb-glow"></div><div class="bomb-core">💣</div></div><div class="prompt">بۆمبەکە ئێستا ناچالاکە.</div><p class="hint bomb-hint">کاتێک ئامادە بوون، دوگمەی دەستپێکردن دابگرن. لەو کاتەوە تیک‌تاک دەست پێدەکات و بۆمبەکە تەنها لە ناو ئەم یارییە کار دەکات.</p><button class="primary bomb-pass" onclick="startBombRound()">💣 دەست پێکردنی بۆمب</button></div>`;
+}
+function startBombRound(){if(state.gameLocked||state.bombActive)return;state.bombActive=true;renderBomb();startBombSound()}
+function renderBomb(){clearInterval(state.timer);state.timer=null;state.gameLocked=false;if(!state.bombActive)return renderBombReady();const alive=alivePlayers();if(alive.length<=1){if(alive[0])addScore(alive[0],50);finishGame();return}if(!state.bombQuestion)state.bombQuestion=makeBombQuestion();const p=alive[state.bombTurn%alive.length];state.currentPlayer=state.players.indexOf(p);const q=state.bombQuestion;progress(alive.length+4);document.getElementById("gameContent").innerHTML=`<div class="play bomb-wrap"><div class="bomb-topline"><span class="turn">💣 بۆمب لە دەستی ${esc(p)}</span><span class="bomb-round">هەمان پرسیار بۆ هەمووان</span></div><div class="bomb-device" aria-hidden="true"><div class="bomb-glow"></div><div class="bomb-core">💣</div></div><div class="bomb-question-label">🎯 بابەتی ڕاو</div><div class="prompt bomb-question"><b>${esc(q.category)}</b></div><p class="hint bomb-hint">وەڵامەکەت بە دەنگی خۆت بڵێ؛ هیچ شتێک مەنووسە. کاتێک وەڵامت دا، بۆمبەکە بگوازەرەوە. هەمان بابەت بۆ هەمووان بەردەوامە.</p><button class="primary bomb-pass" onclick="bombPass()">💨 وتم — بۆمب بگوازەرەوە</button><div class="timer bomb-timer" id="bombTimer">20</div><div class="player-list">${state.players.map(n=>`<div class="player-status ${state.eliminated.includes(n)?"eliminated":"alive"}"><span>${esc(n)}</span><b>${state.eliminated.includes(n)?"💥 دەرکراوە":n===p?"💣 نۆرەی ئێستا":"🟢 چاوەڕێ"}</b></div>`).join("")}</div></div>`;let t=20,el=document.getElementById("bombTimer");state.timer=setInterval(()=>{t--;if(el)el.textContent=t;if(t<=5&&el)el.classList.add("danger");if(t<=0){clearInterval(state.timer);state.timer=null;bombExplode(p)}},1000)}
 loadState();renderGames();renderPlayers();renderGroups();setSpyRoundLimit(state.spyRoundLimit);document.getElementById("soundBtn").textContent=state.sound?"🔊":"🔇";document.getElementById("playerInput").addEventListener("keydown",e=>{if(e.key==="Enter")addPlayer()});document.addEventListener("click",()=>{if(audio&&audio.state==="suspended")audio.resume()},{once:true});
 </script>
 </body>
