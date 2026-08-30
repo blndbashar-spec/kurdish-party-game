@@ -6,7 +6,8 @@
 <meta name="theme-color" content="#fff7fb">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<title>لەگەڵ هاورێیان 🎮</title>
+<!-- Arena Games v16: stability patch -->
+<title>گەمەی گەنجان 🎮</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='85'%3E🎮%3C/text%3E%3C/svg%3E">
 <style>
 :root{
@@ -56,30 +57,16 @@ button,input{font:inherit}button{cursor:pointer}
 .hunt-type{display:inline-block;padding:6px 11px;border-radius:999px;background:#f2edff;color:#6b56c7;font-size:11px;font-weight:950;margin-bottom:8px}.red-hunt h2{font-size:30px;margin-bottom:8px}.red-hunt .timer{margin:12px auto}.red-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
 @keyframes huntPop{50%{transform:translateY(-4px) rotate(2deg);box-shadow:0 20px 42px rgba(80,100,130,.18)}}
 @keyframes redFloat{50%{transform:translate(18px,18px) scale(1.08)}}
-.reaction-new{height:270px;border-radius:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(145deg,#fff,#f3fbff);border:2px solid #cfeaf2;box-shadow:inset 0 0 0 1px #fff,0 18px 45px rgba(25,184,208,.10);font-size:24px;font-weight:1000;user-select:none;cursor:pointer;transition:transform .18s ease,background .18s ease}
-.reaction-new.ready{background:linear-gradient(145deg,#eafff4,#f7fff9);border-color:#8de0bd;transform:scale(1.015)}
-.reaction-dot{width:74px;height:74px;border-radius:50%;background:#e8eef5;box-shadow:inset 0 0 0 8px #fff,0 10px 24px rgba(70,85,110,.12)}
-.reaction-new.ready .reaction-dot{background:#25c77f;box-shadow:inset 0 0 0 8px #dcfff0,0 10px 28px rgba(37,199,127,.28);animation:reactionReady .65s ease-in-out infinite alternate}
-.reaction-start{margin-top:4px}
-@keyframes reactionReady{to{transform:scale(1.12)}}
-.memory-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px auto;max-width:560px}
-.memory-option{appearance:none;border:2px solid #e3def5;background:#fff;border-radius:18px;padding:14px 10px;font-family:inherit;font-size:18px;font-weight:900;cursor:pointer;transition:.18s;box-shadow:0 8px 20px rgba(80,65,120,.06)}
-.memory-option:hover{transform:translateY(-2px);border-color:#b9a8ee}.memory-option:active{transform:scale(.98)}
 .group-box{margin-top:34px;background:linear-gradient(145deg,#fff,#f8f5ff);border:1px solid #e4ddf7;border-radius:30px;padding:25px;box-shadow:0 18px 48px rgba(75,65,120,.08)}
 .group-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.team{border-radius:22px;padding:17px;background:#fff;border:2px solid #e8e4f5}.team h3{margin-bottom:9px}.team-a{border-color:#cdbdff}.team-b{border-color:#bdebf0}.team-list{display:flex;flex-wrap:wrap;gap:7px}.team-player{background:#f7f5ff;border-radius:999px;padding:7px 10px;font-size:13px}
 .group-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
 
-.sequence{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:20px}.seq{width:54px;height:54px;border-radius:15px;background:#f6f1ff;display:grid;place-items:center;font-size:23px;font-weight:1000}
-.center{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}.hint{color:var(--muted);font-size:13px;line-height:1.8}.bomb-wrap{background:linear-gradient(145deg,#fff5f8,#f5f0ff);border:1px solid #f0dbe8;border-radius:28px;padding:22px}
-.bomb{font-size:88px;animation:pulse 1s infinite alternate}@keyframes pulse{to{transform:scale(1.08)}}.letter{display:inline-grid;place-items:center;width:62px;height:62px;border-radius:18px;background:#fff;border:2px solid #d8c8ff;font-size:32px;font-weight:1000;color:#7759d1}
-.eliminated{text-decoration:line-through;opacity:.45}.alive{background:#ecfff7;border-color:#bcebd7}.player-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:14px 0}.player-status{padding:11px;border:1px solid var(--line);border-radius:14px;background:#fff;display:flex;justify-content:space-between}
-.result{text-align:center;padding:20px}.trophy{font-size:80px}.result h2{font-size:36px;margin:8px 0}.leader{max-width:600px;margin:18px auto}.leader-row{display:flex;justify-content:space-between;padding:13px 15px;margin:7px 0;border:1px solid var(--line);border-radius:15px;background:#fff}
-.toast{position:fixed;z-index:9999;bottom:18px;left:50%;transform:translate(-50%,100px);background:#29243a;color:#fff;padding:12px 17px;border-radius:14px;transition:.25s;box-shadow:0 15px 35px rgba(40,30,50,.2);font-size:13px}.toast.show{transform:translate(-50%,0)}
-.modal{position:fixed;inset:0;background:rgba(55,35,65,.25);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:18px;z-index:5000}.modal.show{display:flex}.modal-box{width:min(520px,100%);background:#fff;border-radius:25px;padding:23px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.hint{color:var(--muted);font-size:13px;line-height:1.8}
 .footer{text-align:center;color:#9b94a5;font-size:12px;margin:35px 0 5px}
 
-.feedback{margin:18px auto 0;padding:14px 16px;border-radius:17px;background:rgba(52,211,153,.10);border:1px solid rgba(52,211,153,.30);color:#7ee7bd;font-weight:800;line-height:1.8}.bomb-topline{display:flex;justify-content:space-between;align-items:center;gap:10px}.bomb-round{padding:8px 12px;border-radius:999px;background:#fff4f5;color:#d04452;font-weight:900;font-size:12px}.bomb-device{position:relative;width:150px;height:150px;margin:12px auto 2px;display:grid;place-items:center}.bomb-glow{position:absolute;inset:12px;border-radius:50%;background:radial-gradient(circle,#ffe9ed 0%,#fff7f8 48%,transparent 70%);animation:bglow 1.2s infinite alternate}.bomb-core{position:relative;font-size:92px;filter:drop-shadow(0 12px 16px rgba(242,92,105,.22));animation:bob 1s ease-in-out infinite alternate}@keyframes bglow{to{transform:scale(1.12);opacity:.7}}@keyframes bob{to{transform:translateY(-5px) rotate(2deg)}}.bomb-question-label{display:inline-block;padding:7px 12px;border-radius:999px;background:#f1edff;color:#6652c8;font-weight:950;font-size:12px}.bomb-question{max-width:780px;margin-top:14px}.bomb-timer{width:105px;height:105px;background:#fff8e6;border-color:#ffd77b;box-shadow:0 8px 25px rgba(255,189,63,.14)}.bomb-pass{min-width:min(100%,420px)}.bomb-hint{max-width:650px;margin:8px auto 16px}.explode .boom{animation:boom .55s ease-in-out infinite alternate}@keyframes boom{to{transform:scale(1.12)}}
-@media(max-width:900px){.games-grid{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.app{padding:10px 11px 28px}.games-grid{grid-template-columns:repeat(2,1fr)}.answers{grid-template-columns:1fr}.player-list{grid-template-columns:1fr}.play{padding:18px 13px}.game-head{align-items:flex-start;flex-direction:column}.scores{justify-content:flex-start}.hero{padding-top:24px}}@media(max-width:430px){.games-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.hero h1{font-size:42px}.primary,.secondary,.danger{width:100%}.actions{display:grid}.player-row{flex-direction:column}}
+@media(max-width:900px){.games-grid{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.app{padding:10px 11px 28px}.games-grid{grid-template-columns:repeat(2,1fr)}.answers{grid-template-columns:1fr}.play{padding:18px 13px}.game-head{align-items:flex-start;flex-direction:column}.scores{justify-content:flex-start}.hero{padding-top:24px}}
+@media(max-width:430px){.games-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.hero h1{font-size:42px}.primary,.secondary,.danger{width:100%}.actions{display:grid}.player-row{flex-direction:column}}
 
 /* ڕەنگاوڕەنگ و animation ـی نوێ */
 body{background:radial-gradient(circle at 8% 8%,rgba(255,190,70,.20),transparent 23%),radial-gradient(circle at 92% 16%,rgba(60,190,255,.18),transparent 24%),radial-gradient(circle at 50% 100%,rgba(135,95,255,.10),transparent 30%),linear-gradient(145deg,#fffaf5,#f3f7ff)}
@@ -89,36 +76,7 @@ body{background:radial-gradient(circle at 8% 8%,rgba(255,190,70,.20),transparent
 .play{animation:playIn .34s ease both}.play>*{animation:itemIn .4s ease both}
 @keyframes playIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes itemIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
-.answer.correct{background:#dff9ea!important;border-color:#20b978!important;color:#087a4b!important;box-shadow:0 0 0 3px rgba(32,185,120,.12)}
 .timer{animation:timerFloat 1.7s ease-in-out infinite}@keyframes timerFloat{50%{transform:translateY(-3px)}}
-.menu-overlay{position:fixed;inset:0;background:rgba(20,25,35,.22);backdrop-filter:blur(5px);z-index:7000;display:none}.menu-overlay.show{display:block}
-.menu-drawer{position:absolute;right:0;top:0;height:100%;width:min(390px,92vw);background:#fff;padding:22px;box-shadow:-18px 0 45px rgba(30,40,60,.18);animation:drawerIn .28s ease}
-@keyframes drawerIn{from{transform:translateX(100%)}to{transform:none}}
-.menu-close{float:left}.menu-title{font-size:28px;font-weight:1000;margin:8px 0 20px}.menu-item{display:flex;align-items:center;gap:12px;width:100%;padding:15px;margin:8px 0;border:1px solid var(--line);background:#fff;border-radius:18px;text-decoration:none;color:var(--ink);font-weight:900;transition:.18s}
-.menu-item:hover{transform:translateX(-3px);box-shadow:0 8px 20px rgba(30,40,60,.08)}.menu-instagram{background:linear-gradient(135deg,#fff0f7,#fff);border-color:#ffd0e2}.menu-note{background:#f7fbff;padding:14px;border-radius:16px;color:var(--muted);font-size:13px;line-height:1.9;margin-top:14px}
-
-.static-game h3,.static-game p,.static-game .tag{display:block}.static-game{font-family:inherit;color:var(--ink)}
-
-.spy-wrap{max-width:760px;margin:auto}.spy-round,.spy-badge{display:inline-block;padding:8px 13px;border-radius:999px;background:#f1edff;color:#6b4fd3;font-weight:950;margin:4px}.spy-card,.spy-secret,.spy-result{margin:16px auto;padding:26px;border-radius:28px;background:linear-gradient(145deg,#ffffff,#f7f4ff);border:1px solid #e8defd;box-shadow:0 14px 35px rgba(80,60,130,.10)}.spy-lock{font-size:46px}.spy-big{font-size:68px;margin:10px}.spy-secret.is-spy{background:linear-gradient(145deg,#fff1f3,#fff8f8);border-color:#ffd2d8}.spy-secret.is-citizen{background:linear-gradient(145deg,#effcf7,#f8fffc);border-color:#c8f0df}.spy-votes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}.spy-vote-secret{padding:12px;border-radius:16px;background:#fff8df;border:1px solid #f5dda1;font-weight:900;margin:14px 0}.spy-vote-list{margin-top:16px}.spy-vote-row{display:flex;justify-content:space-between;padding:11px 14px;border-bottom:1px solid #eee}.spy-result.good{border-color:#bdebd5}.spy-result.bad{border-color:#ffd0d6}@media(max-width:650px){.spy-votes{grid-template-columns:1fr}}
-
-.mystery-photo{margin:18px auto;max-width:700px;border-radius:28px;overflow:hidden;box-shadow:0 16px 40px rgba(20,20,40,.18);border:1px solid #2a2c42}.mystery-photo svg{display:block;width:100%;height:auto}.mystery-box{background:#fff8fb;border:1px solid #ead8e8;border-radius:20px;padding:14px 16px;line-height:1.9}.mystery-clues,.mystery-questions{display:grid;gap:10px;margin:14px 0}.mystery-clues small{line-height:1.7;color:var(--muted)}.mystery-suspect{background:linear-gradient(145deg,#fff,#f7f3ff);border:1px solid #e5dcff;border-radius:26px;padding:20px;margin:12px 0}.claim{margin-top:12px;padding:14px;border-radius:18px;background:#fff;border:1px solid #ece8f4;line-height:1.9}.mystery-summary{display:grid;gap:10px;text-align:right;background:#fff;border:1px solid #e7eaf2;border-radius:20px;padding:16px;line-height:1.9}
-.mystery-caseboard{margin:14px 0;padding:16px;border-radius:22px;background:linear-gradient(145deg,#11162b,#0b1020);border:1px solid rgba(34,211,238,.22);box-shadow:0 14px 35px rgba(0,0,0,.22);text-align:right}.mystery-caseboard-title{font-size:17px;font-weight:1000;margin-bottom:12px}.mystery-caseboard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.mystery-caseboard-grid>div{padding:11px 8px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);text-align:center}.mystery-caseboard-grid b{display:block;font-size:20px;color:#f4f7ff}.mystery-caseboard-grid span{display:block;margin-top:3px;font-size:10px;color:var(--muted);line-height:1.5}.mystery-caseboard-tip{margin-top:11px;padding:11px 12px;border-radius:15px;background:rgba(139,92,246,.10);border:1px solid rgba(139,92,246,.20);color:var(--muted);font-size:12px;line-height:1.8}.mystery-caseboard-tip b{color:#f4f7ff}@media(max-width:520px){.mystery-caseboard-grid{grid-template-columns:repeat(2,1fr)}}
-.mystery-clue-progress{display:inline-block;margin:8px auto 2px;padding:8px 12px;border-radius:999px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.20);color:var(--muted);font-size:12px}.mystery-clue-progress b{color:#f4f7ff}.mystery-clues .collected{border-color:rgba(52,211,153,.55)!important;background:rgba(52,211,153,.10)!important;box-shadow:0 0 0 2px rgba(52,211,153,.08)}
-
-
-.game-guide-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}.game-guide-card{background:#fff;border:1px solid #e7eaf2;border-right:5px solid var(--guide-color,#7657ff);border-radius:20px;padding:16px;box-shadow:0 8px 22px rgba(54,72,110,.06)}.game-guide-head{display:flex;align-items:center;gap:10px}.game-guide-icon{font-size:30px}.game-guide-card h3{font-size:17px}.game-guide-card p{color:var(--muted);font-size:13px;line-height:1.9;margin-top:8px}.game-guide-steps{margin-top:10px;padding:11px 13px;border-radius:14px;background:#fbfbff;border:1px solid #eeeef8;font-size:12px;line-height:2;color:#555}.game-guide-steps b{color:#3d3760}.menu-guide-hint{margin-top:12px;padding:14px;border-radius:18px;background:linear-gradient(135deg,#fff8e8,#f4fbff);border:1px solid #f0e1bb;line-height:1.9;font-size:13px;color:#4d5363}.game-guide-tip{margin-top:10px;padding:10px 12px;border-radius:14px;background:#f7fbff;font-size:12px;line-height:1.8}.guide-modal .modal-box{max-width:760px;max-height:88vh;overflow:auto}.guide-intro{background:linear-gradient(135deg,#f7f3ff,#f2fbff);border:1px solid #e5defc;border-radius:18px;padding:14px;line-height:1.9;color:var(--muted);margin:10px 0 16px}.guide-close-row{display:flex;gap:8px;margin-top:16px}
-</style>
-<style id="pre-game-ready-dark-fix">
-/* Pre-game explanation screen: never render as a white card/page. */
-#gameContent .game-ready-card{background:#0b0e1b !important;color:#f4f7ff !important;border:1px solid #29204a !important;box-shadow:0 18px 45px rgba(0,0,0,.28) !important;}
-#gameContent .game-ready-card h2,#gameContent .game-ready-card b{color:#f4f7ff !important;}
-#gameContent .game-ready-card p{color:#a8b0c7;}
-#gameContent .game-ready-card > div[style*="background"]{background:#11152a !important;border-color:#29204a !important;color:#c8cde0 !important;}
-#gameContent .game-ready-card > div[style*="background:#ecfff6"]{background:rgba(52,211,153,.10) !important;border-color:rgba(52,211,153,.30) !important;color:#7ee7bd !important;}
-</style>
-<style>
-/* Game screens: keep the interface clean; explanatory hint text is hidden. */
-#gameContent > .play > .hint, #gameContent > .play .hunt-card > .hint { display:none !important; }
 </style>
 
 <style>
@@ -137,8 +95,7 @@ body{
     radial-gradient(circle at 50% 100%,rgba(255,62,165,.10),transparent 35%),
     #070814!important;
 }
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:32px 32px;z-index:-1}
-.topbar,.panel,.play,.stat,.game-card,.group-box,.team,.leader-row,.modal-box,.input,.secondary,.memory-option,.score,.answer,.menu-drawer,.menu-item{
+.topbar,.panel,.play,.stat,.game-card,.group-box,.team,.input,.secondary,.score,.answer{
   background:rgba(13,16,32,.88)!important;color:var(--ink)!important;border-color:var(--line)!important;
   box-shadow:var(--shadow)
 }
@@ -146,165 +103,118 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;ba
 .logo b,.gradient{background:linear-gradient(90deg,#22d3ee,#8b5cf6,#ff3ea5);-webkit-background-clip:text;color:transparent}
 .icon{background:#11152a!important;color:#fff!important;border-color:var(--line)!important}
 .hero h1{color:#fff;text-shadow:0 0 30px rgba(139,92,246,.28)}
-.hero p,.hint,.stat span,.game-card p,.game-guide-card p{color:var(--muted)!important}
+.hero p,.hint,.stat span,.game-card p{color:var(--muted)!important}
 .badge{background:rgba(139,92,246,.12)!important;border-color:rgba(139,92,246,.35)!important;color:#c9bbff!important}
 .primary{background:linear-gradient(135deg,#8b5cf6,#ff3ea5)!important;color:#fff!important;box-shadow:0 12px 35px rgba(139,92,246,.28)}
 .secondary{background:#11152a!important}
 .danger{background:rgba(251,59,82,.12)!important;color:#ff8c99!important;border-color:rgba(251,59,82,.35)!important}
-.stat{border-radius:20px}
-.stat strong{color:#fff}
-.games-grid{gap:16px}
-.game-card{
-  min-height:195px!important;border:1px solid rgba(255,255,255,.10)!important;
-  border-top:0!important;border-radius:24px!important;overflow:hidden;
-  position:relative;transition:.25s ease!important;
-}
-.game-card:after{content:"";position:absolute;inset:0;border-radius:24px;padding:1px;background:linear-gradient(135deg,var(--game-color),transparent 55%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.75}
-.game-card:hover{transform:translateY(-8px) scale(1.015)!important;box-shadow:0 24px 65px rgba(0,0,0,.55),0 0 30px color-mix(in srgb,var(--game-color) 18%,transparent)!important}
-.game-card:before{background:radial-gradient(circle at 100% 100%,color-mix(in srgb,var(--game-color) 22%,transparent),transparent 62%)!important}
-.game-icon{
-  background:linear-gradient(135deg,color-mix(in srgb,var(--game-color) 78%,#111),color-mix(in srgb,var(--game-color) 35%,#0b0d19))!important;
-  border:1px solid color-mix(in srgb,var(--game-color) 65%,#fff 5%)!important;
-  box-shadow:0 0 28px color-mix(in srgb,var(--game-color) 28%,transparent)!important;
-}
 .game-card h3{color:#fff!important}
-.game-card .tag{background:color-mix(in srgb,var(--game-color) 13%,#0d1020)!important;color:color-mix(in srgb,var(--game-color) 75%,#fff)!important;border-color:color-mix(in srgb,var(--game-color) 35%,transparent)!important}
 .section-title{color:#fff}
 .progress{background:#171b2e!important}.bar{background:linear-gradient(90deg,#22d3ee,#8b5cf6,#ff3ea5)!important}
 .turn{color:#c4b5fd!important}.round{color:var(--muted)!important}
 .answer{background:#11152a!important}.answer:hover{background:#191e39!important}
-.answer.correct{background:rgba(52,211,153,.14)!important;border-color:#34d399!important;color:#6ee7b7!important}
-.answer.wrong{background:rgba(251,59,82,.14)!important;border-color:#fb3b52!important}
 .timer{background:#17172b!important;border-color:#fbbf24!important;color:#fff!important}
 .footer{color:#69728e!important}
-.menu-overlay{background:rgba(0,0,0,.65)!important}
-.menu-drawer{backdrop-filter:blur(20px)}
-.menu-item:hover{background:#171b32!important}
-.menu-note,.menu-guide-hint,.guide-intro,.game-guide-steps,.game-guide-tip{background:#11152a!important;border-color:var(--line)!important;color:var(--muted)!important}
-.game-guide-card{background:#0d1020!important;border-color:var(--line)!important}
-.spy-card,.spy-secret,.spy-result{background:linear-gradient(145deg,#10142a,#0b0e1b)!important;border-color:rgba(139,92,246,.35)!important}
-.spy-secret.is-spy{background:linear-gradient(145deg,#26121c,#120d16)!important}
-.spy-secret.is-citizen{background:linear-gradient(145deg,#0d241d,#0b1715)!important}
-.mystery-box,.mystery-suspect,.mystery-summary{background:#10142a!important;color:var(--ink)!important;border-color:var(--line)!important}
-.bomb-wrap{background:linear-gradient(145deg,#24101a,#141126)!important;border-color:rgba(251,59,82,.35)!important}
-.red-hunt{background:linear-gradient(145deg,#171326,#101b25)!important;border-color:rgba(34,211,238,.25)!important}
-.reaction-new{background:#10142a!important;border-color:rgba(34,211,238,.3)!important}
-.reaction-new.ready{background:rgba(52,211,153,.12)!important}
 .group-box{background:linear-gradient(145deg,#10142a,#0c101e)!important}
 .team-a{border-color:rgba(139,92,246,.5)!important}.team-b{border-color:rgba(34,211,238,.45)!important}
-.pill,.score,.player-status{background:#11152a!important;border-color:var(--line)!important;color:#fff!important}
+.pill,.score{background:#11152a!important;border-color:var(--line)!important;color:#fff!important}
 .input{box-shadow:none!important}.input::placeholder{color:#69728e}
-.modal-box{border-radius:26px}
 </style>
 
-<style id="dossier-dark-fix">
-/* Dossier: keep its cards consistent with the Neon Dark design. */
-.mystery-box, .mystery-summary, .mystery-suspect, .mystery-summary, .claim {
-  background:linear-gradient(145deg,#0f1426,#151a31)!important;
-  color:var(--ink)!important;
-  border:1px solid rgba(139,92,246,.28)!important;
-  box-shadow:0 14px 35px rgba(0,0,0,.28)!important;
-}
-.mystery-box b, .mystery-summary b, .mystery-suspect b, .claim b { color:#f4f7ff!important; }
-.mystery-box span, .mystery-summary span, .mystery-suspect span, .claim span { color:var(--muted)!important; }
-.mystery-questions button, .mystery-clues > * { color:var(--ink); }
-</style>
-
-<style id="dark-inline-card-fix">
-/* Keep inline hint cards readable on the Neon Dark theme. */
-.spy-secret div[style*="background:#fff"],
-.spy-secret div[style*="background: #fff"],
-.spy-first-speaker[style*="background:#f5f1ff"]{
-  background:linear-gradient(145deg,#17132b,#11172b)!important;
-  border-color:rgba(139,92,246,.38)!important;
-  color:#f4f7ff!important;
-  box-shadow:0 12px 30px rgba(0,0,0,.28)!important;
-}
-.spy-secret div[style*="background:#fff"] div,
-.spy-secret div[style*="background: #fff"] div{color:#f4f7ff!important}
-.spy-secret div[style*="background:#fff"] p,
-.spy-secret div[style*="background: #fff"] p{color:#c9c3df!important}
-.spy-first-speaker[style*="background:#f5f1ff"] .hint{color:#a8b0c7!important}
-</style>
-<style id="spy-voting-dark-fix">
-#game, #gameContent{background:#070814!important;color:#f4f7ff!important;}
-#gameContent .spy-wrap{background:transparent!important;color:#f4f7ff!important;}
-#gameContent .spy-wrap .spy-round,#gameContent .spy-wrap .spy-badge{background:#17132b!important;color:#c4b5fd!important;border-color:rgba(139,92,246,.35)!important;}
-#gameContent .spy-wrap .spy-vote-secret{background:#17152a!important;color:#f4f7ff!important;border-color:rgba(251,191,36,.3)!important;}
-#gameContent .spy-wrap .spy-votes{background:transparent!important;}
-#gameContent .spy-wrap .spy-votes .answer{background:#11152a!important;color:#f4f7ff!important;border-color:rgba(139,92,246,.28)!important;}
-#gameContent .spy-wrap .spy-votes .answer:hover{background:#191e39!important;border-color:#8b5cf6!important;}
-#gameContent .spy-wrap .prompt{color:#fff!important;}
-</style>
-
-<style id="final-game-guide-dark-fix">
-/* Final fix: game explanation pages/cards must never render as a white page. */
-#gameGuideModal, #gameGuideModal .modal-box, #gameGuideModal #gameGuideList,
-#gameGuideModal .game-guide-card, #gameGuideModal .game-guide-steps,
-#gameGuideModal .game-guide-tip, #gameGuideModal .guide-intro {
-  background:#0b0e1b !important;
-  color:#f4f7ff !important;
-  border-color:rgba(139,92,246,.28) !important;
-}
-#gameGuideModal .game-guide-card {
-  background:linear-gradient(145deg,#10142a,#0b0e1b) !important;
-  box-shadow:0 14px 35px rgba(0,0,0,.30) !important;
-}
-#gameGuideModal .game-guide-steps, #gameGuideModal .game-guide-tip, #gameGuideModal .guide-intro {
-  background:#11152a !important;
-  color:#a8b0c7 !important;
-}
-#gameGuideModal h2, #gameGuideModal h3, #gameGuideModal b,
-#gameGuideModal .game-guide-head, #gameGuideModal .game-guide-icon {
-  color:#f4f7ff !important;
-}
-#gameGuideModal p, #gameGuideModal span, #gameGuideModal .game-guide-card p {
-  color:#a8b0c7 !important;
-}
-#gameGuideModal .tag {
-  background:#17132b !important;
-  color:#c4b5fd !important;
-  border-color:rgba(139,92,246,.35) !important;
-}
-</style>
-<style id="ABSOLUTE-GUIDE-DARK-FIX">
-#gameGuideModal{background:#050711!important;position:fixed!important;inset:0!important;z-index:99999!important;align-items:center!important;justify-content:center!important;}
-#gameGuideModal.show{display:flex!important;}
-#gameGuideModal .modal-box{background:#0b0e1b!important;color:#f4f7ff!important;border:1px solid #29204a!important;}
-#gameGuideModal .game-guide-grid{background:#0b0e1b!important;}
-#gameGuideModal .game-guide-card{background:#10142a!important;color:#f4f7ff!important;border:1px solid #29204a!important;}
-#gameGuideModal .game-guide-card h3,#gameGuideModal .game-guide-card b{color:#f4f7ff!important;}
-#gameGuideModal .game-guide-card p,#gameGuideModal .game-guide-card span{color:#a8b0c7!important;}
-#gameGuideModal .game-guide-steps,#gameGuideModal .game-guide-tip,#gameGuideModal .guide-intro{background:#151a30!important;color:#c8cde0!important;border:1px solid #29204a!important;}
-#gameGuideModal .game-guide-steps b{color:#f4f7ff!important;}
-#gameGuideModal .icon{background:#171b32!important;color:#fff!important;}
+<style id="arena-case-v12">
+:root{--gold:#e7b54a;--gold2:#f4cf73;--case-bg:#080a0f;--case-panel:#11131a;--case-line:rgba(255,255,255,.11);--case-muted:#8f93a2}
+#game.arena-game-screen{padding:0 0 110px!important;background:radial-gradient(900px 500px at 50% -10%,rgba(191,145,45,.09),transparent 62%),#07090d!important}
+.arena-game-screen .game-shell{max-width:1050px;margin:0 auto;min-height:calc(100vh - 80px);color:#f7f7fa}
+.game-topline{height:74px;display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:14px;border-bottom:1px solid var(--case-line);padding:0 4px}
+.glass-icon{width:46px;height:46px;border-radius:15px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.035);color:#fff;font-size:23px;cursor:pointer}
+.case-meta{text-align:center;font:800 11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:2px;color:#c5c7ce}.case-meta small{display:block;margin-top:3px;font:700 11px/1.6 inherit;letter-spacing:0;color:var(--gold)}
+.game-brand{text-align:right;letter-spacing:3px}.game-brand b{font-size:16px}.game-brand small{display:block;margin-top:5px;font:700 8px ui-monospace,monospace;letter-spacing:2px;color:#707583}
+.case-hero{position:relative;min-height:280px;margin-top:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:radial-gradient(circle at 78% 28%,rgba(221,175,71,.16),transparent 28%),linear-gradient(145deg,#151820,#090b10 72%);display:flex;align-items:center;padding:32px;isolation:isolate}
+.case-hero-copy{max-width:62%;z-index:2}.case-hero h1{font-size:clamp(34px,6vw,62px);margin:13px 0 4px;letter-spacing:-2px}.case-hero p{margin:0;color:#a6a9b4;font-size:14px}
+.case-art{position:absolute;right:7%;top:25%;width:180px;height:180px;border:1px solid rgba(231,181,74,.38);border-radius:30px;transform:rotate(11deg);display:grid;place-items:center;font-size:95px;color:var(--gold);background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(0,0,0,.2))}
 </style>
 </head>
+
 <body>
+
+<div class="u-intro" id="uIntro">
+  <div class="u-intro-core">
+    <div class="u-logo3d">🎮</div>
+    <h1>گەمەی گەنجان</h1>
+    <p>ئامادەیە بۆ شەوێکی پڕ لە پێکەنین؟</p>
+    <button class="primary" style="margin-top:20px" onclick="window.__skipIntro()">دەستپێکردن</button>
+  </div>
+</div>
+
 <div class="app">
-<header class="topbar"><div class="logo" onclick="showScreen('home')">🎮 <b>لەگەل هاوڕێیان</b></div><div class="top-actions"><button class="icon" onclick="openMenu()" aria-label="menu">☰</button><button class="icon" id="soundBtn" onclick="toggleSound()">🔊</button><button class="icon" onclick="showHelp()">?</button></div></header>
+<header class="topbar">
+  <div class="logo" onclick="showScreen('home')">🎮 <b>گەمەی گەنجان</b></div>
+  <div class="top-actions">
+    <button class="icon" id="soundBtn" onclick="toggleSound()">🔊</button>
+  </div>
+</header>
 
 <section id="home" class="screen active">
-<div class="hero"><div class="badge">✨ بۆ خێزان و هاوڕێکان — نۆرە بە نۆرە</div><h1>شەوی خۆشی<br><span class="gradient">دەست پێ بکە!</span></h1><p>یارییە جۆراوجۆرەکان، پرسیاری زۆر، چالاکی و پێکەنین. هەر جار ناوەڕۆکی نوێ دەبینیت و نۆرەکە بە ڕێکخستن دەگوازرێتەوە.</p><div class="actions"><button class="primary" onclick="scrollToGames()">🎮 یاری دەست پێ بکە</button><button class="secondary" onclick="showPlayersSetup()">👥 یاریزانەکان</button></div></div>
-<div class="stats"><div class="stat"><strong id="gameCount">18</strong><span>جۆری یاری</span></div><div class="stat"><strong>1000+</strong><span>دانە بۆ هەر یاری</span></div><div class="stat"><strong>17000+</strong><span>ناوەڕۆکی جیاواز</span></div><div class="stat"><strong>2–20</strong><span>یاریزان</span></div></div>
-<div class="panel" style="max-width:760px;margin:10px auto 22px;padding:18px 20px;text-align:center">
-  <div class="badge">🕵️ ڕێکخستنی «جاسوسی گروپ»</div>
-  <h3 style="font-size:20px;margin:10px 0 6px">🔄 ژمارەی ڕاوەکان</h3>
-  <p class="hint">ژمارەی ڕاوەکانی یاریی جاسوسی بە دڵی خۆتان دیاری بکەن. هەر ڕاو شوێن و جاسوسێکی نوێ هەیە.</p>
-  <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px">
-    <button class="secondary" onclick="setSpyRoundLimit(3)">3 ڕاو</button>
-    <button class="secondary" onclick="setSpyRoundLimit(5)">5 ڕاو</button>
-    <button class="secondary" onclick="setSpyRoundLimit(10)">10 ڕاو</button>
-    <input id="spyRoundLimitInput" class="input" type="number" min="1" max="50" value="5" style="max-width:130px;text-align:center" aria-label="ژمارەی ڕاوی جاسوسی">
-    <button class="primary" onclick="applySpyRoundLimit()">✅ جێگیرکردن</button>
+<div class="hero">
+  <div class="badge">✨ بۆ خێزان و هاوڕێکان — نۆرە بە نۆرە</div>
+  <h1>شەوی خۆشی<br><span class="gradient">دەست پێ بکە!</span></h1>
+  <p>یارییە جۆراوجۆرەکان، پرسیاری زۆر، چالاکی و پێکەنین.</p>
+  <div class="actions">
+    <button class="primary" onclick="scrollToGames()">🎮 یاری دەست پێ بکە</button>
+    <button class="secondary" onclick="showPlayersSetup()">👥 یاریزانەکان</button>
   </div>
-  <div id="spyRoundLimitLabel" class="hint" style="margin-top:8px">ئێستا: 5 ڕاو</div>
 </div>
-<h2 class="section-title" id="gamesTitle">🔥 یارییەکان</h2><div class="games-grid" id="gamesGrid"><button class="game-card static-game" data-game="truth" style="--game-color:#7657ff" onclick="startGame('truth')"><div class="game-icon">🎤</div><h3>ڕاستی یان ئەرک</h3><p>ڕاستییە خۆشەکان و ئەرکی پڕ لە پێکەنین.</p><span class="tag">پێکەنین</span></button><button class="game-card static-game" data-game="memory" style="--game-color:#19b978" onclick="startGame('memory')"><div class="game-icon">🧩</div><h3>بیرگەی شێتانە</h3><p>ڕیزەکە لەبیر بگرە؛ ئاستەکان قورستر دەبن.</p><span class="tag">مێشک</span></button><button class="game-card static-game" data-game="category" style="--game-color:#e05aa6" onclick="startGame('category')"><div class="game-icon">🎯</div><h3>ناوی 5 دانە</h3><p>لە بابەتێکدا 5 شت لە کاتی دیاریکراودا بڵێ.</p><span class="tag">چالاکی</span></button><button class="game-card static-game" data-game="emoji" style="--game-color:#00a896" onclick="startGame('emoji')"><div class="game-icon">😂</div><h3>ئیمۆجی چییە؟</h3><p>ئیمۆجییەکان بخوێنەوە و ماناکەیان بدۆزەوە.</p><span class="tag">خۆش</span></button><button class="game-card static-game" data-game="forbidden" style="--game-color:#8338ec" onclick="startGame('forbidden')"><div class="game-icon">🚫</div><h3>وشەی قەدەغە</h3><p>وشەکە وەسف بکە بەبێ وشەی قەدەغە.</p><span class="tag">زیرەکی</span></button><button class="game-card static-game" data-game="charades" style="--game-color:#06a77d" onclick="startGame('charades')"><div class="game-icon">🎭</div><h3>بەبێ قسە</h3><p>تەنها بە جوڵە و ئاماژە وشەکە بگەیەنە.</p><span class="tag">پێکەنین</span></button><button class="game-card static-game" data-game="guess" style="--game-color:#5e60ce" onclick="startGame('guess')"><div class="game-icon">🕵️</div><h3>وشەکە بدۆزەوە</h3><p>بە هینت و وەسف وشەکە بدۆزەوە.</p><span class="tag">زیرەکی</span></button><button class="game-card static-game" data-game="bomb" style="--game-color:#f03e3e" onclick="startGame('bomb')"><div class="game-icon">💣</div><h3>بۆمبی پیتی</h3><p>هەمان بابەت بۆ هەمووان؛ بۆمب لە نۆرەیەکەوە بۆ نۆرەی دواتر دەچێت.</p><span class="tag">قورس</span></button><button class="game-card static-game" data-game="challenge" style="--game-color:#14b8a6" onclick="startGame('challenge')"><div class="game-icon">🔥</div><h3>چالاکی شێتانە</h3><p>ئەرکە کورتەکان، خۆش و گونجاو بۆ هەمووان.</p><span class="tag">پێکەنین</span></button><button class="game-card static-game" data-game="redhunt" style="--game-color:#ef3340" onclick="startGame('redhunt')"><div class="game-icon">🔴</div><h3>بگەڕێ بۆ سوور</h3><p>کاتێک دەست پێ دەکات، زوو شتێکی سوور بدۆزەوە!</p><span class="tag">چالاکی</span></button></div>
+
+<div class="stats">
+  <div class="stat"><strong id="gameCount">6</strong><span>جۆری یاری</span></div>
+  <div class="stat"><strong>1000+</strong><span>پرسیار</span></div>
+  <div class="stat"><strong>100%</strong><span>خۆشی</span></div>
+  <div class="stat"><strong>2–20</strong><span>یاریزان</span></div>
+</div>
+
+<h2 class="section-title" id="gamesTitle">🔥 یارییەکان</h2>
+<div class="games-grid" id="gamesGrid">
+  <button class="game-card static-game" style="--game-color:#e05aa6" onclick="startGame('category')">
+    <div class="game-icon">🎯</div>
+    <h3>ناوی 5 دانە</h3>
+    <p>لە بابەتێکدا 5 شت لە کاتی دیاریکراودا بڵێ.</p>
+    <span class="tag">چالاکی</span>
+  </button>
+  <button class="game-card static-game" style="--game-color:#8338ec" onclick="startGame('forbidden')">
+    <div class="game-icon">🚫</div>
+    <h3>وشەی قەدەغە</h3>
+    <p>وشەکە وەسف بکە بەبێ وشەی قەدەغە.</p>
+    <span class="tag">زیرەکی</span>
+  </button>
+  <button class="game-card static-game" style="--game-color:#06a77d" onclick="startGame('charades')">
+    <div class="game-icon">🎭</div>
+    <h3>بەبێ قسە</h3>
+    <p>تەنها بە جوڵە و ئاماژە وشەکە بگەیەنە.</p>
+    <span class="tag">پێکەنین</span>
+  </button>
+  <button class="game-card static-game" style="--game-color:#5e60ce" onclick="startGame('guess')">
+    <div class="game-icon">🕵️</div>
+    <h3>وشەکە بدۆزەوە</h3>
+    <p>بە هینت و وەسف وشەکە بدۆزەوە.</p>
+    <span class="tag">زیرەکی</span>
+  </button>
+  <button class="game-card static-game" style="--game-color:#f03e3e" onclick="startGame('bomb')">
+    <div class="game-icon">💣</div>
+    <h3>بۆمبی پیتی</h3>
+    <p>هەمان بابەت بۆ هەمووان؛ بۆمب لە نۆرەیەکەوە بۆ نۆرەی دواتر دەچێت.</p>
+    <span class="tag">قورس</span>
+  </button>
+  <button class="game-card static-game" style="--game-color:#ef3340" onclick="startGame('redhunt')">
+    <div class="game-icon">🔴</div>
+    <h3>بگەڕێ بۆ سوور</h3>
+    <p>کاتێک دەست پێ دەکات، زوو شتێکی سوور بدۆزەوە!</p>
+    <span class="tag">چالاکی</span>
+  </button>
+</div>
+
 <div class="group-box" id="groupBox">
   <div class="badge">👥 شێوازی کۆمەڵە</div>
   <h2 class="section-title" style="margin-bottom:4px">🏆 بە گروپ یاری بکە</h2>
-  <p class="hint">یاریزانەکان بە دوو گروپ دابەش بکە؛ هەر کەس بە نۆرە یاری دەکات و گروپەکەی لەگەڵیەتی.</p>
   <div class="group-grid" id="groupPreview">
     <div class="team team-a"><h3>🟣 گروپی یەکەم</h3><div class="team-list" id="teamAList"><span class="team-player">هێشتا یاریزان نییە</span></div></div>
     <div class="team team-b"><h3>🔵 گروپی دووەم</h3><div class="team-list" id="teamBList"><span class="team-player">هێشتا یاریزان نییە</span></div></div>
@@ -314,946 +224,178 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;ba
     <button class="secondary" onclick="showPlayersSetup()">👥 گۆڕینی یاریزانەکان</button>
   </div>
 </div>
-<div class="footer">🎮 لەگەل هاوڕێیان — هەر نۆرەیەک شتێکی نوێ</div>
+
+<div class="footer">🎮 گەمەی گەنجان — هەموو مافەکانی پارێزراوە</div>
 </section>
 
-<section id="players" class="screen"><div class="panel"><h2>👥 یاریزانەکان</h2><p class="hint">ناوی کەسانی کۆمەڵەکە زیاد بکە. یارییەکان بە نۆرە دەچن.</p><div class="player-row"><input id="playerInput" class="input" maxlength="20" placeholder="ناوی یاریزان..."><button class="primary" onclick="addPlayer()">زیادکردن</button></div><div id="playersList" class="players"></div><div class="actions"><button class="primary" onclick="savePlayers()">✅ تەواو</button><button class="secondary" onclick="showScreen('home')">گەڕانەوە</button></div></div></section>
+<section id="players" class="screen">
+<div class="panel">
+  <h2>👥 یاریزانەکان</h2>
+  <p class="hint">ناوی کەسانی کۆمەڵەکە زیاد بکە.</p>
+  <div class="player-row">
+    <input id="playerInput" class="input" maxlength="20" placeholder="ناوی یاریزان...">
+    <button class="primary" onclick="addPlayer()">زیادکردن</button>
+  </div>
+  <div id="playersList" class="players"></div>
+  <div class="actions">
+    <button class="primary" onclick="showScreen('home')">✅ تەواو</button>
+    <button class="secondary" onclick="showScreen('home')">گەڕانەوە</button>
+  </div>
+</div>
+</section>
 
-<section id="game" class="screen"><div class="game-head"><div class="game-title" id="gameTitle">یاری</div><div class="scores" id="scoreBox"></div></div><div class="progress"><div class="bar" id="progressBar"></div></div><div class="actions" style="margin:10px 0 16px"><button class="secondary" onclick="restartGame()">🔄 دووبارە یاری</button><button class="secondary" onclick="exitGame()">🏠 دەرچوون</button></div><div id="gameContent"></div></section>
+<section id="game" class="screen arena-game-screen">
+<div class="game-shell" id="gameContent">
+  <div class="game-topline">
+    <button class="glass-icon" onclick="exitGame()">↩</button>
+    <div class="case-meta"><span id="caseRound">ROUND 01</span><small id="caseTurn">نۆرەی یاریزان</small></div>
+    <div class="game-brand"><b>ARENA</b><small>GAME ROOM</small></div>
+  </div>
+  
+  <div class="play" style="margin-top:20px">
+    <div class="turn" id="turnPlayer">نۆرەی: یاریزان 1</div>
+    <div class="prompt" id="gamePrompt">ئامادەبۆ دەستپێکردن...</div>
+    <div class="timer" id="gameTimer">15</div>
+    <div class="actions" style="margin-top:20px">
+      <button class="primary" onclick="nextTurn()">نۆرەی دواتر ➔</button>
+      <button class="danger" onclick="exitGame()">کۆتایی یاری</button>
+    </div>
+  </div>
+</div>
+</section>
 
-<section id="result" class="screen"><div class="panel result"><div class="trophy">🏆</div><h2>یاری کۆتایی هات!</h2><p id="resultText" class="hint"></p><div class="leader" id="leaderboard"></div><div class="actions"><button class="primary" onclick="restartGame()">🔄 دووبارە یاری بکە</button><button class="secondary" onclick="showScreen('home')">🏠 سەرەتا</button></div></div></section>
 </div>
 
-<div id="menuOverlay" class="menu-overlay" onclick="closeMenu(event)"><aside class="menu-drawer" onclick="event.stopPropagation()"><button class="icon menu-close" onclick="closeMenu()">×</button><div class="menu-title">☰ مێنیو</div><a class="menu-item" href="#" onclick="closeMenu();showScreen('home');return false">🏠 سەرەتا</a><a class="menu-item" href="#" onclick="closeMenu();showPlayersSetup();return false">👥 یاریزانەکان</a><a class="menu-item" href="#" onclick="closeMenu();showHelp();return false">❓ چۆن یاری بکەین؟</a><a class="menu-item" href="#" onclick="closeMenu();showGameGuide();return false">📚 فێربوونی هەر یارییەک</a><div class="menu-guide-hint">👆 لێرە کلیک بکە تا پێش یاری کردن بە ئاسانی بزانیت: <b>یارییەکە چییە؟ چۆن دەکرێت؟ نۆرە چۆن دەچێت؟ کات و ئامانجی یاری چییە؟</b></div><a class="menu-item menu-instagram" href="https://www.instagram.com/blnd1808?igsi=d29maHFmaXN3dmVx" target="_blank" rel="noopener noreferrer">📩 پەیام بۆ خاوەن وێبسایت — Instagram</a><div class="menu-note">بۆ کێشە، پێشنیار، یان داواکاریی یاریی نوێ، لە Instagram ـەوە پەیام بنێرە.</div></aside></div><div id="toast" class="toast"></div><div id="gameGuideModal" class="modal guide-modal"><div class="modal-box"><button class="icon" style="float:left" onclick="closeGameGuide()">×</button><h2>📚 ڕوونکردنەوەی یاریەکان</h2><div class="guide-intro">لەوێ دەتوانیت پێش دەستپێکردنی هەر یارییەک بە ئاسانی بزانیت <b>ئامانجی یاری چییە، چۆن دەکرێت، چۆن دەست پێ دەکات و چۆن کۆتایی دێت.</b> یارییەک هەڵبژێرە و پاشان بگەڕێوە بۆ سەرەتا و دەست پێ بکە.</div><div id="gameGuideList" class="game-guide-grid"></div><div class="guide-close-row"><button class="primary" onclick="closeGameGuide()">باشە، تێگەیشتم 👍</button></div></div></div><div id="helpModal" class="modal"><div class="modal-box"><button class="icon" style="float:left" onclick="closeHelp()">×</button><h2>🎮 چۆن یاری بکەین؟</h2><br><p class="hint">١) ناوی لانیکەم دوو یاریزان زیاد بکە.<br>٢) یارییەک هەڵبژێرە.<br>٣) هەر یارییەک نۆرە بە نۆرەیە.<br>٤) بانکەکانی ناوەڕۆک سەربەخۆن و هەر دانەیەک ID ـی تایبەتی هەیە، بۆیە تا بانکەکە تەواو نەبێت دووبارە نابێتەوە.<br>💣 لە «بۆمبی پرسیار» هەر یاریزانێک 20 چرکەی هەیە بۆ وەڵامدان. کات تەواو بێت، بۆمب دەقێت و یاریزانی نۆرەکە دەر دەکرێت.</p><br><button class="primary" onclick="closeHelp()">باشە 👍</button></div></div>
-
 <script>
-"use strict";
+let players = ["یاریزان 1", "یاریزان 2"];
+let currentTurnIndex = 0;
+let timerInterval = null;
+let soundEnabled = true;
 
-const GAMES=[
-{id:"truth",icon:"🎤",name:"ڕاستی یان ئەرک",desc:"ڕاستییە خۆشەکان و ئەرکی پڕ لە پێکەنین.",tag:"پێکەنین",color:"#7657ff"},
-{id:"memory",icon:"🧩",name:"بیرگەی شێتانە",desc:"ڕیزەکە لەبیر بگرە؛ ئاستەکان قورستر دەبن.",tag:"مێشک",color:"#19b978"},
-{id:"category",icon:"🎯",name:"ناوی 5 دانە",desc:"لە بابەتێکدا 5 شت لە کاتی دیاریکراودا بڵێ.",tag:"چالاکی",color:"#e05aa6"},
-{id:"emoji",icon:"😂",name:"ئیمۆجی چییە؟",desc:"ئیمۆجییەکان بخوێنەوە و ماناکەیان بدۆزەوە.",tag:"خۆش",color:"#00a896"},
-{id:"forbidden",icon:"🚫",name:"وشەی قەدەغە",desc:"وشەکە وەسف بکە بەبێ وشەی قەدەغە.",tag:"زیرەکی",color:"#8338ec"},
-{id:"charades",icon:"🎭",name:"بەبێ قسە",desc:"تەنها بە جوڵە و ئاماژە وشەکە بگەیەنە.",tag:"پێکەنین",color:"#06a77d"},
-{id:"guess",icon:"🕵️",name:"وشەکە بدۆزەوە",desc:"بە هینت و وەسف وشەکە بدۆزەوە.",tag:"زیرەکی",color:"#5e60ce"},
-{id:"bomb",icon:"💣",name:"بۆمبی پیتی",desc:"پیتێک دیاری دەکرێت؛ وشە بڵێ و بۆمبەکە بگەڕێنەوە.",tag:"قورس",color:"#f03e3e"},
-{id:"challenge",icon:"🔥",name:"چالاکی شێتانە",desc:"ئەرکە کورتەکان، خۆش و گونجاو بۆ هەمووان.",tag:"پێکەنین",color:"#14b8a6"},
-{id:"redhunt",icon:"🧭",name:"بگەڕێ و بیهێنە",desc:"بەپەلە شتێکی دیاریکراو لە دەوروبەرت بدۆزەوە و بیهێنە.",tag:"چالاکی",color:"#ff7a18"},
-{id:"spy",icon:"🕵️",name:"جاسوسی گروپ",desc:"یەک جاسوس لە نێوانتانە؛ 5 خولەک قسە و گومان، بە ڕاوەکانی خۆتان!",tag:"کۆمەڵایەتی",color:"#8b5cf6"},
-{id:"mystery",icon:"🕯️",name:"دۆسیەی تاوان",desc:"کۆمەڵێک لێکۆڵەر، 2 تاوانبار، بەڵگە و پرسیار و گفتوگۆی زۆر!",tag:"لێکۆڵینەوە",color:"#9b5de5"}
-];
-
-const state={players:[],scores:{},currentPlayer:0,currentGame:null,turn:0,timer:null,nextTimeout:null,sound:true,gameLocked:false,used:{},eliminated:[],bombQuestion:null,bombTurn:0,groups:{a:[],b:[]},spyRound:0,spyRoundLimit:5,spyRoles:{},spyLocation:"",spyRevealIndex:0,spyVotes:{},bombActive:false,bombTickTimer:null,bombTickStep:0};
-const KEY="gng_v6";
-
-function saveState(){try{localStorage.setItem(KEY,JSON.stringify({players:state.players,used:state.used,sound:state.sound,groups:state.groups,spyRoundLimit:state.spyRoundLimit}))}catch(e){}}
-function loadState(){try{const x=JSON.parse(localStorage.getItem(KEY)||"{}");if(Array.isArray(x.players))state.players=x.players;if(x.used&&typeof x.used==="object")state.used=x.used;if(typeof x.sound==="boolean")state.sound=x.sound;if(x.groups&&typeof x.groups==="object")state.groups=x.groups;if(Number.isInteger(x.spyRoundLimit))state.spyRoundLimit=Math.max(1,Math.min(50,x.spyRoundLimit))}catch(e){}}
-function renderGroups(){
-  const A=document.getElementById("teamAList"),B=document.getElementById("teamBList");
-  if(!A||!B)return;
-  const a=state.groups?.a||[],b=state.groups?.b||[];
-  A.innerHTML=a.length?a.map(n=>`<span class="team-player">${esc(n)}</span>`).join(""):`<span class="team-player">هێشتا یاریزان نییە</span>`;
-  B.innerHTML=b.length?b.map(n=>`<span class="team-player">${esc(n)}</span>`).join(""):`<span class="team-player">هێشتا یاریزان نییە</span>`;
-}
-function showScreen(id){if(id!=="game")stopMysteryMusic();document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));const el=document.getElementById(id);if(el)el.classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
-function scrollToGames(){document.getElementById("gamesTitle").scrollIntoView({behavior:"smooth"})}
-function toast(t){const e=document.getElementById("toast");e.textContent=t;e.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("show"),2200)}
-function toggleSound(){state.sound=!state.sound;document.getElementById("soundBtn").textContent=state.sound?"🔊":"🔇";if(!state.sound)stopMysteryMusic();else if(state.currentGame==="mystery")startMysteryMusic();saveState()}
-let audio=null;
-let mysteryMusicTimer=null;
-let mysteryMusicToken=0;
-let mysteryMusicNodes=[];
-function ensureAudio(){
-  try{
-    audio ||= new(window.AudioContext||window.webkitAudioContext)();
-    if(audio.state === "suspended") audio.resume();
-    return audio;
-  }catch(e){ return null; }
-}
-function beep(f=600,d=.08,type="sine"){
-  if(!state.sound)return;
-  const ctx=ensureAudio(); if(!ctx)return;
-  try{
-    const o=ctx.createOscillator(),g=ctx.createGain();
-    o.type=type;o.frequency.value=f;
-    g.gain.setValueAtTime(.0001,ctx.currentTime);
-    g.gain.exponentialRampToValueAtTime(.09,ctx.currentTime+.01);
-    g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+d);
-    o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+d);
-  }catch(e){}
-}
-function stopBombSound(){
-  if(state.bombTickTimer){clearInterval(state.bombTickTimer);state.bombTickTimer=null;}
-  state.bombTickStep=0;
-}
-function bombTickSound(){
-  if(!state.sound || state.currentGame!=="bomb" || !state.bombActive)return;
-  const ctx=ensureAudio(); if(!ctx)return;
-  try{
-    const now=ctx.currentTime;
-    // Short mechanical "tick-tock" click — intentionally not a beep.
-    const buffer=ctx.createBuffer(1,Math.floor(ctx.sampleRate*.055),ctx.sampleRate);
-    const data=buffer.getChannelData(0);
-    for(let i=0;i<data.length;i++){
-      const env=Math.pow(1-i/data.length,5);
-      data[i]=(Math.random()*2-1)*env;
-    }
-    const src=ctx.createBufferSource(),filter=ctx.createBiquadFilter(),g=ctx.createGain();
-    src.buffer=buffer; filter.type="bandpass"; filter.frequency.value=state.bombTickStep%2?2100:1650; filter.Q.value=5;
-    g.gain.setValueAtTime(.0001,now); g.gain.exponentialRampToValueAtTime(.34,now+.004); g.gain.exponentialRampToValueAtTime(.0001,now+.055);
-    src.connect(filter);filter.connect(g);g.connect(ctx.destination);src.start(now);src.stop(now+.06);
-    state.bombTickStep++;
-  }catch(e){}
-}
-function bombExplosionSound(){
-  if(!state.sound)return;
-  const ctx=ensureAudio(); if(!ctx)return;
-  try{
-    const now=ctx.currentTime;
-    const master=ctx.createGain(),comp=ctx.createDynamicsCompressor();
-    master.gain.setValueAtTime(.0001,now);master.gain.exponentialRampToValueAtTime(.9,now+.015);master.gain.exponentialRampToValueAtTime(.0001,now+.9);
-    comp.threshold.value=-18;comp.knee.value=18;comp.ratio.value=8;comp.attack.value=.002;comp.release.value=.25;
-    master.connect(comp);comp.connect(ctx.destination);
-    // Low impact / blast body.
-    const osc=ctx.createOscillator(),og=ctx.createGain();osc.type="sine";osc.frequency.setValueAtTime(120,now);osc.frequency.exponentialRampToValueAtTime(42,now+.55);
-    og.gain.setValueAtTime(.0001,now);og.gain.exponentialRampToValueAtTime(.8,now+.02);og.gain.exponentialRampToValueAtTime(.0001,now+.65);osc.connect(og);og.connect(master);osc.start(now);osc.stop(now+.7);
-    // Short noisy burst for a more natural grenade-like explosion.
-    const buffer=ctx.createBuffer(1,Math.floor(ctx.sampleRate*.7),ctx.sampleRate),data=buffer.getChannelData(0);
-    for(let i=0;i<data.length;i++){const env=Math.pow(1-i/data.length,2.6);data[i]=(Math.random()*2-1)*env;}
-    const src=ctx.createBufferSource(),filter=ctx.createBiquadFilter(),ng=ctx.createGain();src.buffer=buffer;filter.type="lowpass";filter.frequency.setValueAtTime(2400,now);filter.frequency.exponentialRampToValueAtTime(350,now+.65);ng.gain.setValueAtTime(.0001,now);ng.gain.exponentialRampToValueAtTime(.75,now+.008);ng.gain.exponentialRampToValueAtTime(.0001,now+.68);src.connect(filter);filter.connect(ng);ng.connect(master);src.start(now);src.stop(now+.72);
-  }catch(e){}
-}
-function startBombSound(){
-  stopBombSound();
-  if(!state.sound || state.currentGame!=="bomb" || !state.bombActive)return;
-  bombTickSound();
-  state.bombTickTimer=setInterval(()=>{
-    if(state.currentGame!=="bomb" || !state.bombActive){stopBombSound();return;}
-    const el=document.getElementById("bombTimer");
-    const t=el?parseInt(el.textContent,10):999;
-    // Near the end, make the ticking faster without making it harsh.
-    if(t<=5){ clearInterval(state.bombTickTimer); state.bombTickTimer=setInterval(bombTickSound,420); }
-    else if(t<=10){ clearInterval(state.bombTickTimer); state.bombTickTimer=setInterval(bombTickSound,650); }
-    bombTickSound();
-  },1000);
-}
-function stopMysteryMusic(){
-  mysteryMusicToken++;
-  if(mysteryMusicTimer){clearTimeout(mysteryMusicTimer);mysteryMusicTimer=null;}
-  const ctx=audio;
-  if(!ctx)return;
-  const now=ctx.currentTime;
-  mysteryMusicNodes.forEach(n=>{
-    try{
-      if(n.gain){
-        n.gain.cancelScheduledValues(now);
-        n.gain.setTargetAtTime(.0001,now,.045);
-      }
-      if(n.osc){n.osc.stop(now+.18)}
-    }catch(e){}
-  });
-  mysteryMusicNodes=[];
-}
-function startMysteryMusic(){
-  // Music is allowed ONLY while the actual mystery game screen is open.
-  const gameScreen=document.getElementById("game");
-  if(!gameScreen || !gameScreen.classList.contains("active"))return;
-  stopMysteryMusic();
-  if(!state.sound || state.currentGame!=="mystery")return;
-  const ctx=ensureAudio(); if(!ctx)return;
-  const token=++mysteryMusicToken;
-  const now=ctx.currentTime;
-
-  // Cinematic mystery ambience: no sharp beeps and no piercing high notes.
-  const compressor=ctx.createDynamicsCompressor();
-  compressor.threshold.value=-20;
-  compressor.knee.value=24;
-  compressor.ratio.value=6;
-  compressor.attack.value=.012;
-  compressor.release.value=.28;
-  compressor.connect(ctx.destination);
-
-  const master=ctx.createGain();
-  master.gain.setValueAtTime(.0001,now);
-  master.gain.exponentialRampToValueAtTime(1.75,now+1.6);
-  master.connect(compressor);
-
-  const filter=ctx.createBiquadFilter();
-  filter.type="lowpass";
-  filter.frequency.value=1150;
-  filter.Q.value=.7;
-  filter.connect(master);
-
-  const padGain=ctx.createGain(); padGain.gain.value=.82; padGain.connect(filter);
-  const bassGain=ctx.createGain(); bassGain.gain.value=.56; bassGain.connect(filter);
-  const motifGain=ctx.createGain(); motifGain.gain.value=.13; motifGain.connect(filter);
-
-  const chords=[
-    [146.83,174.61,220.00], // Dm
-    [130.81,164.81,196.00], // C
-    [116.54,146.83,174.61], // Bb
-    [123.47,155.56,185.00]  // A colour
-  ];
-  const roots=[73.42,65.41,58.27,61.74];
-  const motif=[220,196,174.61,196,220,246.94,220,196];
-  let step=0;
-
-  const addTone=(freq,duration,attack,release,gainValue,type,output,t)=>{
-    const o=ctx.createOscillator(),g=ctx.createGain();
-    o.type=type;o.frequency.setValueAtTime(freq,t);
-    g.gain.setValueAtTime(.0001,t);
-    g.gain.exponentialRampToValueAtTime(gainValue,t+attack);
-    g.gain.setValueAtTime(gainValue,t+Math.max(attack+.01,duration-release));
-    g.gain.exponentialRampToValueAtTime(.0001,t+duration);
-    o.connect(g);g.connect(output);o.start(t);o.stop(t+duration+.04);
-    mysteryMusicNodes.push({osc:o,gain:g});
-  };
-
-  // Start with a soft sustained chord so it sounds like music, not a beep.
-  chords[0].forEach((f,i)=>addTone(f,4.8,1.4,1.5,i===1?.12:.15,i===1?"triangle":"sine",padGain,now));
-  addTone(roots[0],4.5,1.0,1.4,.17,"sine",bassGain,now);
-
-  const playStep=()=>{
-    if(token!==mysteryMusicToken || !state.sound || state.currentGame!=="mystery")return;
-    const t=ctx.currentTime;
-    const chordIndex=Math.floor(step/4)%chords.length;
-    if(step%4===0){
-      chords[chordIndex].forEach((f,i)=>addTone(f,3.8,1.0,1.25,i===1?.10:.13,i===1?"triangle":"sine",padGain,t));
-      addTone(roots[chordIndex],3.55,.75,1.1,.16,"sine",bassGain,t);
-    }
-
-    // Very soft low-register motif: longer notes, rounded envelope, no piercing beep.
-    const f=motif[step%motif.length];
-    addTone(f,1.7,.38,.72,.045,"sine",motifGain,t);
-    step++;
-    mysteryMusicTimer=setTimeout(playStep,1500);
-  };
-  playStep();
-}
-function gameStartSound(gameId){
-  if(!state.sound)return;
-  const ctx=ensureAudio(); if(!ctx)return;
-  try{
-    // Mystery uses ONLY its ambient soundtrack, and only after its game screen is active.
-    if(gameId==='mystery'){
-      const begin=()=>startMysteryMusic();
-      if(document.getElementById("game")?.classList.contains("active"))setTimeout(begin,80);
-      else setTimeout(begin,120);
-      return;
-    }
-    const now=ctx.currentTime;
-    const patterns={
-      spy:[[330,.09],[392,.09],[494,.16]],
-      bomb:[[110,.08],[165,.08],[220,.10],[110,.16]],
-      reaction:[[523,.07],[659,.07],[784,.12]],
-      challenge:[[392,.08],[523,.08],[659,.13]],
-      rapid:[[440,.06],[554,.06],[659,.10]],
-      duel:[[294,.09],[370,.09],[494,.14]]
-    };
-    const seq=patterns[gameId]||[[330,.08],[440,.08],[554,.12]];
-    let t=now;
-    seq.forEach(([f,d],i)=>{
-      const o=ctx.createOscillator(),g=ctx.createGain();
-      o.type='sine'; o.frequency.setValueAtTime(f,t);
-      g.gain.setValueAtTime(.0001,t);
-      g.gain.exponentialRampToValueAtTime(.075,t+.012);
-      g.gain.exponentialRampToValueAtTime(.0001,t+d);
-      o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+d+.02);
-      t+=d+(i<seq.length-1?.035:.02);
-    });
-  }catch(e){}
-}
-function win(){beep(523,.08);setTimeout(()=>beep(659,.08),90);setTimeout(()=>beep(784,.14),180)}
-function lose(){beep(220,.14,"square");setTimeout(()=>beep(150,.18,"square"),120)}
-function openMenu(){document.getElementById("menuOverlay").classList.add("show")}function closeMenu(e){if(e&&e.target!==e.currentTarget&&e.target.id!=="menuOverlay")return;document.getElementById("menuOverlay").classList.remove("show")}
-function showGameGuide(){
-  const box=document.getElementById("gameGuideList");
-  window.GAME_GUIDE={
-    quiz:["پرسیارێک دەردەکەوێت و یاریزان وەڵامی ڕاست هەڵدەبژێرێت.","١) یاریزانەکان زیاد بکەن. ٢) پرسیار بخوێننەوە. ٣) وەڵام هەڵبژێرن. ٤) خاڵ و پرسیاری داهاتوو.","💡 هەر پرسیارێک جیاوازە و پرسیارە بەکارهاتووەکان دووبارە نابنەوە تا بانکەکە پڕ بێت."],
-    truth:["ڕاستی بڵێ یان ئەرکێکی خۆش جێبەجێ بکە.","١) نۆرەکە دیاری دەکرێت. ٢) ڕاستی یان ئەرک هەڵبژێرە. ٣) وەڵام بدە یان ئەرکەکە بکە. ٤) نۆرە بۆ کەسی داهاتوو.","💡 ئەرکەکان بۆ کۆمەڵەی خۆتان بگونجێنن."],
-    who:["پرسیارێک دەخوێندرێتەوە و هەمووان دەنگ دەدەن بۆ کەسێکی گونجاو.","١) پرسیار بخوێننەوە. ٢) هەمووان بۆچوونی خۆیان بڵێن. ٣) دەنگ بدەن. ٤) کەسی زۆرترین دەنگ ببینن.","💡 ئەمە بۆ پێکەنین و ناسینی بۆچوونی هاوڕێکانە."],
-    rapid:["پرسیار یان ئەرکێکی خێرا دەدرێت و کاتت سنووردارە.","١) نۆرەکە دەست پێ دەکات. ٢) پرسیار بخوێنەوە. ٣) لە 25 چرکەدا وەڵام/ئەنجام بدە. ٤) نۆرە بگوازەرەوە.","⚡ خێرایی گرنگە؛ زۆر بیرکردنەوە کاتت دەبات."],
-    memory:["ڕیزێک لە شتەکان لەبیر بگرە و بە هەمان ڕیز دووبارەی بکەوە.","١) ڕیزەکە ببینە. ٢) لەبیر بگرە. ٣) کاتێک شاردرایەوە بە هەمان ڕیز هەڵیبژێرە. ٤) ئاستەکان قورستر دەبن.","🧠 هەر جارێک ڕیزەکە دەگۆڕێت."],
-    math:["بیرکارییەکی خێرا و فێڵدار چارەسەر بکە.","١) پرسیار ببینە. ٢) خێرا حساب بکە. ٣) وەڵامی خۆت هەڵبژێرە. ٤) خاڵ و نۆرەی داهاتوو.","➗ هەموو پرسیارەکان یەکسان نین."],
-    category:["بابەتێک دەدرێت و دەبێت لە کاتی دیاریکراودا 5 دانە بڵێیت.","١) بابەت بخوێنەوە. ٢) 5 وشە/شت بیر بهێنەوە. ٣) لە کاتەکەدا بیڵێ. ٤) دووبارە وشە بەکارمەهێنە.","🎯 خەیاڵ و خێرایی زۆر گرنگن."],
-    emoji:["لە کۆمەڵێک ئیمۆجی مانا یان وشەکە حدس بکە.","١) ئیمۆجییەکان ببینە. ٢) بە کەمترین کات حدس بکە. ٣) وەڵام بدە. ٤) نۆرە بگوازەرەوە.","😂 وەڵامی جیاواز لە کۆمەڵەکە زۆر پێکەنین دروست دەکات."],
-    reaction:["چاوەڕێی ئاماژەکە بکە؛ کاتێک هات زووترین کەس کلیک دەکات.","١) دەست لە دوگمە/ناوچەکە مەدە. ٢) چاوەڕێ بکە. ٣) کاتێک 🟢 هات کلیک بکە. ٤) زووترین کەس خاڵ دەبات.","🖐️ پێش ئاماژەکە کلیک مەکە."],
-    word:["وشەی داهاتوو دەبێت بە پیتی کۆتایی وشەی پێشوو دەست پێ بکات.","١) وشەکە ببینە. ٢) پیتی کۆتایی ببینە. ٣) وشەی نوێ بەو پیتە بڵێ. ٤) نۆرە بگوازەرەوە.","🔤 هەوڵ بدە وشەی زۆر بەردەست لە مێشکتدا هەبێت."],
-    forbidden:["وشەی سەرەکی بۆ هاوڕێکانت وەسف بکە بەبێ وشەی قەدەغە.","١) وشە و وشە قەدەغەکان بخوێنەوە. ٢) وەسفی بکە. ٣) وشەی قەدەغە مەڵێ. ٤) کات تەواو یان ئەرک تەواو.","🚫 ئەگەر وشەی قەدەغە بڵێیت، نمرەکە لەدەست دەدەیت."],
-    charades:["وشەکە تەنها بە جوڵە و ئاماژە پیشان بدە؛ قسەکردن قەدەغەیە.","١) وشەکە تەنها تۆ دەبینیت. ٢) بە جەستە پیشانی بدە. ٣) هاوڕێکان حدس بکەن. ٤) کات پێش تەواوبوون وشەکە بدۆزنەوە.","🎭 قسە مەکە؛ تەنانەت ئاماژەی وشەکەش مەکە."],
-    duel:["دوو یاریزان ڕووبەڕووی یەکتر دەبن و کۆمەڵەکە سەیری ڕکابەرییەکە دەکات.","١) دوو کەس هەڵبژێرن. ٢) چالاکییەک دەردەکەوێت. ٣) هەردوو کەس جێبەجێی دەکەن. ٤) براوەکە دیاری بکەن.","⚔️ ئەگەر دەتانەوێت، کۆمەڵەکە دەتوانێت دەنگ بدات بۆ براوە."],
-    guess:["بە هینت و وەسف وشەکە بدۆزەوە پێش ئەوەی کات تەواو بێت.","١) هینتەکە بخوێنەوە. ٢) حدس بکە. ٣) وەڵامی خۆت بڵێ. ٤) ئەگەر ڕاست بوو خاڵ و نۆرەی داهاتوو.","🕵️ هینتەکە ڕوونە، بەڵام وشەی سەرەکی بە ڕاستەوخۆ نادرێت."],
-    choice:["سێ هەڵبژاردە دەبینیت و یەکێکیان هەڵدەبژێریت.","١) پرسیار بخوێنەوە. ٢) لە نێوان سێ هەڵبژاردە یەکێک هەڵبژێرە. ٣) وەڵام تۆمار دەکرێت. ٤) نۆرەی داهاتوو.","🎲 یارییەکی سادە و خێرایە بۆ گەرمکردنی کۆمەڵەکە."],
-    bomb:["بۆمب لە نۆرەی یەک کەسەوە بۆ کەسی دواتر دەچێت و هەر یاریزانێک دەبێت پێش کۆتایی کات وەڵام بدات.","١) نۆرەکە دەست پێ دەکات. ٢) پرسیارەکە وەڵام بدە. ٣) بۆمبەکە بۆ کەسی داهاتوو دەچێت. ٤) کات تەواو بێت، بۆمب دەقێت.","💣 کاتی بۆمبەکە 20 چرکەیە بۆ هەر یاریزانێک؛ ئامادە بە!"],
-    challenge:["ئەرکە کورت و پڕ لە پێکەنین جێبەجێ بکە.","١) ئەرکەکە بخوێنەوە. ٢) کات دەست پێ دەکات. ٣) جێبەجێی بکە. ٤) تەواو بوو، دوگمەی تەواو دابگرە.","🔥 ئەرکەکان بۆ کۆمەڵەکەی خۆتان بگونجێنن."],
-    redhunt:["لە دەوروبەرت شتێک بدۆزەوە کە داواکراوە و بیهێنە.","١) داواکارییەک ببینە. ٢) بە خێرایی بگەڕێ. ٣) شتەکە بهێنە. ٤) «هێنام!» دابگرە.","🔴 پێش یاری دڵنیابن شوێنەکە بۆ جوڵانەوە ئاساییە."],
-    spy:["یەک کەس جاسوسە. هەمووان دەزانن وشەی سەرەکی چییە جگە لە جاسوس؛ جاسوس تەنها ئاماژەیەکی کەمێک دوور دەبینێت.","١) یاریزانەکان زیاد بکەن. ٢) هەر کەس زانیاری تایبەتی خۆی ببینێت. ٣) مۆبایلەکە دابنێن. ٤) 5 خولەک گفتوگۆ و گومان بکەن. ٥) کۆتایی: دەنگ بدەن و جاسوس بدۆزنەوە.","🕵️ جاسوس نابێت وشەی ڕاستەوخۆ بزانێت؛ ئاماژەکە تەنها یارمەتیدەرە و کەمێک دوورە لە وشەی سەرەکی."],
-    mystery:["کۆمەڵێک لێکۆڵەر و 2 تاوانبار هەیە. هەر یاریزان ڕۆڵ و زانیاریی تایبەتی هەیە.","١) ڕۆڵەکان بە نهێنی ببینن. ٢) پرسیار و بەڵگەکان بخوێننەوە. ٣) هەر کەس زانیاریی خۆی لەبەر بگرێت. ٤) کاتێک بەشی مۆبایل تەواو بوو، مۆبایلەکە دابنێن. ٥) گفتوگۆ بکەن و تاوانبارەکان دەستنیشان بکەن.","🔎 لە سناریۆکەدا هەر یاریزان ڕۆڵێکی هەیە؛ هەمووان بەشێکن لە شوێنی تاوانەکە و بەڵگەکان بۆ دۆزینەوەی ڕاستی بەکار دێن." ]
-  };
-  box.innerHTML=GAMES.map((g,i)=>{const x=guide[g.id]||[g.desc,"١) یارییەکە دەست پێ بکە. ٢) ڕێنماییی ناو یارییەکە بخوێنەوە. ٣) نۆرەکەت جێبەجێ بکە. ٤) کۆتایی یارییەک ببینە.","💡 هەر یارییەک ڕێگای تایبەتی خۆی هەیە."];return `<div class="game-guide-card" style="--guide-color:${g.color||'#7657ff'}"><div class="game-guide-head"><div class="game-guide-icon">${g.icon}</div><div><h3>${i+1}. ${g.name}</h3><span class="tag">${g.tag}</span></div></div><p><b>🎯 ئامانج:</b> ${x[0]}</p><div class="game-guide-steps"><b>▶️ چۆن یاری دەکرێت؟</b><br>${x[1]}</div><div class="game-guide-tip">${x[2]}</div></div>`}).join("");
-  document.getElementById("gameGuideModal").classList.add("show");
-}
-function closeGameGuide(){document.getElementById("gameGuideModal").classList.remove("show")}
-function showHelp(){document.getElementById("helpModal").classList.add("show")}
-function closeHelp(){document.getElementById("helpModal").classList.remove("show")}
-function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
-function renderGames(){const box=document.getElementById("gamesGrid");box.innerHTML="";GAMES.forEach(g=>{const d=document.createElement("div");d.className="game-card";d.onclick=()=>startGame(g.id);d.style.setProperty("--game-color",g.color||"#7657ff");d.innerHTML=`<div class="game-icon">${g.icon}</div><h3>${g.name}</h3><p>${g.desc}</p><span class="tag">${g.tag}</span>`;box.appendChild(d)});document.getElementById("gameCount").textContent=GAMES.length}
-function showPlayersSetup(){renderPlayers();showScreen("players")}
-function addPlayer(){const input=document.getElementById("playerInput"),name=input.value.trim();if(!name)return toast("✍️ ناوی یاریزان بنووسە");if(state.players.length>=20)return toast("👥 زۆرترین 20 یاریزانە");if(state.players.some(x=>x.toLowerCase()===name.toLowerCase()))return toast("⚠️ ئەم ناوە هەیە");state.players.push(name);state.scores[name]=0;state.groups={a:[],b:[]};state.groupScores={a:0,b:0};input.value="";renderPlayers();renderGroups();saveState();beep(650,.06)}
-function removePlayer(i){state.players.splice(i,1);state.groups={a:[],b:[]};state.groupScores={a:0,b:0};renderPlayers();renderGroups();saveState()}
-function renderPlayers(){const b=document.getElementById("playersList");b.innerHTML="";state.players.forEach((n,i)=>{const d=document.createElement("span");d.className="pill";d.innerHTML=`${i+1}. ${esc(n)} <b onclick="removePlayer(${i})" style="cursor:pointer">×</b>`;b.appendChild(d)})}
-function savePlayers(){if(state.players.length<2)return toast("👥 لانیکەم 2 یاریزان پێویستە");showScreen("home");toast("✅ یاریزانەکان ئامادەن")}
-function player(){return state.players[state.currentPlayer%state.players.length]}
-function resetScores(){state.scores={};state.players.forEach(p=>state.scores[p]=0);state.groupScores={a:0,b:0}}
-function groupOf(p){if(state.groups?.a?.includes(p))return"a";if(state.groups?.b?.includes(p))return"b";return null}
-function addScore(p,n){state.scores[p]=(state.scores[p]||0)+n;const g=groupOf(p);if(g)state.groupScores[g]=(state.groupScores[g]||0)+n;renderScores()}
-function renderScores(){const b=document.getElementById("scoreBox");b.innerHTML="";state.players.forEach(n=>{const d=document.createElement("div");d.className="score";d.innerHTML=`👤 ${esc(n)}: <b>${state.scores[n]||0}</b>`;b.appendChild(d)});if(state.groups?.a?.length||state.groups?.b?.length){const a=document.createElement("div");a.className="score";a.innerHTML=`🟣 گروپی ١: <b>${state.groupScores?.a||0}</b>`;b.appendChild(a);const c=document.createElement("div");c.className="score";c.innerHTML=`🔵 گروپی ٢: <b>${state.groupScores?.b||0}</b>`;b.appendChild(c)}}
-function setSpyRoundLimit(n){state.spyRoundLimit=Math.max(1,Math.min(50,Number(n)||5));const input=document.getElementById("spyRoundLimitInput"),label=document.getElementById("spyRoundLimitLabel");if(input)input.value=state.spyRoundLimit;if(label)label.textContent=`ئێستا: ${state.spyRoundLimit} ڕاو`;saveState();toast(`🕵️ ${state.spyRoundLimit} ڕاو بۆ جاسوسی جێگیر کرا`)}
-function applySpyRoundLimit(){const input=document.getElementById("spyRoundLimitInput");setSpyRoundLimit(input?input.value:5)}
-
-function progress(max=10){document.getElementById("progressBar").style.width=Math.min(100,((state.turn+1)/max)*100)+"%"}
-function bankIndex(game){return state.used[game]?state.used[game].length:0}
-const uniqueQuestionLeads=[
-"ئەمجارە بە شێوەیەکی نوێ بیر لە وەڵامەکە بکەرەوە.","ئەم دانەیە بۆ ئەوەیە کەمێک قورستر بیر بکەیتەوە.","ئەمجارە وەڵامێکی جیاواز و ورد هەڵبژێرە.","پێش وەڵامدانەوە، یەک چرکە بیر لە هەڵبژاردەکەت بکەرەوە.","ئەم دانەیە بە شێوەیەکی خێرا تاقیت دەکاتەوە.","ئەمجارە هەوڵ بدە وەڵامەکەت بە دڵنیایی بڵێیت.","ئەم پرسیارە بۆ ڕکابەرییەکی خۆش لەگەڵ هاوڕێکانە.","ئەمجارە وردەکارییەکە لەبیر مەکە.","ئەم دانەیە کەمێک فێڵدارە؛ بە پەلە مەبڕیارە.","ئەمجارە هەوڵ بدە زووتر لە هاوڕێکانت بزانیت.",
-"ئەم پرسیارە دەتوانێت گفتوگۆیەکی خۆش دروست بکات.","ئەمجارە وەڵامەکەت بە شێوەیەکی ڕوون بڵێ.","ئەم دانەیە بۆ تاقیکردنەوەی بیر و خێرایییە.","ئەمجارە هەموو هەڵبژاردەکان بە وردی سەیر بکە.","ئەم پرسیارە بۆ نۆرەی ئێستاتە؛ باش هەڵبژێرە.","ئەمجارە وەڵامێک هەڵبژێرە کە بتوانیت پشتگیریی بکەیت.","ئەم دانەیە بۆ ئەوەیە کۆمەڵەکە کەمێک بخەنێت.","ئەمجارە بە بیرکردنەوەی خۆت پشت ببەستە.","ئەم پرسیارە جۆرێکی تر لە هەمان یارییە.","ئەمجارە خۆت تاقی بکەرەوە و دووبارە وەڵامێکی پێشوو مەهێنە.",
-"ئەم دانەیە بۆ بیرکردنەوەی خێرا و بڕیاری دروستە.","ئەمجارە سەرنجت لەسەر وردترین بەشەکە بێت.","ئەم پرسیارە هەستی ڕکابەری لە نێوانتان زیاد دەکات.","ئەمجارە هەوڵ بدە وەڵامێکی کەمتر ئاسایی بدۆزیتەوە.","ئەم دانەیە بۆ نۆرەی تایبەتی تۆیە."];
-const uniqueQuestionEnds=[
-"هەوڵ بدە وەڵامەکەت تایبەتی خۆت بێت.","ئەگەر بتوانیت، هۆکارێکی کورتیش بڵێ.","وەڵامەکەت لەگەڵ ئەوەی پێشتر وتووتە جیاواز بکە.","باشترین هەڵبژاردەی خۆت دیاری بکە.","ئەمجارە بە شێوەیەکی خۆش و سروشتی وەڵام بدە.","لەگەڵ نۆرەکەتدا بە خێرایی بڕیار بدە.","هیچ وەڵامێک لە نۆرەی پێشوو دووبارە مەکەوە.","ئەگەر دوودڵ بوویت، یەکێکیان بە دڵ هەڵبژێرە.","ئامادەی؟ ئێستا نۆرەی تۆیە.","ئەم دانەیە تەنها بۆ نۆرەی ئێستە.",
-"هەوڵ بدە بە یەکەم بیرۆکەی خۆت وەڵام بدەیت.","ئەمجارە بە شێوەیەکی زیرەکانە بڕیار بدە.","وەڵامێک هەڵبژێرە کە لەگەڵ بۆچوونت بگونجێت.","ئەگەر هاوڕێکانت جیاواز بیر بکەنەوە، گفتوگۆی لێ دروست بکەن.","بە هێمنی وەڵام بدە، پەلە مەکە.","ئەمجارە یەک هەڵبژاردە بە دڵنیایی دیاری بکە.","وەڵامەکەت ڕاستەوخۆ بڵێ.","ئەم دانەیە بە نۆرەی تۆ پەیوەستە.","هەوڵ بدە وەڵامەکەت دووبارەی هیچ نۆرەیەک نەبێت.","ئەمجارە شێوازی خۆت بەکاربهێنە.",
-"ئەگەر دەتوانیت، وەڵامەکەت بە نموونە ڕوون بکە.","سەرنج بدە کە پرسیارەکە بە وردی چی دەڵێت.","ئەمجارە لەگەڵ کۆمەڵەکە بەراوردی بکە.","هەوڵ بدە وەڵامەکە خۆش و سروشتی بێت.","ئەم دانەیە بۆ تاقیکردنەوەی سەرنجە.","یەک وەڵامی نوێ هەڵبژێرە.","ئەمجارە بۆ خۆت چالاکییەکی بچووک دابنێ.","بە شێوەیەکی خۆش وەڵامی بدەوە.","ئەگەر دڵنیایت، ڕاستەوخۆ بڕیار بدە.","ئەمجارە هەوڵ بدە زووتر لە نۆرەی پێشوو بزانیت.",
-"وەڵامەکە بە قسەی خۆت بڵێ.","ئەم دانەیە هەمان بابەتە، بەڵام شێوازی پرسیارەکە جیاوازە.","هەموو سەرنجت لەسەر ئەم نۆرەیە بێت.","ئەمجارە بۆچوونی خۆت پێش بۆچوونی کەسانی تر بخە.","هەوڵ بدە بە دڵنیایی تەواو وەڵام بدەیت.","ئەم دانەیە بۆ ڕکابەرییەکی پاک و خۆشە.","کەمێک بیر بکەرەوە و پاشان وەڵام بدە.","ئەمجارە هیچ شتێکی پێشوو کۆپی مەکە.","ئێستا نۆرەی تۆیە؛ دەست پێ بکە.","ئەم دانەیە لە بانکەکەدا بە تایبەتی بۆ ئەم نۆرەیە دروست کراوە."];
-function uniqueQuestionVariant(game,index){const lead=uniqueQuestionLeads[Math.floor(index/40)%uniqueQuestionLeads.length];const end=uniqueQuestionEnds[index%uniqueQuestionEnds.length];return ` ${lead} ${end} — دانەی ${index+1} لە 1000`}
-function applyUniqueQuestion(game,index,item){
-  // تەنها جیاوازیی ناوەڕۆک و ID پارێزراوە؛
-  // دەقی زیادکراوی «ئەمجارە... — دانەی ... لە 1000» نیشان نادرێت.
-  return item;
-}
-function bankGet(game,factory){if(!state.used[game])state.used[game]=[];const used=state.used[game];const index=used.length;let item=factory(),tries=0;while(used.includes(item.id)&&tries<100){item=factory();tries++}if(used.includes(item.id)){item={...item,id:`${game}-unique-${Date.now()}-${index}-${Math.random()}`}}used.push(item.id);applyUniqueQuestion(game,index,item);saveState();return item}
-function rotatePlayer(){state.currentPlayer=(state.currentPlayer+1)%state.players.length}
-function nextAfter(ms=600){clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);state.nextTimeout=setTimeout(()=>{state.gameLocked=false;state.turn++;rotatePlayer();if(state.turn>=10)finishGame();else dispatchCurrent()},ms)}
-function dispatchCurrent(){const id=String(state.currentGame||"").trim();const runners={quiz:quizGame,truth:truthGame,who:whoGame,rapid:rapidGame,memory:memoryGame,math:mathGame,category:categoryGame,emoji:emojiGame,reaction:reactionGame,word:wordGame,forbidden:forbiddenGame,charades:charadesGame,duel:duelGame,guess:guessGame,choice:choiceGame,bomb:bombGame,challenge:challengeGame,redhunt:redHuntGame,spy:spyGame,mystery:mysteryGame};const run=runners[id];if(typeof run==="function"){run();return;}state.currentGame=null;showScreen("home");renderGames();toast("⚠️ یارییەکە نەدۆزرایەوە") }
-function finishGame(){stopMysteryMusic();clearInterval(state.timer);state.timer=null;state.gameLocked=false;const sorted=[...state.players].sort((a,b)=>(state.scores[b]||0)-(state.scores[a]||0));const w=sorted[0];document.getElementById("resultText").innerHTML=`🎉 بەرەوپێش <b>${esc(w)}</b>!<br>نمرە: <b>${state.scores[w]||0}</b>`;document.getElementById("leaderboard").innerHTML=sorted.map((n,i)=>`<div class="leader-row"><span>${i===0?"🥇":i===1?"🥈":i===2?"🥉":"🏅"} ${esc(n)}</span><b>${state.scores[n]||0}</b></div>`).join("");win();showScreen("result")}
-function restartGame(){if(state.currentGame)startGame(state.currentGame)}
-function exitGame(){stopMysteryMusic();clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);state.gameLocked=false;state.currentGame=null;state.bombQuestion=null;state.bombTurn=0;state.eliminated=[];window.reactionStarted=false;window.ready=false;showScreen("home");renderGames();toast("🏠 گەڕایتەوە سەرەتا")}
-function startGame(id){
-  stopMysteryMusic();
-  if(state.players.length<2){showPlayersSetup();return toast("👥 یەکەم لانیکەم 2 یاریزان زیاد بکە")}
-  const gameId=String(id||"").trim();
-  const g=GAMES.find(x=>x.id===gameId);
-  if(!g){toast("⚠️ یارییەکە نەدۆزرایەوە");return}
-  clearInterval(state.timer);state.timer=null;clearTimeout(state.nextTimeout);
-  state.currentGame=gameId;state.currentPlayer=0;state.turn=0;state.gameLocked=false;
-  state.eliminated=[];state.bombQuestion=null;state.bombTurn=0;state.spyRound=0;state.spyRoles={};state.spyLocation="";state.spyRevealIndex=0;state.spyVotes={};state.bombActive=false;
-  stopBombSound();window.reactionStarted=false;window.ready=false;resetScores();renderScores();
-  document.documentElement.style.setProperty("--game-color",g.color||"#7657ff");
-  showScreen("game");document.getElementById("gameTitle").textContent=`${g.icon} ${g.name}`;
-  renderGameReady();
-}
-function renderGameReady(){
-  const g=GAMES.find(x=>x.id===state.currentGame)||{};
-  const guide=window.GAME_GUIDE||{};
-  const x=guide[g.id]||[g.desc||"ئەم یارییە بۆ خۆشی و بەشداریکردنی هەموو یاریزانەکانە.","١) ڕێنمایییەکە بخوێنەوە. ٢) هەموو یاریزانەکان ئامادە بن. ٣) دوگمەی دەستپێکردن دابگرە. ٤) یاساکانی ناو یارییەکە جێبەجێ بکە.","💡 گرنگترین شت: پێش دەستپێکردن هەموو کەسێک ئامادە بێت."];
-  document.getElementById("gameContent").innerHTML=`<div class="play game-ready-card" style="text-align:center;padding:30px 18px">
-    <div style="font-size:78px;margin-bottom:8px">${g.icon||"🎮"}</div>
-    <h2 style="margin:0 0 8px">${esc(g.name||"یاری")}</h2>
-    <p style="font-size:16px;line-height:2;margin:0 auto 14px;max-width:760px"><b>🎯 ئامانجی یاری:</b><br>${esc(x[0])}</p>
-    <div style="text-align:right;background:#11152a;border:1px solid #29204a;border-radius:20px;padding:18px;max-width:760px;margin:0 auto 14px;line-height:2">
-      <b>📖 چۆن یارییەکە دەکرێت؟</b><br>${esc(x[1])}
-    </div>
-    <div style="background:rgba(52,211,153,.10);border:1px solid rgba(52,211,153,.30);color:#7ee7bd;border-radius:17px;padding:13px;max-width:760px;margin:0 auto 20px;line-height:1.9">${esc(x[2])}</div>
-    <p class="hint" style="margin-bottom:12px">هەموو یاریزانەکان ئامادە بن؛ یاری تەنها دوای کلیککردن لە دوگمەی خوارەوە دەست پێ دەکات.</p>
-    <button class="primary" data-begin-game>▶️ ئێستا دەست پێ بکە</button>
-    <button class="secondary" style="margin-top:10px" onclick="exitGame()">🏠 گەڕانەوە</button>
-  </div>`;
-}
-function beginGame(){
-  if(!state.currentGame||state.gameLocked)return;
-  state.gameLocked=true;
-  try{gameStartSound(state.currentGame)}catch(e){}
-  try{dispatchCurrent()}catch(e){state.gameLocked=false;toast("⚠️ کێشەیەک لە دەستپێکردنی یاری هەیە")}
-}
-document.addEventListener("click",function(e){
-  const b=e.target.closest&&e.target.closest("[data-begin-game]");
-  if(b){e.preventDefault();e.stopPropagation();beginGame();return;}
-});
-function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-
-/* Truth/dare */
-const truths=["ئەگەر بتوانیت یەک توانای سەیر هەبێت، چی هەڵدەبژێریت؟","کۆمیدیترین ڕووداوێک چییە کە لەگەڵ هاوڕێکانت ڕوویداوە؟","کام خواردنە هەرگیز ناتوانیت ڕەتی بکەیتەوە؟","ئەگەر سبەینێ ڕۆژێکی تەواو بەتاڵت هەبێت، چی دەکەیت؟","کام شت لە هاوڕێی باش زۆر گرنگە؟","ئەگەر بتوانیت یەک شوێن بە خۆڕایی ببینیت، کوێ دەچیت؟","کام عادەتت دەتەوێت بگۆڕیت؟","لە کۆمەڵەکەدا کێ زۆرترین توانای پێکەناندن هەیە؟","کام یارییە دەتوانیت زۆرترین کات لەگەڵی بەسەر ببەیت؟","ئەگەر بتوانیت یەک ڕۆژ ناسراو بیت، بۆ چی ناسراو دەبیت؟"];
-const dares=["10 چرکە بە دەنگی ڕۆبۆت قسە بکە.","بۆ 15 چرکە وەک ڕۆبۆت بجوڵێ.","3 جار بە خێرایی بڵێ: سێ سێوی سەوز.","یەک ڕستە بە شێوەی گۆرانی بڵێ.","بۆ 10 چرکە وەک مامۆستا وانەیەکی خۆت هەڵببەستە.","ناوی 7 شت بە پیتی «م» بڵێ.","یەک جوڵەی شێتانە دروست بکە و هەمووان دووبارەی بکەنەوە.","بۆ 10 چرکە بەبێ وشە تەنها بە ئاماژە قسە بکە.","پێنج وشە بڵێ کە هەموویان بە یەک پیت دەست پێ بکەن.","بۆ 12 چرکە بە شێوەی ڕۆبۆت پێکەنە."];
-function makeTruth(){const isTruth=Math.random()<.5,arr=isTruth?truths:dares,i=Math.floor(Math.random()*arr.length),v=Math.floor(Math.random()*120);return{id:`${isTruth?"t":"d"}-${i}-${v}`,text:arr[i]+` ${v%7===0?"😄 ئەمجارە بە جیاوازی بکە!":""}`,isTruth}}
-
-/* Who */
-const whoQuestions=["کێ زووتر دەتوانێت کۆمەڵەکە پێبخەنێت؟","کێ زۆرتر لە مۆبایلەکەی بەکار دەهێنێت؟","کێ زۆرتر خەوی لێدەکەوێت؟","کێ زۆرتر دەگاتە کۆبوونەوە بە دواوە؟","کێ زۆرتر حەزی لە گەشتە؟","کێ زۆرتر خواردن هەڵدەبژێرێت لە فیلم؟","کێ دەتوانێت زووتر ناوی 10 شت بڵێت؟","کێ زۆرتر دەکرێت لە یارییەکەدا فێڵ بکات؟","کێ زۆرترین وزەی هەیە؟","کێ زۆرتر لە پێکەنین ناتوانێت خۆی بگرێت؟"];
-function makeWho(){const i=Math.floor(Math.random()*whoQuestions.length),v=Math.floor(Math.random()*100);return{id:`w-${i}-${v}`,text:whoQuestions[i]+` ${v%5===0?"😄":"👀"}`}}
-
-/* ڕووکاری ناوەڕۆکی یارییەکان — تەنها داتا، هیچ گۆڕانکارییەک لە یاسای بۆمب نییە */
-const animals=["شێر","پڵنگ","فیل","زەرافە","پشیلە","سەگ","ئەسپ","کەر","مانگا","بزن","مەڕ","گورگ","ڕێوی","کەرکەدەن","میمون","کۆتر","باز","مریشک","ماسی","دلفین","نەهنگ","مار","کەمەرە","کێوی","پەپوولە","مێروو","کەروێشک","قاز","قوڕباغە","لاک‌پشت"];
-const foods=["بریانی","کباب","پیتزا","برگر","پاستا","شۆربا","دۆڵمە","کۆفتە","فەلەفڵ","سمبوسە","سالاد","ماست","پنیر","نان","تێرە","مێوە","کیک","بیسکویت","شۆکۆلاتە","ئایسکریم","پۆپکۆرن","پەتاتە","تخم","برنج","عدس","لوبیا","مێشکەک","چای","قاوە","شیر"];
-const colors=["سپی","ڕەش","سۆر","سەوز","شین","زەرد","مۆر","پەمەیی","قاوەیی","نارنجی","خۆڵەمێشی","مۆسی","زەیتی","سەمەنی"];
-const places=["هەولێر","سلێمانی","دهۆک","کەرکووک","ئامەدی","ڕانیە","کۆیە","شەقڵاوە","سۆران","حەریر","چۆمان","پیرەمەگرون","بارزان","ئاكرێ","زاخۆ","دوکان","سەیدسادق","پێنجوێن","حاجی ئۆمەران","چەمچەماڵ"];
-const objects=["مۆبایل","کۆمپیوتەر","قەڵەم","دەفتەر","کتێب","کلیل","کاسە","پیاڵە","کورسی","مێز","کاتژمێر","کەمێرا","سەمافۆر","چراغ","چەتری","کۆڵەپشتی","جانتە","دەستکێش","عینەک","تۆپ","پەتاتەشێو","کارت","دەرگا","پەنجەرە","قوپان","پەنکە"];
-const activities=["فوتبۆڵ","ڤۆلی","پاسکیل‌سواری","پیاسەکردن","گەشتکردن","وێنەگرتن","خوێندن","گۆرانی‌گوتن","سەماکردن","یاری‌کردن","فیلم‌بینین","ئاشپەزی","نوسین","وەرزش","شناکردن","ڕاکردن","مۆسیقا‌گوێگرتن","ماسیگرتن","کەمپ‌کردن","بازاڕکردن"];
-
-/* Rapid */
-const rapidObjects=[...animals,...foods,...colors,...places,...objects,...activities];
-const rapidForms=["ناوی 3 {x} بڵێ.","بە خێرایی 4 {x} ناوببە.","5 {x} بڵێ کە هەموویان جیاوازن.","3 {x} هەڵبژێرە کە خۆشت دەوێن.","ناوی 3 {x} بڵێ کە بە پیتی یەکسان دەست پێ ناکەن."];
-function makeRapid(){const x=rapidObjects[Math.floor(Math.random()*rapidObjects.length)],f=rapidForms[Math.floor(Math.random()*rapidForms.length)],v=Math.floor(Math.random()*100);return{id:`r-${x}-${f}-${v}`,text:f.replace("{x}",x)}}
-
-/* Math */
-function makeMath(){const i=bankIndex("math"),type=i%8,a=2+((i*37)%97),b=2+((i*19)%27);let ans,text;if(type===0){ans=a+b;text=`${a} + ${b} = ؟`}else if(type===1){let x=Math.max(a,b),y=Math.min(a,b);ans=x-y;text=`${x} − ${y} = ؟`}else if(type===2){let x=a%13+2,y=b%9+2;ans=x*y;text=`${x} × ${y} = ؟`}else if(type===3){let y=2+b%9;ans=2+a%10;let x=ans*y;text=`${x} ÷ ${y} = ؟`}else if(type===4){ans=(a%9+1)*10;text=`${a%9+1} × 10 = ؟`}else if(type===5){ans=(a%10+1)*5;text=`${a%10+1} × 5 = ؟`}else if(type===6){let x=a%20+10;ans=x*x;text=`${x}² = ؟`}else{let x=a%8+2;ans=x+3;text=`ئەگەر ${x} + ؟ = ${ans}، ؟ = ؟`}const opts=new Set([ans]);let d=1;while(opts.size<4){opts.add(ans+((i+d*7)%17)-8);d++}const arr=[...opts];shuffle(arr);return{id:`m-v3-${i}`,text:`${text} — پرسیاری ${i+1}`,answers:arr.map(String),correct:arr.indexOf(ans)}}
-
-/* Category */
-const cats=["میوە","ئاژەڵ","خواردن","شار","ڕەنگ","وەرزش","کەلوپەل","شتەکانی قوتابخانە","پیشە","شتەکانی ماڵ","ناوی فیلم","ئامێر"];
-function makeCategory(){const c=cats[Math.floor(Math.random()*cats.length)],n=5+Math.floor(Math.random()*3),v=Math.floor(Math.random()*100);return{id:`c-${c}-${n}-${v}`,text:`لە 25 چرکەدا ناوی ${n} دانە لە «${c}» بڵێ. ئەمجارە هەمان شت دووبارە مەکەوە.`}}
-
-/* Emoji */
-const emojis=[["🐱🍕","پشیلە پیتزا دەخوات"],["🌧️☕","باران و چای"],["⚽🏆","بردنەوەی جام"],["✈️🏔️","گەشت بۆ چیا"],["🎮🔥","یارییەکی زۆر خۆش"],["🍔🍟","برگر و پەتاتە"],["📚😴","خوێندن و خەوتن"],["🎤😂","گۆرانی و پێکەنین"],["🚗💨","ماشێنی خێرا"],["🌙⭐","شەوی پڕ ئەستێرە"],["🏖️☀️","پشووی هاوین"],["📱❤️","حەزکردن لە مۆبایل"],["🎂🎉","جەژن و کیک"],["🐶🦴","سەگ و ئێسک"],["🧊🥤","خواردنەوەی سارد"]];
-function makeEmoji(){const i=Math.floor(Math.random()*emojis.length),v=Math.floor(Math.random()*100);return{id:`e-${i}-${v}`,emoji:emojis[i][0],answer:emojis[i][1]}}
-
-/* Word / forbidden / charades */
-const wordStarts=["کتێب","ئاسمان","باران","خۆر","دەرگا","قەڵەم","بازار","ماڵ","هاوڕێ","یاری","پەنجەرە","کورد","مۆبایل","کۆمپیوتەر","شەو","ڕۆژ","گۆڵ","دریا","چیا","ئاگر","ئاڤ","شار","گەشت","ڕێگا"];
-function makeWord(){const w=wordStarts[Math.floor(Math.random()*wordStarts.length)],v=Math.floor(Math.random()*120);return{id:`wd-${w}-${v}`,word:w,last:[...w].pop()}}
-const forbiddenPairs=[["خوێندن","کتێب"],["پیتزا","خواردن"],["تۆپ","یاری"],["باران","ئاو"],["مۆبایل","تەلەفۆن"],["هاوڕێ","کەس"],["ئۆتۆمبێل","ماشێن"],["قوتابخانە","مامۆستا"],["فیلم","سینەما"],["گۆرانی","مۆسیقا"],["چای","خواردنەوە"],["پشیلە","ئاژەڵ"]];
-function makeForbidden(){const i=Math.floor(Math.random()*forbiddenPairs.length),v=Math.floor(Math.random()*100);return{id:`f-${i}-${v}`,word:forbiddenPairs[i][0],bad:forbiddenPairs[i][1]}}
-const charadesWords=[...animals,...foods,...objects,...activities,"پزیشک","فوتبالیست","مامۆستا","گۆرانیبێژ","خەوتن","فڕین","شناکردن","وێنەگرتن","پێکەنین","ڕاکردن","سەماکردن"];
-function makeCharades(){const i=Math.floor(Math.random()*charadesWords.length),v=Math.floor(Math.random()*100);return{id:`ch-${i}-${v}`,word:charadesWords[i]}}
-
-/* Duel / guess / choice / challenge */
-function makeDuel(){let a=state.players[Math.floor(Math.random()*state.players.length)],b=state.players[Math.floor(Math.random()*state.players.length)];while(b===a)b=state.players[Math.floor(Math.random()*state.players.length)];const x=rapidObjects[Math.floor(Math.random()*rapidObjects.length)],v=Math.floor(Math.random()*100);return{id:`du-${a}-${b}-${x}-${v}`,a,b,text:`کێ زووتر دەتوانێت 3 «${x}» ناوببات؟`}}
-const guessWords=["ئاگر","باران","مۆبایل","پیتزا","فوتبۆڵ","پشیلە","کۆمپیوتەر","گەشت","کتێب","چای","ئۆتۆمبێل","دریا","چیا","گۆڵ","فڕین","سینەما","قوتابخانە","بازار"];
-const guessHints={"ئاگر":"گەرمە و ڕووناکی دروست دەکات","باران":"لە ئاسمانەوە دێت","مۆبایل":"زۆربەی خەڵک لە جێبیاندا هەڵیدەگرن","پیتزا":"خواردنێکی گەرمە و زۆرجار گردە","فوتبۆڵ":"تۆپێک و یاریزانانی زۆری هەیە","پشیلە":"ئاژەڵێکی ماڵییە","کۆمپیوتەر":"بۆ کار و یاری بەکاردێت","گەشت":"مرۆڤ بۆ شوێنێکی تر دەچێت","کتێب":"پەڕەی زۆری هەیە","چای":"زۆرجار گەرمە و دەخۆرێتەوە","ئۆتۆمبێل":"بۆ گواستنەوە بەکاردێت","دریا":"ئاوێکی زۆرە","چیا":"بەرزییەکی سروشتییە","گۆڵ":"ڕووەکێکی جوانە","فڕین":"لە هەوا بەسەر دەبرێت","سینەما":"شوێنی بینینی فیلمە","قوتابخانە":"شوێنی فێربوونە","بازار":"شوێنی کڕین و فرۆشتنە"};
-function makeGuess(){const i=Math.floor(Math.random()*guessWords.length),v=Math.floor(Math.random()*100);return{id:`g-${i}-${v}`,word:guessWords[i],hint:guessHints[guessWords[i]]}}
-const choices=[["ئەگەر تەنها یەک خواردن بۆ یەک مانگ هەڵبژێریت، چی دەبێت؟",["پیتزا","بریانی","کباب"]],["ئەگەر بتوانیت یەک شار بۆ گەشت هەڵبژێریت، کامە؟",places.slice(0,3)],["کامەیان زۆرتر دەخاتە خۆشی؟",["گۆرانی","یاری","فیلم"]],["لە کۆبوونەوەی هاوڕێکان کامە خۆشترە؟",["پێکەنین","موسیقا","یاری"]],["ئەگەر یەک توانای سەیر هەبێت، کامە؟",["فڕین","نادیاربوون","زۆر خێرا بیرکردنەوە"]],["کاتێک ماندوویت، کامە باشترە؟",["خەوتن","گەشت","فیلم"]]];
-function makeChoice(){const i=Math.floor(Math.random()*choices.length),v=Math.floor(Math.random()*120);return{id:`co-${i}-${v}`,q:choices[i][0],a:choices[i][1]}}
-const challengeWords=["10 چرکە بە دەنگی ڕۆبۆت قسە بکە","بۆ 15 چرکە وەک پزیشک قسە بکە","ناوی 8 خواردن بە خێرایی بڵێ","3 جار بە خێرایی بڵێ: پیتزا پێکەنین","بەبێ پێکەنین وشەیەکی زۆر سەیر بڵێ","یەک ڕێکلامی خەیاڵی بۆ قەڵەم دروست بکە","بۆ 10 چرکە وەک ڕۆبۆت ڕۆیشتن بکە","هەمووان بۆ 5 چرکە دەست لەسەر سەر دابنێن","یەک جوڵە دروست بکە و هەمووان دووبارەی بکەنەوە","بەبێ ئەوەی پیتی «ا» بەکاربهێنیت ڕستەیەک بڵێ"];
-function makeChallenge(){const i=Math.floor(Math.random()*challengeWords.length),v=Math.floor(Math.random()*120);return{id:`x-${i}-${v}`,text:challengeWords[i]}}
-
-
-/* ───── بانکە جیاواز و پڕۆفیشنالەکان: تا 500 دانە بۆ هەر یاری ───── */
-const qV2=[
-["ژمارەی 24 لە 6 دابەش بکە. ئەنجام چەندە؟",["2","4","6","8"],1],
-["ئەگەر 15% لە 200 هەژمار بکەیت، ئەنجام چەندە؟",["20","25","30","35"],2],
-["کام هەڵسوکەوت بۆ پاراستنی هەژمارێکی ئۆنلاین باشترە؟",["وشەی نهێنی جیاواز","هەمان وشەی نهێنی بۆ هەموو شت","ناردنی وشەی نهێنی بۆ هاوڕێ","نووسینی وشەی نهێنی لە کۆمێنت"],0],
-["لە زانستدا «پێوانە» بۆ چی بەکاردێت؟",["بۆ پێوانەکردنی بڕێک","تەنها بۆ وێنەگرتن","بۆ گۆڕینی زمان","بۆ گۆرانی"],0],
-["ئەگەر ڕێژەی دوو ژمارە 2:3 بێت و یەکەمەکە 10 بێت، دووەمەکە چەندە؟",["12","15","18","20"],1],
-["کامەیان سەرچاوەی وزەی نوێبوونەوەیە؟",["خۆر","بنزین","پلاستیک","زەغال"],0],
-["ئەگەر 4 کاتژمێر 240 خولەک بێت، 7 کاتژمێر چەند خولەکە؟",["360","400","420","480"],2],
-["لە جۆگرافیادا «پایتەخت» واتای چییە؟",["شاری سەرەکیی دەسەڵات","گەورەترین گوند","ناوی ڕووبار","ناوی چیایەک"],0],
-["کام کار زۆرتر نیشانەی بیرکردنەوەی ڕەخنەییە؟",["پرسین و بەڵگە خواستن","باوەڕکردن بە هەر شتێک","بڵاوکردنەوەی هەواڵ بێ دڵنیایی","ڕەتکردنەوەی هەموو بۆچوون"],0],
-["ئەگەر 3/4 ـی 80 هەژمار بکەیت، چەند دەبێت؟",["40","50","60","70"],2]
-];
-function makeQuiz(){const i=bankIndex("quiz"),b=qV2[i%qV2.length],r=Math.floor(i/qV2.length);if(i%2===0){const n=12+(r%30),m=3+(Math.floor(r/3)%9),ans=n*m,vals=[ans,ans+m,Math.max(0,ans-m),ans+10];shuffle(vals);return{id:`quiz-v2-${i}`,text:`${m} × ${n} = ؟`,answers:vals.map(String),correct:vals.indexOf(ans)}}return{id:`quiz-v2-${i}`,text:b[0]+` — پرسیاری ${r+1}`,answers:b[1],correct:b[2]}}
-
-const truthV2=[
-"کام بڕیارێک لە ژیانتدا فێری شتێکی گرنگت کردووە؟","ئەگەر بتوانیت یەک توانای پیشەیی بە خێرایی فێربیت، چییە؟","کام جۆری هاوڕێیەتی بۆت بەهادارترە و بۆچی؟","لە کاتی فشاردا چی یارمەتیت دەدات بڕیارێکی باش بدەیت؟","ئەگەر یەک مانگ بۆ گەشت هەبێت، چ شێوازێک هەڵدەبژێریت؟","کام عادەتی ڕۆژانەت دەتەوێت باشتر بکەیت؟","کام بابەتی گفتوگۆ دەتوانێت شەوێکی درێژ خۆش بکات؟","ئەگەر بتوانیت یەک پڕۆژەی خەیاڵی دەست پێ بکەیت، چی دەکەیت؟","کام شت زۆرتر لە خۆت پێی دڵنیایت؟","کام شتت زۆرتر پێدەخەنێت لە کۆبوونەوەی هاوڕێکان؟"
-];
-const dareV2=[
-"بۆ 20 چرکە وەک پێشکەشکەرێکی ڕادیۆ قسە بکە.","لە 15 چرکەدا ڕیکلامێکی زیرەک بۆ شتێکی ئاسایی دروست بکە.","یەک داستانی 20 چرکەیی بڵێ کە کۆتاییەکەی پێچەوانەی چاوەڕوانی بێت.","لە 20 چرکەدا 6 وشە بڵێ کە هەموویان بە پیتی جیاواز دەست پێ بکەن.","یەک شت هەڵبژێرە و سێ بەکارهێنانی نامۆی بۆ دروست بکە.","بۆ 15 چرکە بە شێوەی مامۆستایەکی زۆر جدی ڕوونکردنەوە بدە بۆ شتێکی ئاسایی.","هەموو کۆمەڵەکە بخە بە یەک جوڵە و خۆت سەرکردەی بکە.","بەبێ پێکەنین شتێکی سەیر وەک هەواڵێکی جدی بڵێ.","لە 20 چرکەدا سێ هینت بدە بۆ ئەوەی کەسێک وشەیەک بدۆزێتەوە.","بۆ 15 چرکە بە شێوەی ڕیکلامێکی گەورە قسە بکە."
-];
-function makeTruth(){const i=bankIndex("truth"),isTruth=i%2===0,base=(isTruth?truthV2:dareV2)[Math.floor(i/2)%10],r=Math.floor(i/20)+1;return{id:`truth-v2-${i}`,text:`${base} — ڕاو ${r}`,isTruth}}
-
-const whoV2=["کێ زۆرتر دەتوانێت کێشەیەک بە هێمنی چارەسەر بکات؟","کێ زۆرتر دەتوانێت پلانێکی گەشت ڕێک بخات؟","کێ زۆرتر لە وردەکارییەکان ئاگادارە؟","کێ زۆرتر دەتوانێت کۆمەڵەکە پێکەوە ڕێک بخات؟","کێ زۆرتر لە کاتی ڕکابەریدا ئارام دەمێنێتەوە؟","کێ زۆرتر بیرۆکەی نامۆ و خۆش دەخاتەڕوو؟","کێ زۆرتر دەتوانێت قسەیەکی درێژ بە کورتی بڵێت؟","کێ زۆرتر دەتوانێت کەسێک ئارام بکاتەوە؟","کێ زۆرتر لە گۆڕانی پلانەکاندا خۆی دەگونجێنێت؟","کێ زۆرتر دەتوانێت یارییەکی نوێ بۆ کۆمەڵەکە دابنێت؟","کێ زۆرتر حەزی لە فێربوونی شتی نوێیە؟","کێ زۆرتر دەتوانێت بۆ بۆچوونێک بەڵگە بدات؟","کێ زۆرتر دەتوانێت کات بە باشی بەڕێوە ببات؟","کێ زۆرتر هەمووان پێدەخەنێت؟","کێ زۆرتر گوێگرێکی باشە؟","کێ زۆرتر شتێکی ئاڵۆز بە زمانی سادە ڕوون دەکاتەوە؟","کێ زۆرتر دەتوانێت بڕیارێکی خێرا بدات؟","کێ زۆرتر دەتوانێت هەمووان لە یارییەکەدا بەشدار بکات؟","کێ زۆرتر بیرۆکەی نوێ دەخاتەڕوو؟","کێ زۆرتر کاتی ساکت دەکاتە گفتوگۆیەکی خۆش؟"];
-const whoEndsV2=["هەمووان یەک ناو هەڵبژێرن و هۆکارەکەش بڵێن.","زۆرینەی دەنگەکان بڕیار دەدەن.","هەر کەس تەنها یەک ناو هەڵبژێرێت.","ئەگەر دوو ناو یەکسان بوون، هەردووکیان هەڵبژێرن.","دوای دەنگدان، یەک ڕستەی ڕوونکەرەوە بڵێن."];
-function makeWho(){const i=bankIndex("who"),base=whoV2[i%20],end=whoEndsV2[Math.floor(i/20)%5],r=Math.floor(i/100)+1;return{id:`who-v2-${i}`,text:`${base} ${end} — ڕاو ${r}`}}
-
-const rapidV2=[...new Set([...animals,...foods,...colors,...places,...objects,...activities,"پۆدکاست","پڕۆژە","بازاڕ","سینەما","کتێبخانە","پارک","ڕێگا","جۆگرافیا","زانست","زمان","هونەر","تەکنەلۆجیا"])];
-const rapidV2Forms=["ناوی 3 {x} بڵێ.","ناوی 4 {x} بڵێ کە هەموویان جیاوازن.","ناوی 5 {x} بڵێ و هیچ دانەیەک دووبارە نەکەوێتەوە.","ناوی 3 {x} بڵێ کە بە پیتی جیاواز دەست پێ بکەن.","ناوی 4 {x} بڵێ و یەکێکیان هەڵبژێرە کە زۆرتر خۆشت دەوێت.","ناوی 3 {x} بڵێ کە لە ژیانی ڕۆژانەتدا بەکارت هاتوون."];
-function makeRapid(){const i=bankIndex("rapid"),x=rapidV2[i%rapidV2.length],f=rapidV2Forms[Math.floor(i/rapidV2.length)%6];return{id:`rapid-v2-${i}`,text:`${f.replace("{x}",x)} — ڕاو ${i+1}`}}
-
-const catV2=["میوە","خواردن","ئاژەڵ","شار","وڵات","ڕەنگ","وەرزش","ئامێری تەکنەلۆجیا","پیشە","شوێنی گەشت","کەلوپەل","شتەکانی ئاشپەزخانە","شتەکانی ماڵ","شتەکانی قوتابخانە","هونەر","شتەکانی کار"];
-function makeCategory(){const i=bankIndex("category"),c=catV2[i%catV2.length],n=5+(Math.floor(i/catV2.length)%5),r=Math.floor(i/80)+1;return{id:`category-v2-${i}`,text:`لە 25 چرکەدا ناوی ${n} دانە لە «${c}» بڵێ؛ هەموویان دەبێت جیاواز بن — ڕاو ${r}.`}}
-
-const emojiV2=[["🧠💡","بیرۆکەی نوێ"],["🧳🌍","ئامادەبوون بۆ گەشت"],["🎧📚","گوێگرتن و خوێندن"],["📱🔋","کەمبوونی شارژ"],["🍽️👥","خواردن لەگەڵ کۆمەڵ"],["🎬🍿","سینەما و پۆپکۆرن"],["⚽🏆","بردنەوەی ڕکابەری"],["☕🌧️","چای لە کاتی باران"],["📸🏞️","وێنەگرتن لە سروشت"],["💻⏳","کارێک کە کات دەخوات"],["🚗🗺️","گەشت بە سەیارە"],["🎤🎶","گۆرانی و مۆسیقا"],["📅📝","پلان و ڕێکخستن"],["🛒💳","کڕین و پارەدان"],["🏃‍♂️⏱️","ڕاکردن و کاتژمێر"],["🧩🔍","چارەسەرکردنی مەتەڵ"],["🌙📖","خوێندن لە شەو"],["🎮🏅","یاری و خاڵ"],["📞👋","پەیوەندی و سڵاو"],["😄🗣️","قسە و پێکەنین"]];
-const emojiQ=["مانای ئەم ئیمۆجییە بە وشەی خۆت بڵێ.","ئەم ئیمۆجییە چی لە بیرت دەخاتەوە؟","ئەگەر ئەم ئیمۆجییە ناوی فیلم بێت، ناوی چی دەبێت؟","ئەگەر ئەم ئیمۆجییە بابەتی گفتوگۆ بێت، چۆن وەسفی دەکەیت؟","لە یەک ڕستەدا مانای ئەم ئیمۆجییە بڵێ.","ئەگەر ئەم ئیمۆجییە ناوی یاری بێت، ناوی چی دەبێت؟","بە یەک وشە هەستەکەی ئەم ئیمۆجییە وەسف بکە.","ئەگەر ئەم ئیمۆجییە کەسێک بێت، چ جۆر کەسێکە؟","یەک ڕستەی خۆش بۆ ئەم ئیمۆجییە دروست بکە.","ئەم دوو ئیمۆجییە چ پەیامێکت پێ دەڵێن؟","ئەگەر بۆ ئەم ئیمۆجییە ناونیشانێک دابنێیت، چی دەبێت؟","کام کات و بارودۆخێک زیاتر لەگەڵ ئەم ئیمۆجییە دەگونجێت؟","ئەگەر ئەم ئیمۆجییە لە پەیامێکدا بێت، تۆ چۆن وەری دەگریت؟","ئەم ئیمۆجییە بە کام چالاکییەوە زۆرتر دەگونجێت؟","بە شێوەیەکی پێکەنیناوی مانای ئەم ئیمۆجییە بڵێ.","ئەگەر ئەم ئیمۆجییە سەرەتای داستانێک بێت، چی ڕوودەدات؟","ئەم ئیمۆجییە بۆ کۆبوونەوەی هاوڕێکان چ پەیامێکە؟","ئەگەر ئەم ئیمۆجییە ڕەنگێک بێت، چ ڕەنگێک دەبێت و بۆچی؟","ئەم ئیمۆجییە چ بیرۆکەیەکت بۆ دروست دەکات؟","ئەگەر بتوانیت یەک ئیمۆجیی تر زیاد بکەیت، کامیان زیاد دەکەیت؟","ئەم ئیمۆجییە چ جۆر مۆدێک دروست دەکات؟","بە زمانی خۆت بڵێ ئەم ئیمۆجییە چ شتێک نوێنەرایەتی دەکات.","ئەگەر ئەم ئیمۆجییە لە سەرەتای گفتوگۆ بێت، قسەکە بە چی دەست پێدەکات؟","ئەم ئیمۆجییە بۆ کۆمەڵەکەت چ پرسیارێک دروست دەکات؟","ئەگەر ئەم ئیمۆجییە بە شێوەی ناوی گۆرانی بێت، ناوی چی دەبێت؟"];
-function makeEmoji(){const i=bankIndex("emoji"),e=emojiV2[i%20],q=emojiQ[Math.floor(i/20)%5],r=Math.floor(i/100)+1;return{id:`emoji-v2-${i}`,emoji:e[0],answer:e[1],question:`${q} — جۆری ${r} / دانەی ${i+1}`}}
-
-const topics=["میوە","ئاژەڵ","خواردن","شار","ڕەنگ","وەرزش","کەلوپەل","شتەکانی قوتابخانە","پیشە","شتەکانی ماڵ","ناوی فیلم","ئامێر","شوێنی گەشت","ئامێری تەکنەلۆجیا","شتەکانی سروشت","شتەکانی کافێ","شتەکانی یاری","ناوی گۆرانی","ناوی کتێب","ناوی وڵات"];
-const wordV2=[...new Set([...animals,...foods,...objects,...activities,...places,...topics,"کتێب","گۆرانی","فیلم","کافێ","پارک","پڕۆژە","گەشت","سەفەر","زانست","هونەر","زمان","بازاڕ","پەیوەندی","کۆبوونەوە","پلان"])];
-const wordRules=["وشەیەکی تر بڵێ کە بە هەمان پیت دەست پێ بکات.","وشەیەکی جیاواز بڵێ کە بەو پیتە دەست پێ بکات.","وشەیەکی ناوی شت بڵێ کە بەو پیتە دەست پێ بکات.","وشەیەکی ناوی شوێن بڵێ کە بەو پیتە دەست پێ بکات.","وشەیەکی ناوی کار یان چالاکی بڵێ کە بەو پیتە دەست پێ بکات."];
-function makeWord(){const i=bankIndex("word"),w=wordV2[i%wordV2.length],last=[...w].pop(),rule=wordRules[Math.floor(i/wordV2.length)%5],r=Math.floor(i/wordV2.length)+1;return{id:`word-v2-${i}`,word:w,last,rule:`${rule} — ڕاو ${r}`,round:r}}
-
-const forbiddenV2=[["خوێندن","کتێب"],["پیتزا","خواردن"],["مۆبایل","تەلەفۆن"],["قوتابخانە","مامۆستا"],["فیلم","سینەما"],["گۆرانی","مۆسیقا"],["گەشت","سەفەر"],["کەمێرا","وێنە"],["کۆمپیوته‌ر","لەپتۆپ"],["بازار","کڕین"],["چای","خواردنەوە"],["سەیارە","ماشێن"],["پارک","باخچە"],["کافێ","قەهوە"],["کتێب","خوێندن"]];
-function makeForbidden(){const i=bankIndex("forbidden"),p=forbiddenV2[i%15],r=Math.floor(i/15)+1;return{id:`forbidden-v2-${i}`,word:p[0],bad:p[1],round:r}}
-
-const charadesV2=[...new Set([...animals,...foods,...objects,...activities,"پزیشک","فوتبالیست","مامۆستا","گۆرانیبێژ","خەوتن","فڕین","شناکردن","وێنەگرتن","پێکەنین","ڕاکردن","سەماکردن","نووسین","خوێندن","چێشتلێنان","سەیارەسواری","پەیوەندی","گەشتکردن","کڕین","ڕۆژنامەخوێندن"])];
-function makeCharades(){const i=bankIndex("charades"),w=charadesV2[i%charadesV2.length],r=Math.floor(i/charadesV2.length)+1;return{id:`charades-v2-${i}`,word:w,round:r}}
-
-function makeDuel(){const i=bankIndex("duel"),a=state.players[i%state.players.length],b=state.players[(i+1)%state.players.length],x=rapidV2[(i*7)%rapidV2.length],n=2+(i%4);return{id:`duel-v2-${i}`,a,b,text:`کێ زووتر دەتوانێت ${n} «${x}» ناوببات؟ — ڕاو ${i+1}`}}
-
-const guessV2=[["ئاگر","گەرمە و دەتوانێت ڕووناکی دروست بکات"],["باران","لە ئاسمانەوە دێت و زەوی تەڕ دەکات"],["مۆبایل","ئامێرێکە بۆ پەیوەندی و زۆر کار"],["کەمێرا","بۆ وێنە و ڤیدیۆ بەکاردێت"],["هێدفۆن","بۆ گوێگرتن لە دەنگ بەکاردێت"],["کلیل","بۆ کردنەوەی قوفڵ بەکاردێت"],["کاتژمێر","کات پیشان دەدات"],["کۆمپیوته‌ر","بۆ کار، خوێندن و یاری بەکاردێت"],["دریا","بوارێکی زۆر فراوانی ئاوە"],["چیا","شوێنێکی بەرزی سروشتییە"],["کتێب","پەڕەی زۆری هەیە و بۆ خوێندنە"],["بازار","شوێنی کڕین و فرۆشتنە"],["پارک","شوێنێکە بۆ پشوودان و پیاسە"],["سەیارە","ئامێرێکە بۆ گواستنەوە"],["پەنجرە","بەشێکی دیوارە کە ڕووناکی دەهێنێت"],["چراغ","بۆ ڕووناککردنی شوێن بەکاردێت"],["جانتا","بۆ هەڵگرتنی شتەکان بەکاردێت"],["قەڵەم","بۆ نووسین بەکاردێت"],["فنجان","زۆرجار بۆ خواردنەوە بەکاردێت"],["مۆسیقا","لە ڕێگەی دەنگ و ئامێرەکانەوە گوێی لێدەگیرێت"]];
-function makeGuess(){const i=bankIndex("guess"),g=guessV2[i%20],r=Math.floor(i/20)+1;return{id:`guess-v2-${i}`,word:g[0],hint:`${g[1]} — ئاست ${r} — دانەی ${i+1}`}}
-
-const choiceV2=[["ئەگەر بۆ کۆبوونەوەیەکی درێژ یەک شت هەڵبژێریت، کامیان؟",["مۆسیقا","یارییەکی مێزی","گفتوگۆ"]],["بۆ گەشتێکی یەک ڕۆژە، کامیان زۆرتر حەزت لێیە؟",["سروشت","شار","شوێنی ئارام"]],["ئەگەر یەک توانای نوێ فێربیت، کامیان؟",["زمان","کۆدنووسین","وێنەگرتن"]],["کاتێک کاتت کەمە، کام شێوازت خۆشترە؟",["پلانکردن","خێرایی","پیشاندانی پێشەکی"]],["لە یارییەکی گروپیدا کامیان خۆشترە؟",["ڕکابەری","هاوکاری","هەردووکیان"]]];
-function makeChoice(){const i=bankIndex("choice"),q=choiceV2[i%5],r=Math.floor(i/5)+1;return{id:`choice-v2-${i}`,q:`${q[0]} — جۆری ${r}`,a:q[1]}}
-
-const challengeV2=["بۆ 20 چرکە ڕیکلامێکی خەیاڵی بۆ شتێکی ئاسایی دروست بکە.","یەک داستانی 20 چرکەیی بڵێ کە کۆتاییەکەی چاوەڕوان نەکرێت.","یەک شت هەڵبژێرە و سێ بەکارهێنانی نامۆی بۆ دروست بکە.","بە 4 وشە کۆمەڵەکە وا لێبکە پێشبینی بکات چی لە مێشکتدایە.","لە 20 چرکەدا 7 وشە بڵێ کە هەموویان بە پیتی جیاواز دەست پێ بکەن.","بۆ 15 چرکە وەک پێشکەشکەرێکی ڕادیۆ قسە بکە.","یەک ڕستەی زیرەک دروست بکە کە تێیدا 5 ناوی شت هەبێت.","هەمووان بە یەک ڕێکخستن 5 جوڵە بکەن؛ تۆ سەرکردەیی بکە.","یەک شتی ئاسایی بە شێوەی هەواڵێکی گرنگ ڕاگەیەنە.","بۆ 20 چرکە شتێک بفرۆشە کە کەس پێویستی پێی نییە، بەڵام وا پیشانی بدە کە پێویستە."];
-function makeChallenge(){const i=bankIndex("challenge"),t=challengeV2[i%10],r=Math.floor(i/10)+1;return{id:`challenge-v2-${i}`,text:`${t} — جۆری ${r}`}}
-/* Spy group */
-const spyLocations=[
-"کافێ ☕","فڕۆکەخانە ✈️","یاریگای تۆپ ⚽","سینەما 🎬","پارک 🌳","زانکۆ 🎓","کتێبخانە 📚","بازاڕ 🛍️","چێشتخانە 🍽️","شۆڕشەی ئاو 🏖️","هۆتێل 🏨","نەخۆشخانە 🏥","قوتابخانە 🏫","مۆزەخانە 🏛️","شوێنی گەشت 🧳","ژووری یاری 🎮","فێستیڤاڵ 🎉","گوند 🌾","شارستان 🏙️","کۆبوونەوەی هاوڕێیان 🥳","کتێبی خانوو 🏠","بازاڕی خواردن 🍕","یارییەکی مێزی 🎲","دەریا 🌊","چیا ⛰️","پارکی ئاژەڵان 🦁","ئۆتۆمبێلخانە 🚗","ستۆدیۆی مۆسیقا 🎵","فێرگەی وەرزش 🏋️","شوێنی پیکنیک 🧺"
-];
-const spyLocationHints={
-"کافێ ☕":"شوێنێکە کە زۆرجار بۆ دانیشتنێکی کورت و گۆڕینی ماندووبوون هەڵدەبژێردرێت.",
-"فڕۆکەخانە ✈️":"شوێنێکە کە چاوەڕوانی و جوڵەی زۆر لە ڕۆژێکدا تێیدا دەبینرێت.",
-"یاریگای تۆپ ⚽":"شوێنێکە کە زۆرجار هاوار و هەستی ڕکابەری لێ بەرز دەبێتەوە.",
-"سینەما 🎬":"شوێنێکە کە زۆرجار ڕووناکی کەم و سەرنجی زۆر هەیە.",
-"پارک 🌳":"شوێنێکە کە زۆرجار بۆ دووربوون لە قەرەباڵغی شار هەڵدەبژێردرێت.",
-"زانکۆ 🎓":"شوێنێکە کە زۆر کەس لە گەورەبوونی تەمەنیدا ماوەیەکی درێژ تێیدا بەسەر دەبات.",
-"کتێبخانە 📚":"شوێنێکە کە زۆرجار ئارامی لە قسەکردن گرنگترە.",
-"بازاڕ 🛍️":"شوێنێکە کە بڕیاردان و بەراوردکردن زۆر ڕوودەدات.",
-"چێشتخانە 🍽️":"شوێنێکە کە بۆن و تام زۆرجار لە پێش هەموو شتێک خۆت پێ دەناسێنێت.",
-"شۆڕشەی ئاو 🏖️":"شوێنێکە کە گۆڕانی کەش و وەرز زۆر کاریگەری لەسەر خۆشییەکەی هەیە.",
-"هۆتێل 🏨":"شوێنێکە کە کەسێک دەتوانێت تێیدا ماوەیەکی کورت لە ماڵەوە دوور بێت.",
-"نەخۆشخانە 🏥":"شوێنێکە کە لە کاتی کێشەی جەستەیی زۆر کەس پەنا بۆی دەبات.",
-"قوتابخانە 🏫":"شوێنێکە کە بەشێک لە ڕۆژانی منداڵی و گەنجی تێیدا بەسەر دەچێت.",
-"مۆزەخانە 🏛️":"شوێنێکە کە زۆرجار شتە کۆنەکان بە جۆرێکی تایبەت پارێزراون.",
-"شوێنی گەشت 🧳":"شوێنێکە کە زۆرجار بۆ بینینی شتێکی جیاواز لە ژیانی ڕۆژانە دەچن.",
-"ژووری یاری 🎮":"شوێنێکە کە زۆرجار کاتی زۆر بە سەرنجێکی توند تێیدا بەسەر دەچێت.",
-"فێستیڤاڵ 🎉":"شوێنێکە کە کاتێک ڕووداوێکی تایبەت هەیە، قەرەباڵغی زۆر دەبێت.",
-"گوند 🌾":"شوێنێکە کە ژیانی ڕۆژانە زۆرتر لەگەڵ زەوی و سروشت تێکەڵە.",
-"شارستان 🏙️":"شوێنێکە کە دەنگ و هاتوچۆی زۆر بەشێکی ئاسایی ژیانە.",
-"کۆبوونەوەی هاوڕێیان 🥳":"شوێنێکە کە گرنگترین شت تێیدا خودی کۆبوونەوەکەیە، نەک شوێنەکە.",
-"کتێبی خانوو 🏠":"شوێنێکە کە زۆرجار کەسانی نزیک لە یەکتر لە کاتی ئارامیدا تێیدا کۆدەبنەوە.",
-"بازاڕی خواردن 🍕":"شوێنێکە کە هەڵبژاردنی خواردن زۆرترە لە هەڵبژاردنی شتی تر.",
-"یارییەکی مێزی 🎲":"شوێنێکە کە زۆرجار دانیشتن لە دەوری یەک شت و چاوەڕوانی نۆرە گرنگە.",
-"دەریا 🌊":"شوێنێکە کە دەنگ و جوڵەی شتێکی سروشتی بەردەوامە.",
-"چیا ⛰️":"شوێنێکە کە بۆ گەیشتن بە هەندێک بەشەکانی زۆرجار هەوڵی زیاتر پێویستە.",
-"پارکی ئاژەڵان 🦁":"شوێنێکە کە سەیرکردنی ژیانێکی جیاواز لە ژیانی مرۆڤ بەشێکی سەرەکییە.",
-"ئۆتۆمبێلخانە 🚗":"شوێنێکە کە شتە گەورە و جوڵاوەکان زۆرتر لە شتە بچووکەکان سەرنج ڕادەکێشن.",
-"ستۆدیۆی مۆسیقا 🎵":"شوێنێکە کە هەموو شتێک بۆ دەنگێکی پاک و ڕێکخراو ئامادە دەکرێت.",
-"فێرگەی وەرزش 🏋️":"شوێنێکە کە زۆرجار کەسێک بە مەبەستی ماندووبوون دەچێت، نەک بۆ پشوودان.",
-"شوێنی پیکنیک 🧺":"شوێنێکە کە زۆرجار خواردن و دانیشتن لە دەرەوە بە یەکەوە دەبینرێن."
+const gamePrompts = {
+  category: ["5 جۆر میوە بڵێ", "5 وڵاتی ئەوروپی بڵێ", "5 مارکەی ئۆتۆمبێل بڵێ", "5 ناوی ئاژەڵ بڵێ"],
+  forbidden: ["وەسفی (مۆبایل) بکە بەبێ ئاماژەدان بە وشەی (تەلەفۆن، شاشە)", "وەسفی (سەیارە) بکە بەبێ وشەی (تایەر، سووڕان)"],
+  charades: ["بە جوڵە نیشانی بدە: (مامۆستا)", "بە جوڵە نیشانی بدە: (دکتۆر)", "بە جوڵە نیشانی بدە: (سەماکەر)"],
+  guess: ["شتێکە لە ئاسماندا دەدرەوشێتەوە بە شەوان؟", "گیاندارێکە شاخی درێژی هەڕەشەکەر هەیە؟"],
+  bomb: ["پیتێک بڵێ و نەهێڵیت بۆمبەکە بتەقێتەوە!", "ناوی شتێک بڵێ کە بە پیتی (م) دەستپێبکات"],
+  redhunt: ["زوو شتێکی سوور لە ژوورەکەدا بدۆزەرەوە و دەستی لێبدە!"]
 };
-const spyPrompts=[
-"ئەگەر لێرە بیت، یەکەم شت چی دەکەیت؟","ئەم شوێنە زۆرتر بۆ چی بەکاردێت؟","کەی زۆرتر سەردانی ئەم شوێنە دەکەیت؟","لەگەڵ کێ زۆرتر حەز دەکەیت بێیت؟","کام شت لەم شوێنەدا زۆر گرنگە؟","ئەگەر بۆ یەک کات هەڵیبژێریت، بەیانی یان ئێوارە؟","کام شت لەم شوێنەدا دەتوانێت پێکەنین دروست بکات؟","ئەگەر یەک شت لەوێ بگۆڕیت، چی دەگۆڕیت؟","بۆچی خەڵک زۆر حەز لەم شوێنە دەکەن؟","کام شت نابێت لەم شوێنە لەبیر بکرێت؟"
-];
-const spyPromptVariants=[
-  "بە شێوەیەکی جیاواز وەڵامی ئەمە بدەن: ",
-  "ئەمجارە ئەمە بکەن بە بابەتی قسە: ",
-  "بە خێرایی بڕۆنە سەر ئەم پرسیارە: ",
-  "هەوڵ بدەن بۆ ئەمە وەڵامێکی زیرەکانە بدەن: ",
-  "ئەمجارە لە دیدی خۆتانەوە سەیری بکەن: ",
-  "بابەتی ئەم نۆرەیە ئەمەیە: ",
-  "بۆ گومانکردن، لەم پرسیارە دەست پێ بکەن: ",
-  "یەک وەڵامی خۆش بۆ ئەمە ئامادە بکەن: ",
-  "ئەمجارە قسەکە لەسەر ئەمە بێت: ",
-  "بە بۆچوونی خۆتان ئەمە وەربگرن: "
-];
-function getSpyPrompt(round){const base=spyPrompts[(round-1)%spyPrompts.length];const variant=spyPromptVariants[Math.floor((round-1)/spyPrompts.length)%spyPromptVariants.length];return variant+base}
-function spySetupRound(){
-  clearInterval(state.timer); state.timer=null; state.gameLocked=false;
-  const ps=shuffle([...state.players]);
-  const spy=ps[Math.floor(Math.random()*ps.length)];
-  state.spyRoles={}; ps.forEach(n=>state.spyRoles[n]=n===spy?"spy":"citizen");
-  const used=state.used.spyLocations||[]; let available=spyLocations.filter(x=>!used.includes(x));
-  if(!available.length){state.used.spyLocations=[];available=spyLocations}
-  state.spyLocation=available[Math.floor(Math.random()*available.length)];
-  state.used.spyLocations=[...(state.used.spyLocations||[]),state.spyLocation];
-  state.spyRevealIndex=0; state.spyVotes={}; state.spyVoteIndex=0; state.spyRound=(state.spyRound||0)+1; saveState();
-  renderSpyReveal();
-}
-function spyGame(){
-  if(!state.spyRound)state.spyRound=0;
-  spySetupRound();
-}
-function renderSpyReveal(){
-  const ps=state.players, i=state.spyRevealIndex;
-  progress(5);
-  if(i>=ps.length){return spyDiscussion()}
-  const name=ps[i], role=state.spyRoles[name], isSpy=role==="spy";
-  document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🕵️ ڕاو ${state.spyRound} لە ${state.spyRoundLimit}</div><div class="turn">نۆرەی ${esc(name)}</div><div class="spy-card"><div class="spy-lock">🔒</div><h2>تەنها ${esc(name)} سەیری ئەم شاشەیە بکات</h2><p class="hint">مۆبایلەکە بە یاریزانەکە بدە. هیچ کەسێکی تر نابێت ناوەڕۆکەکە ببینێت.</p><button class="primary" onclick="spyRevealRole()">👀 پیشاندانی نهێنی</button></div></div>`;
-}
-function spyRevealRole(){
-  const name=state.players[state.spyRevealIndex],isSpy=state.spyRoles[name]==="spy";
-  document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🔐 نهێنیی ${esc(name)}</div><div class="spy-secret ${isSpy?"is-spy":"is-citizen"}">${isSpy?`<div class="spy-big">🕵️</div><h2>تۆ جاسوسیت!</h2><p>شوێنەکە نازانیت.</p><div style="margin:18px auto 4px;padding:16px 18px;border-radius:20px;background:#fff;border:1px solid #ffd6dc;max-width:620px"><div style="font-size:12px;color:#b33b72;font-weight:950;margin-bottom:7px">💡 ئاماژەی تایبەت بۆ تۆ</div><div style="font-size:21px;font-weight:1000;line-height:1.8">${esc(spyLocationHints[state.spyLocation]||"شوێنێکە کە خەڵک بۆ چالاکی و کۆبوونەوە سەردانی دەکەن.")}</div></div><p>ئەم ئاماژەیە تەنها یارمەتیت دەدات نزیکەی شوێنەکە بزانیت؛ بە زیرەکی پرسیار بکە و خۆت مەدەرخە.</p>`:`<div class="spy-big">📍</div><h2>شوێنەکە: ${esc(state.spyLocation)}</h2><p>تۆ جاسوس نیت. بە ئاماژەی زیرەکانە قسە بکە، بەڵام شوێنەکە ڕاستەوخۆ مەڵێ.</p>`}</div><button class="primary" onclick="spyHideRole()">🙈 شاردنەوە و دانانی نۆرەی دواتر</button></div>`;
-  beep(isSpy?330:660,.12);
-}
-function spyHideRole(){state.spyRevealIndex++;renderSpyReveal()}
-function spyDiscussion(){
-  const prompt=getSpyPrompt(state.spyRound);
-  state.currentPlayer=Math.floor(Math.random()*state.players.length);
-  state.spyFirstSpeaker=state.players[state.currentPlayer];
-  state.gameLocked=false;clearInterval(state.timer);state.timer=null;
-  document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🔥 قسە و گومان — ڕاو ${state.spyRound}/${state.spyRoundLimit}</div><div class="spy-badge">⏱️ 3 خولەک</div><div class="spy-big">🕵️‍♂️</div><div class="prompt">${esc(prompt)}</div><div class="spy-first-speaker" style="margin:18px auto;padding:18px;border-radius:22px;background:#f5f1ff;border:1px solid #ddd0ff;max-width:620px"><div style="font-size:13px;color:#7657ff;font-weight:950;margin-bottom:6px">🎙️ یەکەم قسە</div><div style="font-size:25px;font-weight:1000">${esc(state.spyFirstSpeaker)}</div><div class="hint" style="margin-top:7px">ئەم کەسە یەکەمجار قسە بکات، پاشان هەمووان بەشداری بکەن.</div></div><p class="hint">شوێنەکە بە ڕاستەوخۆ مەڵێن. کات تەواو بوو، دەنگ دەدەین.</p><div class="timer" id="spyTimer">3:00</div><div class="center" style="margin-top:12px"><button class="primary" onclick="spyStartDiscussion()">🔥 دەست پێ بکە</button><button class="danger" onclick="spyEndDiscussion()">🗳️ ئێستا تەواو بکە و دەنگ بدە</button></div></div>`;
-}
-function spyStartDiscussion(){
-  if(state.gameLocked)return; state.gameLocked=true; let t=180,el=document.getElementById("spyTimer");
-  const show=()=>{if(el)el.textContent=`${Math.floor(t/60)}:${String(t%60).padStart(2,"0")}`};show();clearInterval(state.timer);state.timer=setInterval(()=>{t--;show();if(t<=30&&el)el.classList.add("danger");if(t<=0){clearInterval(state.timer);state.timer=null;spyVoting()}},1000);
-}
-function spyEndDiscussion(){clearInterval(state.timer);state.timer=null;state.gameLocked=false;spyVoting()}
-function spyVoting(){
-  clearInterval(state.timer);state.timer=null;state.gameLocked=false;
-  state.spyVoteIndex=0; state.spyVotes={}; renderSpyVote();
-}
-function renderSpyVote(){
-  const voter=state.players[state.spyVoteIndex];
-  document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🗳️ دەنگدان ${state.spyVoteIndex+1} لە ${state.players.length}</div><div class="turn">نۆرەی دەنگدانی: ${esc(voter)}</div><div class="spy-vote-secret">🔒 ${esc(voter)} تەنها خۆی سەیری شاشەکە بکات</div><div class="prompt">جاسوس کێیە؟</div><div class="spy-votes">${state.players.map(n=>`<button class="answer" onclick="spyVote('${esc(n).replace(/'/g,"&#039;")}')">🕵️ ${esc(n)}</button>`).join("")}</div><p class="hint">دەنگەکەت نهێنییە؛ کەسێکی تر مەبینێت.</p></div>`;
-}
-function spyVote(name){
-  if(state.gameLocked)return; state.gameLocked=true;
-  state.spyVotes[state.players[state.spyVoteIndex]]=String(name);
-  state.spyVoteIndex++;
-  if(state.spyVoteIndex<state.players.length){state.gameLocked=false;renderSpyVote();return;}
-  const actual=Object.keys(state.spyRoles).find(n=>state.spyRoles[n]==="spy");
-  const counts={};Object.values(state.spyVotes).forEach(n=>counts[n]=(counts[n]||0)+1);
-  const max=Math.max(...Object.values(counts));
-  const leaders=Object.keys(counts).filter(n=>counts[n]===max);
-  const caught=leaders.includes(actual);
-  if(caught){addScore(actual,5);Object.entries(counts).forEach(([n,c])=>{if(n===actual)addScore(n,10)});win();}
-  else{addScore(actual,20);lose();}
-  const sorted=Object.entries(counts).sort((a,b)=>b[1]-a[1]);
-  const votesText=sorted.map(([n,c])=>`<div class="spy-vote-row"><span>${esc(n)}</span><b>${c} دەنگ</b></div>`).join("");
-  document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-result ${caught?"good":"bad"}"><div class="spy-big">${caught?"🎉":"😈"}</div><h2>${caught?"جاسوسەکەتان دۆزییەوە!":"جاسوس سەرکەوت!"}</h2><p>جاسوس: <b>${esc(actual)}</b></p><p>${caught?`جاسوس گیرایەوە و ${esc(actual)} +5 خاڵی وەرگرت.`:`جاسوس نەدۆزرایەوە و ${esc(actual)} +20 خاڵی وەرگرت.`}</p><div class="spy-vote-list">${votesText}</div></div></div>`;
-  setTimeout(()=>{state.gameLocked=false;if(state.spyRound>=state.spyRoundLimit)finishGame();else spySetupRound()},1600);
-}
-/* Mystery / Crime investigation — 2 real player culprits, 8-role scene system */
-const mysteryCases=[
- {title:"دۆسیەی هۆتێلی شەوی باران",victim:"ئارام",place:"لابی و ڕێڕەوی نهۆمی 3ی هۆتێل",time:"11:20ی شەو",scene:"ئارام لە کۆتایی ڕێڕەوی نهۆمی 3 دۆزرایەوە. پێش ڕووداوەکە 8 کەس لە چیرۆکەکەدا هەبوون؛ بە تایبەتی 4 کەس لە کاتی گرنگدا لە نزیک شوێنی ڕووداوەکە بوون. لە 11:14 چرای ڕێڕەو بۆ چەند چرکەیەک کوژایەوە، 11:16 دەرگای خزمەتگوزاری کراوە، و 11:20 کاتژمێرێکی شکێنراو لە نزیک ئارام دۆزرایەوە. دوو تاوانبار لە نێوان 4 کەسە نزیکەکانن؛ بەڵام هیچ کەسێک نازانێت کام دووانەن. ئامانجتان ئەوەیە لە ڕێگەی ڕۆڵ، کاتی جوڵە، بەڵگە و وەڵامەکان هەردوو تاوانبار بدۆزنەوە." ,weapon:"کەلوپەلێکی دیکۆراتیڤ",clues:["11:14 چرای ڕێڕەو بۆ نزیکەی 20 چرکە کوژاوەتەوە.","11:16 دەرگای خزمەتگوزاری بە کلیلی یەدەکی کراوەتەوە.","لە ژێر میزەکە تیکەتێکی ژمارەدار دۆزرایەوە.","مۆبایلی ئارام لە 11:17 پەیامێکی نەخوێندراوی هەیە: «پێش ئەوەی بڕۆیت، پێویستە قسە بکەین.»","کامێرا تەنها سایەی دوو کەسی جیاواز لە نزیک ڕێڕەوەکە تۆمار کردووە."],roleSlots:[
-  {role:"کارمەندی پێشخان",where:"لە لابی بوویت و نزیک شوێنی ڕووداو بوویت",knowledge:"دەزانی کێ کلیلی یەدەکی هەبوو."},
-  {role:"میوانی ژووری 305",where:"لە ڕێڕەوی نهۆمی 3 بوویت",knowledge:"دەنگێکی بەرزت لە نزیک ڕێڕەوەکە بیستووە."},
-  {role:"چاککەرەوەی کارەبا",where:"بۆ چارەسەری چرای ڕێڕەو هاتبوویت",knowledge:"دەزانی بۆچی چرای ڕێڕەوەکە 11:14 کوژایەوە."},
-  {role:"خاوەن کافێی هۆتێل",where:"لە لابی بوویت و کەسانت دەبینی",knowledge:"دوو کەس بە خێرایی لە لابی دەرچوون."},
-  {role:"پاککەرەوە",where:"لە نهۆمی 2 بوویت و کارتێکی خزمەتگوزاریت لەگەڵ بوو",knowledge:"کات و شوێنی بەکارهێنانی کارتێکی یەدەکیت بینیوە."},
-  {role:"سەیارەوان",where:"لە دەرەوەی هۆتێل بوویت",knowledge:"کەسێکت بینی لە 11:18 بە خێرایی بۆ دەرەوە دەچوو."},
-  {role:"هاوڕێی قوربانی",where:"پێش 11:00 لەگەڵ ئارام قسەت کردبوو",knowledge:"دەزانی ئارام لەگەڵ کەسێک کێشەیەکی نهێنی هەبوو."},
-  {role:"میوانی ژووری 312",where:"لە ژوورەکەت بوویت",knowledge:"دەنگی دەرگای خزمەتگوزاریت بیستووە."}
- ],questions:["لەو کاتەدا بە وردی لە کوێ بوویت و بۆچی؟","کێ دەتوانێت شوێنی تۆ پشتڕاست بکاتەوە؟","لە کاتی ڕووداوەکە چییت بینی یان بیست؟","پەیوەندیت بە قوربانی یان شوێنی ڕووداو چی بوو؟","بۆچی ڕۆڵی تۆ لەو شوێنەدا گرنگە؟","لە کام بەڵگەیەک زیاتر سەرسام بوویت؟","ئەگەر کەسێک قسەکەت بە درۆ بزانێت، چ بەڵگەیەکت هەیە؟","گومان لە کام کەس دەکەیت و بۆچی؟"]},
- {title:"دۆسیەی شەوی خانووی کۆن",victim:"دانا",place:"ژووری خوێندن و هۆڵی پاشەوە",time:"8:40ی ئێوارە",scene:"دانا لە ژووری خوێندن دۆزرایەوە. لە خانووەکەدا 8 کەس بە شێوەیەکی جیاواز پەیوەندییان بە شوێنەکەوە هەبوو. لە کاتی گرنگدا 4 کەس لە ناو خانوو و نزیک ژووری خوێندن بوون. 8:31 دەرگای پاشەوە کراوە، 8:36 چرای هۆڵەکە بۆ ساتێک کوژاوەتەوە و 8:40 ڕووداوەکە ڕوویداوە. دوو تاوانبار لە نێوان 4 کەسی نزیکن." ,weapon:"کەلوپەلێکی شکاو",clues:["پێشوێنی نوێ لە نزیک دەرگای پاشەوە دۆزرایەوە.","کاتژمێرە دیوارییەکە 8:40 وەستاوە.","پەیامێکی کورت لە 8:34 بۆ دانا نێردراوە.","کلیلێکی یەدەکی لە ژێر کتێبێک دۆزرایەوە.","لە هۆڵەکەدا پەردەیەک بە شێوەیەکی نائاسایی کراوەتەوە."],roleSlots:[
-  {role:"خاوەن خانوو",where:"لە ژووری خوێندن بوویت",knowledge:"کلیلە یەدەکییەکەت دەناسی."},{role:"میوانی خانوو",where:"لە هۆڵی پاشەوە بوویت",knowledge:"دەنگی دەرگای پاشەوەت بیستووە."},{role:"یاریدەدەری کتێبخانە",where:"لە ژووری خوێندن بوویت",knowledge:"دەزانی دانا لە چی تووڕە بوو."},{role:"چاککەرەوە",where:"نزیک هۆڵی پاشەوە بوویت",knowledge:"کاتێک چرای هۆڵەکە کوژایەوە دەزانی."},{role:"دراوسێ",where:"لە دەرەوەی خانوو بوویت",knowledge:"جوڵەیەکت لە پشت پەنجەرە بینیوە."},{role:"پزیشکی خێزان",where:"لە سەیارەکەت بوویت",knowledge:"پەیامێکت بۆ دانا ناردووە."},{role:"هاوڕێی دانا",where:"پێش 8:20 لەگەڵی بوویت",knowledge:"نهێنییەکی گرنگت لەسەر دانا هەیە."},{role:"گەشتیار",where:"لە ژوورێکی تر بوویت",knowledge:"کاتێک دەرگای پاشەوەت کرایەوە بیستووتە."}],questions:["لە 8:25 تا 8:45 بە ڕیزبەندی چی کرد؟","کێ شوێنی تۆ پشتڕاست دەکاتەوە؟","چی لە دۆخەکەدا بۆت نامۆ بوو؟","کلیل یان دەرگای پاشەوە چی پەیوەندییەکی بە تۆوە هەیە؟","کەی کۆتا جار دانات بینی؟","بۆچی ئەو بەڵگەیە گرنگە؟","ئەگەر لە قسەکەتدا کاتێک هەڵە بێت، چۆن ڕوونی دەکەیتەوە؟","کێ زۆرترین دەستگەیشتنی بە شوێنی ڕووداو هەبوو؟"]},
- {title:"دۆسیەی کافێی داخراو",victim:"سوران",place:"کافێیەکی داخراو",time:"10:05ی شەو",scene:"کافێک داخراو بوو، بەڵام 8 کەس بە شێوەیەکی جیاواز پەیوەندییان بە کافێکەوە هەبوو. لە کاتی گرنگدا 4 کەس لە کافێ یان لە دەرگای پاشەوە نزیک بوون. 10:01 سیستەمی داخستن کارا بوو، 10:04 کارتی چوونەژوورەوە تۆمار کرا و 10:05 سوران دۆزرایەوە. دوو تاوانبار لە نێوان 4 کەسی نزیکن." ,weapon:"شیشەی شکێنراو",clues:["سیستەمی داخستنی کافێ 10:01 تۆمار کردووە.","کارتێک 10:04 بەکار هاتووە.","پەیامی کۆتایی 9:58 نێردراوە.","دەرگای پشتەوە دوای داخستن کراوەتەوە.","لەسەر میزەکە دوو کوپ و یەک تیکەتی نوێ ماوەتەوە."],roleSlots:[
-  {role:"خاوەن کافێ",where:"لە ناو کافێ بوویت",knowledge:"سیستەمی داخستن دەناسی."},{role:"کارمەند",where:"لە دەرگای پاشەوە بوویت",knowledge:"کارتێکی چوونەژوورت هەیە."},{role:"میوانی کۆتایی",where:"لە کافێ بوویت",knowledge:"کۆتا قسەی سورانت بیستووە."},{role:"گەیەنەر",where:"نزیک دەرگای پاشەوە بوویت",knowledge:"کەسێکت بینی کارتەکە بەکار هێنا."},{role:"دراوسێی کافێ",where:"لە دەرەوە بوویت",knowledge:"کاتی داخستنی کافێت بینیوە."},{role:"هاوڕێی سوران",where:"پێش داخستن لەگەڵی بوویت",knowledge:"دەزانی سوران لە کێ دەترسا."},{role:"چاککەرەوەی سیستەم",where:"لە دەرەوەی کافێ بوویت",knowledge:"دەزانی تۆماری کارت چۆن کار دەکات."},{role:"پاککەرەوە",where:"لە ژووری خزمەتگوزاری بوویت",knowledge:"دوو کوپ لەسەر میزەکە بینیوە."}],questions:["لە 9:50 تا 10:10 بە وردی چی کرد؟","کێ دەتوانێت شوێنی تۆ پشتڕاست بکاتەوە؟","کارت یان کلیلت هەبوو؟","کەی کۆتا جار سورانت بینی؟","چی لە دەرگای پاشەوە سەیر بوو؟","بۆچی ئەو کەسە یان بەڵگەیە بە گرنگ دەزانیت؟","ئایا کاتێک لە قسەکەتدا گۆڕانکاری هەبوو؟","ئەگەر تۆ لێکۆڵەر بیت، یەکەم گومانەکەت کێیە؟"]}
-];
-/* EXTRA DOSSIERS: replayable cases with more leads and investigation detail */
-const extraMysteryCases=[
-{title:"دۆسیەی سەعاتی ونبوو",victim:"هیوا",place:"کتێبخانە و ڕێڕەوی پشتی",time:"7:35ی ئێوارە",scene:"هیوا لە کۆتایی ڕێڕەو دۆزرایەوە. لە 7:20 تا 7:35 هەشت کەس لە چیرۆکەکەدا هەبوون. 7:27 سەعاتێکی دیواری وەستا، 7:30 دەرگای پشتی کرا، 7:33 چرای ڕێڕەو کەم بوو و 7:35 ڕووداوەکە دۆزرایەوە. دوو تاوانبار لە نێوان 4 کەسی نزیکن.",weapon:"کەلوپەلێکی قورس",clues:["7:27 سەعاتەکە وەستا، بەڵام پاشان دەستی لێدراوە.","7:30 دەرگای پشتی بە کلیل کراوەتەوە.","تۆماری کۆمپیوتەر 7:31 یەک چوونەژوورەوە نیشان دەدات.","لەسەر پەنجەرەکە پەنجەمۆری نوێ هەیە.","کەسێک 7:34 دەنگی پێی خێرا بیستوە.","لە ژێر کورسییەکە کاغەزێکی ژمارە 27 دۆزرایەوە.","لەسەر دەرگا نیشانەی تازەی دەست هەیە."],roleSlots:[],questions:["لە 7:20 تا 7:35 بە کات ڕیزبەندی چی کردیت؟","کێ دەتوانێت شوێنت پشتڕاست بکاتەوە؟","دەرگای پشتی کەی و چۆن کرا؟","کێ دەزانێت سەعاتەکە بۆچی وەستا؟","کاغەزی ژمارە 27 چ پەیوەندییەکی هەیە؟","کاتەکانی کێ لەگەڵ تۆمارەکە ناگونجێن؟","کێ کۆتا جار قوربانی بینی؟","کام دوو بەڵگە پێکەوە گومانەکە توندتر دەکەن؟"]},
-{title:"دۆسیەی پەنجەرەی داخراو",victim:"رۆژ",place:"هۆڵی گەشتیاری",time:"9:10ی شەو",scene:"رۆژ لە هۆڵی گەشتیاری دۆزرایەوە. 9:02 پەنجەرە داخرا، 9:04 ئاگادارکردنەوەی مۆبایلێک دەنگی دا، 9:07 چرای هۆڵ گۆڕانی کرد و 9:10 ڕووداوەکە دۆزرایەوە. دوو تاوانبار لە 4 کەسی نزیکن.",weapon:"کەلوپەلێکی شکاو",clues:["پەنجەرە لە ناوەوە داخراوە، بەڵام قوفڵەکە نوێ کراوەتەوە.","9:04 ئاگادارکردنەوەی مۆبایل تۆمار کراوە.","شوێنی پێیەکی تازە لە زەویە.","9:06 کاغەزێک لە ژێر دەرگا دابین کراوە.","کامێرا 9:07 سایەی دوو کەس تۆمار کردووە.","کلیلێکی بچووک لە نزیک پەنجەرەکە دۆزرایەوە.","دەستگێڕی دەرگا لە 9:08 گەرم بووە."],roleSlots:[],questions:["لە 9:00 تا 9:10 بە وردی لە کوێ بوویت؟","چی دەتوانێت قسەکەت پشتڕاست بکاتەوە؟","پەنجەرەکە کەی بینی؟","کلیلە بچووکەکە بۆچی گرنگە؟","دەنگی مۆبایل کێ دەتوانێت ڕوون بکاتەوە؟","کێ دەستگەیشتنی ڕاستەوخۆی بە هۆڵ هەبوو؟","لە قسەی کێدا کاتێکی نامۆ هەیە؟","کام بەڵگە پێویستە لەگەڵ قسەی دوو کەس بەراورد بکرێت؟"]},
-{title:"دۆسیەی کۆگای تاریک",victim:"سەروە",place:"کۆگای کۆن",time:"11:45ی شەو",scene:"سەروە لە کۆگا دۆزرایەوە. 11:30 دەرگا داخرا، 11:36 کارتێکی چوونەژوورەوە بەکار هات، 11:40 کارەبا بڕا و 11:45 ڕووداوەکە دۆزرایەوە. هەشت کەس زانیارییان هەیە و 4 کەس لە نزیک بوون. دوو تاوانبار لەو 4 کەسەن.",weapon:"ئامێرێکی کۆگاکە",clues:["تۆماری کارت 11:36 یەک چوونەژوورەوە نیشان دەدات.","کارەبا 11:40 بڕاوە و 11:43 گەڕاوەتەوە.","لەسەر خاکەکە شوێنی دوو جۆر پێ هەیە.","پارچەیەکی جل لەسەر دەستگێڕەکە ماوەتەوە.","دەرگای پاشەوە 11:44 کەمێک کراوە بوو.","11:29 کەسێک داوای کلیلێکی یەدەکی کردووە.","لەسەر قاپی کۆگا نیشانەی تازەی پەنجەمۆر هەیە."],roleSlots:[],questions:["لە 11:30 تا 11:45 چی کردیت؟","کلیل یان کارتت هەبوو؟","بڕینی کارەبا چ پەیوەندییەکی بە ڕۆڵی تۆوە هەیە؟","کێ دەتوانێت چوونەژوورەوەت پشتڕاست بکاتەوە؟","پارچەی جل چی دەتوانێت بڵێت؟","کێ دەستگەیشتنی زیاتر بە کۆگا هەبوو؟","کام کات لە قسەی یەکێکدا سەیرە؟","کام بەڵگە دەبێت لەگەڵ تۆماری کارت پێکەوە بخوێندرێتەوە؟"]},
-{title:"دۆسیەی شەوی یاریگا",victim:"کاروان",place:"یاریگا و ژووری تماشاکەر",time:"8:55ی شەو",scene:"کاروان لە پشت ژووری تماشاکەر دۆزرایەوە. 8:45 دەرگای یاریگا داخرا، 8:49 موسیقا بەرز بوو، 8:52 تۆپێک لە ڕێڕەو کەوت و 8:55 ڕووداوەکە دۆزرایەوە. 4 کەس نزیک بوون و دوو تاوانبار لەوانەن.",weapon:"کەلوپەلێکی یاریگا",clues:["8:49 موسیقا بەرز بوو و دەنگی دەرەوەی نەبیسترا.","8:52 تۆپەکە لە شوێنێک دۆزرایەوە کە پێویستی بە تێپەڕبوون هەبوو.","کارتێکی یاریگا 8:51 تۆمار کراوە.","ژمارەی کورسییەکە لە کاغەزێک نووسراوە.","کامێرا تەنها دەرگای سەرەکی دەبینێت.","شوێنی پێیەکی تازە لە دەرگای خزمەتگوزارییە.","8:53 دەنگی دەرگا لە تۆمارێکدا هەیە."],roleSlots:[],questions:["لە 8:45 تا 8:55 کوێ بوویت؟","کارتەکەت کەی بەکار هات؟","موسیقا چ پەیوەندییەکی بە ڕووداوەکەوە هەیە؟","کێ دەتوانێت کورسییەکە بناسێت؟","کەسێک بینی لە دەرگای خزمەتگوزاری؟","کام وەڵام کاتی ناگونجێت؟","کێ زانیاریی زیاتر لەسەر ڕێڕەو هەیە؟","دەنگی 8:53 چ کەسێک لە قسەکانی دەکاتەوە؟"]},
-{title:"دۆسیەی پەیامی نەخوێندراو",victim:"ئازاد",place:"ژووری کار",time:"6:25ی ئێوارە",scene:"ئازاد لە ژووری کار دۆزرایەوە. 6:10 پەیامێک بۆی نێردرا، 6:15 دەرگا داخرا، 6:19 کاغەزێک چاپ کرا و 6:25 ڕووداوەکە دۆزرایەوە. 4 کەس نزیک بوون و دوو تاوانبار لەوانەن.",weapon:"کەلوپەلێکی ئۆفیس",clues:["پەیامی 6:10 هێشتا نەخوێندراوە.","پرینتەر 6:19 فایلیەکی نوێ چاپ کردووە.","دەرگا 6:15 داخراوە، بەڵام قوفڵ نەکراوە.","لە میزەکەدا دوو پەن و کاغەزی تازە هەیە.","تۆماری کۆمپیوتەر 6:21 گۆڕانکارییەکی نیشان دەدات.","کەسێک دەڵێت 6:20 لە دەرەوەی ژوور بووە.","کاغەزی چاپکراوەکە پاشماوەی پڕینتەری هەیە."],roleSlots:[],questions:["لە 6:10 تا 6:25 چی کردیت؟","پەیوەندیت بە پرینتەرەکە چییە؟","کێ دەزانێت کۆمپیوتەرەکە چی گۆڕاوە؟","دەرگا کەی بینی؟","کێ دەتوانێت قسەکەت پشتڕاست بکات؟","کێ زانیارییەکی زۆر لەسەر پەیامەکە هەیە؟","کاتەکانی کێ لەگەڵ 6:21 ناگونجێن؟","کاغەزی چاپکراو چ کاتێک دەتوانێت بەکار هاتبێت؟"]},
-{title:"دۆسیەی شەوی باغ",victim:"نەوزاد",place:"باغی پشت ماڵ",time:"10:30ی شەو",scene:"نەوزاد لە باغ دۆزرایەوە. 10:18 چراغی باغ کوژایەوە، 10:22 دەرگای بچووک کرا، 10:27 دەنگی شاخەی شکێنراو هات و 10:30 ڕووداوەکە دۆزرایەوە. 4 کەس نزیک بوون و دوو تاوانبار لەوانەن.",weapon:"ئامرازێکی باغ",clues:["چراغی باغ 10:18 خامۆش بوو.","دەرگای بچووک 10:22 کراوەتەوە.","شوێنی پێ لە خاکەکەدا دوو جۆرە.","شاخێک تازە شکێنراوە.","دەنگی ئاگادارکەرەوە 10:24 هاتووە.","کلیلێکی دەرگای بچووک لە ژێر گڵدا دۆزرایەوە.","لەسەر پەنجەرەی پشتەوە نیشانەی گڵ هەیە."],roleSlots:[],questions:["لە 10:18 تا 10:30 بە وردی کوێ بوویت؟","کلیلەکە دەناسی؟","چراغ کێ دەتوانێت خامۆش بکات؟","شوێنی پێت چی دەڵێت؟","کەی شاخەکەت بینی؟","کێ زانیاریی تایبەت لەسەر دەرگای بچووک هەیە؟","کام قسە لەگەڵ ئاگادارکەرەوە ناگونجێت؟","کێ دەتوانێت لەو کاتەدا بگاتە باغ بەبێ ئەوەی ببیندرێت؟"]},
-{title:"دۆسیەی ژووری موزیک",victim:"بەختیار",place:"ژووری موزیک",time:"9:40ی شەو",scene:"بەختیار لە ژووری موزیک دۆزرایەوە. 9:28 سیستەمی دەنگ کارا بوو، 9:32 دەرگا داخرا، 9:36 دەنگێکی لەناکاو هات و 9:40 ڕووداوەکە دۆزرایەوە. دوو تاوانبار لە نێوان 4 کەسی نزیکن.",weapon:"ئامێرێکی موزیک",clues:["سیستەمی دەنگ 9:28 کارا کراوە.","9:36 تۆمارێکی دەنگی کورت هەیە.","دەرگا 9:32 داخراوە بەڵام قوفڵ نەبووە.","کابلێک لەسەر زەوی دابڕاوە.","مۆبایلێک 9:37 پەیوەندییەکی نەکراوی هەیە.","لەسەر ئامێرەکە پەنجەمۆری نوێ هەیە.","9:38 دەنگی جوڵەی کورسییەک لە تۆمارەکەیە."],roleSlots:[],questions:["لە 9:28 تا 9:40 چی کردیت؟","سیستەمی دەنگ کێ دەناسی؟","دەنگی 9:36 چ پەیوەندییەکی بە کاتەکەوە هەیە؟","کێ دەتوانێت کابلەکە ڕوون بکاتەوە؟","پەیوەندیی نەکراو کێ دەتوانێت ڕوون بکاتەوە؟","کام بەڵگە دەتوانێت شوێنی کەسێک دیاری بکات؟","کێ قسەکەی لەگەڵ تۆمارەکە ناگونجێت؟","دەنگی 9:38 چۆن دەتوانێت کاتی جوڵە دیاری بکات؟"]},
-{title:"دۆسیەی دەرگای پشتی مەکتەب",victim:"دڵشاد",place:"هۆڵی پشتی مەکتەب",time:"5:50ی ئێوارە",scene:"دڵشاد لە هۆڵی پشتی مەکتەب دۆزرایەوە. 5:38 دەرگای پشتی کرا، 5:42 کۆمپیوتەرێک داخرا، 5:47 دەنگی کلیل هات و 5:50 ڕووداوەکە دۆزرایەوە. 4 کەس نزیک بوون و دوو تاوانبار لەوانەن.",weapon:"کەلوپەلێکی مەکتەب",clues:["دەرگای پشتی 5:38 کراوەتەوە.","کۆمپیوتەر 5:42 بە شێوەی دەستی داخراوە.","5:47 دەنگی کلیل لە تۆمارێکی دەنگدا هەیە.","کارتێکی ناسین لە ژێر میزەکەیە.","شوێنی پێ لە پەردەی خۆڵاوی ماوە.","کەسێک دەڵێت 5:46 لە لای دەرگای سەرەکی بووە.","5:48 چرای هۆڵ بۆ ساتێک گۆڕانی کردووە."],roleSlots:[],questions:["کاتەکانت بە ڕیزبەندی بڵێ.","کارتەکە بۆ کێیە؟","دەنگی کلیل کێ دەتوانێت بناسێت؟","کێ شوێنی تۆ پشتڕاست دەکات؟","دەرگای پشتی کەی بینی؟","کێ دەتوانێت لە 5:47 بگاتە هۆڵ؟","کام قسە لەگەڵ تۆمارەکە ناگونجێت؟","گۆڕانی چرای 5:48 چ پەیوەندییەکی بە جوڵەوە هەیە؟"]},
-{title:"دۆسیەی میوانخانەی بێدەنگ",victim:"ژین",place:"هۆڵی میوانخانە",time:"12:15ی شەو",scene:"ژین لە هۆڵی میوانخانە دۆزرایەوە. 12:03 چرای هۆڵ کەم بوو، 12:07 دەرگای خزمەتگوزاری کرا، 12:09 کامێرا بۆ چەند چرکەیەک وەستا، 12:15 ڕووداوەکە دۆزرایەوە. دوو تاوانبار لە 4 کەسی نزیکن.",weapon:"کەلوپەلێکی دیکۆراتیڤ",clues:["چرای هۆڵ 12:03 کەم بووە.","دەرگای خزمەتگوزاری 12:07 کراوە.","کامێرا 12:09 بۆ چەند چرکەیەک وەستا.","کارتێکی ژوور 12:10 لە نزیک دەرگا دۆزرایەوە.","دەنگی کۆڵانەوە 12:11 تۆمار کراوە.","کەسێک دەڵێت 12:12 هەموو دەرگا داخراون.","لەسەر دەرگا نیشانەی تازەی پەنجەمۆر هەیە."],roleSlots:[],questions:["لە 12:03 تا 12:15 کوێ بوویت؟","کێ دەزانێت کامێرا بۆچی وەستا؟","کارتەکە بۆ کێیە؟","دەرگای خزمەتگوزاری کێ دەتوانێت بکاتەوە؟","دەنگی 12:11 چی دەڵێت؟","کێ قسەی 12:12ی لەگەڵ بەڵگەکان ناگونجێت؟","کێ زانیاریی زیاتر لەسەر ژوورەکان هەیە؟","کام بەڵگە دەتوانێت کاتی جوڵەی کەسێک دیاری بکات؟"]}
-];
-const extraRoleTemplates=[["بەرپرسی شوێن","لە نزیک شوێنی ڕووداو بوویت","ڕێکخستنی دەرگا و کاتەکانی چوونەژوورەوە دەناسی."],["کارمەندی خزمەتگوزاری","نزیک ڕێڕەوی خزمەتگوزاری بوویت","کات و شوێنی بەکارهێنانی کلیل یان کارت دەناسی."],["میوانی نزیک","لە هۆڵ یان ڕێڕەوی نزیک بوویت","دەنگێک یان جوڵەیەکی نامۆت بیستوە."],["چاککەرەوە","لە نزیک ئامێرەکان بوویت","دەزانی کام سیستەم کەی گۆڕانی کردووە."],["پاککەرەوە","لە بەشی خزمەتگوزاری بوویت","نیشانەی تازە و شتە جێماوەکانت بینیوە."],["دراوسێ","لە دەرەوەی شوێنەکە بوویت","جوڵە یان کەسێکت لە کاتی گرنگدا بینیوە."],["هاوڕێی قوربانی","پێش ڕووداوەکە لەگەڵ قوربانی بوویت","دەزانی قوربانی لەگەڵ کێ یان چی کێشەی هەبوو."],["چاودێری","لە شوێنی چاودێری بوویت","تۆمارێک یان کاتێکی دیاریکراوت لەبیرە."]];
-extraMysteryCases.forEach(c=>{c.roleSlots=extraRoleTemplates.map(x=>({role:x[0],where:x[1],knowledge:x[2]}));});
-mysteryCases.push(...extraMysteryCases);
 
-let mysteryState={case:null,culprits:[],roles:{},phase:"",suspectIndex:0,asked:{},answers:{},evidence:[],votes:{},voteIndex:0,scenePlayers:[],roleInfo:{}};
-function mysteryPick(){
- mysteryState.case=mysteryCases[Math.floor(Math.random()*mysteryCases.length)];
- const ps=[...state.players]; shuffle(ps);
- /* بۆ ئەوەی دۆسیەکە بە تەواوی لۆجیکی و چارەسەرکراو بێت:
-    هەمیشە 4 کەس لە نزیک شوێنی تاوانن، و تەنها 2 لەو 4 کەسە تاوانبارن. */
- const sceneCount=4;
- mysteryState.scenePlayers=ps.slice(0,sceneCount);
- /* دوو ڕۆڵی دیاریکراوی ناو ئەو 4 کەسە تاوانبارن؛ بەڵگە و پرسیارەکان
-    بۆ بەراوردکردنی کات/شوێن/دەستگەیشتن دانراون، نە بۆ حدسی هەڕەمەکی. */
- const culpritSceneIndexes=[1,3];
- mysteryState.culprits=culpritSceneIndexes.map(i=>mysteryState.scenePlayers[i]).filter(Boolean);
- mysteryState.roles={}; mysteryState.roleInfo={};
- ps.forEach((name,i)=>{
-   const base=mysteryState.case.roleSlots[i % mysteryState.case.roleSlots.length];
-   const cycle=Math.floor(i/mysteryState.case.roleSlots.length);
-   const slot=cycle?{...base,role:`${base.role} ${cycle+1}`}:base;
-   const isCulprit=mysteryState.culprits.includes(name);
-   const atScene=i<sceneCount;
-   const timeline=atScene
-     ? (isCulprit
-       ? `لە کاتی گرنگدا لە نزیک شوێنی ڕووداو بوویت. لە گفتوگۆدا پێویستە ڕوون بکەیتەوە کە لە ${mysteryState.case.time} چۆن لەوێ بوویت؛ هەموو وردەکارییەکانت لەگەڵ بەڵگەکان بەراورد دەکرێن.`
-       : `لە کاتی گرنگدا لە شوێنی دیاریکراوت بوویت. کات و شوێنەکەت بە ڕوونی بڵێ و ئەو شتانەی بینیوتە لەگەڵ بەڵگەکان بەراورد بکە.`)
-     : `لە کاتی گرنگدا لە شوێنی دیکە بوویت. بە وردی بڵێ لە کوێ بوویت، کێ دەتوانێت پشتڕاستی بکاتەوە و چییت بینی یان بیستووە.`;
-   const proof=atScene
-     ? `ئەگەر لێکۆڵەرەکان پرسیاری کات و شوێنت کرد، وەڵامەکەت بە وردی بدە؛ ${isCulprit?"هەوڵ بدە پۆششی ڕۆڵەکەت بپارێزیت و لەگەڵ بەڵگەکاندا نەکەویتە ناکۆکی.":"زانیاریی ڕاستی ڕۆڵەکەت بەکاربهێنە بۆ ئەوەی کات و شوێنەکەت پشتڕاست بکەیتەوە."}`
-     : `زانیارییەکەت بۆ پشتڕاستکردنەوەی کات و شوێنی کەسانی نزیک بەکاربهێنە.`;
-   mysteryState.roles[name]=isCulprit?"culprit":"investigator";
-   const focusPool=["کاتەکان بە وردی بەراورد بکە؛ ئەگەر یەک کەس لە دوو شوێندا لە هەمان کاتدا بوو، ئەو ناکۆکییە گرنگە.","دەستگەیشتن بە شوێنەکە بپشکنە؛ کێ کلیلی، کارت، دەرگا یان ڕێگای تایبەتی هەبوو؟","بەڵگەکانی کات و تۆمارەکان پێکەوە بخە؛ یەک بەڵگە بە تەنیا کۆتایی نییە.","قسەی دوو کەس بەراورد بکە؛ جیاوازییە بچووکەکانی کات زۆر گرنگن.","سەرنج بدە بەو زانیارییەی کە کەسێک زۆر زوو دەزانێت؛ بزانە چۆن لەگەڵ بەڵگەکە دەگونجێت.","ڕێگای جوڵەکە دروست بکە: شوێنی هەر کەس + کاتی گۆڕینی شوێن + دەستگەیشتن."];
- const investigatorFocus=focusPool[i%focusPool.length];
- mysteryState.roleInfo[name]={role:slot.role,where:slot.where,knowledge:slot.knowledge,atScene,timeline,proof,investigatorFocus};
- });
- mysteryState.phase="brief"; mysteryState.suspectIndex=0; mysteryState.asked={}; mysteryState.answers={}; mysteryState.evidence=[]; mysteryState.votes={}; mysteryState.voteIndex=0;
-}
-function mysteryGame(){
- if(state.players.length<4){showPlayersSetup();return toast("🕵️ بۆ ئەم یارییە لانیکەم 4 یاریزان پێویستە")}
- mysteryPick(); const c=mysteryState.case; const ps=state.players;
- document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-big">🕯️</div><div class="spy-round">📁 دۆسیەی نوێ</div><h2>${esc(c.title)}</h2><p class="hint" style="display:block!important">ئەم جارە هەموو یاریزانەکان ڕۆڵێکی تایبەتیان هەیە. <b>${mysteryState.scenePlayers.length} کەس لە کاتی ڕووداوەکەدا لە شوێنی تاوان یان زۆر نزیک بوون</b> و ${ps.length-mysteryState.scenePlayers.length} کەسی تر لە شوێنەکانی دەوروبەر بوون و زانیاریی گرنگیان هەیە. لە نێوان ئەو 4 کەسەی نزیکدا <b>2 تاوانبار</b> هەن.</p><div class="mystery-photo"><svg viewBox="0 0 700 300" role="img" aria-label="وێنەی دۆسیەی تاوان"><rect width="700" height="300" rx="28" fill="#171827"/><rect x="85" y="55" width="530" height="175" rx="20" fill="#24263a"/><path d="M125 210h450M180 80v130M350 80v130M520 80v130" stroke="#8b6cff" stroke-width="4" opacity=".55"/><circle cx="350" cy="145" r="34" fill="#d9dbe8"/><text x="350" y="270" fill="#fff" font-size="18" text-anchor="middle">نەخشەی شوێنی ڕووداو — بەبێ دیمەنی خوێناوی</text></svg></div><div class="mystery-box"><b>🧑‍💼 قوربانی:</b> ${esc(c.victim)}<br><b>📍 شوێن:</b> ${esc(c.place)}<br><b>⏰ کاتی ڕووداو:</b> ${esc(c.time)}<br><b>🔎 شێوەی ڕووداو:</b> ${esc(c.weapon)}<br><br><b>📖 چۆنیەتی ڕووداو:</b><br>${esc(c.scene)}</div><div class="mystery-summary"><b>🎯 ئامانجی یاری</b><span>هەمووتان بە وردی ڕۆڵ و کات و بەڵگەکان بخوێننەوە، پاشان مۆبایلەکە دابنێن و گفتوگۆ بکەن تا هەردوو تاوانبار بدۆزنەوە.</span></div><div class="mystery-caseboard"><div class="mystery-caseboard-title">🧩 پازلەکە چۆن دەکەنەوە؟</div><div class="mystery-caseboard-grid"><div><b>👥 ${ps.length}</b><span>هەموو یاریزانەکان ڕۆڵیان هەیە</span></div><div><b>📍 ${mysteryState.scenePlayers.length}</b><span>لە نزیک شوێنی تاوان</span></div><div><b>😈 2</b><span>تاوانباری ڕاستەقینە</span></div><div><b>🔎 5+</b><span>بەڵگە و نیشانە</span></div></div><div class="mystery-caseboard-tip">💡 سەرکەوتن تەنها بە حدس نییە؛ <b>کات + شوێن + وەڵام + بەڵگە</b> پێکەوە بەراورد بکەن.</div></div><button class="primary" onclick="mysteryRoles()">🔐 دەست بە ڕۆڵە نهێنییەکان بکە</button></div>`;
-}
-function mysteryRoles(){mysteryState.phase="roles";mysteryState.suspectIndex=0;renderMysteryRoleReveal()}
-function renderMysteryRoleReveal(){
- const i=mysteryState.suspectIndex,ps=state.players;if(i>=ps.length)return mysteryEvidence();
- const name=ps[i],role=mysteryState.roles[name],info=mysteryState.roleInfo[name],c=mysteryState.case;
- const culpritText=role==="culprit"?`<div class="spy-big">😈</div><h2>تۆ تاوانباری!</h2><p><b>ڕۆڵت:</b> ${esc(info.role)}</p><p><b>شوێنت:</b> ${esc(info.where)}</p><p><b>زانیاری نهێنی:</b> ${esc(info.knowledge)}</p><div class="claim"><b>⏱️ کاتی ڕۆڵ:</b><br>${esc(info.timeline)}<br><br><b>🔎 چۆن بەکاری بهێنیت:</b><br>${esc(info.proof)}</div><div class="claim"><b>🔐 نهێنی تۆ:</b><br>تۆ یەکێکیت لە دوو تاوانبار. <b>لە شوێنی ڕووداو بوویت</b>. لە گفتوگۆدا ڕۆڵ و زانیاریی خۆت بە شێوەیەکی سروشتی بەکاربهێنە و هەموو شتێک بە ڕاستی مەڵێ.</div>`:`<div class="spy-big">🕵️</div><h2>تۆ لێکۆڵەریت</h2><p><b>ڕۆڵت:</b> ${esc(info.role)}</p><p><b>شوێنت:</b> ${esc(info.where)}</p><p><b>زانیاریت:</b> ${esc(info.knowledge)}</p><div class="claim"><b>🎯 ئەرک:</b><br>لە وەڵام و کاتەکان و بەڵگەکاندا ناکۆکی بدۆزەوە. هەوڵ بدە هەردوو تاوانبار بناسیت، بەڵام ڕۆڵی خۆت بە شێوەیەکی سروشتی بپارێزە.</div><div class="claim"><b>🧭 نیشانەی لێکۆڵینەوە:</b><br>${esc(info.investigatorFocus)}</div>`;
- document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🔐 ڕۆڵی نهێنی — ${i+1}/${ps.length}</div><div class="turn">تەنها ${esc(name)} سەیری شاشەکە بکات</div><div class="spy-secret ${role==="culprit"?"is-spy":"is-citizen"}">${culpritText}</div><div class="mystery-box"><b>📌 تێبینی:</b> ${esc(c.time)}، ${esc(c.place)}. ئەم زانیارییە تەنها بۆ خۆتە؛ بە دەنگی بەرز مەخوێنەوە.</div><button class="primary" onclick="mysteryNextRole()">👀 تێگەیشتم — شاشە بشارەوە</button></div>`;
-}
-function mysteryNextRole(){mysteryState.suspectIndex++;renderMysteryRoleReveal()}
-function mysteryEvidence(){
- mysteryState.phase="evidence";const c=mysteryState.case;
- document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🔎 بەڵگەکانی دۆسیە</div><h2>ئێستا هەمووان بەڵگەکان بخوێننەوە</h2><p class="hint" style="display:block!important">ئەم بەڵگانە بۆ هەمووانن. هەر بەڵگەیەک دەتوانێت کات، شوێن یان قسەی کەسێک پشتڕاست یان لاواز بکات.</p><div class="mystery-clue-progress">📌 بەڵگەکانی هەڵگیراو: <b id="mysteryEvidenceCount">0</b> / ${c.clues.length}</div><div class="mystery-clues">${c.clues.map((x,i)=>`<button id="mysteryClue${i}" class="answer" onclick="mysteryClue(${i})">📌 بەڵگە ${i+1}<br><small>${esc(x)}</small></button>`).join("")}</div><button class="primary" onclick="mysteryInterrogate(0)">🗣️ ئێستا بە نۆرە پرسیار لە هەموو کەسێک بکەن</button></div>`;
-}
-function mysteryClue(i){if(!mysteryState.evidence.includes(i)){mysteryState.evidence.push(i);const b=document.getElementById("mysteryClue"+i);if(b)b.classList.add("collected");const n=document.getElementById("mysteryEvidenceCount");if(n)n.textContent=mysteryState.evidence.length;toast("📌 بەڵگەکە بۆ گفتوگۆ هەڵگیرا")}}
-function mysteryInterrogate(i){
- const ps=state.players,name=ps[i],c=mysteryState.case,info=mysteryState.roleInfo[name];mysteryState.suspectIndex=i;if(!mysteryState.asked[name])mysteryState.asked[name]=[];
- const followUps=["لەو کاتەدا کێ لە نزیکت بوو و چیت لێی بینی؟","کاتەکە بە وردی چەند بوو کە شوێنەکەت گۆڕی؟","ئەگەر کەسێک قسەکەت پشتڕاست نەکاتەوە، چی دەتوانێت یارمەتیدەر بێت؟","پەیوەندیت بە یەکێک لە بەڵگەکان چییە؟","پێش ڕووداوەکە کۆتا جار لەگەڵ کێ قسەت کرد؟","لە قسەی کەسێکی تر چییە کە لەگەڵ زانیاریت ناگونجێت؟","ئەگەر مۆبایل یان کامێرا بەردەست بێت، چ شتێک دەردەخات؟","چۆن دەتوانیت پیشانی بدەیت کە لە شوێنی ڕووداو نەبوویت؟","کام بەڵگە بە گومانەکەت دەگۆڕێت و بۆچی؟","ئەگەر تۆ لێکۆڵەر بیت، یەکەم کەس کێ دەپرسی و بۆچی؟"];
- const qs=[...c.questions,...followUps];
- document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🗣️ پرسیارکردن — ${i+1}/${ps.length}</div><div class="mystery-suspect"><div class="spy-big">👤</div><h2>${esc(name)}</h2><p><b>ڕۆڵ:</b> ${esc(info.role)} — <b>${info.atScene?"نزیک شوێنی ڕووداو":"لە شوێنی دیکە"}</b></p><div class="claim"><b>🎙️ یاسای گفتوگۆ:</b><br>پرسیارەکە بە دەنگی بەرز بخوێنەوە، ئەو کەسە خۆی وەڵام بدات. وەڵامی دروست لە شاشەدا نادرێت؛ هەموو کەسێک دەبێت لە وەڵامەکە وردبێت.</div></div><div class="mystery-questions">${qs.map((q,j)=>`<button class="answer" onclick="mysteryAsk(${j})" ${mysteryState.asked[name].includes(j)?"disabled":""}>❓ ${esc(q)}</button>`).join("")}</div>${i>0?`<button class="secondary" onclick="mysteryInterrogate(${i-1})">⬅️ کەسی پێشوو</button>`:""}${i<ps.length-1?`<button class="primary" onclick="mysteryInterrogate(${i+1})">➡️ کەسی داهاتوو</button>`:`<button class="primary" onclick="mysteryDiscussStart()">📱 شاشەکە دابنێن — گفتوگۆ دەست پێ بکات</button>`}</div>`;
-}
-function mysteryAsk(j){
- const name=state.players[mysteryState.suspectIndex];if(mysteryState.asked[name].includes(j))return toast("🔁 ئەم پرسیارە پێشتر کراوە");mysteryState.asked[name].push(j);
- const info=mysteryState.roleInfo[name];const text=`<div class="mystery-box" style="margin-top:12px"><b>❓ پرسیار:</b> ${esc(([...mysteryState.case.questions,"لەو کاتەدا کێ لە نزیکت بوو و چیت لێی بینی؟","کاتەکە بە وردی چەند بوو کە شوێنەکەت گۆڕی؟","ئەگەر کەسێک قسەکەت پشتڕاست نەکاتەوە، چی دەتوانێت یارمەتیدەر بێت؟","پەیوەندیت بە یەکێک لە بەڵگەکان چییە؟","پێش ڕووداوەکە کۆتا جار لەگەڵ کێ قسەت کرد؟","لە قسەی کەسێکی تر چییە کە لەگەڵ زانیاریت ناگونجێت؟","ئەگەر مۆبایل یان کامێرا بەردەست بێت، چ شتێک دەردەخات؟","چۆن دەتوانیت پیشانی بدەیت کە لە شوێنی ڕووداو نەبوویت؟","کام بەڵگە بە گومانەکەت دەگۆڕێت و بۆچی؟","ئەگەر تۆ لێکۆڵەر بیت، یەکەم کەس کێ دەپرسی و بۆچی?"][j]))}<br><b>🎙️ ${esc(name)}:</b> خاوەن نۆرەیەکە بە دەنگی خۆی وەڵام بدات.<br><small>📌 ڕۆڵی ئەو کەسە: ${esc(info.role)} — وەڵامەکەی بە قسە و بەڵگەکان بسەلمێنن.</small></div>`;
- document.getElementById("gameContent").insertAdjacentHTML("beforeend",text);toast("🎙️ ئێستا خاوەن نۆرە وەڵام بدات")
-}
-function mysteryDiscussStart(){
- mysteryState.phase="discussion";clearInterval(state.timer);state.gameLocked=true;
- document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-big">📱⬇️</div><div class="spy-round">🧠 کاتی لێکۆڵینەوە</div><h2>ئێستا مۆبایلەکە دابنێن!</h2><p class="hint" style="display:block!important">لە ئێستا بەدواوە شاشەکە نابینن. هەمووتان دەست بە گفتوگۆ بکەن و لەسەر ئەوە قسە بکەن کە <b>چۆن تاوانەکە ڕوویداوە</b>، کێ لە کوێ بوو، کێ کاتەکانی ناگونجێت و کام دوو کەس زۆرترین دەستگەیشتنیان بە شوێنی ڕووداو هەبوو.</p><div class="mystery-box"><b>🗣️ پرسیارەکانی گفتوگۆ:</b><br>1️⃣ لە کاتی ڕووداوەکەدا 4 کەس لە کوێ بوون؟<br>2️⃣ کام وەڵام لەگەڵ بەڵگەکان ناگونجێت؟<br>3️⃣ کێ دەتوانێت چرای کوژاوە یان دەرگای خزمەتگوزاری ڕوون بکاتەوە؟<br>4️⃣ کێ زانیارییەکی زۆر لەسەر شوێنەکەی هەیە؟<br>5️⃣ ئایا دوو کەس قسەکانیان یەکتر پشتگیری دەکات یان هەردووکیان زۆر لە یەکتر نزیکن؟<br>6️⃣ چۆن پێکهاتەی ڕووداوەکە لە سەرەتادا تا کۆتایی ڕوویداوە؟</div><div class="mystery-summary"><b>⏱️ ئێستا کاتی گفتوگۆی ڕاستەقینەیە</b><span>مۆبایلەکە دابنێن، لەسەر شاشە سەیر مەکەن و بە قسە و بیرکردنەوە هەردوو تاوانبار بدۆزنەوە.</span></div><button class="primary" onclick="mysteryVoting()">🗳️ کاتێک ئامادە بوون — دەنگ بدەن</button></div>`;
-}
-function mysteryVoting(){mysteryState.phase="voting";mysteryState.votes={};mysteryState.voteIndex=0;renderMysteryVote()}
-function renderMysteryVote(){
- const voter=state.players[mysteryState.voteIndex],opts=state.players.filter(n=>n!==voter).map(n=>`<button class="answer" onclick="mysteryVote('${String(n).replace(/'/g,"\\'")}')">👤 ${esc(n)}</button>`).join("");
- document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-round">🗳️ دەنگدان ${mysteryState.voteIndex+1}/${state.players.length}</div><div class="turn">تەنها ${esc(voter)} دەنگ بدات</div><p class="hint" style="display:block!important">دوو کەس هەڵبژێرە کە بە گومانترین کەسن.</p><div class="mystery-questions">${opts}</div></div>`;
-}
-function mysteryVote(name){
- const voter=state.players[mysteryState.voteIndex];if(!mysteryState.votes[voter])mysteryState.votes[voter]=[];if(mysteryState.votes[voter].includes(name))return;if(mysteryState.votes[voter].length<2)mysteryState.votes[voter].push(name);
- if(mysteryState.votes[voter].length<2)return toast("☝️ کەسی دووەمیش هەڵبژێرە");mysteryState.voteIndex++;if(mysteryState.voteIndex<state.players.length)return renderMysteryVote();mysteryResult();
-}
-function mysteryResult(){
- mysteryState.phase="result";const counts={};Object.values(mysteryState.votes).flat().forEach(n=>counts[n]=(counts[n]||0)+1);const rows=state.players.map(n=>`<div class="leader-row"><span>👤 ${esc(n)}</span><strong>${counts[n]||0} دەنگ</strong></div>`).join("");const chosen=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,2).map(x=>x[0]);const correct=mysteryState.culprits.every(n=>chosen.includes(n))&&chosen.length===2;
- document.getElementById("gameContent").innerHTML=`<div class="play spy-wrap"><div class="spy-result ${correct?"good":"bad"}"><div class="spy-big">${correct?"🎉":"😈"}</div><h2>${correct?"هەردوو تاوانبارتان دۆزییەوە!":"تاوانبارەکان سەرکەوتن!"}</h2><p>${correct?"لێکۆڵینەوەکەتان بە سەرکەوتوویی کۆتایی هات.":"ئەمجارە گومانەکانتان هەڵە بوون."}</p><div class="mystery-box"><b>😈 تاوانبارە ڕاستەقینەکان:</b><br>${mysteryState.culprits.map(esc).join(" و ")}<br><br><b>🗳️ دەنگەکان:</b></div><div class="spy-vote-list">${rows}</div></div><button class="primary" onclick="finishGame()">🏁 کۆتایی و نمرەکان</button></div>`;
+function window__skipIntro() {
+  document.getElementById('uIntro').style.display = 'none';
 }
 
-/* Quiz */
-function quizGame(){const q=bankGet("quiz",makeQuiz),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🧠 نۆرەی ${esc(p)}</div><div class="round">پرسیاری ${state.turn+1} لە 10</div><div class="prompt">${esc(q.text)}</div><div class="answers">${q.answers.map((a,i)=>`<button class="answer" onclick="quizAnswer(${i},${q.correct})">${esc(a)}</button>`).join("")}</div></div>`}
-function quizAnswer(i,c){if(state.gameLocked)return;state.gameLocked=true;const bs=document.querySelectorAll(".answer");bs.forEach(b=>b.disabled=true);const p=player();if(i===c){bs[i].classList.add("correct");addScore(p,10);win();toast("🎉 ڕاستە! +10")}else{if(bs[i])bs[i].classList.add("wrong");bs[c].classList.add("correct");lose();toast("❌ هەڵە بوو")}nextAfter(750)}
-
-/* Truth */
-function truthGame(){const q=bankGet("truth",makeTruth),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🎤 نۆرەی ${esc(p)}</div><div class="big">${q.isTruth?"🗣️ ڕاستی":"🔥 ئەرک"}</div><div class="prompt">${esc(q.text)}</div><button class="primary" onclick="truthDone()">✅ کردم!</button></div>`}
-function truthDone(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),5);win();toast("🎤 تەواو! +5");nextAfter(550)}
-
-/* Who */
-function whoGame(){const q=bankGet("who",makeWho);progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">👀 هەمووان بەشداری بکەن</div><div class="prompt">${esc(q.text)}</div><button class="primary" onclick="whoDone()">👉 دەنگمان دا</button></div>`}
-function whoDone(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),5);toast("👀 دەنگەکان تۆمارکران! +5");nextAfter(550)}
-
-/* Rapid */
-function rapidGame(){const q=bankGet("rapid",makeRapid),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">⚡ نۆرەی ${esc(p)}</div><div class="timer" id="rapidTimer">25</div><div class="prompt">${esc(q.text)}</div><button class="primary" id="rapidStart">⏱️ دەستم پێکرد!</button></div>`;document.getElementById("rapidStart").onclick=()=>startTimed("rapid",25,()=>rapidDone())}
-function startTimed(kind,secs,done){if(state.gameLocked)return;state.gameLocked=true;let t=secs,el=document.getElementById(kind+"Timer");if(!el)return;clearInterval(state.timer);el.textContent=t;state.timer=setInterval(()=>{t--;el.textContent=t;if(t<=5)el.classList.add("danger");if(t<=0){clearInterval(state.timer);done(true)}},1000)}
-function rapidDone(timeout=false){clearInterval(state.timer);addScore(player(),timeout?5:10);toast(timeout?"⏰ کات تەواو بوو":"⚡ +10");nextAfter(500)}
-
-/* Memory */
-let memorySeq=[];
-function memoryGame(){
-  const p=player(),len=Math.min(8,3+Math.floor(state.turn/2)),pool=["🍎","🚀","🎸","🐯","⚽","🔥","🌙","🍕","🎮","⭐","🍔","🎈","🐼","🌈","🎯","🧩"];
-  memorySeq=[];while(memorySeq.length<len){const x=pool[Math.floor(Math.random()*pool.length)];if(!memorySeq.includes(x))memorySeq.push(x)}
-  progress(8);
-  document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🧩 نۆرەی ${esc(p)} — ئاست ${len-2}</div><div class="sequence">${memorySeq.map(x=>`<div class="seq">${x}</div>`).join("")}</div><button class="primary" onclick="hideMemory()">🙈 شارەوە و دەست پێ بکە</button></div>`;
-  setTimeout(()=>{const s=document.querySelector(".sequence");if(s)s.innerHTML=memorySeq.map(()=>`<div class="seq">❓</div>`).join("")},2600)
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
 }
-function hideMemory(){
-  if(state.gameLocked)return;
-  state.gameLocked=true;
-  const correct=memorySeq.join(" ");
-  const options=[correct];
-  const pool=["🍎","🚀","🎸","🐯","⚽","🔥","🌙","🍕","🎮","⭐","🍔","🎈","🐼","🌈","🎯","🧩"];
-  while(options.length<4){
-    const wrong=shuffle([...memorySeq].map((x,i)=>i===Math.floor(Math.random()*memorySeq.length)?pool[Math.floor(Math.random()*pool.length)]:x)).join(" ");
-    if(wrong!==correct&&!options.includes(wrong))options.push(wrong)
+
+function scrollToGames() {
+  document.getElementById('gamesTitle').scrollIntoView({ behavior: 'smooth' });
+}
+
+function showPlayersSetup() {
+  renderPlayers();
+  showScreen('players');
+}
+
+function addPlayer() {
+  const input = document.getElementById('playerInput');
+  const val = input.value.trim();
+  if(val) {
+    players.push(val);
+    input.value = '';
+    renderPlayers();
   }
-  shuffle(options);
-  document.getElementById("gameContent").insertAdjacentHTML("beforeend",`<div class="memory-options">${options.map((o,i)=>`<button class="memory-option" onclick="memoryPick(${JSON.stringify(o).replace(/"/g,'&quot;')})">ڕیز ${i+1}<br><span dir="ltr">${esc(o)}</span></button>`).join("")}</div>`);
-}
-function memoryPick(choice){
-  if(!state.gameLocked)return;
-  state.gameLocked=false;
-  const ok=choice===memorySeq.join(" ");
-  state.gameLocked=true;
-  document.querySelectorAll(".memory-option").forEach(b=>b.disabled=true);
-  if(ok){addScore(player(),15);win();toast("🧠 زۆر باش! +15")}else{lose();toast("❌ ڕیزەکە هەڵە بوو")}
-  nextAfter(500)
 }
 
-/* Math */
-function mathGame(){const q=bankGet("math",makeMath),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">➗ نۆرەی ${esc(p)}</div><div class="timer" id="mathTimer">25</div><div class="prompt">${q.text}</div><div class="answers">${q.answers.map((a,i)=>`<button class="answer" onclick="mathAnswer(${i},${q.correct})">${a}</button>`).join("")}</div></div>`;let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("mathTimer");if(e)e.textContent=t;if(t<=5&&e)e.classList.add("danger");if(t<=0){clearInterval(state.timer);mathAnswer(-1,q.correct)}},1000)}
-function mathAnswer(i,c){if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);const bs=document.querySelectorAll(".answer");bs.forEach(b=>b.disabled=true);if(i===c){bs[i].classList.add("correct");addScore(player(),15);win()}else{if(bs[i])bs[i].classList.add("wrong");bs[c].classList.add("correct");lose()}nextAfter(600)}
-
-/* Category */
-function categoryGame(){const q=bankGet("category",makeCategory),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🎯 نۆرەی ${esc(p)}</div><div class="timer" id="catTimer">25</div><div class="prompt">${esc(q.text)}</div><button class="primary" onclick="categoryDone()">✅ تەواو</button></div>`;let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("catTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);categoryDone(true)}},1000)}
-function categoryDone(timeout=false){if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;addScore(player(),timeout?5:10);toast(timeout?"⏰ کات تەواو بوو":"🎯 تەواو! +10");nextAfter(500)}
-
-/* Emoji */
-function emojiGame(){const q=bankGet("emoji",makeEmoji),p=player();progress(10);window.currentEmojiAnswer=q.answer;document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">😂 نۆرەی ${esc(p)}</div><div class="big">${q.emoji}</div><div class="prompt">${esc(q.question||"ئەم ئیمۆجییە چی دەڵێت؟")}</div><button class="primary" onclick="emojiAnswer()">💡 وەڵام</button></div>`}
-function emojiAnswer(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),5);win();document.getElementById("gameContent").insertAdjacentHTML("beforeend",`<div class="feedback good">💡 وەڵام: <b>${esc(window.currentEmojiAnswer)}</b><br>+5 خاڵ</div>`);nextAfter(1200)}
-
-/* Reaction */
-function reactionGame(){
-  const p=player();progress(8);
-  document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🖐️ نۆرەی ${esc(p)}</div><div class="reaction-new" id="reactionArea"><div class="reaction-dot"></div><div id="reactionText">ئامادەی؟</div><button class="primary reaction-start" onclick="reactionStart(event)">⚡ دەست پێ بکە</button></div></div>`;
-  state.gameLocked=false;window.ready=false;clearTimeout(window.rto)
-}
-function reactionStart(ev){
-  ev.stopPropagation();
-  if(state.gameLocked||window.reactionStarted)return;
-  window.reactionStarted=true;window.ready=false;
-  const e=document.getElementById("reactionArea"),txt=document.getElementById("reactionText");
-  if(!e||!txt)return;
-  e.onclick=reactionClick;const b=e.querySelector(".reaction-start");if(b)b.remove();
-  txt.textContent="چاوەڕوان بە... 👀";
-  window.rto=setTimeout(()=>{
-    const x=document.getElementById("reactionArea"),y=document.getElementById("reactionText");if(!x||!y)return;
-    x.classList.add("ready");y.textContent="🟢 ئێستا! کلیک بکە!";
-    window.ready=true;beep(900,.12)
-  },1200+Math.random()*3200)
-}
-function reactionClick(){
-  if(state.gameLocked)return;
-  state.gameLocked=true;clearTimeout(window.rto);window.reactionStarted=false;
-  if(window.ready){addScore(player(),20);win();toast("⚡ زۆر خێرا!")}else{lose();toast("❌ زوو بوو!")}
-  nextAfter(650)
+function renderPlayers() {
+  const list = document.getElementById('playersList');
+  list.innerHTML = players.map((p, i) => `
+    <span class="pill">${p} <b onclick="removePlayer(${i})" style="cursor:pointer;color:red;margin-right:5px">×</b></span>
+  `).join('');
+  updateGroupPreview();
 }
 
-/* Word */
-function wordGame(){const q=bankGet("word",makeWord),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🔤 نۆرەی ${esc(p)}</div><div class="big">${esc(q.word)}</div><div class="letter-big"><span class="letter">${esc(q.last)}</span></div><button class="primary" onclick="wordDone()">✅ وتم!</button></div>`}
-function wordDone(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),8);win();toast("🔤 باشە! +8");nextAfter(500)}
-
-/* Forbidden */
-function forbiddenGame(){const q=bankGet("forbidden",makeForbidden),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🚫 نۆرەی ${esc(p)}</div><div class="big">${esc(q.word)}</div><div class="prompt">بەبێ بەکارهێنانی وشەی «${esc(q.bad)}» ئەمە بۆ هاوڕێکانت وەسف بکە.</div><div class="timer" id="forbiddenTimer">25</div><button class="primary" onclick="forbiddenDone()">✅ تەواو</button></div>`;let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("forbiddenTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);forbiddenDone(true)}},1000)}
-function forbiddenDone(timeout=false){if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;addScore(player(),timeout?5:12);toast(timeout?"⏰ کات تەواو بوو":"🚫 باشە! +12");nextAfter(500)}
-
-/* Charades */
-function charadesGame(){const q=bankGet("charades",makeCharades),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🎭 نۆرەی ${esc(p)}</div><div class="timer" id="charadesTimer">25</div><div class="big">${esc(q.word)}</div><button class="primary" onclick="charadesDone()">🏆 زانییان!</button></div>`;let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("charadesTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);charadesDone(true)}},1000)}
-function charadesDone(timeout=false){if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;addScore(player(),timeout?4:15);toast(timeout?"⏰ کات تەواو بوو":"🎭 زانییان! +15");nextAfter(550)}
-
-/* Duel */
-function duelGame(){const q=bankGet("duel",makeDuel),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">⚔️ نۆرەی ${esc(p)}</div><div class="prompt">${esc(q.text)}</div><div class="center"><button class="primary" onclick="duelDone()">🏁 ئەنجام</button></div></div>`}
-function duelDone(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),20);win();toast("⚔️ دووڕووبەڕوو تەواو بوو! +20");nextAfter(650)}
-
-/* Guess */
-function guessGame(){const q=bankGet("guess",makeGuess),p=player();progress(10);window.guessAnswer=q.word;document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🕵️ نۆرەی ${esc(p)}</div><div class="prompt"><span class="gradient">${esc(q.hint)}</span></div><button class="primary" onclick="guessShow()">🔎 وەڵام بدۆزەوە</button></div>`}
-function guessShow(){if(state.gameLocked)return;state.gameLocked=true;addScore(player(),8);win();document.getElementById("gameContent").insertAdjacentHTML("beforeend",`<div class="feedback good">🔎 وەڵام: <b>${esc(window.guessAnswer)}</b><br>+8 خاڵ</div>`);nextAfter(1200)}
-
-/* Choice */
-function choiceGame(){const q=bankGet("choice",makeChoice),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🎲 نۆرەی ${esc(p)}</div><div class="prompt">${esc(q.q)}</div><div class="answers">${q.a.map((a,i)=>`<button class="answer" onclick="choiceDone(${i})">${esc(a)}</button>`).join("")}</div></div>`}
-function choiceDone(i){if(state.gameLocked)return;state.gameLocked=true;const bs=document.querySelectorAll(".answer");bs.forEach(b=>b.disabled=true);if(bs[i])bs[i].classList.add("correct");addScore(player(),5);toast("🎲 هەڵبژاردنەکەت تۆمارکرا! +5");win();nextAfter(650)}
-
-/* Challenge */
-function challengeGame(){const q=bankGet("challenge",makeChallenge),p=player();progress(10);document.getElementById("gameContent").innerHTML=`<div class="play"><div class="turn">🔥 نۆرەی ${esc(p)}</div><div class="timer" id="challengeTimer">25</div><div class="prompt">${esc(q.text)}</div><button class="primary" onclick="challengeDone()">😄 کردم!</button></div>`;let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("challengeTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);challengeDone(true)}},1000)}
-function challengeDone(timeout=false){if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;addScore(player(),timeout?3:10);toast(timeout?"⏰ کات تەواو بوو":"🔥 ئەرکەکە تەواو بوو! +10");nextAfter(500)}
-
-/* Hunt — physical party challenge: many different tasks, not color-only */
-const huntTasks=[
-  ["🎨","شتێکی سەوز","شتێکی سەوز لە دەوروبەرت بدۆزەوە و بیهێنە.","رەنگ"],
-  ["🧸","شتێکی نەرم","شتێکی نەرم بدۆزەوە و بیهێنە.","جۆر"],
-  ["📦","شتێکی چوارگۆشە","شتێکی چوارگۆشە یان نزیک لە چوارگۆشە بدۆزەوە.","شێوە"],
-  ["🪑","شتێک کە لەسەر مێز نییە","شتێک بدۆزەوە کە ئێستا لەسەر مێز نەبێت.","شوێن"],
-  ["🔵","شتێکی شین","شتێکی شین بدۆزەوە و بیهێنە.","رەنگ"],
-  ["🧢","شتێک کە لە سەرەوە دەپۆشرێت","شتێک بدۆزەوە کە زۆرجار لە سەرەوە دەپۆشرێت.","بەکارهێنان"],
-  ["📱","شتێکی تەکنەلۆجی","شتێکی تەکنەلۆجی بدۆزەوە کە بۆ کارێک بەکاردێت.","تێکنەلۆجیا"],
-  ["📄","شتێکی کاغەزی","شتێکی کاغەزی بدۆزەوە و بیهێنە.","ماددە"],
-  ["🟡","شتێکی زەرد","شتێکی زەرد بدۆزەوە و بیهێنە.","رەنگ"],
-  ["🧴","شتێک کە لە ناوی خۆیدا پیتی «م» هەیە","شتێک بدۆزەوە کە ناوی بە پیتی «م» دەست پێ بکات.","پیت"],
-  ["🪙","شتێکی بچووک","شتێکی بچووک بدۆزەوە کە بتوانیت بە یەک دەست هەڵیبگریت.","قەبارە"],
-  ["🧤","شتێک بۆ پاراستنی دەست","شتێک بدۆزەوە کە بۆ پاراستنی دەست بەکاردێت.","ئامراز"],
-  ["⚪","شتێکی سپی","شتێکی سپی بدۆزەوە و بیهێنە.","رەنگ"],
-  ["🧹","شتێک بۆ پاککردنەوە","شتێک بدۆزەوە کە بۆ پاککردنەوە بەکاردێت.","بەکارهێنان"],
-  ["🔺","شتێکی سێگۆشە یان نزیک لەو شێوەیە","شتێک بە شێوەی سێگۆشە بدۆزەوە.","شێوە"],
-  ["📚","شتێک بۆ خوێندن","شتێک بدۆزەوە کە بۆ خوێندن بەکاردێت.","بەکارهێنان"],
-  ["🟣","شتێکی مۆر","شتێکی مۆر بدۆزەوە و بیهێنە.","رەنگ"],
-  ["🔑","شتێکی کە قوفڵ دەکاتەوە","شتێک بدۆزەوە کە بۆ کردنەوەی قوفڵ بەکاردێت.","بەکارهێنان"],
-  ["🧊","شتێکی سارد","شتێکی سارد بدۆزەوە؛ ئەگەر خۆراکە، تەنها بەبێ تێکدانی یاری بیهێنە.","هەست"],
-  ["🎒","شتێک بۆ هەڵگرتنی شتەکان","شتێک بدۆزەوە کە بتوانیت شتێکی تێدا هەڵبگریت.","بەکارهێنان"]
-];
-let huntTaskIndex=0;
-function makeHuntTask(){
-  if(!state.used.hunt)state.used.hunt=[];
-  const used=state.used.hunt;
-  let available=huntTasks.map((_,i)=>i).filter(i=>!used.includes(i));
-  if(!available.length){state.used.hunt=[];available=huntTasks.map((_,i)=>i)}
-  const i=available[Math.floor(Math.random()*available.length)];
-  state.used.hunt.push(i);saveState();return huntTasks[i];
-}
-function redHuntGame(){
-  const p=player(),task=makeHuntTask();progress(8);
-  document.getElementById("gameContent").innerHTML=`<div class="play"><div class="red-hunt hunt-card"><div class="turn">🧭 نۆرەی ${esc(p)}</div><div class="hunt-icon">${task[0]}</div><div class="hunt-type">${esc(task[3])}</div><h2>${esc(task[1])}</h2><div class="timer" id="redHuntTimer">25</div><div class="red-actions"><button class="primary" onclick="redHuntDone()">✅ هێنام!</button><button class="secondary" onclick="redHuntDone(true)">⏰ نەگەیشتم</button></div></div></div>`;
-  let t=25;state.gameLocked=false;state.timer=setInterval(()=>{t--;const e=document.getElementById("redHuntTimer");if(e)e.textContent=t;if(t<=0){clearInterval(state.timer);redHuntDone(true)}},1000)
-}
-function redHuntDone(timeout=false){
-  if(state.gameLocked)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;
-  if(timeout){addScore(player(),2);lose();toast("⏰ کات تەواو بوو")}else{addScore(player(),15);win();toast("🎯 زۆر باش! +15")}
-  nextAfter(550)
+function removePlayer(i) {
+  players.splice(i, 1);
+  renderPlayers();
 }
 
-/* Group mode */
-function setupGroups(){
-  if(state.players.length<2)return toast("👥 لانیکەم 2 یاریزان زیاد بکە");
-  const arr=shuffle([...state.players]),a=arr.filter((_,i)=>i%2===0),b=arr.filter((_,i)=>i%2===1);
-  state.groups={a,b};state.groupScores={a:0,b:0};
-  const A=document.getElementById("teamAList"),B=document.getElementById("teamBList");
-  if(A)A.innerHTML=a.map(n=>`<span class="team-player">${esc(n)}</span>`).join("");
-  if(B)B.innerHTML=b.map(n=>`<span class="team-player">${esc(n)}</span>`).join("");
-  saveState();toast("🏆 گروپەکان ئامادەن!");
-}
-/* BOMBER — question mode, 60 seconds, turn by turn. No letters or typing required. */
-const bombQuestionTopics=[
-  "ئەگەر بتوانیت یەک توانای سەیر هەبێت، کام توانایە و بۆچی؟",
-  "ئەگەر یەک ڕۆژ بەبێ مۆبایل بژییت، زۆرترین شت چییە کە دەتەوێت بکەیت؟",
-  "کام خواردن دەتوانێت هەموو کۆمەڵەکە خۆشحاڵ بکات؟",
-  "کێ لە کۆمەڵەکەدا زۆرتر لە پێکەنین خۆی ناگرێت؟",
-  "ئەگەر بتوانیت یەک شوێن بۆ گەشت هەڵبژێریت، کوێ دەچیت؟",
-  "ناوی سێ شت بڵێ کە زۆر خێراتر لە بیرت دێنەوە لە کاتی پێکەنین.",
-  "ئەگەر فیلمێکی ژیانت بێت، ناوی چی لێ دەنێیت؟",
-  "کەمترین شت چییە کە دەتوانێت ڕۆژەکەت خۆش بکات؟",
-  "ئەگەر بتوانیت یەک کەس لە مێژوو بگەڕێنیتەوە بۆ گفتوگۆ، کێ دەبێت؟",
-  "کێ دەتوانێت لە کۆمەڵەکەدا زۆرترین وشە لە یەک خولەکدا بڵێت؟",
-  "ئەگەر پیتزاکە بتوانێت قسە بکات، یەکەم وشەی چی دەبێت؟",
-  "ئەگەر تۆ بکرێیتە سەرۆکی کۆمەڵەکە بۆ یەک ڕۆژ، یەکەم یاساکەت چی دەبێت؟",
-  "کام گۆرانی دەتوانێت هەمووان بخاتە ناو مودێکی باش؟",
-  "ئەگەر بتوانیت یەک شتی ئاسایی بکەیتە شتێکی زۆر گرانبەها، چی دەکەیت؟",
-  "ناوی سێ شت بڵێ کە لەگەڵ هاوڕێکاندا زۆر خۆشن.",
-  "ئەگەر بتوانیت یەک ڕۆژ ببیتە ناسراو، بە چی ناسراو دەبیت؟",
-  "کام یارییە دەتوانێت کۆمەڵەکە زووترین بخاتە پێکەنین؟",
-  "ئەگەر مێشکت وەک مۆبایل شارژ دەکرا، ئێستا چەند لەسەد بوو؟",
-  "کێ دەتوانێت زووتر یەک وەڵامی زیرەک بۆ پرسیارێکی سەیر بدۆزێتەوە؟",
-  "ئەگەر بتوانیت یەک شت لە جیهاندا بگۆڕیت، چی دەگۆڕیت؟"
-];
-const bombQuestionOpeners=[
-  "بە خێرایی و بە وەڵامێکی خۆش بڵێ: ",
-  "بەبێ زۆر بیرکردنەوە وەڵامی ئەمە بدە: ",
-  "لەگەڵ کۆمەڵەکەدا وەڵامی ئەمە بدە: ",
-  "وەڵامێکی خۆش و جیاواز بۆ ئەمە بدۆزەوە: ",
-  "ئەمجارە وەڵامەکەت بە شێوەیەکی سەیرتر بڵێ: ",
-  "یەکەم شتێک کە بە مێشکتدا دێت بڵێ: ",
-  "بە شێوەیەکی پڕ پێکەنین وەڵامی ئەمە بدە: ",
-  "ئەگەر تۆ بڕیار بدەیت، وەڵامی ئەمە چی دەبێت؟ ",
-  "وەڵامێکی نەخۆشەویستانە نە، بەڵکو خۆش و خێرا بدە: ",
-  "ئەم پرسیارە بۆ تۆیە؛ زوو وەڵامی بدە: "
-];
-const bombQuestionEnds=[
-  " 😄", " 😂", " 🤔", " 🔥", " 🎮", " 👀", " ✨", " 😎", " 🤯", " 🥳"
-];
-function makeBombQuestion(){const topics=["ناوی میوەکان","ناوی خواردنەکان","ناوی ئاژەڵەکان","ناوی شارەکان","ناوی وڵاتەکان","ناوی فیلمەکان","ناوی گۆرانییەکان","ناوی وەرزشەکان","ناوی ڕەنگەکان","ناوی شتەکانی مۆبایل","ناوی پیشەکان","ناوی شتەکانی قوتابخانە","ناوی شتەکانی ماڵ","ناوی شوێنەکانی گەشت","ناوی ئامێرە تەکنەلۆجییەکان","ناوی شتەکانی ئاشپەزخانە","ناوی شتەکانی یاری","ناوی شتەکانی بازاڕ","ناوی شتەکانی کافێ","ناوی شتەکانی سروشت"];const used=state.used.bombTopics||[];let available=topics.filter(x=>!used.includes(x));if(!available.length){state.used.bombTopics=[];available=topics}const category=available[Math.floor(Math.random()*available.length)];state.used.bombTopics=[...(state.used.bombTopics||[]),category];saveState();return{id:`bomb-${Date.now()}-${Math.random()}`,category}}
-function bombGame(){stopBombSound();state.eliminated=[];state.bombTurn=0;state.bombQuestion=makeBombQuestion();state.bombActive=false;renderBombReady()}
-function alivePlayers(){return state.players.filter(p=>!state.eliminated.includes(p));}
-function nextAliveAfter(name){
-  const alive=alivePlayers();
-  if(!alive.length)return null;
-  const base=state.players.indexOf(name);
-  for(let step=1;step<=state.players.length;step++){
-    const candidate=state.players[(base+step)%state.players.length];
-    if(!state.eliminated.includes(candidate))return candidate;
+function setupGroups() {
+  if (players.length < 2) {
+    alert("تکایە سەرەتا بەلایەنی کەمەوە 2 یاریزان زیاد بکە!");
+    return;
   }
-  return alive[0];
+  let shuffled = [...players].sort(() => 0.5 - Math.random());
+  let half = Math.ceil(shuffled.length / 2);
+  let teamA = shuffled.slice(0, half);
+  let teamB = shuffled.slice(half);
+
+  document.getElementById('teamAList').innerHTML = teamA.map(p => `<span class="team-player">${p}</span>`).join('');
+  document.getElementById('teamBList').innerHTML = teamB.map(p => `<span class="team-player">${p}</span>`).join('');
 }
 
-function bombPass(){if(state.gameLocked||!state.bombActive)return;state.gameLocked=true;clearInterval(state.timer);state.timer=null;stopBombSound();addScore(player(),10);beep(780,.08);setTimeout(()=>beep(980,.12),90);toast("💨 بۆمب گوازرایەوە!");const next=nextAliveAfter(player());if(next)state.bombTurn=state.players.indexOf(next);setTimeout(()=>{state.gameLocked=false;renderBomb()},500)}
-function bombExplode(p){if(state.gameLocked)return;stopBombSound();state.gameLocked=true;clearInterval(state.timer);state.timer=null;state.eliminated.push(p);lose();bombExplosionSound();document.getElementById("gameContent").innerHTML=`<div class="play bomb-wrap explode"><div class="big boom">💥</div><div class="prompt">کات تەواو بوو!<br><b>${esc(p)}</b> بۆمبەکەی لێ تەقی و لە یارییەکە دەرکرا.</div></div>`;const alive=alivePlayers();if(alive.length<=1){setTimeout(()=>{state.gameLocked=false;renderBomb()},1100);return}const next=nextAliveAfter(p);state.bombTurn=next?state.players.indexOf(next):0;setTimeout(()=>{state.gameLocked=false;renderBomb()},1100)}
-function renderBombReady(){
-  clearInterval(state.timer);state.timer=null;state.gameLocked=false;stopBombSound();
-  const alive=alivePlayers(); if(alive.length<=1){finishGame();return;}
-  const p=alive[state.bombTurn%alive.length]; state.currentPlayer=state.players.indexOf(p);
-  document.getElementById("gameContent").innerHTML=`<div class="play bomb-wrap"><div class="bomb-topline"><span class="turn">💣 بۆمبی پیتی</span><span class="bomb-round">ئامادەی یاری؟</span></div><div class="bomb-device" aria-hidden="true"><div class="bomb-glow"></div><div class="bomb-core">💣</div></div><div class="prompt">بۆمبەکە ئێستا ناچالاکە.</div><p class="hint bomb-hint">کاتێک ئامادە بوون، دوگمەی دەستپێکردن دابگرن. لەو کاتەوە تیک‌تاک دەست پێدەکات و بۆمبەکە تەنها لە ناو ئەم یارییە کار دەکات.</p><button class="primary bomb-pass" onclick="startBombRound()">💣 دەست پێکردنی بۆمب</button></div>`;
+function updateGroupPreview() {
+  setupGroups();
 }
-function startBombRound(){if(state.gameLocked||state.bombActive)return;state.bombActive=true;renderBomb();startBombSound()}
-function renderBomb(){clearInterval(state.timer);state.timer=null;state.gameLocked=false;if(!state.bombActive)return renderBombReady();const alive=alivePlayers();if(alive.length<=1){if(alive[0])addScore(alive[0],50);finishGame();return}if(!state.bombQuestion)state.bombQuestion=makeBombQuestion();const p=alive[state.bombTurn%alive.length];state.currentPlayer=state.players.indexOf(p);const q=state.bombQuestion;progress(alive.length+4);document.getElementById("gameContent").innerHTML=`<div class="play bomb-wrap"><div class="bomb-topline"><span class="turn">💣 بۆمب لە دەستی ${esc(p)}</span><span class="bomb-round">هەمان پرسیار بۆ هەمووان</span></div><div class="bomb-device" aria-hidden="true"><div class="bomb-glow"></div><div class="bomb-core">💣</div></div><div class="bomb-question-label">🎯 بابەتی ڕاو</div><div class="prompt bomb-question"><b>${esc(q.category)}</b></div><p class="hint bomb-hint">وەڵامەکەت بە دەنگی خۆت بڵێ؛ هیچ شتێک مەنووسە. کاتێک وەڵامت دا، بۆمبەکە بگوازەرەوە. هەمان بابەت بۆ هەمووان بەردەوامە.</p><button class="primary bomb-pass" onclick="bombPass()">💨 وتم — بۆمب بگوازەرەوە</button><div class="timer bomb-timer" id="bombTimer">20</div><div class="player-list">${state.players.map(n=>`<div class="player-status ${state.eliminated.includes(n)?"eliminated":"alive"}"><span>${esc(n)}</span><b>${state.eliminated.includes(n)?"💥 دەرکراوە":n===p?"💣 نۆرەی ئێستا":"🟢 چاوەڕێ"}</b></div>`).join("")}</div></div>`;let t=20,el=document.getElementById("bombTimer");state.timer=setInterval(()=>{t--;if(el)el.textContent=t;if(t<=5&&el)el.classList.add("danger");if(t<=0){clearInterval(state.timer);state.timer=null;bombExplode(p)}},1000)}
-loadState();renderGames();renderPlayers();renderGroups();setSpyRoundLimit(state.spyRoundLimit);document.getElementById("soundBtn").textContent=state.sound?"🔊":"🔇";document.getElementById("playerInput").addEventListener("keydown",e=>{if(e.key==="Enter")addPlayer()});document.addEventListener("click",()=>{if(audio&&audio.state==="suspended")audio.resume()},{once:true});
+
+function startGame(type) {
+  if(players.length === 0) {
+    alert("تکایە سەرەتا یاریزان زیاد بکە!");
+    showPlayersSetup();
+    return;
+  }
+  showScreen('game');
+  currentTurnIndex = 0;
+  loadGameContent(type);
+}
+
+function loadGameContent(type) {
+  const prompts = gamePrompts[type] || ["پرسیارێک بۆ تاقیکردنەوە"];
+  const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+  
+  document.getElementById('turnPlayer').innerText = "نۆرەی: " + players[currentTurnIndex];
+  document.getElementById('gamePrompt').innerText = randomPrompt;
+  
+  startTimer(15);
+}
+
+function startTimer(seconds) {
+  clearInterval(timerInterval);
+  let count = seconds;
+  const timerEl = document.getElementById('gameTimer');
+  timerEl.innerText = count;
+  
+  timerInterval = setInterval(() => {
+    count--;
+    timerEl.innerText = count;
+    if(count <= 0) {
+      clearInterval(timerInterval);
+      timerEl.innerText = "کات تەواو!";
+    }
+  }, 1000);
+}
+
+function nextTurn() {
+  currentTurnIndex = (currentTurnIndex + 1) % players.length;
+  document.getElementById('turnPlayer').innerText = "نۆرەی: " + players[currentTurnIndex];
+  startTimer(15);
+}
+
+function exitGame() {
+  clearInterval(timerInterval);
+  showScreen('home');
+}
+
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  document.getElementById('soundBtn').innerText = soundEnabled ? "🔊" : "🔇";
+}
+
+// دەستپێکردنی ڕەندەر کردنی سەرەتایی
+renderPlayers();
 </script>
+
 </body>
 </html>
