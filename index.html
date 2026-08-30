@@ -282,7 +282,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;ba
 </head>
 <body>
 <div class="app">
-<header class="topbar"><div class="logo" onclick="showScreen('home')">🎮 <b>گەمەی گەنجان</b></div><div class="top-actions"><button class="icon" onclick="openMenu()" aria-label="menu">☰</button><button class="icon" id="soundBtn" onclick="toggleSound()">🔊</button><button class="icon" onclick="showHelp()">?</button></div></header>
+<header class="topbar"><div class="logo" onclick="showScreen('home')">🎮 <b>لەگەل هاوڕێیان</b></div><div class="top-actions"><button class="icon" onclick="openMenu()" aria-label="menu">☰</button><button class="icon" id="soundBtn" onclick="toggleSound()">🔊</button><button class="icon" onclick="showHelp()">?</button></div></header>
 
 <section id="home" class="screen active">
 <div class="hero"><div class="badge">✨ بۆ خێزان و هاوڕێکان — نۆرە بە نۆرە</div><h1>شەوی خۆشی<br><span class="gradient">دەست پێ بکە!</span></h1><p>یارییە جۆراوجۆرەکان، پرسیاری زۆر، چالاکی و پێکەنین. هەر جار ناوەڕۆکی نوێ دەبینیت و نۆرەکە بە ڕێکخستن دەگوازرێتەوە.</p><div class="actions"><button class="primary" onclick="scrollToGames()">🎮 یاری دەست پێ بکە</button><button class="secondary" onclick="showPlayersSetup()">👥 یاریزانەکان</button></div></div>
@@ -314,7 +314,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;ba
     <button class="secondary" onclick="showPlayersSetup()">👥 گۆڕینی یاریزانەکان</button>
   </div>
 </div>
-<div class="footer">🎮 گەمەی گەنجان — هەر نۆرەیەک شتێکی نوێ</div>
+<div class="footer">🎮 لەگەل هاوڕێیان — هەر نۆرەیەک شتێکی نوێ</div>
 </section>
 
 <section id="players" class="screen"><div class="panel"><h2>👥 یاریزانەکان</h2><p class="hint">ناوی کەسانی کۆمەڵەکە زیاد بکە. یارییەکان بە نۆرە دەچن.</p><div class="player-row"><input id="playerInput" class="input" maxlength="20" placeholder="ناوی یاریزان..."><button class="primary" onclick="addPlayer()">زیادکردن</button></div><div id="playersList" class="players"></div><div class="actions"><button class="primary" onclick="savePlayers()">✅ تەواو</button><button class="secondary" onclick="showScreen('home')">گەڕانەوە</button></div></div></section>
