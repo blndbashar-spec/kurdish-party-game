@@ -1,0 +1,51 @@
+{
+  "name": "arena-api",
+  "version": "1.0.0",
+  "description": "API ی ماڵپەڕی یاری ڕەقەبەری Arena — Express + TypeScript + Drizzle + Socket.io",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "seed": "tsx src/seed/seed.ts",
+    "test:e2e": "node scripts/e2e.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.31.4",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "postgres": "^3.4.4",
+    "socket.io": "^4.7.5",
+    "xss": "^1.0.15",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.10",
+    "drizzle-kit": "^0.22.8",
+    "embedded-postgres": "^18.4.0-beta.17",
+    "socket.io-client": "^4.8.3",
+    "tsx": "^4.15.7",
+    "typescript": "^5.4.5"
+  }
+}
